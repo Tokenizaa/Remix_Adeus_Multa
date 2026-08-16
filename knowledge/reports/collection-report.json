@@ -1,0 +1,77 @@
+{
+  "report_title": "Relatório de Coleta e Estruturação da Base Jurídica DefesaAI v1",
+  "version": "1.0.0-canonical",
+  "execution_date": "2026-08-15T08:35:00Z",
+  "responsible_agent": "DefesaAI Core Architecture Specialist",
+  "metrics": {
+    "official_sources_verified": 5,
+    "statutory_laws_collected": 1,
+    "contran_resolutions_indexed": 6,
+    "senatran_ordinances_indexed": 2,
+    "articles_normalized": 14,
+    "priority_infractions_cataloged": 12,
+    "procedures_and_services_cataloged": 7,
+    "defense_templates_structured": 6,
+    "specialized_arguments_modeled": 5,
+    "knowledge_graph_relational_mappings": 5
+  },
+  "sources_utilized": [
+    {
+      "source": "Portal da Presidência da República (Planalto)",
+      "document": "Lei Federal nº 9.503/1997 compilada com Leis 14.071, 14.229, 14.440 e 14.599",
+      "url": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm",
+      "status": "vigente"
+    },
+    {
+      "source": "Portal Oficial do CONTRAN / Ministério dos Transportes",
+      "document": "Resoluções 798/2020, 985/2022 (MBFT), 432/2013, 918/2022, 900/2022, 973/2022",
+      "url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran",
+      "status": "vigente"
+    },
+    {
+      "source": "Secretaria Nacional de Trânsito (SENATRAN)",
+      "document": "Portarias de Enquadramento 159/2017 e MBFT 2022-2024",
+      "url": "https://www.gov.br/transportes/pt-br/assuntos/transito/arquivos-senatran",
+      "status": "vigente"
+    },
+    {
+      "source": "Superior Tribunal de Justiça (STJ)",
+      "document": "Súmula 312 (Dupla Notificação), Súmula 127 e Tema Repetitivo 1.097",
+      "url": "https://www.stj.jus.br/jurisprudencia/sumulas/",
+      "status": "vigente"
+    }
+  ],
+  "priority_infractions_summary": [
+    "1. Excesso de Velocidade até 20% (Art. 218, I - Cód. 745-50)",
+    "2. Excesso de Velocidade 20% a 50% (Art. 218, II - Cód. 746-30)",
+    "3. Excesso de Velocidade > 50% (Art. 218, III - Cód. 747-10)",
+    "4. Avançar Sinal Vermelho (Art. 208 - Cód. 605-01)",
+    "5. Uso e Manuseio de Celular (Art. 252, P.Ú. - Cód. 736-62)",
+    "6. Estacionamento Proibido (Art. 181, XVIII - Cód. 555-00)",
+    "7. Falta de Documento de Porte Obrigatório (Art. 232 - Cód. 691-20)",
+    "8. Lei Seca - Direção Alcoólica (Art. 165 - Cód. 516-91)",
+    "9. Recusa ao Teste do Bafômetro (Art. 165-A - Cód. 757-90)",
+    "10. Cinto de Segurança (Art. 167 - Cód. 518-51)",
+    "11. Licenciamento Atrasado (Art. 230, V - Cód. 659-92)",
+    "12. Multa NIC Pessoa Jurídica (Art. 257, § 8º - Cód. 500-20)"
+  ],
+  "supported_services_summary": [
+    "1. Defesa Prévia (Defesa da Autuação - Art. 281 CTB)",
+    "2. Recurso JARI (1ª Instância Administrativa - Art. 282/285 CTB)",
+    "3. Recurso CETRAN (2ª Instância Administrativa - Art. 288/289 CTB)",
+    "4. Suspensão CNH (Defesa em PSDD por pontos ou autossuspensiva - Art. 261 CTB)",
+    "5. Cassação CNH (Defesa em PCDD - Art. 263 CTB)",
+    "6. Indicação de Real Condutor (FICI - Art. 257, § 7º CTB)",
+    "7. Conversão em Advertência por Escrito (Direito Subjetivo - Art. 267 CTB)"
+  ],
+  "pendencies": [
+    "Coleta e normalização dos regimentos internos específicos dos 27 CETRANs estaduais",
+    "Mapeamento automatizado de editais de Notificação de Autuação por Diário Oficial Eletrônico municipal",
+    "Integração de webhook com API pública de verificação do INMETRO para consulta em tempo real de laudos de radares"
+  ],
+  "recommended_next_steps": [
+    "Fase 2: Alimentar o CMS de Curadoria Jurídica para expansão dos 341 artigos do CTB com jurisprudência local",
+    "Fase 3: Implementar sincronizador contínuo com o Diário Oficial da União (DOU) para detecção instantânea de novas resoluções do CONTRAN",
+    "Fase 4: Realizar auditoria de conformidade dos templates contra os novos formulários padronizados do SNE e portal Senatran"
+  ]
+}

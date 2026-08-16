@@ -1,0 +1,37 @@
+{
+  "title": "Código de Trânsito Brasileiro",
+  "law_number": "Lei Federal nº 9.503, de 23 de setembro de 1997",
+  "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm",
+  "collection_timestamp": "2026-08-15T08:30:00Z",
+  "structure": {
+    "total_chapters": 20,
+    "total_articles": 341,
+    "annexes": ["Anexo I - Dos Conceitos e Definições", "Anexo II - Sinalização de Trânsito"]
+  },
+  "key_defense_chapters": [
+    {
+      "chapter": "Capítulo XV",
+      "name": "Das Infrações",
+      "articles_range": "Art. 161 a 255"
+    },
+    {
+      "chapter": "Capítulo XVI",
+      "name": "Das Penalidades",
+      "articles_range": "Art. 256 a 268-A"
+    },
+    {
+      "chapter": "Capítulo XVII",
+      "name": "Das Medidas Administrativas",
+      "articles_range": "Art. 269 a 279-A"
+    },
+    {
+      "chapter": "Capítulo XVIII",
+      "name": "Do Processo Administrativo",
+      "sections": [
+        "Seção I - Da Autuação (Art. 280 a 281-A)",
+        "Seção II - Do Julgamento das Autuações e Penalidades (Art. 282 a 290)"
+      ]
+    }
+  ],
+  "validation_status": "validado_oficialmente"
+}

@@ -1,0 +1,156 @@
+[
+  {
+    "id": "art_ctb_165",
+    "source": "CTB",
+    "article": "165",
+    "title": "Dirigir sob a influência de álcool ou substâncias psicoativas",
+    "text": "Dirigir sob a influência de álcool ou de qualquer outra substância psicoativa que determine dependência: Infração - gravíssima; Penalidade - multa (dez vezes) e suspensão do direito de dirigir por 12 (doze) meses.",
+    "category": "infracoes_transito",
+    "related_infractions": ["516-91", "516-92"],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art165",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_165_a",
+    "source": "CTB",
+    "article": "165-A",
+    "title": "Recusa à realização de teste, exame clínico ou perícia de alcoolemia",
+    "text": "Recusar-se a ser submetido a teste, exame clínico, perícia ou outro procedimento que permita certificar influência de álcool ou outra substância psicoativa, na forma estabelecida pelo art. 277: Infração - gravíssima; Penalidade - multa (dez vezes) e suspensão do direito de dirigir por 12 (doze) meses.",
+    "category": "infracoes_transito",
+    "related_infractions": ["757-90"],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art165a",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_167",
+    "source": "CTB",
+    "article": "167",
+    "title": "Deixar de usar o cinto de segurança",
+    "text": "Deixar o condutor ou passageiro de usar o cinto de segurança, conforme previsto no art. 65: Infração - grave; Penalidade - multa; Medida administrativa - retenção do veículo até colocação do cinto pelo infrator.",
+    "category": "infracoes_transito",
+    "related_infractions": ["518-51", "518-52"],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art167",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_181",
+    "source": "CTB",
+    "article": "181",
+    "title": "Estacionamento irregular em desacordo com a legislação",
+    "text": "Estacionar o veículo em desacordo com as posições estabelecidas no Código, em locais e horários proibidos pela sinalização regulamentar ou sobre calçadas, faixas de pedestres e ciclovias.",
+    "category": "infracoes_transito",
+    "related_infractions": ["538-00", "545-21", "545-22", "554-11", "555-00"],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art181",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_208",
+    "source": "CTB",
+    "article": "208",
+    "title": "Avançar sinal vermelho do semáforo ou parada obrigatória",
+    "text": "Avançar o sinal vermelho do semáforo ou o de parada obrigatória, exceto onde houver sinalização que permita a livre conversão à direita prevista no art. 44-A deste Código: Infração - gravíssima; Penalidade - multa.",
+    "category": "infracoes_transito",
+    "related_infractions": ["605-01", "605-02", "605-03"],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art208",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_218",
+    "source": "CTB",
+    "article": "218",
+    "title": "Transitar em velocidade superior à máxima permitida",
+    "text": "Transitar em velocidade superior à máxima permitida para o local, medida por instrumento ou equipamento hábil: I - em até 20% (média); II - de 20% a 50% (grave); III - acima de 50% (gravíssima com suspensão do direito de dirigir).",
+    "category": "infracoes_transito",
+    "related_infractions": ["745-50", "746-30", "747-10"],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art218",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_230_v",
+    "source": "CTB",
+    "article": "230, V",
+    "title": "Conduzir veículo não registrado e devidamente licenciado",
+    "text": "Conduzir o veículo: V - que não esteja registrado e devidamente licenciado: Infração - gravíssima; Penalidade - multa e apreensão do veículo; Medida administrativa - remoção do veículo.",
+    "category": "infracoes_transito",
+    "related_infractions": ["659-92"],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art230v",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_232",
+    "source": "CTB",
+    "article": "232",
+    "title": "Conduzir veículo sem os documentos de porte obrigatório",
+    "text": "Conduzir veículo sem os documentos de porte obrigatório referidos neste Código: Infração - leve; Penalidade - multa; Medida administrativa - retenção do veículo até a apresentação do documento. (Verificado por consulta eletrônica dispensa porte físico conforme Lei 13.281/16).",
+    "category": "infracoes_transito",
+    "related_infractions": ["691-20"],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art232",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_252",
+    "source": "CTB",
+    "article": "252",
+    "title": "Dirigir veículo com uso de celular ou apenas uma das mãos",
+    "text": "Dirigir o veículo: V - com apenas uma das mãos; VI - utilizando-se de fones ou telefone celular: Infração média. Parágrafo único: Segurar ou manusear telefone celular enquanto dirige caracteriza infração gravíssima.",
+    "category": "infracoes_transito",
+    "related_infractions": ["735-80", "736-62"],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art252",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_257",
+    "source": "CTB",
+    "article": "257",
+    "title": "Responsabilidade pelas infrações e Multa NIC para Pessoa Jurídica",
+    "text": "Responsabilidade solidária e subsidiária pelo cometimento da infração. O § 7º prevê o prazo de 30 dias para indicação do real condutor. O § 8º institui a Multa por Não Indicação do Condutor (Multa NIC) para pessoas jurídicas.",
+    "category": "responsabilidade_e_penalidades",
+    "related_infractions": ["500-20"],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art257",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_267",
+    "source": "CTB",
+    "article": "267",
+    "title": "Conversão da penalidade de multa em advertência por escrito",
+    "text": "Deverá ser imposta a penalidade de advertência por escrito à infração de natureza leve ou média, passível de ser punida com multa, não sendo reincidente o infrator, na mesma infração, nos últimos doze meses. (Direito subjetivo do condutor conforme Lei nº 14.071/2020).",
+    "category": "beneficios_processuais",
+    "related_infractions": ["745-50", "735-80", "691-20", "518-51", "545-21"],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art267",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_280",
+    "source": "CTB",
+    "article": "280",
+    "title": "Requisitos formais e obrigatórios do Auto de Infração de Trânsito (AIT)",
+    "text": "Ocorrendo infração prevista na legislação de trânsito, lavrar-se-á auto de infração, do qual constará: tipificação da infração; local, data e hora; placa e caracteres do veículo; prontuário; identificação do órgão e do agente autuador ou equipamento aferido.",
+    "category": "processo_administrativo",
+    "related_infractions": [],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art280",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_281",
+    "source": "CTB",
+    "article": "281",
+    "title": "Julgamento da consistência do auto e decadência de 30 dias",
+    "text": "A autoridade de trânsito julgará a consistência do auto de infração e aplicará a penalidade cabível. Parágrafo único: O auto de infração será arquivado e seu registro julgado insubsistente: I - se considerado inconsistente ou irregular; II - se, no prazo máximo de 30 (trinta) dias, não for expedida a notificação da autuação.",
+    "category": "processo_administrativo",
+    "related_infractions": [],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art281",
+    "status": "vigente"
+  },
+  {
+    "id": "art_ctb_282",
+    "source": "CTB",
+    "article": "282",
+    "title": "Expedição da Notificação de Penalidade e Prazos Recursais",
+    "text": "Caso a defesa prévia seja indeferida ou não seja apresentada no prazo estabelecido, será aplicada a penalidade e expedida a notificação ao proprietário do veículo ou ao infrator.",
+    "category": "processo_administrativo",
+    "related_infractions": [],
+    "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm#art282",
+    "status": "vigente"
+  }
+]

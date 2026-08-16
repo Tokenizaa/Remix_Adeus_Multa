@@ -1,0 +1,167 @@
+[
+  {
+    "id": "ARG-001",
+    "code": "INMETRO_CALIBRATION_EXPIRED",
+    "title": "Aferição Metrológica do Radar Vencida ou Ausente (Res. CONTRAN 798/2020)",
+    "description": "Nulidade absoluta da autuação por excesso de velocidade quando o equipamento medidor de velocidade não foi submetido à verificação metrológica anual obrigatória (validade máxima de 12 meses) pelo INMETRO ou IPEM delegado.",
+    "category": "merito",
+    "impactType": "anulacao_total",
+    "confidenceScore": 95,
+    "legalBase": "Art. 280, §2º do CTB c/c Portaria INMETRO nº 158/2022",
+    "resolutions": ["Resolução CONTRAN nº 798/2020, Art. 4º, Inciso III"]
+  },
+  {
+    "id": "ARG-002",
+    "code": "LACK_OF_REGULATORY_SIGNAGE",
+    "title": "Ausência ou Ilegibilidade de Sinalização Regulamentadora R-19 (Art. 90 do CTB)",
+    "description": "Inaplicabilidade de penalidade de trânsito em virtude de sinalização de velocidade inexistente, insuficiente, encoberta por vegetação/obstáculos ou instalada fora das distâncias regulamentares.",
+    "category": "preliminar",
+    "impactType": "anulacao_total",
+    "confidenceScore": 90,
+    "legalBase": "Art. 90, caput e §1º do CTB",
+    "resolutions": ["Resolução CONTRAN nº 798/2020, Art. 12 e Anexo II"]
+  },
+  {
+    "id": "ARG-003",
+    "code": "RADAR_ESTUDO_TECNICO_AUSENTE",
+    "title": "Inexistência de Estudo Técnico de Engenharia de Instalação do Radar Fixo (Art. 6º Res. 798/20)",
+    "description": "Nulidade do local de fiscalização por radar fixo ante a falta de estudo de engenharia prévio com ART que comprove a criticidade e histórico de sinistros do trecho.",
+    "category": "merito",
+    "impactType": "anulacao_total",
+    "confidenceScore": 88,
+    "legalBase": "Art. 6º da Resolução CONTRAN nº 798/2020",
+    "resolutions": ["Resolução CONTRAN nº 798/2020, Art. 6º e Anexo I"]
+  },
+  {
+    "id": "ARG-004",
+    "code": "RADAR_PORTATIL_SEM_OPERADOR_VISIVEL",
+    "category": "merito",
+    "title": "Operação Oculta ou Descaracterizada de Radar Portátil / Móvel (Art. 13 Res. 798/20)",
+    "description": "Proibição de utilização de radar portátil escondido atrás de árvores, muretas, pontes ou operado por agente desprovido de uniforme ostensivo.",
+    "impactType": "anulacao_total",
+    "confidenceScore": 92,
+    "legalBase": "Art. 13 da Resolução CONTRAN nº 798/2020",
+    "resolutions": ["Resolução CONTRAN nº 798/2020, Art. 13, §1º e §2º"]
+  },
+  {
+    "id": "ARG-005",
+    "code": "RADAR_MARGEM_ERRO_RECLASSIFICACAO",
+    "category": "merito",
+    "title": "Erro de Enquadramento por Inobservância da Velocidade Considerada (Tabela INMETRO)",
+    "description": "Reclassificação ou anulação da infração quando o abatimento da margem metrológica (7 km/h ou 7%) rebaixa a gravidade da penalidade.",
+    "impactType": "reclassificacao",
+    "confidenceScore": 94,
+    "legalBase": "Art. 218 do CTB c/c Tabela de Valores Referenciais da Res. CONTRAN 798/2020",
+    "resolutions": ["Resolução CONTRAN nº 798/2020, Anexo II"]
+  },
+  {
+    "id": "ARG-009",
+    "code": "SEMAFORO_FALTA_FOTO_RETENCAO",
+    "category": "merito",
+    "title": "Ausência de Fotografia Sequencial da Linha de Retenção (Res. CONTRAN 985/2022)",
+    "description": "Nulidade do registro de avanço semafórico eletrônico que não contenha a foto do veículo antes de cruzar a faixa de retenção com foco vermelho.",
+    "impactType": "anulacao_total",
+    "confidenceScore": 93,
+    "legalBase": "Art. 280, § 2º do CTB c/c Manual Brasileiro de Fiscalização de Trânsito",
+    "resolutions": ["Resolução CONTRAN nº 985/2022 (MBFT - Ficha Cód. 605-01)"]
+  },
+  {
+    "id": "ARG-015",
+    "code": "CELULAR_FALTA_ABORDAGEM_DESCRICAO",
+    "category": "formal",
+    "title": "Ausência de Abordagem e Omissão de Descrição Circunstanciada no AIT (Art. 252 CTB)",
+    "description": "Nulidade da autuação por uso de celular lavrada sem abordagem e sem esclarecer detalhadamente a forma de manuseio no campo de observações.",
+    "impactType": "anulacao_total",
+    "confidenceScore": 90,
+    "legalBase": "Art. 280 do CTB c/c Resolução CONTRAN nº 985/2022 (Ficha 736-62)",
+    "resolutions": ["Resolução CONTRAN nº 985/2022 (MBFT)"]
+  },
+  {
+    "id": "ARG-020",
+    "code": "ESTACIONAMENTO_FALTA_SINALIZACAO_R6A",
+    "category": "merito",
+    "title": "Inexistência ou Ilegibilidade de Placa R-6a (Proibido Estacionar)",
+    "description": "Nulidade da autuação por estacionamento proibido em via sem a competente placa de regulamentação R-6a.",
+    "impactType": "anulacao_total",
+    "confidenceScore": 92,
+    "legalBase": "Art. 90 do CTB c/c Resolução CONTRAN nº 973/2022",
+    "resolutions": ["Resolução CONTRAN nº 973/2022"]
+  },
+  {
+    "id": "ARG-025",
+    "code": "LEI_SECA_FALTA_TERMO_SINAIS_RES432",
+    "category": "merito",
+    "title": "Inexistência de Termo de Constatação de Sinais Psicomotores (Res. CONTRAN 432/2013)",
+    "description": "Nulidade absoluta do procedimento de Lei Seca sem teste quando o agente omite a lavratura do Termo de Constatação circunstanciado.",
+    "impactType": "anulacao_total",
+    "confidenceScore": 94,
+    "legalBase": "Art. 277, § 2º do CTB c/c Art. 5º da Resolução CONTRAN nº 432/2013",
+    "resolutions": ["Resolução CONTRAN nº 432/2013, Art. 5º e Anexo II"]
+  },
+  {
+    "id": "ARG-035",
+    "code": "LICENCIAMENTO_PAGO_ATRASO_DETRAN_SISTEMICO",
+    "category": "merito",
+    "title": "Tributos e Taxas de Licenciamento Quitados Tempestivamente com Atraso Sistêmico no DETRAN",
+    "description": "Nulidade da autuação por falta de licenciamento (Art. 230, V) quando comprovado o pagamento prévio de IPVA e taxas pelo cidadão.",
+    "impactType": "anulacao_total",
+    "confidenceScore": 95,
+    "legalBase": "Art. 131, § 2º do CTB c/c Princípio da Boa-Fé do Administrado",
+    "resolutions": ["Resolução CONTRAN nº 985/2022"]
+  },
+  {
+    "id": "ARG-039",
+    "code": "NIC_PJ_INDICACAO_TEMPESTIVA_NAO_PROCESSADA",
+    "category": "merito",
+    "title": "Multa NIC Indevida: Real Condutor Indicado Tempestivamente pela Empresa",
+    "description": "Nulidade da multa por Não Indicação de Condutor quando a empresa protocolou o FICI tempestivamente pelos canais do órgão.",
+    "impactType": "anulacao_total",
+    "confidenceScore": 96,
+    "legalBase": "Art. 257, § 7º e § 8º do CTB c/c Resolução CONTRAN nº 918/2022",
+    "resolutions": ["Resolução CONTRAN nº 918/2022, Art. 9º"]
+  },
+  {
+    "id": "ARG-042",
+    "code": "SUSPENSAO_RETROATIVIDADE_40_PONTOS_LEI_14071",
+    "category": "merito",
+    "title": "Aplicação Retroativa da Escala de 40 Pontos da Lei 14.071/2020 (Tema 1.097 STJ)",
+    "description": "Retroatividade de norma administrativa mais benéfica para processos de suspensão por pontuação instaurados antes da vigência da Lei 14.071/20.",
+    "impactType": "anulacao_total",
+    "confidenceScore": 96,
+    "legalBase": "Art. 261, I do CTB (redação da Lei nº 14.071/2020) c/c Art. 5º, XL da CF/88",
+    "resolutions": ["Resolução CONTRAN nº 723/2018 (com alterações da Res. 844/2021)"]
+  },
+  {
+    "id": "ARG-045",
+    "code": "CASSACAO_AUSENCIA_DIRECAO_PESSOAL_CONDUTOR",
+    "category": "merito",
+    "title": "Inocorrência de Direção Durante a Suspensão: Veículo Conduzido por Terceiro",
+    "description": "Nulidade do processo de cassação da CNH (Art. 263, I) quando a infração na vigência da suspensão ocorreu sem abordagem e o veículo estava na posse de outrem.",
+    "impactType": "anulacao_total",
+    "confidenceScore": 95,
+    "legalBase": "Art. 263, I do CTB c/c Princípio da Intranscendência das Penas (Art. 5º, XLV da CF/88)",
+    "resolutions": ["Resolução CONTRAN nº 723/2018"]
+  },
+  {
+    "id": "ARG-048",
+    "code": "DECADENCIA_NOTIFICACAO_AUTUACAO_30_DIAS",
+    "category": "preliminar",
+    "title": "Decadência do Direito de Punir: Notificação Expedida após 30 Dias (Art. 281, II CTB)",
+    "description": "Extinção definitiva da pretensão punitiva da Administração Pública em virtude da expedição ou postagem da Notificação da Autuação (NA) após o prazo decadencial de 30 dias da infração.",
+    "impactType": "anulacao_total",
+    "confidenceScore": 99,
+    "legalBase": "Art. 281, parágrafo único, inciso II do CTB c/c Súmula 312 do STJ",
+    "resolutions": ["Resolução CONTRAN nº 918/2022, Art. 3º"]
+  },
+  {
+    "id": "ARG-051",
+    "code": "CONVERSAO_OBRIGATORIA_ADVERTENCIA_ART267",
+    "category": "merito",
+    "title": "Direito Subjetivo à Conversão em Advertência por Escrito (Art. 267 do CTB)",
+    "description": "Imposição obrigatória da conversão de multa leve ou média em advertência por escrito quando o condutor não cometeu infrações nos últimos 12 meses (Lei 14.071/2020).",
+    "impactType": "conversao_advertencia",
+    "confidenceScore": 99,
+    "legalBase": "Art. 267 do Código de Trânsito Brasileiro (com redação da Lei nº 14.071/2020)",
+    "resolutions": ["Resolução CONTRAN nº 918/2022, Art. 10"]
+  }
+]

@@ -1,0 +1,314 @@
+[
+  {
+    "id": "BLK-001",
+    "code": "ENDERECO_AUTORIDADE_TRANSITO",
+    "category": "enderecamento",
+    "title": "Endereçamento à Autoridade Executiva de Trânsito (Defesa Prévia)",
+    "description": "Cabeçalho formal direcionado à autoridade de trânsito do órgão autuador para protocolo de Defesa Prévia da autuação.",
+    "supportedVariables": ["{{orgao_autuador}}", "{{cidade_estado}}"]
+  },
+  {
+    "id": "BLK-002",
+    "code": "ENDERECO_JARI_1A_INSTANCIA",
+    "category": "enderecamento",
+    "title": "Endereçamento à Junta Administrativa de Recursos de Infrações (JARI)",
+    "description": "Cabeçalho recursal direcionado ao Colegiado da JARI para apreciação em 1ª instância administrativa.",
+    "supportedVariables": ["{{orgao_autuador}}", "{{cidade_estado}}"]
+  },
+  {
+    "id": "BLK-003",
+    "code": "ENDERECO_CETRAN_CONTRANDIFE",
+    "category": "enderecamento",
+    "title": "Endereçamento ao CETRAN / CONTRANDIFE (2ª Instância)",
+    "description": "Cabeçalho recursal de 2ª instância dirigido ao Conselho Estadual de Trânsito ou CONTRANDIFE.",
+    "supportedVariables": ["{{uf_requerente}}"]
+  },
+  {
+    "id": "BLK-004",
+    "code": "ENDERECO_DETRAN_PSDD",
+    "category": "enderecamento",
+    "title": "Endereçamento à Comissão de Suspensão do DETRAN (PSDD)",
+    "description": "Cabeçalho formal direcionado à autoridade competente para julgamento de processos de suspensão da CNH.",
+    "supportedVariables": ["{{uf_requerente}}"]
+  },
+  {
+    "id": "BLK-005",
+    "code": "ENDERECO_DETRAN_PCDD",
+    "category": "enderecamento",
+    "title": "Endereçamento à Comissão de Cassação do DETRAN (PCDD)",
+    "description": "Cabeçalho formal para defesa em processo administrativo de cassação da CNH.",
+    "supportedVariables": ["{{uf_requerente}}"]
+  },
+  {
+    "id": "BLK-006",
+    "code": "ENDERECO_SETOR_FICI",
+    "category": "enderecamento",
+    "title": "Endereçamento ao Setor de Identificação de Condutores (FICI)",
+    "description": "Cabeçalho para apresentação tempestiva de Formulário de Indicação do Real Condutor.",
+    "supportedVariables": ["{{orgao_autuador}}"]
+  },
+  {
+    "id": "BLK-007",
+    "code": "ENDERECO_CONVERSAO_ADVERTENCIA",
+    "category": "enderecamento",
+    "title": "Endereçamento para Requerimento de Conversão em Advertência (Art. 267 CTB)",
+    "description": "Cabeçalho direcionado à autoridade de trânsito solicitando a aplicação do direito subjetivo de advertência por escrito.",
+    "supportedVariables": ["{{orgao_autuador}}"]
+  },
+  {
+    "id": "BLK-008",
+    "code": "QUALIFICA_PROPRIETARIO_PF",
+    "category": "qualificacao",
+    "title": "Qualificação Padrão do Requerente Pessoa Física",
+    "description": "Qualificação civil completa do condutor/proprietário com dados do veículo e do AIT impugnado.",
+    "supportedVariables": ["{{nome_requerente}}", "{{cpf_requerente}}", "{{rg_requerente}}", "{{cnh_requerente}}", "{{endereco_requerente}}", "{{cidade_requerente}}", "{{uf_requerente}}", "{{veiculo_modelo}}", "{{veiculo_placa}}", "{{veiculo_renavam}}"]
+  },
+  {
+    "id": "BLK-009",
+    "code": "QUALIFICA_PROPRIETARIO_PJ",
+    "category": "qualificacao",
+    "title": "Qualificação de Pessoa Jurídica Proprietária (Multas e NIC)",
+    "description": "Qualificação de empresa titular do veículo, representada por seu administrador legal.",
+    "supportedVariables": ["{{nome_empresa}}", "{{cnpj_empresa}}", "{{endereco_empresa}}", "{{nome_representante}}", "{{cpf_representante}}", "{{veiculo_modelo}}", "{{veiculo_placa}}", "{{veiculo_renavam}}", "{{numero_ait}}"]
+  },
+  {
+    "id": "BLK-010",
+    "code": "QUALIFICA_CONDUTOR_PSDD",
+    "category": "qualificacao",
+    "title": "Qualificação do Condutor em Processo de Suspensão (PSDD)",
+    "description": "Qualificação específica para processo administrativo instaurado pelo DETRAN para suspensão do direito de dirigir.",
+    "supportedVariables": ["{{nome_requerente}}", "{{cpf_requerente}}", "{{cnh_requerente}}", "{{categoria_cnh}}", "{{numero_processo_psdd}}"]
+  },
+  {
+    "id": "BLK-011",
+    "code": "QUALIFICA_CONDUTOR_PCDD",
+    "category": "qualificacao",
+    "title": "Qualificação do Condutor em Processo de Cassação (PCDD)",
+    "description": "Qualificação para processo grave de cassação da habilitação.",
+    "supportedVariables": ["{{nome_requerente}}", "{{cpf_requerente}}", "{{cnh_requerente}}", "{{numero_processo_pcdd}}"]
+  },
+  {
+    "id": "BLK-012",
+    "code": "QUALIFICA_DUPLA_FICI",
+    "category": "qualificacao",
+    "title": "Qualificação Conjunta de Proprietário e Real Condutor Infrator (FICI)",
+    "description": "Qualificação bilateral exigida pelo Art. 257, § 7º do CTB e Resolução CONTRAN 918/2022.",
+    "supportedVariables": ["{{nome_requerente}}", "{{cpf_requerente}}", "{{condutor_indicado_nome}}", "{{condutor_indicado_cpf}}", "{{condutor_indicado_cnh}}"]
+  },
+  {
+    "id": "BLK-013",
+    "code": "FATOS_PADRAO_GENERICO",
+    "category": "fatos",
+    "title": "Dos Fatos - Notificação de Autuação Genérica",
+    "description": "Narrativa fática introdutória padrão indicando dados do AIT, local, data e enquadramento legal.",
+    "supportedVariables": ["{{numero_ait}}", "{{orgao_autuador}}", "{{enquadramento_ctb}}", "{{descricao_infracao}}", "{{data_infracao}}", "{{local_infracao}}"]
+  },
+  {
+    "id": "BLK-014",
+    "code": "FATOS_EXCESSO_VELOCIDADE_RADAR",
+    "category": "fatos",
+    "title": "Dos Fatos - Fiscalização Eletrônica de Velocidade por Radar",
+    "description": "Narrativa específica para infrações do Art. 218 do CTB captadas por medidores eletrônicos de velocidade.",
+    "supportedVariables": ["{{numero_ait}}", "{{enquadramento_ctb}}", "{{velocidade_medida}}", "{{velocidade_considerada}}", "{{velocidade_limite}}", "{{local_infracao}}", "{{data_infracao}}"]
+  },
+  {
+    "id": "BLK-015",
+    "code": "FATOS_AVANCO_SINAL_VERMELHO",
+    "category": "fatos",
+    "title": "Dos Fatos - Avanço de Sinal Vermelho Semafórico (Art. 208)",
+    "description": "Narrativa para autuações por avanço semafórico eletrônico ou por fiscalização presencial.",
+    "supportedVariables": ["{{numero_ait}}", "{{data_infracao}}", "{{local_infracao}}"]
+  },
+  {
+    "id": "BLK-016",
+    "code": "FATOS_USO_CELULAR",
+    "category": "fatos",
+    "title": "Dos Fatos - Uso / Manuseio de Aparelho Celular (Art. 252)",
+    "description": "Narrativa para multas de celular sem abordagem do condutor e sem detalhamento fático no campo de observações.",
+    "supportedVariables": ["{{numero_ait}}", "{{data_infracao}}", "{{local_infracao}}"]
+  },
+  {
+    "id": "BLK-017",
+    "code": "FATOS_ESTACIONAMENTO_PROIBIDO",
+    "category": "fatos",
+    "title": "Dos Fatos - Estacionamento / Parada em Local Proibido (Art. 181)",
+    "description": "Narrativa para autuações de estacionamento em que inexiste sinalização regulamentar ou configurou-se parada rápida.",
+    "supportedVariables": ["{{numero_ait}}", "{{data_infracao}}", "{{local_infracao}}"]
+  },
+  {
+    "id": "BLK-018",
+    "code": "FATOS_LEI_SECA_RECUSA_BAFOMETRO",
+    "category": "fatos",
+    "title": "Dos Fatos - Recusa ao Teste do Etilômetro / Bafômetro (Art. 165-A)",
+    "description": "Narrativa para autuações sob alegação de recusa, sem constatação de sinais clínicos de alteração psicomotora.",
+    "supportedVariables": ["{{data_infracao}}", "{{local_infracao}}"]
+  },
+  {
+    "id": "BLK-019",
+    "code": "FATOS_FALTA_CINTO_SEGURANCA",
+    "category": "fatos",
+    "title": "Dos Fatos - Falta de Uso do Cinto de Segurança (Art. 167)",
+    "description": "Narrativa fática impugnando autuações de cinto de segurança sem abordagem e com erro de visualização.",
+    "supportedVariables": ["{{numero_ait}}", "{{data_infracao}}", "{{local_infracao}}"]
+  },
+  {
+    "id": "BLK-020",
+    "code": "FATOS_LICENCIAMENTO_ATRASADO",
+    "category": "fatos",
+    "title": "Dos Fatos - Condução de Veículo sem Registro / Licenciamento (Art. 230, V)",
+    "description": "Narrativa para casos em que as taxas de licenciamento foram recolhidas ou houve falha nos sistemas do DETRAN.",
+    "supportedVariables": ["{{data_infracao}}", "{{numero_ait}}", "{{uf_requerente}}"]
+  },
+  {
+    "id": "BLK-021",
+    "code": "FATOS_MULTA_NIC_PJ",
+    "category": "fatos",
+    "title": "Dos Fatos - Multa NIC Pessoa Jurídica (Art. 257, § 8º)",
+    "description": "Narrativa para impugnação de penalidade por não indicação de condutor em veículo de pessoa jurídica.",
+    "supportedVariables": ["{{numero_ait}}"]
+  },
+  {
+    "id": "BLK-022",
+    "code": "FATOS_PSDD_INSTAURACAO",
+    "category": "fatos",
+    "title": "Dos Fatos - Instauração de Processo de Suspensão por Pontos / Autossuspensiva",
+    "description": "Narrativa em processo de suspensão da CNH pelo atingimento de pontos ou infração autossuspensiva.",
+    "supportedVariables": ["{{uf_requerente}}", "{{numero_processo_psdd}}", "{{tempo_suspensao_meses}}"]
+  },
+  {
+    "id": "BLK-023",
+    "code": "FATOS_PCDD_INSTAURACAO",
+    "category": "fatos",
+    "title": "Dos Fatos - Notificação de Instauração de Cassação da CNH",
+    "description": "Narrativa para processo de cassação da CNH decorrente de suposta direção em período de suspensão.",
+    "supportedVariables": ["{{numero_processo_pcdd}}"]
+  },
+  {
+    "id": "BLK-024",
+    "code": "FATOS_FICI_APRESENTACAO",
+    "category": "fatos",
+    "title": "Dos Fatos - Apresentação Tempestiva de Indicação de Condutor (FICI)",
+    "description": "Narrativa formal demonstrando a tempestividade e a veracidade da indicação de condutor.",
+    "supportedVariables": ["{{data_infracao}}", "{{condutor_indicado_nome}}", "{{numero_ait}}"]
+  },
+  {
+    "id": "BLK-025",
+    "code": "FATOS_CONVERSAO_ADVERTENCIA_ART267",
+    "category": "fatos",
+    "title": "Dos Fatos - Requerimento de Direito Subjetivo de Conversão em Advertência",
+    "description": "Narrativa fática demonstrando o enquadramento perfeito nos requisitos do Art. 267 do CTB.",
+    "supportedVariables": ["{{numero_ait}}", "{{enquadramento_ctb}}", "{{gravidade_infracao}}"]
+  },
+  {
+    "id": "BLK-026",
+    "code": "PRELIMINAR_DECADENCIA_30_DIAS",
+    "category": "preliminares",
+    "title": "Preliminar: Decadência do Direito de Punir por Notificação Expedida após 30 Dias",
+    "description": "Nulidade e arquivamento obrigatório da autuação quando a Notificação da Autuação for postada após 30 dias (Art. 281, II CTB).",
+    "supportedVariables": ["{{data_infracao}}", "{{data_expedicao}}", "{{dias_decorridos}}"]
+  },
+  {
+    "id": "BLK-027",
+    "code": "PRELIMINAR_SUMULA_312_STJ_DUPLA_NOTIFICACAO",
+    "category": "preliminares",
+    "title": "Preliminar: Cerceamento de Defesa por Ausência de Dupla Notificação (Súmula 312 STJ)",
+    "description": "Nulidade do processo administrativo por inobservância do rito obrigatório de Notificação de Autuação seguida de Notificação de Penalidade.",
+    "supportedVariables": []
+  },
+  {
+    "id": "BLK-039",
+    "code": "MÉRITO_RADAR_CALIBRACAO_EXPIRADA",
+    "category": "argumentos_velocidade",
+    "title": "Mérito: Aferição Metrológica do Radar Expirada ou Inexistente (Res. CONTRAN 798/2020)",
+    "description": "Nulidade do registro de velocidade quando o equipamento não foi aferido pelo INMETRO no prazo máximo de 12 meses.",
+    "supportedVariables": []
+  },
+  {
+    "id": "BLK-040",
+    "code": "MÉRITO_RADAR_FALTA_SINALIZACAO_R19",
+    "category": "argumentos_velocidade",
+    "title": "Mérito: Ausência ou Irregularidade de Placa Regulamentadora R-19 (Art. 90 do CTB)",
+    "description": "Inaplicabilidade de penalidade por ausência de sinalização visível de velocidade antes do radar.",
+    "supportedVariables": []
+  },
+  {
+    "id": "BLK-056",
+    "code": "PEDIDOS_ARQUIVAMENTO_DEFESA_PREVIA",
+    "category": "pedidos",
+    "title": "Pedidos Formais - Defesa Prévia (Arquivamento e Insubsistência)",
+    "description": "Bloco padronizado de requerimentos formais para Defesa Prévia.",
+    "supportedVariables": ["{{numero_ait}}"]
+  },
+  {
+    "id": "BLK-057",
+    "code": "PEDIDOS_CANCELAMENTO_RECURSO_JARI",
+    "category": "pedidos",
+    "title": "Pedidos Formais - Recurso à JARI (Efeito Suspensivo e Cancelamento)",
+    "description": "Requerimentos formais para Recurso de 1ª Instância perante a JARI com efeito suspensivo.",
+    "supportedVariables": ["{{numero_ait}}"]
+  },
+  {
+    "id": "BLK-058",
+    "code": "PEDIDOS_REFORMA_RECURSO_CETRAN",
+    "category": "pedidos",
+    "title": "Pedidos Formais - Recurso de 2ª Instância ao CETRAN",
+    "description": "Requerimentos formais em grau recursal perante o Conselho Estadual de Trânsito.",
+    "supportedVariables": ["{{uf_requerente}}", "{{numero_ait}}"]
+  },
+  {
+    "id": "BLK-059",
+    "code": "PEDIDOS_EXTINCAO_PSDD_SUSPENSAO",
+    "category": "pedidos",
+    "title": "Pedidos Formais - Processo de Suspensão da CNH (PSDD)",
+    "description": "Requerimentos em processo de suspensão do direito de dirigir.",
+    "supportedVariables": ["{{uf_requerente}}", "{{numero_processo_psdd}}"]
+  },
+  {
+    "id": "BLK-060",
+    "code": "PEDIDOS_NULIDADE_PCDD_CASSACAO",
+    "category": "pedidos",
+    "title": "Pedidos Formais - Processo de Cassação da CNH (PCDD)",
+    "description": "Requerimentos para anulação de processo de cassação da carteira de habilitação.",
+    "supportedVariables": ["{{uf_requerente}}", "{{numero_processo_pcdd}}"]
+  },
+  {
+    "id": "BLK-061",
+    "code": "PEDIDOS_HOMOLOGACAO_FICI",
+    "category": "pedidos",
+    "title": "Pedidos Formais - Homologação de Indicação de Condutor (FICI)",
+    "description": "Requerimento de aceitação e transferência de pontuação para o condutor indicado.",
+    "supportedVariables": ["{{numero_ait}}", "{{condutor_indicado_nome}}", "{{condutor_indicado_cnh}}"]
+  },
+  {
+    "id": "BLK-062",
+    "code": "PEDIDOS_CONVERSAO_OBRIGATORIA_ADVERTENCIA",
+    "category": "pedidos",
+    "title": "Pedidos Formais - Conversão em Advertência por Escrito (Art. 267 CTB)",
+    "description": "Requerimento de conversão imperativa de multa em advertência por escrito.",
+    "supportedVariables": ["{{numero_ait}}"]
+  },
+  {
+    "id": "BLK-066",
+    "code": "FECHO_PADRAO_COM_DATA",
+    "category": "fechamento",
+    "title": "Fecho Padrão de Deferimento com Local e Data",
+    "description": "Conclusão formal forense padrão com local, data e campo para assinatura do requerente.",
+    "supportedVariables": ["{{cidade_estado}}", "{{data_peticao}}", "{{nome_requerente}}", "{{cpf_requerente}}", "{{cnh_requerente}}"]
+  },
+  {
+    "id": "BLK-067",
+    "code": "FECHO_DUPLO_FICI",
+    "category": "fechamento",
+    "title": "Fecho com Assinatura Dupla (Proprietário e Real Condutor)",
+    "description": "Conclusão com assinaturas conjuntas obrigatórias para transferência de pontuação de trânsito.",
+    "supportedVariables": ["{{cidade_estado}}", "{{data_peticao}}", "{{nome_requerente}}", "{{cpf_requerente}}", "{{condutor_indicado_nome}}", "{{condutor_indicado_cpf}}", "{{condutor_indicado_cnh}}"]
+  },
+  {
+    "id": "BLK-068",
+    "code": "FECHO_ROL_DOCUMENTOS_ANEXOS",
+    "category": "fechamento",
+    "title": "Rol de Documentos Anexados à Petição",
+    "description": "Relação descritiva de documentos probatórios que instruem o processo administrativo.",
+    "supportedVariables": ["{{numero_ait}}"]
+  }
+]

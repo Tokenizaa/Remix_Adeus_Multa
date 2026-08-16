@@ -1,0 +1,256 @@
+[
+  {
+    "id": "inf_vel_20",
+    "code": "745-50",
+    "description": "Transitar em velocidade superior à máxima permitida em até 20%",
+    "ctb_article": "Art. 218, I",
+    "severity": "media",
+    "points": 4,
+    "penalty": "Multa de R$ 130,16",
+    "administrative_measures": "Não há",
+    "related_documents": [
+      "Auto de Infração de Trânsito (AIT)",
+      "Foto do radar com enquadramento do veículo",
+      "Certificado de Verificação Metrológica do INMETRO/IPEM",
+      "Estudo Técnico do Radar (Resolução CONTRAN 798/20)"
+    ],
+    "possible_defenses": [
+      "Ausência ou expiração da verificação metrológica anual do INMETRO (>12 meses)",
+      "Falta de sinalização R-19 obrigatória antes do ponto de fiscalização",
+      "Erro no cálculo da velocidade considerada (margem de tolerância)",
+      "Decadência do prazo de 30 dias para emissão da Notificação de Autuação (Art. 281, II)",
+      "Conversão obrigatória em Advertência por Escrito (Art. 267 CTB - Lei 14.071/20)"
+    ]
+  },
+  {
+    "id": "inf_vel_20_50",
+    "code": "746-30",
+    "description": "Transitar em velocidade superior à máxima permitida em mais de 20% até 50%",
+    "ctb_article": "Art. 218, II",
+    "severity": "grave",
+    "points": 5,
+    "penalty": "Multa de R$ 195,23",
+    "administrative_measures": "Não há",
+    "related_documents": [
+      "AIT e Notificação de Autuação",
+      "Foto do radar e dados técnicos da via",
+      "Laudo do INMETRO do radar"
+    ],
+    "possible_defenses": [
+      "Vício no enquadramento metrológico do radar",
+      "Radar oculto ou sem visibilidade ostensiva (Res. 798/20)",
+      "Inexistência de estudo técnico publicado pelo órgão autuador",
+      "Vício de identificação do local ou da placa do veículo no AIT",
+      "Dupla autuação sucessiva em curto intervalo (Bis in Idem)"
+    ]
+  },
+  {
+    "id": "inf_vel_50_plus",
+    "code": "747-10",
+    "description": "Transitar em velocidade superior à máxima permitida em mais de 50%",
+    "ctb_article": "Art. 218, III",
+    "severity": "gravissima",
+    "points": 7,
+    "penalty": "Multa de R$ 880,41 (fator multiplicador x3) e suspensão do direito de dirigir",
+    "administrative_measures": "Recolhimento do documento de habilitação e suspensão imediata",
+    "related_documents": [
+      "AIT",
+      "Notificação de Autuação",
+      "Notificação de Instauração de Processo de Suspensão do Direito de Dirigir (PSDD)",
+      "Laudo do Inmetro e Estudo de Engenharia Viária"
+    ],
+    "possible_defenses": [
+      "Nulidade da instauração do PSDD antes do trânsito em julgado da multa",
+      "Falta de calibração metrológica do radar dentro do prazo legal de 1 ano",
+      "Placa de sinalização de velocidade R-19 encoberta por vegetação ou danificada",
+      "Falta de dupla notificação autônoma (Súmula 312 do STJ)"
+    ]
+  },
+  {
+    "id": "inf_sinal_vermelho",
+    "code": "605-01",
+    "description": "Avançar o sinal vermelho do semáforo fiscalizado por equipamento eletrônico",
+    "ctb_article": "Art. 208",
+    "severity": "gravissima",
+    "points": 7,
+    "penalty": "Multa de R$ 293,47",
+    "administrative_measures": "Não há",
+    "related_documents": [
+      "AIT",
+      "Sequência de fotos comprobatórias do avanço (antes da faixa de retenção e cruzando a via com foco vermelho aceso)",
+      "Registro de tempo de amarelo (mínimo regulamentar)"
+    ],
+    "possible_defenses": [
+      "Passagem para dar passagem a veículo de socorro/urgência (ambulância, bombeiros, polícia) - Art. 189 CTB",
+      "Tempo de fase amarela abaixo do padrão técnico fixado pelo CONTRAN/MBFT",
+      "Falta da foto comprobatória de cruzamento efetivo da linha de retenção",
+      "Livre conversão à direita autorizada conforme Art. 44-A do CTB",
+      "Semáforo piscando em amarelo (intermitente) no horário do fato"
+    ]
+  },
+  {
+    "id": "inf_celular_manuseio",
+    "code": "736-62",
+    "description": "Dirigir o veículo segurando ou manuseando telefone celular",
+    "ctb_article": "Art. 252, Parágrafo Único",
+    "severity": "gravissima",
+    "points": 7,
+    "penalty": "Multa de R$ 293,47",
+    "administrative_measures": "Não há",
+    "related_documents": [
+      "Auto de Infração lavrado por agente",
+      "Notificação de Autuação com campo de observações"
+    ],
+    "possible_defenses": [
+      "Ausência de descrição fática no campo de observações do AIT (exigência do MBFT/Res. 985/22)",
+      "Veículo imobilizado em semáforo ou congestionamento (ausência de condução ativa)",
+      "Aparelho fixado em suporte no painel para GPS (não manuseado)",
+      "Impossibilidade visual do agente à distância e com vidros com insulfilm regular",
+      "Presunção de inocência e ausência de prova material corroborativa"
+    ]
+  },
+  {
+    "id": "inf_estacionamento_proibido",
+    "code": "555-00",
+    "description": "Estacionar o veículo em local/horário proibido especificamente pela sinalização (Placa R-6a)",
+    "ctb_article": "Art. 181, XVIII",
+    "severity": "media",
+    "points": 4,
+    "penalty": "Multa de R$ 130,16",
+    "administrative_measures": "Remoção do veículo",
+    "related_documents": [
+      "AIT",
+      "Fotos do local comprovando ausência ou má conservação da placa R-6a",
+      "Comprovante de parada rápida (embarque/desembarque) se aplicável"
+    ],
+    "possible_defenses": [
+      "Confusão entre parada momentânea para embarque/desembarque e estacionamento",
+      "Sinalização horizontal ou vertical ausente, apagada ou fora dos padrões do CONTRAN",
+      "Conversão obrigatória em Advertência por Escrito (Art. 267 CTB)",
+      "Incompetência do órgão autuador para o trecho fiscalizado"
+    ]
+  },
+  {
+    "id": "inf_falta_documento_porte",
+    "code": "691-20",
+    "description": "Conduzir veículo sem os documentos de porte obrigatório",
+    "ctb_article": "Art. 232",
+    "severity": "leve",
+    "points": 3,
+    "penalty": "Multa de R$ 88,38",
+    "administrative_measures": "Retenção do veículo até a apresentação do documento",
+    "related_documents": [
+      "AIT",
+      "Comprovante de consulta informatizada pelos sistemas Renach/Renavam no momento da abordagem"
+    ],
+    "possible_defenses": [
+      "Desnecessidade de porte físico quando o agente dispõe de acesso aos sistemas informatizados (Art. 232 / Lei 13.281/16)",
+      "CNH Digital e CRLV-e disponíveis no aplicativo oficial da Carteira Digital de Trânsito",
+      "Conversão expressa em Advertência por Escrito (Art. 267 do CTB)"
+    ]
+  },
+  {
+    "id": "inf_lei_seca_alcool",
+    "code": "516-91",
+    "description": "Dirigir sob a influência de álcool (constatação por teste de etilômetro)",
+    "ctb_article": "Art. 165",
+    "severity": "gravissima",
+    "points": 7,
+    "penalty": "Multa de R$ 2.934,70 (fator x10) e suspensão do direito de dirigir por 12 meses",
+    "administrative_measures": "Recolhimento da CNH e retenção do veículo",
+    "related_documents": [
+      "AIT",
+      "Comprovante impresso do teste do etilômetro (bafômetro)",
+      "Certificado de Verificação Metrológica do aparelho pelo INMETRO",
+      "Auto de Retenção do Veículo e Recolhimento da CNH"
+    ],
+    "possible_defenses": [
+      "Etilômetro com verificação periódica anual vencida pelo INMETRO (Res. 432/13)",
+      "Valor medido dentro da margem de erro metrológica admissível (0,04 mg/L)",
+      "Descompasso entre horário da abordagem e horário impresso no tíquete do etilômetro",
+      "Falta de oportunidade para contraprova ou segundo teste regulamentar"
+    ]
+  },
+  {
+    "id": "inf_recusa_bafometro",
+    "code": "757-90",
+    "description": "Recusar-se a ser submetido a teste, exame clínico ou perícia de alcoolemia",
+    "ctb_article": "Art. 165-A",
+    "severity": "gravissima",
+    "points": 7,
+    "penalty": "Multa de R$ 2.934,70 (fator x10) e suspensão do direito de dirigir por 12 meses",
+    "administrative_measures": "Recolhimento da CNH e retenção do veículo",
+    "related_documents": [
+      "AIT",
+      "Termo de Constatação de Sinais de Alteração da Capacidade Psicomotora (Anexo II da Res. 432/13 CONTRAN)",
+      "Notificação do Processo de Suspensão da CNH"
+    ],
+    "possible_defenses": [
+      "Ausência do Termo de Constatação de Sinais preenchido pelo agente autuador",
+      "Preenchimento de apenas um sinal isolado (o CONTRAN exige conjunto notório de sinais)",
+      "Direito fundamental à não autoincriminação (Nemo Tenetur Se Detegere - Art. 5º, LXIII da CF/88)",
+      "Ausência de estado de embriaguez visível atestado pela liberação do veículo a condutor no mesmo local"
+    ]
+  },
+  {
+    "id": "inf_cinto_seguranca",
+    "code": "518-51",
+    "description": "Deixar o condutor de usar o cinto de segurança",
+    "ctb_article": "Art. 167",
+    "severity": "grave",
+    "points": 5,
+    "penalty": "Multa de R$ 195,23",
+    "administrative_measures": "Retenção do veículo até colocação do cinto pelo infrator",
+    "related_documents": [
+      "AIT",
+      "Notificação de Autuação com detalhamento da abordagem"
+    ],
+    "possible_defenses": [
+      "Lavratura sem abordagem obrigatória e sem detalhamento fático no campo de observações",
+      "Uso de vestimenta escura similar à cor do cinto (gerando falsa percepção do agente à distância)",
+      "Veículo dotado de insulfilm escuro homologado que impedia visualização nítida externa",
+      "Vício formal de preenchimento do AIT (Art. 280 do CTB)"
+    ]
+  },
+  {
+    "id": "inf_licenciamento_atrasado",
+    "code": "659-92",
+    "description": "Conduzir o veículo que não esteja registrado e devidamente licenciado",
+    "ctb_article": "Art. 230, V",
+    "severity": "gravissima",
+    "points": 7,
+    "penalty": "Multa de R$ 293,47 e apreensão/remoção do veículo",
+    "administrative_measures": "Remoção do veículo ao pátio",
+    "related_documents": [
+      "AIT",
+      "Comprovante de quitação bancária de IPVA, DPVAT e taxa de licenciamento anterior à abordagem",
+      "Termo de Apreensão e Liberação"
+    ],
+    "possible_defenses": [
+      "Tributos quitados e pendência exclusiva de emissão eletrônica pelo sistema do DETRAN (falha de processamento estatal)",
+      "Inconstitucionalidade de apreensão de veículo como meio coercitivo de cobrança de tributo (Súmula 323 do STF)",
+      "Ausência de expedição da Notificação da Penalidade de multas anteriores que travaram o licenciamento (Súmula 127/STJ)"
+    ]
+  },
+  {
+    "id": "inf_multa_nic_pj",
+    "code": "500-20",
+    "description": "Multa por não indicação de condutor infrator em veículo de Pessoa Jurídica (Multa NIC)",
+    "ctb_article": "Art. 257, § 8º",
+    "severity": "gravissima",
+    "points": 0,
+    "penalty": "Valor da multa originária multiplicado pelo coeficiente de reincidência",
+    "administrative_measures": "Não há",
+    "related_documents": [
+      "Notificação da Multa NIC",
+      "Comprovante de envio ou protocolo tempestivo do formulário de indicação do condutor",
+      "Contrato de locação ou termo de responsabilidade de frota"
+    ],
+    "possible_defenses": [
+      "Indicação tempestiva do condutor apresentada e não processada pelo órgão",
+      "Falta de notificação prévia da autuação originária à empresa proprietária (nulidade por falta de ciência)",
+      "Anulação ou cancelamento da multa originária que deu ensejo à Multa NIC (acessório segue o principal)",
+      "Erro no cálculo do fator multiplicador de infrações"
+    ]
+  }
+]

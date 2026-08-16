@@ -1,0 +1,65 @@
+[
+  {
+    "id": "src_ctb_planalto",
+    "name": "Código de Trânsito Brasileiro (Lei Federal nº 9.503/1997)",
+    "official_body": "Presidência da República / Casa Civil / Subchefia para Assuntos Jurídicos",
+    "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm",
+    "collection_date": "2026-08-15",
+    "status": "vigente_com_alteracoes",
+    "last_major_amendments": [
+      "Lei nº 14.071/2020 (Nova Lei de Trânsito)",
+      "Lei nº 14.229/2021 (Novos Prazos de Recursos e Fiscalização)",
+      "Lei nº 14.440/2022 (Exames e Prazos)",
+      "Lei nº 14.599/2023 (Competências Municipais e Exame Toxicológico)"
+    ],
+    "verification_signature": "SHA256:govbr_planalto_l9503_consolidated_2026"
+  },
+  {
+    "id": "src_contran_portal",
+    "name": "Portal de Resoluções do CONTRAN",
+    "official_body": "Conselho Nacional de Trânsito (CONTRAN) / Ministério dos Transportes",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran",
+    "collection_date": "2026-08-15",
+    "status": "vigente",
+    "last_major_amendments": ["Consolidação Regulatória CONTRAN 2022-2024"],
+    "verification_signature": "SHA256:contran_resolucoes_oficiais_2026"
+  },
+  {
+    "id": "src_senatran_mbft",
+    "name": "Manual Brasileiro de Fiscalização de Trânsito (MBFT) - Resolução CONTRAN nº 985/2022 e alterações",
+    "official_body": "Secretaria Nacional de Trânsito (SENATRAN)",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/arquivos-senatran/mbft",
+    "collection_date": "2026-08-15",
+    "status": "vigente",
+    "last_major_amendments": [
+      "Resolução CONTRAN nº 985/2022",
+      "Resolução CONTRAN nº 996/2023",
+      "Portarias Complementares SENATRAN 2023-2024"
+    ],
+    "verification_signature": "SHA256:senatran_mbft_v2026_tabelas"
+  },
+  {
+    "id": "src_dou_imprensa_nacional",
+    "name": "Diário Oficial da União (DOU)",
+    "official_body": "Imprensa Nacional",
+    "official_url": "https://www.in.gov.br/",
+    "collection_date": "2026-08-15",
+    "status": "vigente",
+    "last_major_amendments": ["Publicações Oficiais de Normas e Editais"],
+    "verification_signature": "SHA256:dou_atos_normativos_transito"
+  },
+  {
+    "id": "src_stj_jurisprudencia",
+    "name": "Jurisprudência Consolidada e Súmulas do STJ em Matéria de Trânsito",
+    "official_body": "Superior Tribunal de Justiça (STJ)",
+    "official_url": "https://www.stj.jus.br/jurisprudencia/sumulas/",
+    "collection_date": "2026-08-15",
+    "status": "vigente",
+    "last_major_amendments": [
+      "Súmula 312/STJ (Dupla Notificação)",
+      "Súmula 127/STJ (Licenciamento e Notificação)",
+      "Tema Repetitivo 1.097/STJ (Prazo decadencial de notificação)"
+    ],
+    "verification_signature": "SHA256:stj_sumulas_transito_precedentes"
+  }
+]

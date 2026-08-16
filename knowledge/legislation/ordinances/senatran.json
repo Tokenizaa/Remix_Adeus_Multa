@@ -1,0 +1,22 @@
+[
+  {
+    "id": "port_senatran_159",
+    "number": "159",
+    "year": 2017,
+    "issuing_body": "SENATRAN",
+    "subject": "Tabela de Enquadramentos de Infrações e Códigos Oficiais de Autuação",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/arquivos-senatran/tabela-de-enquadramentos",
+    "status": "vigente_com_atualizacoes_periodicas",
+    "description": "Padroniza os códigos numéricos de 5 e 6 dígitos utilizados em todos os Autos de Infração de Trânsito no Brasil."
+  },
+  {
+    "id": "port_senatran_354",
+    "number": "354",
+    "year": 2022,
+    "issuing_body": "SENATRAN",
+    "subject": "Manual e Procedimentos do Sistema de Notificação Eletrônica (SNE)",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/arquivos-senatran/sne",
+    "status": "vigente",
+    "description": "Regulamenta o desconto de até 40% nas multas e os procedimentos de renúncia ao direito de recurso para pagamento com abatimento."
+  }
+]

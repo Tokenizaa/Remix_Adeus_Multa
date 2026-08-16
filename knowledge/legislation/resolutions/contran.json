@@ -1,0 +1,120 @@
+[
+  {
+    "id": "res_contran_798",
+    "number": "798",
+    "year": 2020,
+    "issuing_body": "CONTRAN",
+    "subject": "Critérios técnicos para instalação e fiscalização com medidores de velocidade (radares)",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao7982020.pdf",
+    "status": "vigente",
+    "key_articles": [
+      {
+        "article": "4º",
+        "description": "Exigência de aprovação de modelo pelo INMETRO e verificação metrológica periódica (máximo 12 meses)."
+      },
+      {
+        "article": "5º",
+        "description": "Estudo técnico de viabilidade e mapeamento de acidentalidade para radares fixos."
+      },
+      {
+        "article": "6º",
+        "description": "Vedação do uso de medidores de velocidade do tipo oculto ou sem visibilidade ostensiva."
+      },
+      {
+        "article": "11",
+        "description": "Tabela de enquadramento de velocidade medida e velocidade considerada para aplicação de penalidade."
+      }
+    ]
+  },
+  {
+    "id": "res_contran_985",
+    "number": "985",
+    "year": 2022,
+    "issuing_body": "CONTRAN",
+    "subject": "Manual Brasileiro de Fiscalização de Trânsito (MBFT)",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9852022.pdf",
+    "status": "vigente",
+    "key_articles": [
+      {
+        "article": "Volume Único",
+        "description": "Fichas individuais de enquadramento com campos obrigatórios, competência do agente e definições de abordagem."
+      }
+    ]
+  },
+  {
+    "id": "res_contran_432",
+    "number": "432",
+    "year": 2013,
+    "issuing_body": "CONTRAN",
+    "subject": "Fiscalização de alcoolemia e substâncias psicoativas no trânsito",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/resolucao4322013.pdf",
+    "status": "vigente",
+    "key_articles": [
+      {
+        "article": "5º",
+        "description": "Meios de prova admitidos (etilômetro, exame de sangue, sinais de alteração psicomotora)."
+      },
+      {
+        "article": "6º",
+        "description": "Margem de erro admissível e verificação metrológica anual do etilômetro."
+      },
+      {
+        "article": "Anexo II",
+        "description": "Formulário obrigatório do Termo de Constatação de Sinais de Alteração da Capacidade Psicomotora."
+      }
+    ]
+  },
+  {
+    "id": "res_contran_918",
+    "number": "918",
+    "year": 2022,
+    "issuing_body": "CONTRAN",
+    "subject": "Procedimento de notificação de autuação e penalidade, e arrecadação de multas",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9182022.pdf",
+    "status": "vigente",
+    "key_articles": [
+      {
+        "article": "3º",
+        "description": "Obrigatoriedade de emissão da Notificação de Autuação em até 30 dias sob pena de arquivamento."
+      },
+      {
+        "article": "4º",
+        "description": "Prazo mínimo de 30 dias para apresentação de Defesa Prévia e Indicação de Real Condutor."
+      }
+    ]
+  },
+  {
+    "id": "res_contran_900",
+    "number": "900",
+    "year": 2022,
+    "issuing_body": "CONTRAN",
+    "subject": "Padronização do procedimento de apresentação de Defesa da Autuação e Recursos Administrativos",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9002022.pdf",
+    "status": "vigente",
+    "key_articles": [
+      {
+        "article": "4º",
+        "description": "Documentos e requisitos mínimos de admissibilidade recursal."
+      },
+      {
+        "article": "7º",
+        "description": "Vedação de exigência de pagamento prévio para admissão de recurso administrativo."
+      }
+    ]
+  },
+  {
+    "id": "res_contran_973",
+    "number": "973",
+    "year": 2022,
+    "issuing_body": "CONTRAN",
+    "subject": "Manual Brasileiro de Sinalização de Trânsito - Volume I (Regulamentação)",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9732022.pdf",
+    "status": "vigente",
+    "key_articles": [
+      {
+        "article": "Padrões Técnicos",
+        "description": "Requisitos obrigatórios de visibilidade, posicionamento e conservação de placas regulamentares."
+      }
+    ]
+  }
+]

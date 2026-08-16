@@ -1,0 +1,8 @@
+{
+  "name": "Remix Adeus Multa — Especialista em Defesa de Trânsito",
+  "description": "Plataforma inteligente de geração, edição e protocolo de defesas administrativas de trânsito com suporte a CTB, CONTRAN, JARI e CETRAN.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

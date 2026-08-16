@@ -1,0 +1,54 @@
+{
+  "id": "leg_ctb_9503",
+  "type": "lei_ordinaria_federal",
+  "number": "9.503",
+  "year": 1997,
+  "title": "Código de Trânsito Brasileiro",
+  "official_source": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm",
+  "promulgation_date": "1997-09-23",
+  "publication_date": "1997-09-24",
+  "status": "vigente_com_alteracoes",
+  "chapters": [
+    {
+      "chapter": "I",
+      "name": "Disposições Preliminares",
+      "articles": ["1", "2", "3", "4"]
+    },
+    {
+      "chapter": "XV",
+      "name": "Das Infrações",
+      "articles": [
+        "165", "165-A", "167", "181", "208", "218", "230", "232", "252", "253-A"
+      ]
+    },
+    {
+      "chapter": "XVI",
+      "name": "Das Penalidades",
+      "articles": ["256", "257", "258", "259", "261", "263", "267", "268"]
+    },
+    {
+      "chapter": "XVII",
+      "name": "Das Medidas Administrativas",
+      "articles": ["269", "270", "271", "272", "276", "277"]
+    },
+    {
+      "chapter": "XVIII",
+      "name": "Do Processo Administrativo",
+      "sections": [
+        {
+          "name": "Seção I - Da Autuação",
+          "articles": ["280", "281", "281-A"]
+        },
+        {
+          "name": "Seção II - Do Julgamento das Autuações e Penalidades",
+          "articles": ["282", "282-A", "284", "285", "286", "287", "288", "289", "290"]
+        }
+      ]
+    }
+  ],
+  "constitutional_guarantees": [
+    "Art. 5º, LIV da CF/88 (Devido Processo Legal)",
+    "Art. 5º, LV da CF/88 (Contraditório e Ampla Defesa)",
+    "Art. 37, caput da CF/88 (Princípios da Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência Administrativa)"
+  ]
+}

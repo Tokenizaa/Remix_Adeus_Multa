@@ -1,0 +1,115 @@
+[
+  {
+    "id": "proc_defesa_previa",
+    "name": "Defesa Prévia (Defesa da Autuação)",
+    "description": "Fase inicial do processo administrativo de trânsito, apresentada logo após o recebimento da Notificação de Autuação (NA) e antes da imposição formal da penalidade e cobrança da multa.",
+    "deadline": "Não inferior a 30 (trinta) dias contados da data da notificação da autuação",
+    "when_applies": "Quando o condutor ou proprietário recebe a Notificação de Autuação e constata vícios formais, erros no auto (AIT), decadência de 30 dias na emissão ou atipicidade do fato.",
+    "legal_basis": "Art. 281, Parágrafo Único do CTB; Resoluções CONTRAN nº 918/2022 e nº 900/2022.",
+    "required_documents": [
+      "Cópia da Notificação de Autuação ou espelho do AIT",
+      "Cópia da CNH ou RG/CPF do requerente",
+      "Cópia do Certificado de Registro e Licenciamento do Veículo (CRLV-e)",
+      "Procuração com poderes específicos (se representado por procurador)",
+      "Provas documentais (fotos, laudos de radar, notas fiscais de manutenção)"
+    ],
+    "related_articles": ["Art. 280", "Art. 281", "Art. 281-A"],
+    "template_available": true
+  },
+  {
+    "id": "proc_recurso_jari",
+    "name": "Recurso à JARI (1ª Instância Administrativa)",
+    "description": "Recurso administrativo dirigido à Junta Administrativa de Recursos de Infrações (JARI) do órgão autuador, cabível após o indeferimento da Defesa Prévia ou após a expedição da Notificação de Penalidade (NP).",
+    "deadline": "Mesmo prazo estabelecido para o vencimento do pagamento da multa (mínimo de 30 dias)",
+    "when_applies": "Quando a Defesa Prévia foi indeferida pela autoridade de trânsito ou quando o condutor foi notificado diretamente da penalidade e busca julgamento por colegiado independente.",
+    "legal_basis": "Arts. 282, 285, 286 e 287 do CTB; Resolução CONTRAN nº 900/2022.",
+    "required_documents": [
+      "Cópia da Notificação de Penalidade (NP)",
+      "Cópia da decisão de indeferimento da Defesa Prévia (se houver)",
+      "Documento de Identificação Oficial (CNH / RG) e CRLV-e",
+      "Provas e fundamentos fáticos e jurídicos pormenorizados"
+    ],
+    "related_articles": ["Art. 282", "Art. 285", "Art. 286", "Art. 287"],
+    "template_available": true
+  },
+  {
+    "id": "proc_recurso_cetran",
+    "name": "Recurso ao CETRAN / CONTRANDIFE (2ª Instância Administrativa)",
+    "description": "Última instância na esfera administrativa de trânsito. Julgado pelo Conselho Estadual de Trânsito (CETRAN) ou CONTRANDIFE (DF) ou Colegiado Especial nos órgãos federais.",
+    "deadline": "30 (trinta) dias contados da publicação ou notificação da decisão da JARI",
+    "when_applies": "Quando o recurso em 1ª instância foi negado pela JARI e existem fundamentos para reforma da decisão no tribunal administrativo superior do Estado.",
+    "legal_basis": "Arts. 288 e 289 do CTB; Resolução CONTRAN nº 900/2022.",
+    "required_documents": [
+      "Cópia do Acórdão/Decisão denegatória da JARI",
+      "Cópia do recurso interposto na 1ª instância",
+      "Documentos pessoais e do veículo",
+      "Pareceres técnicos e jurisprudência vinculante de tribunais superiores"
+    ],
+    "related_articles": ["Art. 288", "Art. 289", "Art. 290"],
+    "template_available": true
+  },
+  {
+    "id": "proc_suspensao_cnh",
+    "name": "Defesa contra Processo de Suspensão do Direito de Dirigir (PSDD)",
+    "description": "Procedimento administrativo instaurado pelo DETRAN de registro da habilitação para aplicar a penalidade de suspensão do direito de dirigir por pontos acumulados ou infrações mandatórias/autossuspensivas.",
+    "deadline": "Mínimo de 30 (trinta) dias a contar da notificação de instauração do processo",
+    "when_applies": "Quando o condutor atinge o limite de pontos (20, 30 ou 40 pontos conforme Art. 261) ou comete infração autossuspensiva (ex: Lei Seca, recusa, excesso de velocidade >50%).",
+    "legal_basis": "Art. 261 do CTB; Resolução CONTRAN nº 723/2018 (com alterações da Res. 844/2021).",
+    "required_documents": [
+      "Notificação de Instauração de Processo de Suspensão (PSDD)",
+      "Extrato consolidado da pontuação e prontuário no DETRAN",
+      "Cópia da CNH e comprovante de residência",
+      "Comprovantes de recursos pendentes de julgamento em instâncias ordinárias"
+    ],
+    "related_articles": ["Art. 261", "Art. 265", "Art. 268"],
+    "template_available": true
+  },
+  {
+    "id": "proc_cassacao_cnh",
+    "name": "Defesa contra Processo de Cassação do Documento de Habilitação (PCDD)",
+    "description": "Procedimento administrativo de penalidade máxima que cancela a CNH do condutor, obrigando-o a cumprir 2 anos de inabilitação e reiniciar todo o processo de reabilitação.",
+    "deadline": "Mínimo de 30 (trinta) dias da notificação de instauração",
+    "when_applies": "Quando o condutor é flagrado dirigindo com a CNH suspensa, reincide em infrações gravíssimas específicas no prazo de 12 meses ou é condenado judicialmente por delito de trânsito.",
+    "legal_basis": "Art. 263 do CTB; Resolução CONTRAN nº 723/2018.",
+    "required_documents": [
+      "Notificação de Instauração do Processo de Cassação (PCDD)",
+      "Cópia integral do processo administrativo que decretou a suspensão prévia",
+      "Provas de que o condutor não estava na direção do veículo na data indicada",
+      "CNH e documentos do veículo"
+    ],
+    "related_articles": ["Art. 263", "Art. 265"],
+    "template_available": true
+  },
+  {
+    "id": "proc_indicacao_condutor",
+    "name": "Formulário de Indicação do Real Condutor Infrator",
+    "description": "Procedimento administrativo formal pelo qual o proprietário do veículo transfere a responsabilidade pelas infrações cometidas por terceiros no volante para o real condutor.",
+    "deadline": "30 (trinta) dias improrrogáveis contados da Notificação de Autuação",
+    "when_applies": "Quando a infração de trânsito ocorreu sem abordagem física do condutor e o veículo estava sendo conduzido por outra pessoa no momento do fato.",
+    "legal_basis": "Art. 257, § 7º do CTB; Resolução CONTRAN nº 918/2022.",
+    "required_documents": [
+      "Formulário oficial de Indicação do Real Condutor preenchido e assinado",
+      "Cópia legível da CNH do real condutor infrator com assinatura idêntica",
+      "Cópia do documento de identidade do proprietário do veículo (ou procuração/contrato social)",
+      "Termo de responsabilidade assinado conjuntamente por ambos"
+    ],
+    "related_articles": ["Art. 257, § 7º e § 8º"],
+    "template_available": true
+  },
+  {
+    "id": "proc_conversao_advertencia",
+    "name": "Requerimento de Conversão de Multa em Advertência por Escrito",
+    "description": "Benefício legal de aplicação obrigatória pela autoridade de trânsito para condutores sem reincidência que cometeram infração de natureza leve ou média nos últimos 12 meses.",
+    "deadline": "Até o prazo final fixado para a apresentação da Defesa da Autuação",
+    "when_applies": "Quando o condutor comete infração de gravidade leve ou média e não possui registro de infração idêntica em seu prontuário nos 12 meses precedentes (Direito Subjetivo).",
+    "legal_basis": "Art. 267 do CTB (Redação determinada pela Lei Federal nº 14.071/2020).",
+    "required_documents": [
+      "Requerimento fundamentado de conversão em advertência",
+      "Notificação da Autuação",
+      "Extrato de Prontuário de Habilitação do DETRAN comprovando a inexistência de reincidência nos últimos 12 meses",
+      "Cópia da CNH e CRLV-e"
+    ],
+    "related_articles": ["Art. 267"],
+    "template_available": true
+  }
+]

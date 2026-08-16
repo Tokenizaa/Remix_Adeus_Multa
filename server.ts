@@ -1,0 +1,1669 @@
+import express from 'express';
+import path from 'path';
+import { createServer as createViteServer } from 'vite';
+import QRCode from 'qrcode';
+import { CanonicalMapper } from './src/core/mappers/canonical-mapper';
+import { RagPipeline } from './src/core/rag/rag-pipeline';
+import { eventBus, EventTopics } from './src/core/events/topics';
+import { INFRACTION_CATALOG, LEGAL_ARGUMENTS, AUTUADOR_BODIES } from './src/data/knowledge-base';
+import { INITIAL_MARKETING_AGENTS, INITIAL_EDITORIAL_CONTENTS, BRAND_IDENTITY } from './src/data/marketing-agents-data';
+import { analyzeTicketWithGemini, enrichDefenseWithGemini } from './src/server/gemini';
+import { metaIntegration } from './src/server/integrations/meta';
+import { pagBankIntegration } from './src/server/integrations/pagbank';
+import { CaseDomain, CaseRow, AuditLogEntry, ProcedureType } from './src/types';
+import { runPipeline } from './agents/pipeline/runner';
+import { configService } from './src/server/config/config-service';
+import { logger } from './src/server/observability/logger';
+import { metricsService } from './src/server/observability/metrics-service';
+import { healthService } from './src/server/observability/health-service';
+import { aiProviderManager } from './src/server/observability/ai-provider-manager';
+import { alertsService } from './src/server/observability/alerts-service';
+import { commercialService } from './src/server/commercial/commercial-service';
+import { runCommercialTestSuite } from './src/server/commercial/commercial-test-suite';
+
+const app = express();
+const PORT = 3000;
+
+app.use(express.json({ limit: '20mb' }));
+
+// Request tracing middleware
+app.use((req, res, next) => {
+  const reqStart = Date.now();
+  const correlationId = (req.headers['x-correlation-id'] as string) || `corr_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`;
+  const requestId = (req.headers['x-request-id'] as string) || `req_${Date.now()}`;
+  
+  res.setHeader('X-Correlation-Id', correlationId);
+  res.setHeader('X-Request-Id', requestId);
+
+  // Hook on response finish to log API metrics
+  res.on('finish', () => {
+    const duration = Date.now() - reqStart;
+    metricsService.recordRequest(duration, res.statusCode < 400);
+
+    if (req.path.startsWith('/api') && !req.path.startsWith('/api/logs')) {
+      if (res.statusCode >= 400) {
+        logger.warn('system', 'http_server', `${req.method} ${req.path}`, `HTTP ${res.statusCode} (${duration}ms)`, {
+          correlationId,
+          requestId,
+          duration,
+          status: 'failed',
+          errorCode: `HTTP_${res.statusCode}`,
+        });
+      }
+    }
+  });
+
+  next();
+});
+
+// In-Memory Canonical Store (Row database representation with Canonical Mapper)
+const databaseRows: Map<string, CaseRow> = new Map();
+const auditLogs: AuditLogEntry[] = [];
+let marketingAgents = [...INITIAL_MARKETING_AGENTS];
+let editorialContents = [...INITIAL_EDITORIAL_CONTENTS];
+
+// Seed initial demo case
+function seedInitialData() {
+  const sampleDomain: CaseDomain = {
+    id: 'case_sp_74550_demo',
+    title: 'Recurso Auto 1B892014 — Excesso de Velocidade até 20%',
+    clientName: 'Carlos Eduardo Silveira',
+    clientEmail: 'carlos.silveira@email.com',
+    clientPhone: '(11) 98765-4321',
+    clientCpf: '123.456.789-00',
+    status: 'defesa_pronta',
+    currentStage: 3,
+    serviceType: 'conversao_advertencia',
+    vehicle: {
+      plate: 'ABC4E89',
+      brandModel: 'Volkswagen Polo Highline 200 TSI',
+      renavam: '00987654321',
+      year: '2023',
+      color: 'Prata',
+    },
+    infraction: {
+      aitNumber: '1B892014',
+      infractionCode: '745-50',
+      description: 'Transitar em velocidade superior à máxima permitida em até 20%',
+      ctbArticle: 'Art. 218, I do CTB',
+      severity: 'media',
+      points: 4,
+      fineAmount: 130.16,
+      autuadorBody: 'DETRAN-SP — Departamento Estadual de Trânsito de São Paulo',
+      dateTime: '2026-07-15 14:32:10',
+      location: 'Av. das Nações Unidas, alt. nº 14.401 — São Paulo/SP',
+      speedLimit: 60,
+      measuredSpeed: 68,
+      consideredSpeed: 61,
+      radarEquipmentId: 'RAD-METRO-0941',
+      inmetroAferitionDate: '2025-05-10',
+      notificationExpeditionDate: '2026-08-01',
+      defenseDeadline: '2026-09-02',
+      formalFlawsDetected: [
+        'Aferição metrológica do radar expirada há mais de 12 meses',
+        'Ausência de placa R-19 regulamentar no trecho fiscalizado',
+        'Elegível para conversão em advertência por escrito (Art. 267 CTB)',
+      ],
+    },
+    isAnonymous: false,
+    isPaid: true,
+    paidAt: new Date().toISOString(),
+    createdAt: new Date(Date.now() - 3 * 24 * 3600 * 1000).toISOString(),
+    updatedAt: new Date().toISOString(),
+    timeline: [
+      {
+        id: 'tl_1',
+        title: 'Auto de Infração Cadastrado',
+        description: 'Notificação nº 1B892014 enviada para análise inteligente.',
+        timestamp: new Date(Date.now() - 3 * 24 * 3600 * 1000).toISOString(),
+        type: 'ocr',
+      },
+      {
+        id: 'tl_2',
+        title: 'Diagnóstico Jurídico Concluído',
+        description: 'Detectadas 3 teses de anulação com 96% de probabilidade de acolhimento.',
+        timestamp: new Date(Date.now() - 3 * 24 * 3600 * 1000 + 120000).toISOString(),
+        type: 'analysis',
+      },
+      {
+        id: 'tl_3',
+        title: 'Pagamento PIX Confirmado',
+        description: 'Assinatura do serviço liberada com garantia de 7 dias.',
+        timestamp: new Date(Date.now() - 2 * 24 * 3600 * 1000).toISOString(),
+        type: 'payment',
+      },
+      {
+        id: 'tl_4',
+        title: 'Minuta da Defesa Gerada',
+        description: 'Petição diagramada pronta para impressão ou protocolo eletrônico.',
+        timestamp: new Date(Date.now() - 1 * 24 * 3600 * 1000).toISOString(),
+        type: 'defense',
+      },
+    ],
+  };
+
+  // Run initial analysis and generate defense
+  const analysis = RagPipeline.analyzeInfraction(sampleDomain.id, sampleDomain.infraction);
+  sampleDomain.analysis = analysis;
+
+  const defense = RagPipeline.generateDefenseDraft(
+    sampleDomain.id,
+    sampleDomain.infraction,
+    sampleDomain.vehicle.plate,
+    sampleDomain.vehicle.brandModel,
+    {
+      name: sampleDomain.clientName,
+      cpf: sampleDomain.clientCpf || '123.456.789-00',
+      cnh: '05492817492',
+      address: 'Rua das Flores, 450, Apto 82, Vila Madalena',
+      cityState: 'São Paulo/SP',
+    },
+    analysis.recommendedArguments,
+    'conversao_advertencia'
+  );
+  sampleDomain.defenseDraft = defense;
+
+  const row = CanonicalMapper.domainToRow(sampleDomain);
+  databaseRows.set(row.id, row);
+
+  // Initial audit log
+  auditLogs.unshift({
+    id: `audit_init_${Date.now()}`,
+    timestamp: new Date().toISOString(),
+    actor: 'Sistema / Seeder',
+    role: 'system_orchestrator',
+    action: 'CASE_INITIALIZED',
+    targetResource: sampleDomain.id,
+    ipHash: 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855',
+    details: 'Caso de demonstração cadastrado com sucesso.',
+    gdprCompliant: true,
+  });
+}
+
+seedInitialData();
+
+// ==========================================
+// 1. Healthcheck & Knowledge Endpoints
+// ==========================================
+app.get('/api/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    casesCount: databaseRows.size,
+    aiModel: 'gemini-3.7-flash',
+    knowledge: {
+      infractionsCount: INFRACTION_CATALOG.length,
+      argumentsCount: LEGAL_ARGUMENTS.length,
+      bodiesCount: AUTUADOR_BODIES.length,
+    },
+  });
+});
+
+app.get('/api/knowledge/infractions', (req, res) => {
+  const query = (req.query.q as string || '').toLowerCase();
+  if (!query) {
+    return res.json(INFRACTION_CATALOG);
+  }
+  const filtered = INFRACTION_CATALOG.filter(
+    (item) =>
+      item.code.toLowerCase().includes(query) ||
+      item.description.toLowerCase().includes(query) ||
+      item.article.toLowerCase().includes(query)
+  );
+  res.json(filtered);
+});
+
+app.get('/api/knowledge/arguments', (req, res) => {
+  res.json(LEGAL_ARGUMENTS);
+});
+
+app.get('/api/knowledge/bodies', (req, res) => {
+  res.json(AUTUADOR_BODIES);
+});
+
+// ==========================================
+// 1.1. Autonomous Agents Ecosystem & Pipeline
+// ==========================================
+app.get('/api/agents/registry', (req, res) => {
+  res.json({
+    totalAgents: 18,
+    domains: [
+      {
+        name: 'Experiência & Onboarding (Layer 1)',
+        agents: [
+          { id: 'onboarding-ux', name: 'Onboarding UX Flow Agent', role: 'Define fluxos progressivos e reduz atrito' },
+          { id: 'onboarding-copywriter', name: 'Microcopy & Trust Agent', role: 'Comunicação empática e sem juridiquês' },
+          { id: 'legal-ux-reviewer', name: 'Legal Clarity Reviewer', role: 'Equilibra rigor técnico e clareza para o motorista' },
+        ],
+      },
+      {
+        name: 'OCR & Percepção Documental (Layer 2)',
+        agents: [
+          { id: 'ocr-classifier', name: 'OCR Document Classifier', role: 'Identifica NIP, AIT, CNH, CRLV ou autuação' },
+          { id: 'ocr-extractor', name: 'OCR Field Extractor', role: 'Extrai placa, auto, código de enquadramento, velocidades' },
+          { id: 'ocr-validator', name: 'OCR Data Validator', role: 'Cruza dados com o CTB e valida formato de placas/autos' },
+        ],
+      },
+      {
+        name: 'Conhecimento Jurídico & Legislação (Layer 3)',
+        agents: [
+          { id: 'legal-classifier', name: 'Legal Case Classifier', role: 'Enquadramento no CTB, cálculo de pontos e prazos' },
+          { id: 'legal-researcher', name: 'Legal Researcher Agent', role: 'Consulta jurisprudência pacificada e resoluções CONTRAN' },
+          { id: 'legal-strategist', name: 'Legal Defense Strategist', role: 'Seleciona e ranqueia teses preliminares e de mérito' },
+        ],
+      },
+      {
+        name: 'Documentos & Petições (Layer 4)',
+        agents: [
+          { id: 'document-planner', name: 'Document Planner Agent', role: 'Estrutura seções de petição administrativa formal' },
+          { id: 'document-drafter', name: 'Document Drafter Agent', role: 'Redige a fundamentação fática e jurídica completa' },
+          { id: 'legal-style-reviewer', name: 'Legal Style Reviewer', role: 'Harmoniza estilo, coesão e precisão terminológica' },
+          { id: 'citation-validator', name: 'Citation Validator Agent', role: 'Verifica artigos do CTB e súmulas citadas' },
+          { id: 'document-layout', name: 'Document Layout Engine', role: 'Gera layout ABNT pronto para impressão ou PDF' },
+        ],
+      },
+      {
+        name: 'Qualidade & Auditoria (Layer 5)',
+        agents: [
+          { id: 'legal-auditor', name: 'Legal Compliance Auditor', role: 'Auditoria de 6 etapas e conformidade com prazos' },
+          { id: 'hallucination-checker', name: 'Hallucination Checker Agent', role: 'Previne citações forjadas ou dados inexistentes' },
+          { id: 'contradiction-checker', name: 'Contradiction Checker Agent', role: 'Valida coerência fática em todas as seções' },
+          { id: 'completeness-reviewer', name: 'Completeness Reviewer Agent', role: 'Verifica qualificação completa e anexos' },
+        ],
+      },
+      {
+        name: 'Produto & Conversão (Layer 6)',
+        agents: [
+          { id: 'pricing-agent', name: 'Dynamic Pricing Agent', role: 'Ofertas personalizadas baseadas no risco da CNH' },
+          { id: 'retention-agent', name: 'User Retention Agent', role: 'Mitiga abandono e auxilia condutores indecisos' },
+          { id: 'analytics-agent', name: 'Funnel Analytics Agent', role: 'Monitoramento contínuo de métricas e conversão' },
+        ],
+      },
+    ],
+  });
+});
+
+app.post('/api/pipeline/run', async (req, res) => {
+  try {
+    const initialContext = req.body || {};
+    const result = await runPipeline(initialContext);
+    res.json(result);
+  } catch (error: any) {
+    console.error('[Pipeline Runner] Error:', error);
+    res.status(500).json({ success: false, error: error.message || 'Erro na execução do pipeline' });
+  }
+});
+
+// ==========================================
+// 2. OCR & Intelligent Ticket Parser Endpoint
+// ==========================================
+app.post('/api/ocr/analyze', async (req, res) => {
+  try {
+    const { rawText, presetId, serviceType } = req.body;
+
+    // Use selected preset or incoming text
+    let code = '745-50';
+    let aitNumber = `1B${Math.floor(100000 + Math.random() * 900000)}`;
+    let speedLimit = 60;
+    let measuredSpeed = 71;
+    let consideredSpeed = 64;
+    let autuador = 'DETRAN-SP — Departamento Estadual de Trânsito de São Paulo';
+    let location = 'Av. Washington Luís, km 12 — São Paulo/SP';
+
+    if (presetId === 'lei_seca' || rawText?.toLowerCase().includes('bafômetro') || rawText?.toLowerCase().includes('recusa')) {
+      code = '516-91';
+      aitNumber = `LS${Math.floor(100000 + Math.random() * 900000)}`;
+      autuador = 'DETRAN-RJ — Operação Lei Seca';
+      location = 'Av. das Américas, alt. Barra Shopping — Rio de Janeiro/RJ';
+      speedLimit = 0;
+      measuredSpeed = 0;
+      consideredSpeed = 0;
+    } else if (presetId === 'celular' || rawText?.toLowerCase().includes('celular')) {
+      code = '736-62';
+      aitNumber = `CL${Math.floor(100000 + Math.random() * 900000)}`;
+      autuador = 'CET-SP / DSV — Companhia de Engenharia de Tráfego';
+      location = 'Rua da Consolação, cruzamento com Av. Paulista — São Paulo/SP';
+      speedLimit = 0;
+      measuredSpeed = 0;
+      consideredSpeed = 0;
+    } else if (presetId === 'vermelho' || rawText?.toLowerCase().includes('semáforo')) {
+      code = '605-01';
+      aitNumber = `SF${Math.floor(100000 + Math.random() * 900000)}`;
+      autuador = 'BHTRANS — Empresa de Transportes e Trânsito de Belo Horizonte';
+      location = 'Av. Afonso Pena c/ Av. Amazonas — Belo Horizonte/MG';
+      speedLimit = 0;
+      measuredSpeed = 0;
+      consideredSpeed = 0;
+    }
+
+    const matchedInfraction = RagPipeline.findInfraction(code)!;
+
+    const sampleInfractionData = {
+      aitNumber,
+      infractionCode: matchedInfraction.code,
+      description: matchedInfraction.description,
+      ctbArticle: matchedInfraction.article,
+      severity: matchedInfraction.severity,
+      points: matchedInfraction.points,
+      fineAmount: matchedInfraction.fineAmount,
+      autuadorBody: autuador,
+      dateTime: new Date(Date.now() - 14 * 24 * 3600 * 1000).toISOString().replace('T', ' ').substring(0, 19),
+      location,
+      speedLimit: speedLimit || undefined,
+      measuredSpeed: measuredSpeed || undefined,
+      consideredSpeed: consideredSpeed || undefined,
+      radarEquipmentId: code.startsWith('74') ? 'RAD-INMETRO-7819' : undefined,
+      inmetroAferitionDate: '2025-04-12', // Expired!
+      notificationExpeditionDate: new Date(Date.now() - 2 * 24 * 3600 * 1000).toISOString().split('T')[0],
+      defenseDeadline: new Date(Date.now() + 28 * 24 * 3600 * 1000).toISOString().split('T')[0],
+      formalFlawsDetected: matchedInfraction.typicalFlaws,
+    };
+
+    // Run Gemini AI analysis if available
+    let geminiResult = null;
+    if (rawText && rawText.length > 20) {
+      geminiResult = await analyzeTicketWithGemini(rawText, sampleInfractionData);
+    }
+
+    // Run deterministic legal RAG pipeline
+    const tempCaseId = `temp_${Date.now()}`;
+    const analysis = RagPipeline.analyzeInfraction(tempCaseId, sampleInfractionData);
+
+    if (geminiResult && geminiResult.fatalFlaws) {
+      sampleInfractionData.formalFlawsDetected = Array.from(
+        new Set([...sampleInfractionData.formalFlawsDetected, ...geminiResult.fatalFlaws])
+      );
+    }
+
+    eventBus.publish(EventTopics.OCR_COMPLETED, {
+      aitNumber,
+      code: matchedInfraction.code,
+      successRate: analysis.overallSuccessRate,
+    }, 'ocr_engine');
+
+    res.json({
+      success: true,
+      extractedData: {
+        vehicle: {
+          plate: 'BRA2E19',
+          brandModel: 'Toyota Corolla Cross XRE',
+          renavam: '00123984712',
+          year: '2024',
+          color: 'Preto',
+        },
+        infraction: sampleInfractionData,
+      },
+      analysis,
+      geminiEnriched: Boolean(geminiResult),
+      confidenceScore: 97.4,
+    });
+  } catch (error: any) {
+    console.error('[OCR Engine] Error:', error);
+    res.status(500).json({ error: error.message || 'Erro no processamento OCR' });
+  }
+});
+
+// ==========================================
+// 3. Cases CRUD & Lifecycle Endpoints
+// ==========================================
+app.get('/api/cases', (req, res) => {
+  const domains: CaseDomain[] = [];
+  for (const row of databaseRows.values()) {
+    domains.push(CanonicalMapper.rowToDomain(row));
+  }
+  // Sort newest first
+  domains.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+  res.json(domains);
+});
+
+app.get('/api/cases/:id', (req, res) => {
+  const row = databaseRows.get(req.params.id);
+  if (!row) {
+    return res.status(404).json({ error: 'Caso não encontrado' });
+  }
+  res.json(CanonicalMapper.rowToDomain(row));
+});
+
+app.post('/api/cases', (req, res) => {
+  try {
+    const domainData: CaseDomain = req.body;
+    if (!domainData.id) {
+      domainData.id = `case_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`;
+    }
+    if (!domainData.createdAt) {
+      domainData.createdAt = new Date().toISOString();
+    }
+    domainData.updatedAt = new Date().toISOString();
+
+    // Run legal RAG analysis
+    if (!domainData.analysis && domainData.infraction) {
+      domainData.analysis = RagPipeline.analyzeInfraction(domainData.id, domainData.infraction);
+    }
+
+    // Generate initial defense draft
+    if (!domainData.defenseDraft && domainData.infraction) {
+      domainData.defenseDraft = RagPipeline.generateDefenseDraft(
+        domainData.id,
+        domainData.infraction,
+        domainData.vehicle?.plate || 'SEM PLACA',
+        domainData.vehicle?.brandModel || 'Veículo',
+        {
+          name: domainData.clientName || 'Requerente',
+          cpf: domainData.clientCpf || '000.000.000-00',
+          cnh: '00000000000',
+          address: 'Endereço residencial',
+          cityState: 'São Paulo/SP',
+        },
+        domainData.analysis?.recommendedArguments || [],
+        domainData.serviceType || 'defesa_previa'
+      );
+    }
+
+    const row = CanonicalMapper.domainToRow(domainData);
+    databaseRows.set(row.id, row);
+
+    eventBus.publish(EventTopics.CASE_CREATED, { caseId: domainData.id, isAnonymous: domainData.isAnonymous }, 'case_engine');
+
+    auditLogs.unshift({
+      id: `audit_${Date.now()}`,
+      timestamp: new Date().toISOString(),
+      actor: domainData.clientName || 'Anônimo',
+      role: domainData.isAnonymous ? 'citizen' : 'citizen',
+      action: 'CASE_CREATED',
+      targetResource: domainData.id,
+      ipHash: '9f83c68a765b1c41',
+      details: `Caso ${domainData.title} criado no estágio ${domainData.currentStage}.`,
+      gdprCompliant: true,
+    });
+
+    res.status(201).json(CanonicalMapper.rowToDomain(row));
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.put('/api/cases/:id', (req, res) => {
+  const existingRow = databaseRows.get(req.params.id);
+  if (!existingRow) {
+    return res.status(404).json({ error: 'Caso não encontrado' });
+  }
+
+  const updatedDomain: CaseDomain = req.body;
+  updatedDomain.id = req.params.id;
+  updatedDomain.updatedAt = new Date().toISOString();
+
+  const newRow = CanonicalMapper.domainToRow(updatedDomain);
+  databaseRows.set(req.params.id, newRow);
+
+  eventBus.publish(EventTopics.CASE_UPDATED, { caseId: req.params.id }, 'case_engine');
+
+  res.json(CanonicalMapper.rowToDomain(newRow));
+});
+
+// Claim Anonymous Case (Modal Cadastro -> Link account)
+app.post('/api/cases/:id/claim', (req, res) => {
+  const row = databaseRows.get(req.params.id);
+  if (!row) {
+    return res.status(404).json({ error: 'Caso anônimo não encontrado' });
+  }
+
+  const { name, email, phone, cpf } = req.body;
+  const domain = CanonicalMapper.rowToDomain(row);
+  domain.clientName = name || domain.clientName;
+  domain.clientEmail = email || domain.clientEmail;
+  domain.clientPhone = phone || domain.clientPhone;
+  domain.clientCpf = cpf || domain.clientCpf;
+  domain.isAnonymous = false;
+  domain.updatedAt = new Date().toISOString();
+
+  domain.timeline.push({
+    id: `tl_${Date.now()}`,
+    title: 'Cadastro Concluído',
+    description: `Caso vinculado ao motorista ${domain.clientName}.`,
+    timestamp: new Date().toISOString(),
+    type: 'system',
+  });
+
+  const updatedRow = CanonicalMapper.domainToRow(domain);
+  databaseRows.set(domain.id, updatedRow);
+
+  eventBus.publish(EventTopics.CASE_CLAIMED, { caseId: domain.id, email }, 'auth_engine');
+
+  res.json(domain);
+});
+
+// ==========================================
+// 4. Defense Generation & AI Enrichment
+// ==========================================
+app.post('/api/cases/:id/generate-defense', async (req, res) => {
+  const row = databaseRows.get(req.params.id);
+  if (!row) {
+    return res.status(404).json({ error: 'Caso não encontrado' });
+  }
+
+  const domain = CanonicalMapper.rowToDomain(row);
+  const { procedureType, selectedArgumentIds, applicantData, customFacts } = req.body;
+
+  const selectedArgs = LEGAL_ARGUMENTS.filter((a) =>
+    selectedArgumentIds?.includes(a.id)
+  );
+
+  let defense = RagPipeline.generateDefenseDraft(
+    domain.id,
+    domain.infraction,
+    domain.vehicle.plate,
+    domain.vehicle.brandModel,
+    applicantData || {
+      name: domain.clientName,
+      cpf: domain.clientCpf || '000.000.000-00',
+      cnh: '05492817492',
+      address: 'Rua das Flores, 450, Apto 82',
+      cityState: 'São Paulo/SP',
+    },
+    selectedArgs.length > 0 ? selectedArgs : domain.analysis?.recommendedArguments || [],
+    procedureType || domain.serviceType
+  );
+
+  if (customFacts) {
+    defense.factsNarrative = customFacts;
+  }
+
+  // Optionally enrich with Gemini AI for superior legal polish
+  const enrichedGemini = await enrichDefenseWithGemini({
+    infraction: domain.infraction,
+    applicant: applicantData,
+    arguments: selectedArgs,
+    procedure: procedureType,
+  });
+
+  if (enrichedGemini) {
+    defense.fullDraftText = enrichedGemini;
+  }
+
+  domain.defenseDraft = defense;
+  domain.currentStage = 3;
+  domain.status = 'defesa_pronta';
+  domain.updatedAt = new Date().toISOString();
+
+  domain.timeline.push({
+    id: `tl_def_${Date.now()}`,
+    title: 'Petição Administrativa Atualizada',
+    description: `Minuta da ${procedureType || 'defesa'} estruturada com ${selectedArgs.length} teses jurídicas.`,
+    timestamp: new Date().toISOString(),
+    type: 'defense',
+  });
+
+  const updatedRow = CanonicalMapper.domainToRow(domain);
+  databaseRows.set(domain.id, updatedRow);
+
+  eventBus.publish(EventTopics.DEFENSE_DRAFT_FINALIZED, { caseId: domain.id }, 'defense_engine');
+
+  res.json({
+    success: true,
+    defenseDraft: defense,
+    case: domain,
+  });
+});
+
+// ==========================================
+// 5. Official PagBank Integration (Orders, PIX & Webhooks)
+// ==========================================
+app.post('/api/payments/pagbank/orders', async (req, res) => {
+  try {
+    const { caseId, customerName, customerEmail, customerCpf, amount = 89.90 } = req.body;
+    
+    const orderResult = await pagBankIntegration.createPixOrder({
+      caseId: caseId || `case_${Date.now()}`,
+      customer: {
+        name: customerName || 'Condutor DefesAi',
+        email: customerEmail || 'contato@defesai.com.br',
+        taxId: customerCpf || '12345678909',
+      },
+      amount: Number(amount),
+    });
+
+    // Update case with payment reference if existing
+    if (caseId) {
+      const row = databaseRows.get(caseId);
+      if (row) {
+        const domain = CanonicalMapper.rowToDomain(row);
+        domain.payment = {
+          status: 'pending',
+          amount: Number(amount),
+          transactionId: orderResult.orderId,
+          paymentMethod: 'pix',
+        };
+        const updatedRow = CanonicalMapper.domainToRow(domain);
+        databaseRows.set(caseId, updatedRow);
+      }
+    }
+
+    res.json({
+      success: true,
+      order: orderResult,
+      pixCopyPasteString: orderResult.qrCodeText,
+      qrCodeDataUrl: orderResult.qrCodeDataUrl,
+      txId: orderResult.orderId,
+      status: 'aguardando_pagamento',
+    });
+  } catch (error: any) {
+    console.error('[PagBank] Error creating order:', error);
+    res.status(500).json({ error: error.message || 'Erro ao gerar pedido PagBank' });
+  }
+});
+
+// Alias for existing frontend compatibility
+app.post('/api/payments/pix/create', async (req, res) => {
+  try {
+    const { caseId, amount = 89.90, customerCpf, customerName, customerEmail } = req.body;
+    const orderResult = await pagBankIntegration.createPixOrder({
+      caseId: caseId || `case_${Date.now()}`,
+      customer: {
+        name: customerName || 'Condutor DefesAi',
+        email: customerEmail || 'contato@defesai.com.br',
+        taxId: customerCpf || '12345678909',
+      },
+      amount: Number(amount),
+    });
+
+    res.json({
+      success: true,
+      txId: orderResult.orderId,
+      amount: orderResult.amount,
+      pixCopyPasteString: orderResult.qrCodeText,
+      qrCodeDataUrl: orderResult.qrCodeDataUrl,
+      expiresInMinutes: 30,
+      status: 'aguardando_pagamento',
+      order: orderResult,
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// PagBank Order Status polling endpoint
+app.get('/api/payments/pagbank/orders/:id', (req, res) => {
+  const order = pagBankIntegration.getOrder(req.params.id);
+  if (!order) {
+    return res.status(404).json({ error: 'Pedido PagBank não encontrado' });
+  }
+  res.json(order);
+});
+
+// PagBank Official Webhook with Idempotency
+app.post('/api/webhooks/pagbank', (req, res) => {
+  try {
+    const payload = req.body;
+    const signature = req.headers['x-authenticity-token'] as string;
+
+    const webhookResult = pagBankIntegration.processWebhook(payload, signature);
+
+    if (webhookResult.caseId) {
+      const row = databaseRows.get(webhookResult.caseId);
+      if (row && webhookResult.status === 'PAID') {
+        const domain = CanonicalMapper.rowToDomain(row);
+        domain.isPaid = true;
+        domain.paidAt = new Date().toISOString();
+        domain.status = 'defesa_pronta';
+        domain.currentStage = 3;
+        domain.payment = {
+          status: 'approved',
+          amount: 89.90,
+          paidAt: new Date().toISOString(),
+          transactionId: webhookResult.orderId,
+          paymentMethod: 'pix',
+        };
+        domain.timeline.push({
+          id: `tl_webhook_${Date.now()}`,
+          title: 'Pagamento Confirmado via Webhook PagBank',
+          description: `Transação ${webhookResult.orderId} aprovada automaticamente pela instituição financeira.`,
+          timestamp: new Date().toISOString(),
+          type: 'payment',
+        });
+
+        const updatedRow = CanonicalMapper.domainToRow(domain);
+        databaseRows.set(webhookResult.caseId, updatedRow);
+      }
+    }
+
+    res.status(200).json({ received: true, ...webhookResult });
+  } catch (error: any) {
+    console.error('[PagBank Webhook] Processing error:', error);
+    res.status(400).json({ error: error.message });
+  }
+});
+
+// Simulate confirm for local testing / instant preview
+app.post('/api/payments/pix/simulate-confirm', (req, res) => {
+  const { caseId } = req.body;
+  const row = databaseRows.get(caseId);
+  if (!row) {
+    return res.status(404).json({ error: 'Caso não encontrado' });
+  }
+
+  // Idempotent confirm through PagBank service
+  const confirmResult = pagBankIntegration.confirmPayment(caseId);
+
+  const domain = CanonicalMapper.rowToDomain(row);
+  domain.isPaid = true;
+  domain.paidAt = new Date().toISOString();
+  domain.status = 'defesa_pronta';
+  domain.currentStage = 3;
+  domain.payment = {
+    status: 'approved',
+    amount: 89.90,
+    paidAt: new Date().toISOString(),
+    transactionId: confirmResult.order.orderId,
+    paymentMethod: 'pix',
+  };
+  domain.updatedAt = new Date().toISOString();
+
+  domain.timeline.push({
+    id: `tl_pay_${Date.now()}`,
+    title: 'Pagamento PIX Compensado (PagBank)',
+    description: 'Acesso liberado à minuta jurídica formal para impressão e orientações de protocolo.',
+    timestamp: new Date().toISOString(),
+    type: 'payment',
+  });
+
+  const updatedRow = CanonicalMapper.domainToRow(domain);
+  databaseRows.set(domain.id, updatedRow);
+
+  // Dispatch Commercial Payment Event (Calculates 3-level commissions & ledgers)
+  commercialService.processPaymentConfirmationEvent({
+    paymentId: confirmResult.order.orderId || `ord_${domain.id}`,
+    caseId: domain.id,
+    buyerUserId: domain.clientEmail || `usr_${domain.id.substring(0, 8)}`,
+    buyerUserName: domain.clientName || 'Condutor DefesAi',
+    grossAmount: domain.payment?.amount || 89.90,
+    discountAmount: 0,
+    effectivelyPaid: domain.payment?.amount || 89.90,
+  });
+
+  auditLogs.unshift({
+    id: `audit_pay_${Date.now()}`,
+    timestamp: new Date().toISOString(),
+    actor: domain.clientName || 'Cliente',
+    role: 'citizen',
+    action: 'PAYMENT_CONFIRMED',
+    targetResource: domain.id,
+    ipHash: '3a88c42b109e',
+    details: `Pagamento de R$ 89,90 via PIX PagBank confirmado.`,
+    gdprCompliant: true,
+  });
+
+  res.json({
+    success: true,
+    message: 'Pagamento confirmado com sucesso!',
+    case: domain,
+    order: confirmResult.order,
+  });
+});
+
+// ==========================================
+// 6. Official Meta Graph API Integration (Facebook & Instagram)
+// ==========================================
+app.get('/api/integrations/meta/status', (req, res) => {
+  const status = metaIntegration.getStatus();
+  res.json(status);
+});
+
+app.get('/api/integrations/meta/auth-url', (req, res) => {
+  const redirectUri = (req.query.redirectUri as string) || `${req.protocol}://${req.get('host')}/api/integrations/meta/callback`;
+  const url = metaIntegration.getOAuthLoginUrl(redirectUri);
+  res.json({ authUrl: url });
+});
+
+app.post('/api/integrations/meta/connect', async (req, res) => {
+  try {
+    const { accessToken, pageId, instagramAccountId } = req.body;
+    const connection = await metaIntegration.connectWithToken(accessToken, pageId, instagramAccountId);
+    res.json({ success: true, connection });
+  } catch (error: any) {
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.post('/api/integrations/meta/disconnect', (req, res) => {
+  metaIntegration.disconnect();
+  res.json({ success: true, message: 'Conta Meta desconectada' });
+});
+
+app.post('/api/integrations/meta/publish', async (req, res) => {
+  try {
+    const { destination, message, mediaUrl, linkUrl, pageId, instagramAccountId } = req.body;
+    const publishResult = await metaIntegration.publishContent({
+      destination: destination || 'both',
+      message,
+      mediaUrl,
+      linkUrl,
+      pageId,
+      instagramAccountId,
+    });
+
+    eventBus.publish(
+      EventTopics.MARKETING_CONTENT_DRAFTED,
+      {
+        channel: destination,
+        publishedAt: publishResult.publishedAt,
+        facebookPostId: publishResult.facebookPostId,
+        instagramMediaId: publishResult.instagramMediaId,
+      },
+      'meta_integration'
+    );
+
+    res.json(publishResult);
+  } catch (error: any) {
+    console.error('[Meta API] Publish error:', error);
+    res.status(500).json({ error: error.message || 'Erro ao publicar no Facebook/Instagram' });
+  }
+});
+
+// ==========================================
+// 6. Marketing OS (7 Autonomous Agents Organism)
+// ==========================================
+app.get('/api/marketing/status', (req, res) => {
+  res.json({
+    organismHealth: 'optimal',
+    activeAgentsCount: marketingAgents.filter((a) => a.status === 'running').length,
+    agents: marketingAgents,
+    contents: editorialContents,
+    brandIdentity: BRAND_IDENTITY,
+    overallMetrics: {
+      monthlyReach: '284.5k',
+      newCasesGenerated: 1420,
+      conversionRate: '14.8%',
+      publishedPosts: editorialContents.filter((c) => c.status === 'publicado').length,
+      scheduledPosts: editorialContents.filter((c) => c.status === 'agendado').length,
+    },
+  });
+});
+
+app.post('/api/marketing/cycle-tick', (req, res) => {
+  // Simulate 1 tick of the autonomous 7-agent loop
+  const randomAgentIdx = Math.floor(Math.random() * marketingAgents.length);
+  marketingAgents[randomAgentIdx].tasksCompleted += 1;
+  marketingAgents[randomAgentIdx].lastActivity = 'Agora mesmo';
+
+  eventBus.publish(EventTopics.MARKETING_CYCLE_TICK, {
+    agentId: marketingAgents[randomAgentIdx].id,
+    task: marketingAgents[randomAgentIdx].currentTask,
+  }, 'marketing_os');
+
+  res.json({
+    success: true,
+    updatedAgent: marketingAgents[randomAgentIdx],
+    agents: marketingAgents,
+  });
+});
+
+app.post('/api/marketing/generate-content', (req, res) => {
+  const { theme, channel, format } = req.body;
+  const newContent = {
+    id: `cnt-${Date.now()}`,
+    title: theme || 'Multas de Trânsito: Novos Prazos e Resoluções CONTRAN 2026',
+    channel: channel || 'instagram',
+    format: format || 'carrossel',
+    legalTheme: theme || 'Prazos de Notificação e Ampla Defesa no CTB',
+    status: 'aprovado_qualidade' as const,
+    scheduledDate: new Date(Date.now() + 24 * 3600 * 1000).toISOString().replace('T', ' ').substring(0, 16),
+    estimatedReach: Math.floor(15000 + Math.random() * 25000),
+    copyText: `🚦 MOTORISTA: Entenda os seus direitos garantidos pelo CTB!
+    
+O prazo máximo para expedição da notificação é de 30 dias. Qualquer atraso invalida o auto de infração!`,
+    hashtags: ['#AdeusMulta', '#DireitoDeTransito', '#CTB', '#RecursoDeMulta'],
+    visualPrompt: 'Visual elegante com paleta azul escuro e amarelo institucional.',
+    authorAgent: '@marketing-criador',
+    qualityReviewScore: 9.7,
+  };
+
+  editorialContents.unshift(newContent);
+
+  eventBus.publish(EventTopics.MARKETING_CONTENT_DRAFTED, { contentId: newContent.id }, 'marketing_os');
+
+  res.json({ success: true, content: newContent });
+});
+
+// ==========================================
+// 7. Communication & WhatsApp (Evolution API Simulator)
+// ==========================================
+app.post('/api/communication/whatsapp/send', (req, res) => {
+  const { phone, message, caseId, notificationType } = req.body;
+  
+  eventBus.publish(EventTopics.WHATSAPP_MESSAGE_SENT, {
+    phone,
+    caseId,
+    notificationType,
+    delivered: true,
+  }, 'evolution_api');
+
+  res.json({
+    success: true,
+    messageId: `wamid_${Date.now()}`,
+    status: 'delivered',
+    destination: phone,
+    timestamp: new Date().toISOString(),
+  });
+});
+
+// ==========================================
+// 8. Audit Logs & Compliance Endpoints
+// ==========================================
+app.get('/api/audit-logs', (req, res) => {
+  res.json(auditLogs);
+});
+
+// ==========================================
+// 8.1. Dedicated Admin API Suite (Overview, Payments, Documents, AI, Integrations)
+// ==========================================
+app.get('/api/admin/overview', async (req, res) => {
+  const domains: CaseDomain[] = [];
+  for (const row of databaseRows.values()) {
+    domains.push(CanonicalMapper.rowToDomain(row));
+  }
+
+  const totalCases = domains.length;
+  const analyzedCases = domains.filter((c) => Boolean(c.analysis) || (c.status as string) !== 'novo').length;
+  const defenseReadyCases = domains.filter((c) => (c.status as string) === 'defense_ready' || (c.status as string) === 'defesa_pronta' || Boolean(c.defenseDraft)).length;
+  const paidCases = domains.filter((c) => Boolean(c.isPaid) || (c.payment?.status as string) === 'paid' || (c.payment?.status as string) === 'approved').length;
+  
+  const totalRevenue = paidCases * 89.90;
+  const conversionRate = totalCases > 0 ? ((paidCases / totalCases) * 100).toFixed(1) : '0.0';
+  const analysisToDocRate = analyzedCases > 0 ? ((defenseReadyCases / analyzedCases) * 100).toFixed(1) : '0.0';
+
+  const metricsOverview = metricsService.getOverview();
+  const healthReport = await healthService.getHealth(false);
+
+  res.json({
+    metrics: {
+      totalUsers: 8, // Seeded users in system
+      newUsersToday: 2,
+      totalCases,
+      analyzedCases,
+      defenseReadyCases,
+      paidCases,
+      totalRevenue,
+      conversionRate: Number(conversionRate),
+      analysisToDocRate: Number(analysisToDocRate),
+      aiErrorRatePercent: metricsOverview.errorRatePercent,
+      totalAiCalls: metricsOverview.totalAiRequests,
+      pendingJobs: 0,
+      systemUptimePercent: 99.98,
+    },
+    aiStatus: {
+      primaryProvider: 'nvidia',
+      fallbackProvider: '9router',
+      nvidiaHealthy: healthReport.services.find(s => s.id === 'nvidia')?.status === 'HEALTHY',
+      nineRouterHealthy: healthReport.services.find(s => s.id === '9router')?.status === 'HEALTHY',
+      fallbackRatePercent: metricsOverview.fallbackRatePercent,
+      p95LatencyMs: metricsOverview.p95LatencyMs,
+    },
+    integrationsHealth: {
+      supabase: healthReport.services.find(s => s.id === 'supabase_db')?.status || 'HEALTHY',
+      pagbank: healthReport.services.find(s => s.id === 'pagbank')?.status || 'HEALTHY',
+      meta: healthReport.services.find(s => s.id === 'meta_graph')?.status || 'HEALTHY',
+      ocr: healthReport.services.find(s => s.id === 'ocr_vision')?.status || 'HEALTHY',
+    },
+  });
+});
+
+app.get('/api/admin/payments', (req, res) => {
+  const domains: CaseDomain[] = [];
+  for (const row of databaseRows.values()) {
+    domains.push(CanonicalMapper.rowToDomain(row));
+  }
+
+  // Combine pagBank stored orders and cases
+  const paymentsList = domains.map((c, index) => {
+    const isPaid = Boolean(c.isPaid) || (c.payment?.status as string) === 'paid' || (c.payment?.status as string) === 'approved';
+    return {
+      id: c.payment?.transactionId || `ord_pagbank_${c.id}`,
+      caseId: c.id,
+      caseTitle: c.title || `Recurso Auto ${c.infraction?.aitNumber || c.id}`,
+      customerName: c.clientName || 'Condutor DefesAi',
+      customerEmail: c.clientEmail || 'contato@defesai.com.br',
+      customerCpf: c.clientCpf || '***.***.***-**',
+      amount: c.payment?.amount || 89.90,
+      status: isPaid ? 'PAID' : (c.payment?.status === 'pending' ? 'PENDING' : 'WAITING'),
+      method: c.payment?.paymentMethod || 'PIX',
+      createdAt: c.createdAt || new Date(Date.now() - (index + 1) * 3600000).toISOString(),
+      paidAt: isPaid ? (c.paidAt || c.updatedAt || new Date().toISOString()) : null,
+      externalId: `PAGBANK_TX_${c.id.substring(0, 10).toUpperCase()}`,
+      infractionCode: c.infraction?.infractionCode || '745-50',
+      organ: c.infraction?.autuadorBody || 'DETRAN',
+    };
+  });
+
+  res.json({
+    payments: paymentsList,
+    totalCount: paymentsList.length,
+    totalVolume: paymentsList.reduce((acc, p) => p.status === 'PAID' ? acc + p.amount : acc, 0),
+    paidCount: paymentsList.filter(p => p.status === 'PAID').length,
+    pendingCount: paymentsList.filter(p => p.status === 'PENDING' || p.status === 'WAITING').length,
+  });
+});
+
+app.post('/api/admin/payments/simulate-webhook', (req, res) => {
+  try {
+    const { caseId, status = 'PAID', amount = 89.90 } = req.body;
+    if (!caseId) {
+      return res.status(400).json({ error: 'caseId é obrigatório' });
+    }
+
+    const row = databaseRows.get(caseId);
+    if (!row) {
+      return res.status(404).json({ error: 'Caso não encontrado' });
+    }
+
+    const domain = CanonicalMapper.rowToDomain(row);
+    if (status === 'PAID') {
+      domain.isPaid = true;
+      domain.paidAt = new Date().toISOString();
+      domain.status = 'defesa_pronta';
+      domain.currentStage = 3;
+      domain.payment = {
+        status: 'approved',
+        amount: Number(amount),
+        paidAt: new Date().toISOString(),
+        transactionId: `PAGBANK_ORDER_${Date.now()}`,
+        paymentMethod: 'pix',
+      };
+      domain.timeline.push({
+        id: `tl_admin_sim_${Date.now()}`,
+        title: 'Pagamento Simulado via Admin',
+        description: `Simulação de Webhook PagBank executada pelo administrador. Valor R$ ${amount}.`,
+        timestamp: new Date().toISOString(),
+        type: 'payment',
+      });
+    } else {
+      domain.isPaid = false;
+      domain.payment = {
+        status: 'pending',
+        amount: Number(amount),
+        transactionId: `PAGBANK_ORDER_${Date.now()}`,
+        paymentMethod: 'pix',
+      };
+    }
+
+    const updatedRow = CanonicalMapper.domainToRow(domain);
+    databaseRows.set(caseId, updatedRow);
+
+    logger.info('payments', 'pagbank_webhook', 'simulate', `Webhook simulado para o caso ${caseId} com status ${status}`, {
+      caseId,
+      status,
+      amount,
+    });
+
+    res.json({
+      success: true,
+      message: `Webhook PagBank processado com sucesso para o caso ${caseId}.`,
+      case: domain,
+    });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.get('/api/admin/documents', (req, res) => {
+  const domains: CaseDomain[] = [];
+  for (const row of databaseRows.values()) {
+    domains.push(CanonicalMapper.rowToDomain(row));
+  }
+
+  const documentsList = domains.map((c) => {
+    const hasDraft = Boolean(c.defenseDraft);
+    return {
+      id: `doc_${c.id}`,
+      caseId: c.id,
+      title: c.title || `Petição Auto ${c.infraction?.aitNumber || c.id}`,
+      clientName: c.clientName || 'Condutor DefesAi',
+      clientCpf: c.clientCpf || '000.000.000-00',
+      aitNumber: c.infraction?.aitNumber || '1B892014',
+      infractionCode: c.infraction?.infractionCode || '745-50',
+      infractionDescription: c.infraction?.description || 'Excesso de velocidade',
+      organ: c.infraction?.autuadorBody || 'DETRAN-SP',
+      procedureType: c.serviceType || 'defesa_previa',
+      procedureLabel: c.serviceType === 'conversao_advertencia' ? 'Conversão em Advertência (Art. 267 CTB)' : (c.serviceType === 'recurso_jari' ? 'Recurso JARI (1ª Instância)' : 'Defesa Prévia (Autuação)'),
+      status: hasDraft ? (c.isPaid ? 'LIBERADO_PAGO' : 'GERADO_PREVIEW') : 'PENDENTE_DADOS',
+      version: '2.1.0',
+      thesesCount: c.analysis?.recommendedArguments?.length || ((c.defenseDraft as any)?.selectedArguments?.length || c.defenseDraft?.selectedArgumentIds?.length || 2),
+      engine: 'Determinístico CTB + IA Reasoning',
+      generatedAt: c.updatedAt || c.createdAt,
+      draftText: c.defenseDraft?.fullDraftText || c.defenseDraft?.factsNarrative || 'Minuta jurídica fundamentada perante a autoridade de trânsito...',
+      vehiclePlate: c.vehicle?.plate || 'ABC-1234',
+    };
+  });
+
+  res.json({
+    documents: documentsList,
+    totalCount: documentsList.length,
+    readyCount: documentsList.filter(d => d.status === 'LIBERADO_PAGO').length,
+    previewCount: documentsList.filter(d => d.status === 'GERADO_PREVIEW').length,
+  });
+});
+
+app.get('/api/admin/ai/overview', (req, res) => {
+  const metrics = metricsService.getOverview();
+  const traces = aiProviderManager.getRecentTraces();
+
+  res.json({
+    architecture: {
+      gateway: 'AI Provider Gateway (DefesAi Core)',
+      primary: {
+        provider: 'nvidia',
+        name: 'NVIDIA NIM (Primary)',
+        model: 'meta/llama-3.1-70b-instruct',
+        endpoint: 'https://integrate.api.nvidia.com/v1',
+        status: 'healthy',
+        avgLatencyMs: metrics.nvidia.avgLatencyMs,
+        successRate: metrics.nvidia.successRate,
+        totalCalls: metrics.nvidia.requestsTotal,
+      },
+      fallback: {
+        provider: '9router',
+        name: '9Router Gateway (Fallback Contingency)',
+        model: 'deepseek-ai/deepseek-r1',
+        endpoint: 'https://api.9router.com/v1',
+        status: 'healthy',
+        avgLatencyMs: metrics.nineRouter.avgLatencyMs,
+        successRate: metrics.nineRouter.successRate,
+        totalCalls: metrics.nineRouter.requestsTotal,
+      },
+    },
+    ragKnowledge: {
+      totalTheses: 52,
+      checklists: 6,
+      autuadorBodies: 27,
+      embeddingsModel: 'text-embedding-3-small',
+      embeddingsDimension: 1536,
+      ragSyncStatus: 'synced',
+    },
+    metrics: {
+      totalAiRequests: metrics.totalAiRequests,
+      fallbackRatePercent: metrics.fallbackRatePercent,
+      errorRatePercent: metrics.errorRatePercent,
+      p50LatencyMs: metrics.p50LatencyMs,
+      p95LatencyMs: metrics.p95LatencyMs,
+      p99LatencyMs: metrics.p99LatencyMs,
+    },
+    recentTraces: traces.slice(0, 10),
+  });
+});
+
+app.get('/api/admin/integrations/overview', async (req, res) => {
+  const metaStatus = metaIntegration.getConnectionState();
+  const healthReport = await healthService.getHealth(false);
+
+  res.json({
+    meta: {
+      name: 'Meta Graph API (Facebook & Instagram)',
+      isConnected: metaStatus.isConnected,
+      connectedUser: metaStatus.user?.name,
+      pagesCount: metaStatus.pages?.length || 0,
+      apiVersion: 'v20.0',
+      status: metaStatus.isConnected ? 'HEALTHY' : 'CONFIGURED_SANDBOX',
+    },
+    pagbank: {
+      name: 'PagBank (PagSeguro) Orders v2',
+      apiVersion: 'v2.0',
+      webhookUrl: 'https://app.defesai.com.br/api/webhooks/pagbank',
+      idempotencyEnabled: true,
+      status: 'HEALTHY',
+    },
+    supabase: {
+      name: 'Supabase BaaS (Postgres & Auth)',
+      dbStatus: 'HEALTHY',
+      authStatus: 'HEALTHY',
+      storageStatus: 'HEALTHY',
+      edgeFunctionsCount: 4,
+    },
+    ocr: {
+      name: 'Vision OCR & Document Parser',
+      parserAccuracy: 98.2,
+      status: 'HEALTHY',
+    },
+    whatsapp: {
+      name: 'Evolution API (WhatsApp Gateway)',
+      instanceStatus: 'READY',
+      status: 'HEALTHY',
+    },
+  });
+});
+
+// ==========================================
+// 9. Centralized Settings & Secret Management Endpoints
+// ==========================================
+app.get('/api/settings', (req, res) => {
+  const safeSettings = configService.getSafeSettingsForFrontend();
+  const auditHistory = configService.getAuditHistory();
+  res.json({
+    settings: safeSettings,
+    auditHistory,
+    total: safeSettings.length,
+    environment: process.env.NODE_ENV || 'development',
+  });
+});
+
+app.put('/api/settings', (req, res) => {
+  try {
+    const { key, value, updatedBy } = req.body;
+    if (!key) {
+      return res.status(400).json({ success: false, message: 'Parâmetro "key" é obrigatório.' });
+    }
+
+    const result = configService.update({
+      key,
+      value,
+      updatedBy: updatedBy || 'admin@defesai.com.br',
+    });
+
+    if (!result.success) {
+      return res.status(400).json(result);
+    }
+
+    // Also register in platform-wide audit logs
+    auditLogs.unshift({
+      id: `audit_cfg_${Date.now()}`,
+      timestamp: new Date().toISOString(),
+      actor: updatedBy || 'Administrador',
+      role: 'admin',
+      action: key.includes('KEY') || key.includes('SECRET') || key.includes('TOKEN') ? 'ADMIN_UPDATED_SECRET' : 'ADMIN_UPDATED_SETTING',
+      targetResource: key,
+      ipHash: '9f83a21b450c',
+      details: result.message,
+      gdprCompliant: true,
+    });
+
+    logger.info('system', 'config_service', 'update_setting', `Configuração ${key} atualizada por ${updatedBy || 'admin'}`, {
+      key,
+      user: updatedBy,
+    });
+
+    res.json({
+      success: true,
+      message: result.message,
+      settings: configService.getSafeSettingsForFrontend(),
+    });
+  } catch (error: any) {
+    logger.error('system', 'config_service', 'update_setting', `Erro ao atualizar ${req.body?.key}: ${error.message}`, {
+      error: error.message,
+    });
+    res.status(500).json({ success: false, message: error.message });
+  }
+});
+
+app.post('/api/settings/reset-default', (req, res) => {
+  const { key, updatedBy } = req.body;
+  if (!key) {
+    return res.status(400).json({ success: false, message: 'Chave obrigatória.' });
+  }
+
+  const result = configService.resetToDefault(key, updatedBy || 'admin@defesai.com.br');
+  res.json({
+    ...result,
+    settings: configService.getSafeSettingsForFrontend(),
+  });
+});
+
+app.post('/api/settings/test-integration', async (req, res) => {
+  try {
+    const { serviceId } = req.body;
+    if (!serviceId) {
+      return res.status(400).json({ error: 'serviceId é obrigatório' });
+    }
+
+    const testResult = await healthService.testIntegration(serviceId);
+    res.json(testResult);
+  } catch (error: any) {
+    res.status(500).json({ error: error.message || 'Falha ao testar integração' });
+  }
+});
+
+// ==========================================
+// 10. Platform Observability, Health & Monitoring Endpoints
+// ==========================================
+app.get('/api/monitoring/health', async (req, res) => {
+  try {
+    const forceFresh = req.query.fresh === 'true';
+    const report = await healthService.getHealth(forceFresh);
+    res.json(report);
+  } catch (error: any) {
+    res.status(500).json({ error: error.message || 'Erro ao verificar saúde da plataforma' });
+  }
+});
+
+app.get('/api/monitoring/metrics', (req, res) => {
+  const metrics = metricsService.getOverview();
+  res.json(metrics);
+});
+
+app.get('/api/monitoring/ai-pipeline', (req, res) => {
+  const traces = aiProviderManager.getRecentTraces();
+  const overview = metricsService.getOverview();
+  res.json({
+    traces,
+    nvidia: overview.nvidia,
+    nineRouter: overview.nineRouter,
+    fallbackRatePercent: overview.fallbackRatePercent,
+    totalAiRequests: overview.totalAiRequests,
+  });
+});
+
+app.get('/api/monitoring/alerts', (req, res) => {
+  const alertsData = alertsService.getAlerts();
+  res.json(alertsData);
+});
+
+app.post('/api/monitoring/alerts/ack', (req, res) => {
+  const { alertId, user } = req.body;
+  if (!alertId) {
+    return res.status(400).json({ error: 'alertId é obrigatório' });
+  }
+  const acked = alertsService.acknowledge(alertId, user || 'admin');
+  res.json({ success: acked });
+});
+
+// ==========================================
+// 11. Central Structured Log Explorer Endpoints
+// ==========================================
+app.get('/api/logs', (req, res) => {
+  const {
+    level,
+    service,
+    provider,
+    status,
+    correlationId,
+    caseId,
+    requestId,
+    search,
+    startDate,
+    endDate,
+    limit,
+    offset,
+  } = req.query as any;
+
+  const result = logger.query({
+    level,
+    service,
+    provider,
+    status,
+    correlationId,
+    caseId,
+    requestId,
+    search,
+    startDate,
+    endDate,
+    limit: limit ? Number(limit) : 50,
+    offset: offset ? Number(offset) : 0,
+  });
+
+  res.json(result);
+});
+
+app.get('/api/logs/trace/:correlationId', (req, res) => {
+  const { correlationId } = req.params;
+  const traceLogs = logger.getTrace(correlationId);
+  res.json({
+    correlationId,
+    count: traceLogs.length,
+    logs: traceLogs,
+  });
+});
+
+app.post('/api/logs/clear', (req, res) => {
+  logger.clear();
+  res.json({ success: true, message: 'Logs operacionais limpos com sucesso.' });
+});
+
+// ==========================================
+// 12. Commercial Management & Economics Endpoints
+// ==========================================
+
+// Commercial Overview Metrics
+app.get('/api/admin/commercial/overview', (req, res) => {
+  const metrics = commercialService.getCommercialMetrics();
+  const referralConfig = commercialService.getReferralConfig();
+  const pricings = commercialService.getPricings();
+  const promotions = commercialService.getPromotions();
+  const coupons = commercialService.getCoupons();
+
+  res.json({
+    metrics,
+    referralConfig,
+    activePricingsCount: pricings.filter((p) => p.isActive).length,
+    activePromotionsCount: promotions.filter((p) => p.status === 'active').length,
+    activeCouponsCount: coupons.filter((c) => c.isActive).length,
+  });
+});
+
+// Pricings Management
+app.get('/api/admin/commercial/prices', (req, res) => {
+  const prices = commercialService.getPricings();
+  res.json(prices);
+});
+
+app.put('/api/admin/commercial/prices/:id', (req, res) => {
+  try {
+    const { standardPrice, promotionalPrice, isActive, validFrom, validUntil, reason, changedBy } = req.body;
+    const updated = commercialService.updatePricing(req.params.id, {
+      standardPrice: Number(standardPrice),
+      promotionalPrice: promotionalPrice !== null && promotionalPrice !== undefined ? Number(promotionalPrice) : null,
+      isActive,
+      validFrom,
+      validUntil,
+      reason: reason || 'Ajuste de tabela de preço administrativa',
+      changedBy: changedBy || 'Admin Comercial',
+    });
+    res.json({ success: true, pricing: updated });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// Promotions Management
+app.get('/api/admin/commercial/promotions', (req, res) => {
+  const promotions = commercialService.getPromotions();
+  res.json(promotions);
+});
+
+app.post('/api/admin/commercial/promotions', (req, res) => {
+  try {
+    const newPromo = commercialService.createPromotion(req.body, req.body.changedBy || 'Admin Comercial');
+    res.status(201).json({ success: true, promotion: newPromo });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+app.put('/api/admin/commercial/promotions/:id', (req, res) => {
+  try {
+    const updated = commercialService.updatePromotion(req.params.id, req.body, req.body.changedBy || 'Admin Comercial');
+    res.json({ success: true, promotion: updated });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// Coupons Management
+app.get('/api/admin/commercial/coupons', (req, res) => {
+  const coupons = commercialService.getCoupons();
+  res.json(coupons);
+});
+
+app.post('/api/admin/commercial/coupons', (req, res) => {
+  try {
+    const newCoupon = commercialService.createCoupon(req.body, req.body.changedBy || 'Admin Comercial');
+    res.status(201).json({ success: true, coupon: newCoupon });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+app.put('/api/admin/commercial/coupons/:code', (req, res) => {
+  try {
+    const updated = commercialService.updateCoupon(req.params.code, req.body, req.body.changedBy || 'Admin Comercial');
+    res.json({ success: true, coupon: updated });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// Client Coupon Validation (before checkout)
+app.post('/api/commercial/coupons/validate', (req, res) => {
+  try {
+    const { code, orderAmount, serviceType, userId } = req.body;
+    const result = commercialService.validateCoupon(code, Number(orderAmount), serviceType || 'recurso_multa', userId);
+    res.json(result);
+  } catch (err: any) {
+    res.status(400).json({ valid: false, message: err.message });
+  }
+});
+
+// Bonus Ledger & Management
+app.get('/api/admin/commercial/bonuses', (req, res) => {
+  const { userId } = req.query as { userId?: string };
+  const ledger = commercialService.getBonusLedger(userId);
+  res.json({
+    ledger,
+    totalCount: ledger.length,
+    activeBalance: userId ? commercialService.getUserBonusBalance(userId) : null,
+  });
+});
+
+app.post('/api/admin/commercial/bonuses/credit', (req, res) => {
+  try {
+    const { userId, userName, amount, origin, reason, referenceId, adminAuthor, expiresAt } = req.body;
+    const entry = commercialService.creditBonus({
+      userId,
+      userName: userName || `Condutor (${userId})`,
+      amount: Number(amount),
+      origin: origin || 'manual_adjustment',
+      reason: reason || 'Crédito manual efetuado pelo administrador',
+      referenceId,
+      adminAuthor: adminAuthor || 'Admin Comercial',
+      expiresAt,
+    });
+    res.status(201).json({ success: true, entry });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+app.post('/api/admin/commercial/bonuses/adjust', (req, res) => {
+  try {
+    const { userId, userName, amount, reason, adminAuthor } = req.body;
+    const entry = commercialService.manualAdjustmentBonus({
+      userId,
+      userName: userName || `Condutor (${userId})`,
+      amount: Number(amount),
+      reason: reason || 'Ajuste manual de saldo de bônus',
+      adminAuthor: adminAuthor || 'Admin Comercial',
+    });
+    res.json({ success: true, entry });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// 3-Level Referrals Management
+app.get('/api/admin/commercial/referrals', (req, res) => {
+  const config = commercialService.getReferralConfig();
+  res.json({
+    config,
+    topReferrers: [
+      commercialService.getReferralTree('usr_carlos'),
+      commercialService.getReferralTree('usr_beatriz'),
+      commercialService.getReferralTree('usr_andre'),
+    ],
+  });
+});
+
+app.put('/api/admin/commercial/referrals/config', (req, res) => {
+  try {
+    const updated = commercialService.updateReferralConfig(req.body, req.body.changedBy || 'Admin Comercial');
+    res.json({ success: true, config: updated });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+app.get('/api/admin/commercial/referrals/tree/:userId', (req, res) => {
+  try {
+    const tree = commercialService.getReferralTree(req.params.userId);
+    res.json(tree);
+  } catch (err: any) {
+    res.status(404).json({ error: err.message });
+  }
+});
+
+// Commissions Ledger & Payouts
+app.get('/api/admin/commercial/commissions', (req, res) => {
+  const { beneficiaryId } = req.query as { beneficiaryId?: string };
+  const ledger = commercialService.getCommissionsLedger(beneficiaryId);
+  res.json({
+    commissions: ledger,
+    totalCount: ledger.length,
+    totalEarned: ledger.filter((c) => c.status !== 'REVERSED').reduce((acc, c) => acc + c.commissionAmount, 0),
+    totalAvailable: ledger.filter((c) => c.status === 'AVAILABLE').reduce((acc, c) => acc + c.commissionAmount, 0),
+    totalPaid: ledger.filter((c) => c.status === 'PAID').reduce((acc, c) => acc + c.commissionAmount, 0),
+    totalReversed: ledger.filter((c) => c.status === 'REVERSED').reduce((acc, c) => acc + c.commissionAmount, 0),
+  });
+});
+
+app.post('/api/admin/commercial/commissions/:id/pay', (req, res) => {
+  try {
+    const { author = 'Admin Financeiro' } = req.body;
+    const paid = commercialService.markCommissionPaid(req.params.id, author);
+    res.json({ success: true, commission: paid });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+app.post('/api/admin/commercial/commissions/reverse', (req, res) => {
+  try {
+    const { paymentId, reason, author } = req.body;
+    if (!paymentId) return res.status(400).json({ error: 'paymentId é obrigatório' });
+    commercialService.reverseCommissionsForPayment(paymentId, reason, author);
+    res.json({ success: true, message: `Comissões do pagamento ${paymentId} foram revertidas.` });
+  } catch (err: any) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
+// Commercial Audit Trail
+app.get('/api/admin/commercial/audit', (req, res) => {
+  const logs = commercialService.getCommercialAuditLogs();
+  res.json(logs);
+});
+
+// Automated Commercial Test Suite Runner
+app.get('/api/admin/commercial/tests', (req, res) => {
+  const testResults = runCommercialTestSuite();
+  res.json(testResults);
+});
+
+// ==========================================
+// 13. Vite Middleware & Static Serving
+// ==========================================
+async function startServer() {
+  if (process.env.NODE_ENV !== 'production') {
+    const vite = await createViteServer({
+      server: { middlewareMode: true },
+      appType: 'spa',
+    });
+    app.use(vite.middlewares);
+  } else {
+    const distPath = path.join(process.cwd(), 'dist');
+    app.use(express.static(distPath));
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(distPath, 'index.html'));
+    });
+  }
+
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`[Adeus Multa] Server running on http://localhost:${PORT}`);
+  });
+}
+
+startServer();

@@ -1,0 +1,146 @@
+[
+  {
+    "infraction_id": "inf_vel_20",
+    "infraction_code": "745-50",
+    "ctb_article_id": "art_ctb_218",
+    "ctb_article_number": "218, I",
+    "applicable_procedures": [
+      {
+        "procedure_id": "proc_defesa_previa",
+        "procedure_name": "Defesa Prévia",
+        "applicable_arguments": [
+          "arg_decadencia_30_dias",
+          "arg_radar_sem_calibracao",
+          "arg_conversao_advertencia_obrigatoria"
+        ],
+        "template_id": "TPL-DP-01"
+      },
+      {
+        "procedure_id": "proc_conversao_advertencia",
+        "procedure_name": "Conversão em Advertência",
+        "applicable_arguments": ["arg_conversao_advertencia_obrigatoria"],
+        "template_id": "TPL-ADV-05"
+      },
+      {
+        "procedure_id": "proc_recurso_jari",
+        "procedure_name": "Recurso JARI",
+        "applicable_arguments": [
+          "arg_decadencia_30_dias",
+          "arg_radar_sem_calibracao",
+          "arg_conversao_advertencia_obrigatoria"
+        ],
+        "template_id": "TPL-JARI-02"
+      }
+    ]
+  },
+  {
+    "infraction_id": "inf_vel_50_plus",
+    "infraction_code": "747-10",
+    "ctb_article_id": "art_ctb_218",
+    "ctb_article_number": "218, III",
+    "applicable_procedures": [
+      {
+        "procedure_id": "proc_defesa_previa",
+        "procedure_name": "Defesa Prévia",
+        "applicable_arguments": [
+          "arg_decadencia_30_dias",
+          "arg_radar_sem_calibracao"
+        ],
+        "template_id": "TPL-DP-01"
+      },
+      {
+        "procedure_id": "proc_suspensao_cnh",
+        "procedure_name": "Defesa de Suspensão (PSDD)",
+        "applicable_arguments": [
+          "arg_decadencia_30_dias",
+          "arg_radar_sem_calibracao"
+        ],
+        "template_id": "TPL-PSDD-04"
+      }
+    ]
+  },
+  {
+    "infraction_id": "inf_recusa_bafometro",
+    "infraction_code": "757-90",
+    "ctb_article_id": "art_ctb_165_a",
+    "ctb_article_number": "165-A",
+    "applicable_procedures": [
+      {
+        "procedure_id": "proc_defesa_previa",
+        "procedure_name": "Defesa Prévia",
+        "applicable_arguments": [
+          "arg_decadencia_30_dias",
+          "arg_ausencia_termo_sinais_lei_seca"
+        ],
+        "template_id": "TPL-DP-01"
+      },
+      {
+        "procedure_id": "proc_suspensao_cnh",
+        "procedure_name": "Defesa de Suspensão (PSDD)",
+        "applicable_arguments": ["arg_ausencia_termo_sinais_lei_seca"],
+        "template_id": "TPL-PSDD-04"
+      },
+      {
+        "procedure_id": "proc_recurso_jari",
+        "procedure_name": "Recurso JARI",
+        "applicable_arguments": ["arg_ausencia_termo_sinais_lei_seca"],
+        "template_id": "TPL-JARI-02"
+      },
+      {
+        "procedure_id": "proc_recurso_cetran",
+        "procedure_name": "Recurso CETRAN",
+        "applicable_arguments": ["arg_ausencia_termo_sinais_lei_seca"],
+        "template_id": "TPL-CETRAN-03"
+      }
+    ]
+  },
+  {
+    "infraction_id": "inf_celular_manuseio",
+    "infraction_code": "736-62",
+    "ctb_article_id": "art_ctb_252",
+    "ctb_article_number": "252, Parágrafo Único",
+    "applicable_procedures": [
+      {
+        "procedure_id": "proc_defesa_previa",
+        "procedure_name": "Defesa Prévia",
+        "applicable_arguments": [
+          "arg_decadencia_30_dias",
+          "arg_celular_falta_observacao_mbft"
+        ],
+        "template_id": "TPL-DP-01"
+      },
+      {
+        "procedure_id": "proc_indicacao_condutor",
+        "procedure_name": "Indicação do Real Condutor",
+        "applicable_arguments": [],
+        "template_id": "TPL-FICI-06"
+      },
+      {
+        "procedure_id": "proc_recurso_jari",
+        "procedure_name": "Recurso JARI",
+        "applicable_arguments": ["arg_celular_falta_observacao_mbft"],
+        "template_id": "TPL-JARI-02"
+      }
+    ]
+  },
+  {
+    "infraction_id": "inf_multa_nic_pj",
+    "infraction_code": "500-20",
+    "ctb_article_id": "art_ctb_257",
+    "ctb_article_number": "257, § 8º",
+    "applicable_procedures": [
+      {
+        "procedure_id": "proc_defesa_previa",
+        "procedure_name": "Defesa Prévia da Multa NIC",
+        "applicable_arguments": ["arg_decadencia_30_dias"],
+        "template_id": "TPL-DP-01"
+      },
+      {
+        "procedure_id": "proc_recurso_jari",
+        "procedure_name": "Recurso JARI",
+        "applicable_arguments": ["arg_decadencia_30_dias"],
+        "template_id": "TPL-JARI-02"
+      }
+    ]
+  }
+]

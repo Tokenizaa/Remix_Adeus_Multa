@@ -1,0 +1,83 @@
+[
+  {
+    "resolution_number": "798/2020",
+    "year": 2020,
+    "theme": "Medidores de Velocidade (Radares)",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao7982020.pdf",
+    "summary": "Dispõe sobre os requisitos técnicos mínimos para a fiscalização da velocidade de veículos automotores, reboques e semirreboques.",
+    "key_requirements": [
+      "Verificação metrológica obrigatória anual pelo INMETRO/IPEM",
+      "Estudo técnico prévio e atualizado publicado no site do órgão",
+      "Visibilidade ostensiva dos equipamentos",
+      "Sinalização de regulamentação R-19 visível e sem obstrução vegetal",
+      "Tabela de velocidade medida x velocidade considerada (erro máximo admissível)"
+    ],
+    "status": "vigente"
+  },
+  {
+    "resolution_number": "985/2022",
+    "year": 2022,
+    "theme": "Manual Brasileiro de Fiscalização de Trânsito (MBFT)",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9852022.pdf",
+    "summary": "Aprova o Manual Brasileiro de Fiscalização de Trânsito (MBFT) que estabelece os procedimentos e campos obrigatórios de autuação para todos os órgãos do SNT.",
+    "key_requirements": [
+      "Tipificação exata pelo código de enquadramento da SENATRAN",
+      "Obrigatoriedade de preenchimento do campo de observações para infrações sem abordagem",
+      "Definição de competência privativa e concorrente entre órgãos municipais, estaduais e federais",
+      "Definição de infração continuada x infrações concomitantes"
+    ],
+    "status": "vigente"
+  },
+  {
+    "resolution_number": "432/2013",
+    "year": 2013,
+    "theme": "Fiscalização de Álcool e Substâncias Psicoativas (Lei Seca)",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/resolucao4322013.pdf",
+    "summary": "Dispõe sobre os procedimentos a serem adotados pelas autoridades de trânsito e seus agentes na fiscalização do consumo de álcool ou de outra substância psicoativa.",
+    "key_requirements": [
+      "Verificação anual do etilômetro pelo INMETRO",
+      "Preenchimento obrigatório do Termo de Constatação de Sinais de Alteração da Capacidade Psicomotora (Anexo II) quando não houver teste",
+      "Necessidade de constatação de conjunto de sinais (não apenas odor isolado)",
+      "Margem de tolerância metrológica de 0,04 mg/L para etilômetro"
+    ],
+    "status": "vigente"
+  },
+  {
+    "resolution_number": "918/2022",
+    "year": 2022,
+    "theme": "Procedimento de Notificação e Aplicação de Penalidades",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9182022.pdf",
+    "summary": "Consolida as normas sobre procedimentos para a aplicação das multas por infrações, arrecadação e o repasse dos valores.",
+    "key_requirements": [
+      "Dupla notificação obrigatória: Notificação de Autuação (NA) e Notificação de Penalidade (NP)",
+      "Prazo mínimo de 30 dias para apresentação de Defesa Prévia e Indicação de Condutor",
+      "Prazo decadencial de 30 dias para expedição da Notificação de Autuação (Art. 281 CTB)"
+    ],
+    "status": "vigente"
+  },
+  {
+    "resolution_number": "900/2022",
+    "year": 2022,
+    "theme": "Padronização de Recursos Administrativos e Defesa Prévia",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9002022.pdf",
+    "summary": "Padroniza os procedimentos administrativos para apresentação de Defesa da Autuação e Recursos Administrativos em 1ª e 2ª instâncias.",
+    "key_requirements": [
+      "Requisitos de admissibilidade recursal (tempestividade, legitimidade e representação)",
+      "Veda a exigência de recolhimento prévio do valor da multa para recorrer",
+      "Obrigatoriedade de motivação explícita no julgamento colegiado da JARI/CETRAN"
+    ],
+    "status": "vigente"
+  },
+  {
+    "resolution_number": "973/2022",
+    "year": 2022,
+    "theme": "Sinalização Viária e Sinalização Semafórica",
+    "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9732022.pdf",
+    "summary": "Aprova o Volume I do Manual Brasileiro de Sinalização de Trânsito (Sinalização Vertical de Regulamentação).",
+    "key_requirements": [
+      "Critérios de legibilidade, retrorrefletividade e posicionamento de placas R-1 a R-40",
+      "Obrigatoriedade de sinalização regular para validade de autuações de parada, estacionamento e conversões"
+    ],
+    "status": "vigente"
+  }
+]
