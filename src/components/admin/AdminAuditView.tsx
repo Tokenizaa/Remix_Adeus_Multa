@@ -313,10 +313,8 @@ export const AdminAuditView: React.FC = () => {
                             </button>
                           </div>
                         </td>
+                      </tr>
                     )))
-                      </tr>
-                      </tr>
-                </table>
                   </tbody>
               </div>
         </div>
