@@ -82,7 +82,7 @@ export class SearchService {
         query: cleanQuery.substring(0, 80),
         matchesCount: finalResults.length,
         durationMs,
-        provider: queryEmbResult.provider,
+        provider: queryEmbResult.provider === 'DETERMINISTIC_LOCAL' ? 'internal' : queryEmbResult.provider.toLowerCase() as 'nvidia' | '9router' | 'gemini',
       });
 
       return finalResults;

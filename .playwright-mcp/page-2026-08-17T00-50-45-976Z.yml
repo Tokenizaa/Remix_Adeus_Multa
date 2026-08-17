@@ -1,0 +1,132 @@
+- generic [ref=f24e1]:
+  - navigation "Acesso rápido":
+    - link "Ir para o Conteúdo 1" [ref=f24e2] [cursor=pointer]:
+      - /url: "#wrapper"
+      - generic [ref=f24e3]: Ir para o
+      - text: Conteúdo
+      - generic [ref=f24e4]: "1"
+    - link "Ir para a Página Inicial 2" [ref=f24e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f24e6]: Ir para a
+      - text: Página Inicial
+      - generic [ref=f24e7]: "2"
+    - link "Ir para o menu de Navegação 3" [ref=f24e8] [cursor=pointer]:
+      - /url: "#main-navigation"
+      - generic [ref=f24e9]: Ir para o menu de
+      - text: Navegação
+      - generic [ref=f24e10]: "3"
+    - link "Ir para a Busca 4" [ref=f24e11] [cursor=pointer]:
+      - /url: "#govbr-busca-input"
+      - generic [ref=f24e12]: Ir para a
+      - text: Busca
+      - generic [ref=f24e13]: "4"
+    - link "Ir para o Mapa do site 5" [ref=f24e14] [cursor=pointer]:
+      - /url: "#portal-footer"
+      - generic [ref=f24e15]: Ir para o
+      - text: Mapa do site
+      - generic [ref=f24e16]: "5"
+  - banner [ref=f24e17]:
+    - generic [ref=f24e20]:
+      - generic [ref=f24e23]:
+        - generic [ref=f24e25]:
+          - generic [ref=f24e26]:
+            - generic [ref=f24e27]: "Idioma atual:"
+            - text: PT
+          - button "Alterar idioma" [ref=f24e28] [cursor=pointer]:
+            - generic [ref=f24e29]: 
+        - button "Abrir preferências de cookies" [ref=f24e32] [cursor=pointer]:
+          - generic [ref=f24e33]: 
+        - button "Ativar ou desativar o modo de alto contraste" [ref=f24e37] [cursor=pointer]:
+          - generic [ref=f24e38]: 
+      - banner [ref=f24e41]:
+        - generic [ref=f24e43]:
+          - generic [ref=f24e44]:
+            - link [ref=f24e45] [cursor=pointer]:
+              - /url: https://www.gov.br/pt-br
+              - img "Logomarca gov.br" [ref=f24e46]
+            - link "Presidência da República" [ref=f24e48] [cursor=pointer]:
+              - /url: www.gov.br/planalto/
+          - generic [ref=f24e49]:
+            - generic [ref=f24e50]:
+              - text: 
+              - list [ref=f24e51]:
+                - listitem [ref=f24e52]:
+                  - button "Institucional" [ref=f24e53] [cursor=pointer]:
+                    - generic [ref=f24e55]: 
+                - listitem [ref=f24e56]:
+                  - link "Acessibilidade" [ref=f24e57] [cursor=pointer]:
+                    - /url: https://www.gov.br/governodigital/pt-br/acessibilidade-digital
+                - listitem [ref=f24e58]:
+                  - link "Participe" [ref=f24e59] [cursor=pointer]:
+                    - /url: https://www.gov.br/pt-br/participacao-social
+            - button "Abrir menu de seleção serviços" [ref=f24e64] [cursor=pointer]:
+              - generic [ref=f24e68]: Atalhos gov.br
+            - button "Entrar com gov.br" [ref=f24e72] [cursor=pointer]:
+              - generic [ref=f24e73]: 
+    - generic [ref=f24e76]:
+      - generic [ref=f24e77]:
+        - link "Abrir menu principal de navegação" [ref=f24e78] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f24e80]: 
+          - text: 
+        - link "Ministério dos Transportes" [ref=f24e82] [cursor=pointer]:
+          - /url: https://www.gov.br/transportes/pt-br
+      - text:        
+      - generic [ref=f24e83]:
+        - combobox [ref=f24e85]:
+          - search [ref=f24e86]:
+            - button "" [ref=f24e88] [cursor=pointer]
+            - searchbox "O que você procura?" [ref=f24e90]
+            - button "Pesquisar por voz" [ref=f24e91] [cursor=pointer]:
+              - generic [ref=f24e92]: 
+        - text:   
+    - text:                                          
+  - text: ">  >>>"
+  - generic [ref=f24e93]:
+    - main [ref=f24e95]:
+      - generic [ref=f24e96]:
+        - text: 
+        - generic [ref=f24e97]:
+          - generic [ref=f24e100]:
+            - heading "Desculpe, mas esta página não existe…" [level=1] [ref=f24e101]
+            - generic [ref=f24e102]:
+              - paragraph [ref=f24e103]: Pedimos desculpas pelo inconveniente, mas a página que você estava tentando acessar não existe neste endereço.
+              - paragraph [ref=f24e104]:
+                - text: Se você está certo que o endereço informado está correto mas está encontrando um erro, por favor contate a
+                - link "Administração do Site" [ref=f24e106] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/canais_atendimento/fale_conosco
+                - text: .
+              - paragraph [ref=f24e107]: Obrigado.
+          - link " Ir para a Página Principal" [ref=f24e108] [cursor=pointer]:
+            - /url: https://www.gov.br/transportes
+      - text:     
+    - text:       
+    - navigation "Voltar ao topo da página" [ref=f24e109]:
+      - link " Voltar ao topo da página" [ref=f24e110] [cursor=pointer]:
+        - /url: "#wrapper"
+        - generic [ref=f24e111]: 
+        - generic [ref=f24e112]: Voltar ao topo da página
+  - generic [ref=f24e116]:
+    - generic [ref=f24e117]:
+      - text:  
+      - generic [ref=f24e118]:
+        - generic [ref=f24e119]:
+          - text: Para melhorar a sua experiência na plataforma e prover serviços personalizados, utilizamos cookies.
+          - strong [ref=f24e120]: Ao aceitar, você terá acesso a todas as funcionalidades do site. Se clicar em "Rejeitar Cookies", os cookies que não forem estritamente necessários serão desativados.
+          - text: Para escolher quais quer autorizar, clique em "Gerenciar cookies". Saiba mais em nossa
+          - link "Declaração de Cookies" [ref=f24e121] [cursor=pointer]:
+            - /url: https://www.gov.br/pt-br/termos-de-uso
+          - text: .
+        - text: Desativado  Ativado  Desativado  Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  • • • • • • Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado 
+    - generic [ref=f24e122]:
+      - button "Gerenciar cookies" [ref=f24e123] [cursor=pointer]:  Gerenciar cookies
+      - button "Rejeitar cookies" [ref=f24e124] [cursor=pointer]
+      - button "Aceitar cookies" [ref=f24e125] [cursor=pointer]
+  - text:   
+  - generic [ref=f24e127] [cursor=pointer]:
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f24e128]
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f24e129]
+  - generic [ref=f24e130]:
+    - button "Falar com Mauá" [ref=f24e132] [cursor=pointer]:
+      - img "Mauá" [ref=f24e133]
+    - text: +

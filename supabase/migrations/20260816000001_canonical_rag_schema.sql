@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS public.knowledge_embeddings (
     provider TEXT NOT NULL, -- 'NVIDIA', '9ROUTER', 'GEMINI'
     model TEXT NOT NULL,    -- 'nvidia/nv-embedqa-e5-v5', 'snowflake/arctic-embed-l'
     dimensions INTEGER NOT NULL, -- 4096, 1024, 768
-    embedding vector(4096), -- Dimensão máxima padrão NVIDIA NV-EmbedQA E5 v5
+    embedding vector(1024), -- Compatível com HNSW (limite Supabase: 2000 dims); modelos atuais: nv-embedqa-e5-v5 (1024), snowflake/arctic-embed-l (1024)
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 

@@ -96,12 +96,12 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
     recommendedArguments: [
       {
         id: 'arg_1',
-        title: 'Decadência da Notificação de Autuação (Art. 281 CTB)',
+        title: 'Decadência da Notificação de Autuação (Art. 281-A CTB)',
         category: 'decadencia_notificacao',
-        ctbArticle: 'Art. 281, II do CTB',
+        ctbArticle: 'Art. 281-A do CTB (Lei 14.071/2020)',
         successProbability: 96,
         description: 'Expedição da Notificação de Autuação superior ao prazo legal de 30 dias contados da data do fato.',
-        legalFoundation: 'Súmula 312 do Superior Tribunal de Justiça (STJ) e Art. 281, Parágrafo Único, II do CTB.',
+        legalFoundation: 'Art. 281-A do CTB (incluído pela Lei 14.071/2020) e Súmula 312 do STJ.',
       },
       {
         id: 'arg_2',
@@ -213,8 +213,9 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
   const handlePaymentSuccess = (finalCase: CaseDomain) => {
     if (onCaseReadyForCheckout) {
       onCaseReadyForCheckout(finalCase);
+      return; // o callback (App.tsx) decide a rota (/checkout)
     }
-    navigate(`/cases/${finalCase.id}`);
+    navigate(`/cases/${finalCase.id}`); // fallback se usado sem callback
   };
 
   return (

@@ -35,7 +35,7 @@ export const EXPERT_RULES: RuleModel[] = [
             title: `Decadência da Notificação de Autuação (${diffDays} dias)`,
             description: `A notificação foi postada ${diffDays} dias após a data da infração, violando o prazo limite decadencial improrrogável de 30 dias.`,
             severity: 'alta',
-            legalArgumentId: 'ARG-003',
+            legalArgumentId: 'ARG-048',
             impact: 'Extinção definitiva da pretensão punitiva e arquivamento obrigatório do AIT.',
             statutoryBasis: 'Artigo 281, Parágrafo Único, Inciso II do CTB c/c Súmula 312 do STJ',
           };
@@ -102,7 +102,7 @@ export const EXPERT_RULES: RuleModel[] = [
           title: 'Direito Vinculado à Conversão em Advertência por Escrito',
           description: 'Infração de natureza leve ou média sem reincidência no prontuário nos últimos 12 meses garante cancelamento compulsório da multa e dos pontos.',
           severity: 'alta',
-          legalArgumentId: 'ARG-008',
+          legalArgumentId: 'ARG-051',
           impact: '100% de isenção do pagamento financeiro (R$ 130,16) e 0 pontos na CNH.',
           statutoryBasis: 'Artigo 267 do CTB (Redação pela Lei nº 14.071/2020)',
         };
@@ -124,7 +124,7 @@ export const EXPERT_RULES: RuleModel[] = [
           title: 'Ausência ou Defeito no Termo de Constatação de Sinais (Res. 432/13)',
           description: 'A autuação por recusa exige o preenchimento simultâneo do Termo do Anexo II com conjunto notório de sinais clínicos observados.',
           severity: 'alta',
-          legalArgumentId: 'ARG-010',
+          legalArgumentId: 'ARG-025',
           impact: 'Anulação do AIT e cancelamento do processo de suspensão da CNH por 12 meses (R$ 2.934,70).',
           statutoryBasis: 'Artigo 277 do CTB c/c Resolução CONTRAN nº 432/2013',
         };
@@ -146,7 +146,7 @@ export const EXPERT_RULES: RuleModel[] = [
           title: 'Ausência de Descrição Circunstanciada no Campo de Observações',
           description: 'A Resolução 985/2022 exige fundamentação detalhada do ângulo de visão e do motivo da não abordagem para flagrantes à distância.',
           severity: 'alta',
-          legalArgumentId: 'ARG-006',
+          legalArgumentId: 'ARG-015',
           impact: 'Nulidade do auto por vício formal de motivação e falta de prova material.',
           statutoryBasis: 'Resolução CONTRAN nº 985/2022 (Manual Brasileiro de Fiscalização de Trânsito)',
         };
@@ -230,7 +230,7 @@ export class ExpertRuleEngine {
     }
 
     // 2. Always inject Constitutional Due Process
-    const constArg = ARGUMENTS_CATALOG.find((a) => a.id === 'ARG-007');
+    const constArg = ARGUMENTS_CATALOG.find((a) => a.id === 'ARG-049');
     if (constArg && !recommendedArgs.some((r) => r.id === constArg.id)) {
       recommendedArgs.push({
         id: constArg.id,
@@ -250,16 +250,16 @@ export class ExpertRuleEngine {
     let procedure: ProcedureType = 'defesa_previa';
     if (infraction.infractionCode === '516-91' || infraction.infractionCode === '747-10') {
       procedure = 'suspensao_cnh';
-    } else if (detectedInconsistencies.some((i) => i.legalArgumentId === 'ARG-008')) {
+    } else if (detectedInconsistencies.some((i) => i.legalArgumentId === 'ARG-051')) {
       procedure = 'conversao_advertencia';
     }
 
     // 4. Calculate deterministic success probability score
     let baseScore = 74;
-    if (detectedInconsistencies.some((i) => i.legalArgumentId === 'ARG-003')) baseScore += 24; // 30-day decadence is fatal
-    if (detectedInconsistencies.some((i) => i.legalArgumentId === 'ARG-008')) baseScore += 18; // Compulsory warning
+    if (detectedInconsistencies.some((i) => i.legalArgumentId === 'ARG-048')) baseScore += 24; // 30-day decadence is fatal
+    if (detectedInconsistencies.some((i) => i.legalArgumentId === 'ARG-051')) baseScore += 18; // Compulsory warning
     if (detectedInconsistencies.some((i) => i.legalArgumentId === 'ARG-001')) baseScore += 12; // Radar expired
-    if (detectedInconsistencies.some((i) => i.legalArgumentId === 'ARG-010')) baseScore += 14; // Lei Seca lacking term
+    if (detectedInconsistencies.some((i) => i.legalArgumentId === 'ARG-025')) baseScore += 14; // Lei Seca lacking term
     const overallSuccessRate = Math.min(99, Math.max(68, baseScore));
 
     // 5. Default deadline

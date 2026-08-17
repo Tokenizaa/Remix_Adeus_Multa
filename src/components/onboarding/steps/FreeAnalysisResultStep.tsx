@@ -12,7 +12,10 @@ import {
   Calendar,
   Scale,
   Download,
-  Check
+  Check,
+  Database,
+  RefreshCw,
+  ExternalLink
 } from 'lucide-react';
 import { CaseAnalysis, InfractionData, VehicleData, ProcedureType } from '../../../types';
 
@@ -133,8 +136,49 @@ export const FreeAnalysisResultStep: React.FC<FreeAnalysisResultStepProps> = ({
             <span>Atenção aos Prazos de Protocolo</span>
           </div>
           <p className="text-amber-900 text-[11px] leading-relaxed">
-            O prazo legal para protocolar esta defesa perante o órgão autuador expira em aproximadamente 30 dias contados da expedição da notificação. Protocolar tempestivamente garante o efeito suspensivo e impede o bloqueio da CNH.
+            O prazo legal para protocolar esta defesa perante o órgão autuador expira em aproximadamente 30 dias contados da expedição da notificação (Art. 281-A CTB — Lei 14.071/2020). Protocolar tempestivamente garante o efeito suspensivo e impede o bloqueio da CNH.
           </p>
+        </div>
+
+        {/* Verified Sources & Temporal Law Awareness */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+            <div className="flex items-center gap-2">
+              <Database className="w-3.5 h-3.5 text-[#155BCB]" />
+              <span className="text-[10px] font-bold uppercase font-mono text-slate-500">Fontes Oficiais Verificadas</span>
+            </div>
+            <div className="space-y-1">
+              <div className="flex items-center gap-1.5 text-[10px] text-slate-600">
+                <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+                <span>Planalto (Lei 9.503/97 consolidada)</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-[10px] text-slate-600">
+                <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+                <span>CONTRAN (Res. 798/20, 432/13, 985/22)</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-[10px] text-slate-600">
+                <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+                <span>STJ (Súmula 312, Tema 1.097)</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-[10px] text-slate-600">
+                <RefreshCw className="w-3 h-3 text-[#155BCB] shrink-0" />
+                <span>Sincronização diária via DOU</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2">
+            <div className="flex items-center gap-2">
+              <Calendar className="w-3.5 h-3.5 text-[#155BCB]" />
+              <span className="text-[10px] font-bold uppercase font-mono text-slate-500">Aplicação Temporal de Leis</span>
+            </div>
+            <p className="text-[10px] text-slate-600 leading-relaxed">
+              O sistema considera automaticamente a vigência de cada lei. Exemplo: Art. 261 (pontuação 20/30/40 pontos) e Art. 267 (conversão em advertência) foram alterados pela <span className="font-bold">Lei 14.071/2020</span> e só se aplicam a infrações posteriores à sua vigência.
+            </p>
+            <p className="text-[10px] text-slate-500 italic">
+              Lei 14.229/2021 • Lei 14.440/2022 • Lei 14.599/2023 — todas mapeadas.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -149,7 +193,7 @@ export const FreeAnalysisResultStep: React.FC<FreeAnalysisResultStepProps> = ({
             Pronto para transformar este diagnóstico na sua Petição Formal?
           </h2>
           <p className="text-xs text-slate-300 leading-relaxed">
-            Gere a minuta jurídica completa em PDF (A4), diagramada nos padrões do órgão autuador com todas as 52 teses e jurisprudência aplicadas.
+            Gere a minuta jurídica completa em PDF (A4), diagramada nos padrões do órgão autuador com todas as teses, jurisprudência do STJ e blocos documentais aplicáveis.
           </p>
         </div>
 

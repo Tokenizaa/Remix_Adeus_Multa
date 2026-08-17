@@ -4,6 +4,8 @@
  * Supports Graph API v20.0 with secure token handling and fallback sandbox for local environments.
  */
 
+import { metaRepository } from '../db/meta-repository';
+
 export interface MetaPage {
   id: string;
   name: string;
@@ -154,6 +156,7 @@ class MetaIntegrationService {
           selectedInstagramId: 'ig_defesai_202',
           connectedAt: new Date().toISOString(),
         };
+        metaRepository.persistConnection(this.connection);
         return this.connection;
       }
 
@@ -204,6 +207,7 @@ class MetaIntegrationService {
         selectedInstagramId: pages[0]?.instagram_business_account?.id,
         connectedAt: new Date().toISOString(),
       };
+      metaRepository.persistConnection(this.connection);
 
       return this.connection;
     } catch (error: any) {
@@ -241,6 +245,7 @@ class MetaIntegrationService {
         selectedInstagramId: igAccountId || 'ig_defesai_live',
         connectedAt: new Date().toISOString(),
       };
+      metaRepository.persistConnection(this.connection);
       return this.connection;
     } catch (err: any) {
       console.error('[MetaIntegration] Manual connect error:', err);
@@ -256,6 +261,7 @@ class MetaIntegrationService {
       isConnected: false,
       pages: [],
     };
+    metaRepository.persistConnection(this.connection);
   }
 
   /**
@@ -290,6 +296,7 @@ class MetaIntegrationService {
         selectedInstagramId: 'mock_ig_account',
         connectedAt: new Date().toISOString(),
       };
+      metaRepository.persistConnection(this.connection);
     }
 
     const page = this.connection.pages.find((p) => p.id === (params.pageId || this.connection.selectedPageId)) || this.connection.pages[0];

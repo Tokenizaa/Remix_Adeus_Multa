@@ -1,0 +1,118 @@
+- generic [ref=f7e3]:
+  - generic [ref=f7e4]:
+    - generic [ref=f7e5]:
+      - generic [ref=f7e9]: DefesAi Enterprise LegalTech Core
+      - generic [ref=f7e10]: •
+      - generic [ref=f7e11]: Ambiente Seguro e Criptografado
+    - generic [ref=f7e12]:
+      - generic [ref=f7e13]: API v20.0 • 99.98% Uptime
+      - generic [ref=f7e14]: •
+      - generic [ref=f7e15]: Regulamentação CTB / CONTRAN
+  - generic [ref=f7e16]:
+    - complementary [ref=f7e18]:
+      - generic [ref=f7e24] [cursor=pointer]:
+        - generic [ref=f7e25]:
+          - generic [ref=f7e26]: DefesAi
+          - generic [ref=f7e27]: Admin
+        - paragraph [ref=f7e28]: Console Operacional
+      - generic [ref=f7e29]:
+        - generic [ref=f7e30]:
+          - generic [ref=f7e31]: Operação Jurídica
+          - button "Dashboard Geral" [ref=f7e32] [cursor=pointer]
+          - button "Casos & Autuações" [ref=f7e40] [cursor=pointer]
+          - button "Usuários & Contas" [ref=f7e46] [cursor=pointer]
+          - button "Documentos & Petições" [ref=f7e54] [cursor=pointer]
+          - button "Pagamentos (PagBank)" [ref=f7e60] [cursor=pointer]
+        - generic [ref=f7e65]:
+          - generic [ref=f7e66]: Gestão Comercial
+          - button "Visão Geral Comercial" [ref=f7e67] [cursor=pointer]
+          - button "Tabela de Preços" [ref=f7e72] [cursor=pointer]
+          - button "Promoções & Campanhas" [ref=f7e77] [cursor=pointer]
+          - button "Gestão de Cupons" [ref=f7e83] [cursor=pointer]
+          - button "Bônus (Ledger)" [ref=f7e89] [cursor=pointer]
+          - button "Indicações em 3 Níveis" [ref=f7e96] [cursor=pointer]
+          - button "Ledger de Comissões" [ref=f7e105] [cursor=pointer]
+          - button "Test Center Comercial" [ref=f7e113] [cursor=pointer]
+          - button "Configurações Comerciais" [ref=f7e119] [cursor=pointer]
+        - generic [ref=f7e125]:
+          - generic [ref=f7e126]: Inteligência & Marketing
+          - button "Marketing OS (7 Agentes)" [ref=f7e127] [cursor=pointer]
+          - button "IA & Gateway Providers" [ref=f7e135] [cursor=pointer]
+          - button "Hub de Integrações" [ref=f7e141] [cursor=pointer]
+          - button "Base Jurídica & CTB" [ref=f7e154] [cursor=pointer]
+        - generic [ref=f7e161]:
+          - generic [ref=f7e162]: Governança & Sistema
+          - button "Configurações (Settings)" [ref=f7e163] [cursor=pointer]
+          - button "Logs Estruturados" [ref=f7e167] [cursor=pointer]
+          - button "Monitoramento & Saúde" [ref=f7e172] [cursor=pointer]
+          - button "Auditoria & LGPD" [ref=f7e178] [cursor=pointer]
+        - generic [ref=f7e186]:
+          - generic [ref=f7e187]: "Status: Operacional"
+          - paragraph [ref=f7e190]: Motor Determinístico v1 ativo • 52 teses catalogadas.
+          - button "Ver como Motorista" [ref=f7e191] [cursor=pointer]
+      - generic [ref=f7e198]:
+        - generic [ref=f7e199]:
+          - generic [ref=f7e200]: A
+          - generic [ref=f7e201]:
+            - paragraph [ref=f7e202]: Administrador
+            - paragraph
+        - button "Sair do Modo Admin" [ref=f7e203] [cursor=pointer]
+    - generic [ref=f7e207]:
+      - banner [ref=f7e208]:
+        - generic [ref=f7e210]:
+          - navigation [ref=f7e211]:
+            - button "Admin" [ref=f7e212] [cursor=pointer]
+            - generic [ref=f7e215]: Marketing OS
+          - generic [ref=f7e216]:
+            - heading "Marketing OS (7 Agentes)" [level=1] [ref=f7e217]
+            - generic [ref=f7e218]: Admin
+          - paragraph [ref=f7e219]: Campanhas autônomas de aquisição e nutrição de condutores
+        - generic [ref=f7e220]:
+          - generic [ref=f7e221]:
+            - generic [ref=f7e223]: API 200 OK
+            - generic [ref=f7e224]: •
+            - generic [ref=f7e225]: NVIDIA / 9Router
+          - button "Visão do Usuário" [ref=f7e226] [cursor=pointer]
+          - button "Encerrar Sessão" [ref=f7e232] [cursor=pointer]
+      - main [ref=f7e236]:
+        - generic [ref=f7e237]:
+          - generic [ref=f7e238]:
+            - generic [ref=f7e239]: Organismo Autônomo • 7 Agentes de Aquisição
+            - heading "Marketing OS" [level=1] [ref=f7e243]
+            - paragraph [ref=f7e244]: Ciclo autônomo, biblioteca de conteúdos e automações — modelo v1 (DefesAi).
+          - generic [ref=f7e246]:
+            - button "Dashboard" [ref=f7e247] [cursor=pointer]
+            - button "Planejamento" [ref=f7e254] [cursor=pointer]
+            - button "Conteúdos" [ref=f7e260] [cursor=pointer]
+            - button "Agendamento" [ref=f7e265] [cursor=pointer]
+            - button "Automações" [ref=f7e271] [cursor=pointer]
+            - button "Canais" [ref=f7e275] [cursor=pointer]
+            - button "Resultados" [ref=f7e283] [cursor=pointer]
+            - button "Configurações" [ref=f7e287] [cursor=pointer]
+          - generic [ref=f7e292]:
+            - generic [ref=f7e293]:
+              - generic [ref=f7e294]: 0/0 agentes ativos
+              - generic [ref=f7e298]: "Ciclos: 0"
+              - generic [ref=f7e299]: Sem alertas
+            - generic [ref=f7e300]:
+              - generic [ref=f7e301]:
+                - generic [ref=f7e302]: Alcance Mensal
+                - generic [ref=f7e303]: —
+              - generic [ref=f7e304]:
+                - generic [ref=f7e305]: Novos Casos
+                - generic [ref=f7e306]: —
+              - generic [ref=f7e307]:
+                - generic [ref=f7e308]: Conversão
+                - generic [ref=f7e309]: —
+              - generic [ref=f7e310]:
+                - generic [ref=f7e311]: Publicados
+                - generic [ref=f7e312]:
+                  - text: —
+                  - generic [ref=f7e313]: / 0 agendados
+            - paragraph [ref=f7e314]: Organismo autônomo — nenhuma intervenção manual necessária. Exceções reais aparecem acima.
+      - contentinfo [ref=f7e318]:
+        - generic [ref=f7e319]: DefesAi Plataforma Privada de Tecnologia Jurídica © 2026
+        - generic [ref=f7e321]:
+          - generic [ref=f7e322]: NVIDIA NIM AI • 9Router Gateway
+          - generic [ref=f7e323]: PagBank Orders v2
+          - generic [ref=f7e324]: LGPD Compliant

@@ -15,6 +15,7 @@ import {
   Key,
 } from 'lucide-react';
 import { useRouter } from '../../core/router/RouterContext';
+import { api } from '../../lib/api/client';
 
 export const AdminIntegrationsView: React.FC = () => {
   const { navigate } = useRouter();
@@ -22,49 +23,45 @@ export const AdminIntegrationsView: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [testStatus, setTestStatus] = useState<Record<string, { testing: boolean; result?: string }>>({});
 
-  const fetchIntegrations = async () => {
-    try {
-      setIsLoading(true);
-      const res = await fetch('/api/admin/integrations/overview');
-      if (!res.ok) throw new Error('Falha ao carregar integrações');
-      const json = await res.json();
-      setData(json);
-    } catch (err: any) {
-      console.error('Error fetching integrations:', err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+const fetchIntegrations = async () => {
+     try {
+       setIsLoading(true);
+       const res = await api.get<any>('/api/admin/integrations/overview');
+       if (!res) throw new Error('Falha ao carregar integrações');
+       setData(res);
+     } catch (err: any) {
+       console.error('Error fetching integrations:', err);
+     } finally {
+       setIsLoading(false);
+     }
+   };
 
   useEffect(() => {
     fetchIntegrations();
   }, []);
 
-  const handleTestIntegration = async (service: string) => {
-    try {
-      setTestStatus((prev) => ({ ...prev, [service]: { testing: true } }));
-      const res = await fetch('/api/health/test', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ service }),
-      });
-      const json = await res.json();
-      setTestStatus((prev) => ({
-        ...prev,
-        [service]: {
-          testing: false,
-          result: json.success
-            ? `Conexão bem-sucedida (${json.latencyMs}ms)`
-            : `Erro: ${json.error || 'Falha no probe'}`,
-        },
-      }));
-    } catch (err: any) {
-      setTestStatus((prev) => ({
-        ...prev,
-        [service]: { testing: false, result: `Erro: ${err.message}` },
-      }));
-    }
-  };
+const handleTestIntegration = async (service: string) => {
+     try {
+       setTestStatus((prev) => ({ ...prev, [service]: { testing: true } }));
+       const res = await api.post<{ success: boolean; latencyMs?: number; error?: string }>('/api/health/test', {
+         service,
+       });
+       setTestStatus((prev) => ({
+         ...prev,
+         [service]: {
+           testing: false,
+           result: res.success
+             ? `Conexão bem-sucedida (${res.latencyMs}ms)`
+             : `Erro: ${res.error || 'Falha no probe'}`,
+         },
+       }));
+     } catch (err: any) {
+       setTestStatus((prev) => ({
+         ...prev,
+         [service]: { testing: false, result: `Erro: ${err.message}` },
+       }));
+     }
+   };
 
   return (
     <div className="space-y-6">

@@ -1,0 +1,399 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e2]:
+    - generic [ref=f8e3]:
+      - generic [ref=f8e6]:
+        - generic [ref=f8e7]:
+          - link "Acessibilidade:" [ref=f8e8] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Paginas/Acessibilidade.aspx
+          - link "A-" [ref=f8e9] [cursor=pointer]:
+            - /url: javascript:;
+          - link "A+" [ref=f8e10] [cursor=pointer]:
+            - /url: javascript:;
+          - link "AA" [ref=f8e11] [cursor=pointer]:
+            - /url: javascript:;
+        - generic [ref=f8e12]:
+          - text: "Sob medida:"
+          - link "Advogado" [ref=f8e13] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Sob-medida/Advogado
+          - link "Tribunais" [ref=f8e14] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Sob-medida/tribunais
+          - link "Servidor" [ref=f8e15] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Sob-medida/Servidor
+        - text: 
+        - generic [ref=f8e16]:
+          - generic [ref=f8e17]:
+            - link "Ouvidoria" [ref=f8e18] [cursor=pointer]:
+              - /url: https://www.stj.jus.br/sites/portalp/Contato-e-ajuda/Fale-conosco/Ouvidoria
+            - button "Acesso Rápido " [ref=f8e19] [cursor=pointer]:
+              - text: Acesso Rápido
+              - generic [ref=f8e20]: 
+          - generic [ref=f8e21] [cursor=pointer]:
+            - button "Redes Sociais " [ref=f8e22]:
+              - text: Redes Sociais
+              - generic [ref=f8e23]: 
+            - text:          
+          - button "" [ref=f8e26] [cursor=pointer]
+        - text:                                                                        
+      - generic [ref=f8e29]:
+        - text:            
+        - link [ref=f8e31] [cursor=pointer]:
+          - /url: https://www.stj.jus.br/sites/portalp/Inicio
+          - img "Logo STJ" [ref=f8e32]
+        - navigation [ref=f8e34]:
+          - list [ref=f8e35]:
+            - listitem [ref=f8e36]:
+              - link "Institucional" [ref=f8e37] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f8e38]:
+              - link "Processos" [ref=f8e39] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f8e40]:
+              - link "Jurisprudência" [ref=f8e41] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f8e42]:
+              - link "Precedentes" [ref=f8e43] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f8e44]:
+              - link "Internacional" [ref=f8e45] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f8e46]:
+              - link "Comunicação" [ref=f8e47] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f8e48]:
+              - link "Leis e normas" [ref=f8e49] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f8e50]:
+              - link "Sob medida" [ref=f8e51] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f8e52]:
+              - link "Contato e ajuda" [ref=f8e53] [cursor=pointer]:
+                - /url: javascript:;
+        - button "" [ref=f8e55] [cursor=pointer]
+        - text:  
+    - generic [ref=f8e58]:
+      - link "Início" [ref=f8e59] [cursor=pointer]:
+        - /url: https://www.stj.jus.br/
+      - text: Jurisprudência
+      - link "Súmulas" [ref=f8e60] [cursor=pointer]:
+        - /url: https://scon.stj.jus.br/SCON/sumstj/
+    - generic [ref=f8e61]:
+      - generic [ref=f8e62]:
+        - heading "Súmulas do STJ" [level=1] [ref=f8e64]
+        - generic [ref=f8e65]:
+          - link " Notificações automáticas" [ref=f8e66] [cursor=pointer]:
+            - /url: /SCON/feed.jsp
+            - generic [ref=f8e67]: 
+            - generic [ref=f8e68]: Notificações automáticas
+          - link "Jurisprudência no Telegram" [ref=f8e69] [cursor=pointer]:
+            - /url: https://t.me/stjnoticias
+        - text: 
+      - generic [ref=f8e72]:
+        - generic [ref=f8e75]:
+          - generic [ref=f8e76]:
+            - heading [level=3] [ref=f8e77]:
+              - link " Pesquisa" [ref=f8e78] [cursor=pointer]:
+                - /url: javascript:;
+                - generic [ref=f8e79]: 
+                - generic [ref=f8e80]: Pesquisa
+            - generic [ref=f8e81]:
+              - button "Configurações da pesquisa (plurais, sinônimos, visualização)" [ref=f8e82] [cursor=pointer]:
+                - generic "Configurações da pesquisa (plurais, sinônimos, visualização)" [ref=f8e83]: 
+              - text:  
+          - generic [ref=f8e85]:
+            - textbox "Busca livre" [ref=f8e86]: "127"
+            - button "Pesquisar" [ref=f8e88] [cursor=pointer]: 
+        - generic [ref=f8e89]:
+          - generic [ref=f8e90]:
+            - heading " Filtrar Resultados" [level=3] [ref=f8e92]:
+              - generic [ref=f8e93]: 
+              - text: Filtrar Resultados
+            - generic [ref=f8e94]: 
+          - link "Situação " [ref=f8e96] [cursor=pointer]:
+            - /url: javascript:;
+            - text: Situação
+            - generic [ref=f8e97]: 
+          - link "Órgãos Julgadores " [ref=f8e100] [cursor=pointer]:
+            - /url: javascript:;
+            - text: Órgãos Julgadores
+            - generic [ref=f8e101]: 
+          - link "Ramos do Direito " [ref=f8e104] [cursor=pointer]:
+            - /url: javascript:;
+            - text: Ramos do Direito
+            - generic [ref=f8e105]: 
+          - generic [ref=f8e107]:
+            - link "Data de Publicação " [ref=f8e108] [cursor=pointer]:
+              - /url: javascript:;
+              - text: Data de Publicação
+              - generic [ref=f8e109]: 
+            - text: 
+          - generic [ref=f8e111]:
+            - link "Data de Julgamento " [ref=f8e112] [cursor=pointer]:
+              - /url: javascript:;
+              - text: Data de Julgamento
+              - generic [ref=f8e113]: 
+            - text: 
+          - heading " Súmulas em PDF" [level=3] [ref=f8e117]:
+            - generic [ref=f8e118]: 
+            - text: Súmulas em PDF
+          - list [ref=f8e121]:
+            - listitem [ref=f8e122]:
+              - generic [ref=f8e123]:
+                - generic [ref=f8e124]: 
+                - generic [ref=f8e125]: Enunciados
+              - list [ref=f8e126]:
+                - listitem [ref=f8e127]:
+                  - link " Ordem crescente" [ref=f8e128] [cursor=pointer]:
+                    - /url: /SCON/getFile?url=/docs_internet/jurisprudencia/tematica/download/SU/Verbetes/VerbetesSTJ_asc.pdf
+                    - generic [ref=f8e129]: 
+                    - generic [ref=f8e130]: Ordem crescente
+                - listitem [ref=f8e131]:
+                  - link " Ordem decrescente" [ref=f8e132] [cursor=pointer]:
+                    - /url: /SCON/getFile?url=/docs_internet/jurisprudencia/tematica/download/SU/Verbetes/VerbetesSTJ.pdf
+                    - generic [ref=f8e133]: 
+                    - generic [ref=f8e134]: Ordem decrescente
+            - listitem [ref=f8e135]:
+              - generic [ref=f8e136]:
+                - generic [ref=f8e137]: 
+                - generic [ref=f8e138]: Canceladas
+              - list [ref=f8e139]:
+                - listitem [ref=f8e140]:
+                  - link " Ordem crescente" [ref=f8e141] [cursor=pointer]:
+                    - /url: /SCON/getFile?url=/docs_internet/jurisprudencia/tematica/download/SU/Canceladas/VerbetesCanceladasSTJ_asc.pdf
+                    - generic [ref=f8e142]: 
+                    - generic [ref=f8e143]: Ordem crescente
+                - listitem [ref=f8e144]:
+                  - link " Ordem decrescente" [ref=f8e145] [cursor=pointer]:
+                    - /url: /SCON/getFile?url=/docs_internet/jurisprudencia/tematica/download/SU/Canceladas/VerbetesCanceladasSTJ_asc.pdf
+                    - generic [ref=f8e146]: 
+                    - generic [ref=f8e147]: Ordem decrescente
+            - listitem [ref=f8e148]:
+              - link " Inteiro Teor" [ref=f8e149] [cursor=pointer]:
+                - /url: /SCON/getFile?url=/docs_internet/jurisprudencia/tematica/download/SU/Sumulas/SumulasSTJ.pdf
+                - generic [ref=f8e150]: 
+                - generic [ref=f8e151]: Inteiro Teor
+            - listitem [ref=f8e152]:
+              - link " Organizadas por Ramos do Direito" [ref=f8e153] [cursor=pointer]:
+                - /url: /SCON/getFile?url=/docs_internet/jurisprudencia/tematica/download/SU/RamosDoDireito/SumulasSTJ_Ramos.pdf
+                - generic [ref=f8e154]: 
+                - generic [ref=f8e155]: Organizadas por Ramos do Direito
+        - generic [ref=f8e156]:
+          - generic [ref=f8e158]:
+            - generic [ref=f8e159]: Súmulas (15)
+            - link "Acórdãos (1.578)" [ref=f8e162] [cursor=pointer]:
+              - /url: /SCON/pesquisar.jsp?livre=127&operador=E&b=ACOR&p=true&tp=T
+            - link "Decisões Monocráticas (64.551)" [ref=f8e165] [cursor=pointer]:
+              - /url: /SCON/pesquisar.jsp?livre=127&operador=E&b=DTXT&p=true&tp=T
+            - generic [ref=f8e167]:
+              - link "Informativos e outros produtos(83) " [ref=f8e168] [cursor=pointer]:
+                - /url: javascript:;
+                - text: Informativos e outros produtos(83)
+                - generic [ref=f8e169]: 
+              - text:     
+          - generic [ref=f8e170]:
+            - generic [ref=f8e171]:
+              - generic [ref=f8e172]:
+                - button "Ordem numérica ascendente" [ref=f8e173] [cursor=pointer]:
+                  - generic [ref=f8e174]: 
+                - button "Ordem numérica descendente" [ref=f8e175] [cursor=pointer]:
+                  - generic [ref=f8e176]: 
+                - button "Agrupamento por ramos do direito" [ref=f8e177] [cursor=pointer]:
+                  - generic [ref=f8e178]: 
+              - generic [ref=f8e179]: "15 súmulas encontradas com: 127"
+              - generic [ref=f8e183]:
+                - generic [ref=f8e184]:
+                  - combobox "documentos por página" [ref=f8e185]:
+                    - option "10" [selected]
+                    - option "25"
+                    - option "50"
+                    - option "100"
+                  - generic [ref=f8e186]: documentos por página
+                - generic [ref=f8e187]:
+                  - generic [ref=f8e188]: 
+                  - generic [ref=f8e190]: 
+                  - link "" [ref=f8e192] [cursor=pointer]:
+                    - /url: javascript:;
+                  - link "" [ref=f8e194] [cursor=pointer]:
+                    - /url: javascript:;
+                  - link "" [ref=f8e196] [cursor=pointer]:
+                    - /url: javascript:;
+            - generic [ref=f8e198]:
+              - generic [ref=f8e199]:
+                - generic [ref=f8e200]:
+                  - checkbox [ref=f8e201]
+                  - button " PDF" [disabled] [ref=f8e202]:
+                    - generic [ref=f8e203]: 
+                    - text: PDF
+                  - generic [ref=f8e204]:
+                    - radio [checked] [ref=f8e205]
+                    - text: Íntegra
+                    - radio [ref=f8e206]
+                    - text: Enunciados
+                - generic [ref=f8e207]: Súmulas
+              - generic [ref=f8e208]:
+                - generic [ref=f8e209]:
+                  - checkbox [ref=f8e211]
+                  - link "Súmula 641" [ref=f8e213] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e214]: Súmula
+                    - generic [ref=f8e215]: "641"
+                  - link "DIREITO ADMINISTRATIVO - PROCESSO ADMINISTRATIVO DISCIPLINAR A portaria de instauração do processo administrativo disciplinar prescinde da exposição detalhada dos fatos a serem apurados. (PRIMEIRA SEÇÃO, julgado em 18/02/2020, DJe 19/02/2020)" [ref=f8e217] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e218]: DIREITO ADMINISTRATIVO - PROCESSO ADMINISTRATIVO DISCIPLINAR
+                    - generic [ref=f8e219]: A portaria de instauração do processo administrativo disciplinar prescinde da exposição detalhada dos fatos a serem apurados.
+                    - text: (PRIMEIRA SEÇÃO, julgado em 18/02/2020, DJe 19/02/2020)
+                  - link [ref=f8e221] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f8e223]:
+                  - checkbox [ref=f8e225]
+                  - link "Súmula 625" [ref=f8e227] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e228]: Súmula
+                    - generic [ref=f8e229]: "625"
+                  - link "DIREITO TRIBUTÁRIO - REPETIÇÃO DE INDÉBITO O pedido administrativo de compensação ou de restituição não interrompe o prazo prescricional para a ação de repetição de indébito tributário de que trata o art. 168 do CTN nem o da execução de título judicial contra a Fazenda Pública. (PRIMEIRA SEÇÃO, julgado em 12/12/2018, DJe 17/12/2018)" [ref=f8e231] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e232]: DIREITO TRIBUTÁRIO - REPETIÇÃO DE INDÉBITO
+                    - generic [ref=f8e233]: O pedido administrativo de compensação ou de restituição não interrompe o prazo prescricional para a ação de repetição de indébito tributário de que trata o art. 168 do CTN nem o da execução de título judicial contra a Fazenda Pública.
+                    - text: (PRIMEIRA SEÇÃO, julgado em 12/12/2018, DJe 17/12/2018)
+                  - link [ref=f8e235] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f8e237]:
+                  - checkbox [ref=f8e239]
+                  - link "Súmula 601" [ref=f8e241] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e242]: Súmula
+                    - generic [ref=f8e243]: "601"
+                  - link "DIREITO PROCESSUAL CIVIL - AÇÃO CIVIL PÚBLICA O Ministério Público tem legitimidade ativa para atuar na defesa de direitos difusos, coletivos e individuais homogêneos dos consumidores, ainda que decorrentes da prestação de serviço público. (CORTE ESPECIAL, julgado em 07/02/2018, DJe 14/02/2018)" [ref=f8e245] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e246]: DIREITO PROCESSUAL CIVIL - AÇÃO CIVIL PÚBLICA
+                    - generic [ref=f8e247]: O Ministério Público tem legitimidade ativa para atuar na defesa de direitos difusos, coletivos e individuais homogêneos dos consumidores, ainda que decorrentes da prestação de serviço público.
+                    - text: (CORTE ESPECIAL, julgado em 07/02/2018, DJe 14/02/2018)
+                  - link [ref=f8e249] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f8e251]:
+                  - checkbox [ref=f8e253]
+                  - link "Súmula 598" [ref=f8e255] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e256]: Súmula
+                    - generic [ref=f8e257]: "598"
+                  - link "DIREITO TRIBUTÁRIO - IMPOSTO DE RENDA É desnecessária a apresentação de laudo médico oficial para o reconhecimento judicial da isenção do imposto de renda, desde que o magistrado entenda suficientemente demonstrada a doença grave por outros meios de prova. (PRIMEIRA SEÇÃO, julgado em 08/11/2017, DJe 20/11/2017)" [ref=f8e259] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e260]: DIREITO TRIBUTÁRIO - IMPOSTO DE RENDA
+                    - generic [ref=f8e261]: É desnecessária a apresentação de laudo médico oficial para o reconhecimento judicial da isenção do imposto de renda, desde que o magistrado entenda suficientemente demonstrada a doença grave por outros meios de prova.
+                    - text: (PRIMEIRA SEÇÃO, julgado em 08/11/2017, DJe 20/11/2017)
+                  - link [ref=f8e263] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f8e265]:
+                  - checkbox [ref=f8e267]
+                  - link "Súmula 535" [ref=f8e269] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e270]: Súmula
+                    - generic [ref=f8e271]: "535"
+                  - link "DIREITO PENAL - EXECUÇÃO PENAL A prática de falta grave não interrompe o prazo para fim de comutação de pena ou indulto. (TERCEIRA SEÇÃO, julgado em 10/06/2015, DJe 15/06/2015)" [ref=f8e273] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e274]: DIREITO PENAL - EXECUÇÃO PENAL
+                    - generic [ref=f8e275]: A prática de falta grave não interrompe o prazo para fim de comutação de pena ou indulto.
+                    - text: (TERCEIRA SEÇÃO, julgado em 10/06/2015, DJe 15/06/2015)
+                  - link [ref=f8e277] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f8e279]:
+                  - checkbox [ref=f8e281]
+                  - link "Súmula 534" [ref=f8e283] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e284]: Súmula
+                    - generic [ref=f8e285]: "534"
+                  - link "DIREITO PENAL - EXECUÇÃO PENAL A prática de falta grave interrompe a contagem do prazo para a progressão de regime de cumprimento de pena, o qual se reinicia a partir do cometimento dessa infração. (TERCEIRA SEÇÃO, julgado em 10/06/2015, DJe 15/06/2015)" [ref=f8e287] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e288]: DIREITO PENAL - EXECUÇÃO PENAL
+                    - generic [ref=f8e289]: A prática de falta grave interrompe a contagem do prazo para a progressão de regime de cumprimento de pena, o qual se reinicia a partir do cometimento dessa infração.
+                    - text: (TERCEIRA SEÇÃO, julgado em 10/06/2015, DJe 15/06/2015)
+                  - link [ref=f8e291] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f8e293]:
+                  - checkbox [ref=f8e295]
+                  - link "Súmula 533" [ref=f8e297] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e298]: Súmula
+                    - generic [ref=f8e299]: "533"
+                  - link "DIREITO PENAL - EXECUÇÃO PENAL Para o reconhecimento da prática de falta disciplinar no âmbito da execução penal, é imprescindível a instauração de procedimento administrativo pelo diretor do estabelecimento prisional, assegurado o direito de defesa, a ser realizado por advogado constituído ou defensor público nomeado. (TERCEIRA SEÇÃO, julgado em 10/06/2015, DJe 15/06/2015)" [ref=f8e301] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e302]: DIREITO PENAL - EXECUÇÃO PENAL
+                    - generic [ref=f8e303]: Para o reconhecimento da prática de falta disciplinar no âmbito da execução penal, é imprescindível a instauração de procedimento administrativo pelo diretor do estabelecimento prisional, assegurado o direito de defesa, a ser realizado por advogado constituído ou defensor público nomeado.
+                    - text: (TERCEIRA SEÇÃO, julgado em 10/06/2015, DJe 15/06/2015)
+                  - link [ref=f8e305] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f8e307]:
+                  - checkbox [ref=f8e309]
+                  - link "Súmula 498" [ref=f8e311] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e312]: Súmula
+                    - generic [ref=f8e313]: "498"
+                  - link "DIREITO TRIBUTÁRIO - IMPOSTO DE RENDA Não incide imposto de renda sobre a indenização por danos morais. (PRIMEIRA SEÇÃO, julgado em 08/08/2012, DJe 13/08/2012)" [ref=f8e315] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e316]: DIREITO TRIBUTÁRIO - IMPOSTO DE RENDA
+                    - generic [ref=f8e317]: Não incide imposto de renda sobre a indenização por danos morais.
+                    - text: (PRIMEIRA SEÇÃO, julgado em 08/08/2012, DJe 13/08/2012)
+                  - link [ref=f8e319] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f8e321]:
+                  - checkbox [ref=f8e323]
+                  - link "Súmula 312" [ref=f8e325] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e326]: Súmula
+                    - generic [ref=f8e327]: "312"
+                  - link "DIREITO ADMINISTRATIVO - CÓDIGO DE TRÂNSITO BRASILEIRO No processo administrativo para imposição de multa de trânsito, são necessárias as notificações da autuação e da aplicação da pena decorrente da infração. (PRIMEIRA SEÇÃO, julgado em 11/05/2005, DJ 23/05/2005, p. 371)" [ref=f8e329] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e330]: DIREITO ADMINISTRATIVO - CÓDIGO DE TRÂNSITO BRASILEIRO
+                    - generic [ref=f8e331]: No processo administrativo para imposição de multa de trânsito, são necessárias as notificações da autuação e da aplicação da pena decorrente da infração.
+                    - text: (PRIMEIRA SEÇÃO, julgado em 11/05/2005, DJ 23/05/2005, p. 371)
+                  - link [ref=f8e333] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f8e335]:
+                  - checkbox [ref=f8e337]
+                  - link "Súmula 234" [ref=f8e339] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e340]: Súmula
+                    - generic [ref=f8e341]: "234"
+                  - link "DIREITO PROCESSUAL PENAL - OFERECIMENTO DE DENÚNCIA A participação de membro do Ministério Público na fase investigatória criminal não acarreta o seu impedimento ou suspeição para o oferecimento da denúncia. (TERCEIRA SEÇÃO, julgado em 13/12/1999, DJ 07/02/2000, p. 185)" [ref=f8e343] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f8e344]: DIREITO PROCESSUAL PENAL - OFERECIMENTO DE DENÚNCIA
+                    - generic [ref=f8e345]: A participação de membro do Ministério Público na fase investigatória criminal não acarreta o seu impedimento ou suspeição para o oferecimento da denúncia.
+                    - text: (TERCEIRA SEÇÃO, julgado em 13/12/1999, DJ 07/02/2000, p. 185)
+                  - link [ref=f8e347] [cursor=pointer]:
+                    - /url: javascript:;
+            - generic [ref=f8e352]:
+              - generic [ref=f8e353]: 
+              - generic [ref=f8e355]: 
+              - link "" [ref=f8e357] [cursor=pointer]:
+                - /url: javascript:;
+              - link "" [ref=f8e359] [cursor=pointer]:
+                - /url: javascript:;
+              - link "" [ref=f8e361] [cursor=pointer]:
+                - /url: javascript:;
+      - generic:
+        - button "Avalie" [ref=f8e363] [cursor=pointer]
+        - generic [ref=f8e369]:
+          - generic [ref=f8e370]: Melhore esse serviço. Avalie!
+          - button "Responder à pesquisa " [ref=f8e376] [cursor=pointer]:
+            - generic [ref=f8e377]:
+              - text: Responder à pesquisa
+              - generic [ref=f8e378]: 
+        - text: 
+    - generic [ref=f8e381]:
+      - generic [ref=f8e382]: Versão 5.1.19.2
+      - text: "|"
+      - generic [ref=f8e383]: de 05/08/2026 13:18.
+    - contentinfo [ref=f8e384]:
+      - generic [ref=f8e386]:
+        - link "Como chegar" [ref=f8e388] [cursor=pointer]:
+          - /url: http://www.stj.jus.br/sites/portalp/Contato-e-ajuda/Fale-conosco/Como-chegar
+          - generic [ref=f8e389]: 
+          - text: Como chegar
+        - generic [ref=f8e390]:
+          - text: "SAFS - Quadra 06 - Lote 01 - CEP: 70095-900 - Brasília - DF"
+          - generic [ref=f8e391]:
+            - generic [ref=f8e392]: 
+            - text: +55 61 3319-8000
+        - generic [ref=f8e393]: 
+  - generic [ref=f8e395] [cursor=pointer]:
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f8e396]
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f8e397]

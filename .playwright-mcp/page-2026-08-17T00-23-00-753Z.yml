@@ -1,0 +1,360 @@
+- generic [ref=f18e1]:
+  - navigation "Acesso rápido":
+    - link "Ir para o Conteúdo 1" [ref=f18e2] [cursor=pointer]:
+      - /url: "#wrapper"
+      - generic [ref=f18e3]: Ir para o
+      - text: Conteúdo
+      - generic [ref=f18e4]: "1"
+    - link "Ir para a Página Inicial 2" [ref=f18e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f18e6]: Ir para a
+      - text: Página Inicial
+      - generic [ref=f18e7]: "2"
+    - link "Ir para o menu de Navegação 3" [ref=f18e8] [cursor=pointer]:
+      - /url: "#main-navigation"
+      - generic [ref=f18e9]: Ir para o menu de
+      - text: Navegação
+      - generic [ref=f18e10]: "3"
+    - link "Ir para a Busca 4" [ref=f18e11] [cursor=pointer]:
+      - /url: "#govbr-busca-input"
+      - generic [ref=f18e12]: Ir para a
+      - text: Busca
+      - generic [ref=f18e13]: "4"
+    - link "Ir para o Mapa do site 5" [ref=f18e14] [cursor=pointer]:
+      - /url: "#portal-footer"
+      - generic [ref=f18e15]: Ir para o
+      - text: Mapa do site
+      - generic [ref=f18e16]: "5"
+  - banner [ref=f18e17]:
+    - generic [ref=f18e20]:
+      - generic [ref=f18e23]:
+        - generic [ref=f18e25]:
+          - generic [ref=f18e26]:
+            - generic [ref=f18e27]: "Idioma atual:"
+            - text: PT
+          - button "Alterar idioma" [ref=f18e28] [cursor=pointer]:
+            - generic [ref=f18e29]: 
+        - button "Abrir preferências de cookies" [ref=f18e32] [cursor=pointer]:
+          - generic [ref=f18e33]: 
+        - button "Ativar ou desativar o modo de alto contraste" [ref=f18e37] [cursor=pointer]:
+          - generic [ref=f18e38]: 
+      - banner [ref=f18e41]:
+        - generic [ref=f18e43]:
+          - generic [ref=f18e44]:
+            - link [ref=f18e45] [cursor=pointer]:
+              - /url: https://www.gov.br/pt-br
+              - img "Logomarca gov.br" [ref=f18e46]
+            - link "Presidência da República" [ref=f18e48] [cursor=pointer]:
+              - /url: www.gov.br/planalto/
+          - generic [ref=f18e49]:
+            - generic [ref=f18e50]:
+              - text: 
+              - list [ref=f18e51]:
+                - listitem [ref=f18e52]:
+                  - button "Institucional" [ref=f18e53] [cursor=pointer]:
+                    - generic [ref=f18e55]: 
+                - listitem [ref=f18e56]:
+                  - link "Acessibilidade" [ref=f18e57] [cursor=pointer]:
+                    - /url: https://www.gov.br/governodigital/pt-br/acessibilidade-digital
+                - listitem [ref=f18e58]:
+                  - link "Participe" [ref=f18e59] [cursor=pointer]:
+                    - /url: https://www.gov.br/pt-br/participacao-social
+            - button "Abrir menu de seleção serviços" [ref=f18e64] [cursor=pointer]:
+              - generic [ref=f18e68]: Atalhos gov.br
+            - generic [ref=f18e71]:
+              - button "Entrar com gov.br" [ref=f18e72] [cursor=pointer]:
+                - generic [ref=f18e73]: 
+              - generic:
+                - generic: Para começar
+                - generic: Clique em Entrar para acessar sua conta gov.br
+                - text: 
+        - button "Fechar overlay" [ref=f18e75] [cursor=pointer]
+    - generic [ref=f18e77]:
+      - generic [ref=f18e78]:
+        - link "Abrir menu principal de navegação" [ref=f18e79] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f18e81]: 
+          - text: 
+        - link "Ministério dos Transportes" [ref=f18e83] [cursor=pointer]:
+          - /url: https://www.gov.br/transportes/pt-br
+      - text:        
+      - generic [ref=f18e84]:
+        - combobox [ref=f18e86]:
+          - search [ref=f18e87]:
+            - button "" [ref=f18e89] [cursor=pointer]
+            - searchbox "O que você procura?" [ref=f18e91]
+            - button "Pesquisar por voz" [ref=f18e92] [cursor=pointer]:
+              - generic [ref=f18e93]: 
+        - text:   
+    - text:                                          
+  - navigation "Histórico de navegação (Breadcrumbs)" [ref=f18e95]:
+    - generic [ref=f18e96]:
+      - generic [ref=f18e97]: ">Você está aqui:"
+      - link "Página Inicial" [ref=f18e99] [cursor=pointer]:
+        - /url: https://www.gov.br/transportes/pt-br
+        - generic [ref=f18e100]: 
+      - generic [ref=f18e102]:
+        - text: ">"
+        - link "Assuntos" [ref=f18e103] [cursor=pointer]:
+          - /url: https://www.gov.br/transportes/pt-br/assuntos
+      - generic [ref=f18e104]:
+        - text: ">"
+        - link "Trânsito" [ref=f18e105] [cursor=pointer]:
+          - /url: https://www.gov.br/transportes/pt-br/assuntos/transito
+      - generic [ref=f18e106]:
+        - text: ">"
+        - link "Conteúdo Contran" [ref=f18e107] [cursor=pointer]:
+          - /url: https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran
+      - generic [ref=f18e108]: "> Resolucoes"
+  - generic [ref=f18e109]:
+    - main [ref=f18e111]:
+      - generic [ref=f18e112]:
+        - text: 
+        - generic [ref=f18e114]:
+          - heading "Resolucoes" [level=1] [ref=f18e115]
+          - list
+          - list
+      - generic [ref=f18e117]:
+        - generic [ref=f18e118]: "Compartilhe:"
+        - link "Compartilhe por Facebook" [ref=f18e119] [cursor=pointer]:
+          - /url: http://www.facebook.com/sharer.php?u=https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes
+          - generic [ref=f18e120]: 
+        - link "Compartilhe por Twitter" [ref=f18e122] [cursor=pointer]:
+          - /url: https://twitter.com/share?text=Resolucoes&url=https://www.gov.br/transportes/resolveuid/93a509b47e834f21844e7b4f73f4949f
+          - generic [ref=f18e123]: 
+        - link "Compartilhe por LinkedIn" [ref=f18e125] [cursor=pointer]:
+          - /url: https://www.linkedin.com/shareArticle?mini=true&url=https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes&title=Resolucoes
+          - generic [ref=f18e126]: 
+        - link "Compartilhe por WhatsApp" [ref=f18e128] [cursor=pointer]:
+          - /url: https://api.whatsapp.com/send?text=https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes
+          - generic [ref=f18e129]: 
+        - link "link para Copiar para área de transferência" [ref=f18e131] [cursor=pointer]:
+          - /url: https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes
+          - generic [ref=f18e132]: 
+    - contentinfo [ref=f18e134]:
+      - generic [ref=f18e135]:
+        - list [ref=f18e137]:
+          - listitem [ref=f18e138]:
+            - link "Assuntos" [ref=f18e139] [cursor=pointer]:
+              - /url: https://www.gov.br/transportes/pt-br/assuntos
+            - list [ref=f18e140]:
+              - listitem [ref=f18e141]:
+                - link "Notícias" [ref=f18e142] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/noticias-
+              - listitem [ref=f18e143]:
+                - link "Rodovias" [ref=f18e144] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/rodovias
+              - listitem [ref=f18e145]:
+                - link "Ferrovias" [ref=f18e146] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/ferrovias
+              - listitem [ref=f18e147]:
+                - link "Trânsito" [ref=f18e148] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/transito
+              - listitem [ref=f18e149]:
+                - link "Sustentabilidade" [ref=f18e150] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/sustentabilidade
+              - listitem [ref=f18e151]:
+                - link "Governança" [ref=f18e152] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/governanca
+              - listitem [ref=f18e153]:
+                - link "Comissão de Ética" [ref=f18e154] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/comissao-de-etica
+              - listitem [ref=f18e155]:
+                - link "Transformação Digital" [ref=f18e156] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/governanca/plano-de-transformacao-digital-ptd
+              - listitem [ref=f18e157]:
+                - link "Laboratório de Inovação" [ref=f18e158] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/inovacao/laboratorio-de-inovacao-/laboratorio-de-inovacao_
+              - listitem [ref=f18e159]:
+                - link "Portal da Estratégia" [ref=f18e160] [cursor=pointer]:
+                  - /url: http://www.gov.br/transportes/pt-br/assuntos/portal-da-estrategia/planejamento-estrategico-2024-2027/planejamento-estrategia
+              - listitem [ref=f18e161]:
+                - link "Fomento e Incentivos" [ref=f18e162] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/incentivos/fomento
+              - listitem [ref=f18e163]:
+                - link "Planejamento (PIT)" [ref=f18e164] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/PIT
+              - listitem [ref=f18e165]:
+                - link "Dados, Mapas – BIT" [ref=f18e166] [cursor=pointer]:
+                  - /url: http://www.gov.br/transportes/pt-br/assuntos/dados-de-transportes/bit
+              - listitem [ref=f18e167]:
+                - link "Orçamento e Gestão" [ref=f18e168] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/orcamento-e-gestao
+              - listitem [ref=f18e169]:
+                - link "Corregedoria" [ref=f18e170] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/corregedoria
+              - listitem [ref=f18e171]:
+                - link "Conjur" [ref=f18e172] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/conjur
+              - listitem [ref=f18e173]:
+                - link "Emendas Parlamentares" [ref=f18e174] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/emendas-parlamentares
+              - listitem [ref=f18e175]:
+                - link "Conselhos" [ref=f18e176] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/assuntos/conselhos
+              - listitem [ref=f18e177]:
+                - link "Legislação" [ref=f18e178] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/legislacao
+          - listitem [ref=f18e179]:
+            - link "Acesso à Informação" [ref=f18e180] [cursor=pointer]:
+              - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao
+            - list [ref=f18e181]:
+              - listitem [ref=f18e182]:
+                - link "Institucional" [ref=f18e183] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/institucional-1
+              - listitem [ref=f18e184]:
+                - link "Ações e Programas" [ref=f18e185] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/acoes-e-programas
+              - listitem [ref=f18e186]:
+                - link "Participação Social" [ref=f18e187] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/participacao-social-mt
+              - listitem [ref=f18e188]:
+                - link "Auditorias" [ref=f18e189] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/auditorias-mt
+              - listitem [ref=f18e190]:
+                - link "Convênios e Transferências" [ref=f18e191] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/convenios-e-transferencias
+              - listitem [ref=f18e192]:
+                - link "Receitas e Despesas" [ref=f18e193] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/receitas-e-despesas-1
+              - listitem [ref=f18e194]:
+                - link "Licitações e Contratos" [ref=f18e195] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/licitacoes-e-contratos
+              - listitem [ref=f18e196]:
+                - link "Servidores" [ref=f18e197] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/servidores-
+              - listitem [ref=f18e198]:
+                - link "Informações Classificadas" [ref=f18e199] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/informacoes-classificadas-1
+              - listitem [ref=f18e200]:
+                - link "Serviço de Informação ao Cidadão - SIC" [ref=f18e201] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/servico-de-informacao-ao-cidadao-sic
+              - listitem [ref=f18e202]:
+                - link "Perguntas Frequentes" [ref=f18e203] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/perguntas-frequentes
+              - listitem [ref=f18e204]:
+                - link "Dados Abertos" [ref=f18e205] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/dados-abertos
+              - listitem [ref=f18e206]:
+                - link "Sanções Administrativas" [ref=f18e207] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/sancoes-administrativas
+              - listitem [ref=f18e208]:
+                - link "Transparência e Prestação de Contas" [ref=f18e209] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/transparencia-e-prestacao-de-contas
+              - listitem [ref=f18e210]:
+                - link "Acordos de Cooperação" [ref=f18e211] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/acesso-a-informacao/acordos-de-cooperacao
+          - listitem [ref=f18e212]:
+            - link "Composição" [ref=f18e213] [cursor=pointer]:
+              - /url: https://www.gov.br/transportes/pt-br/composicao
+            - list [ref=f18e214]:
+              - listitem [ref=f18e215]:
+                - link "Quem é Quem" [ref=f18e216] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/composicao/quem-e-quem
+              - listitem [ref=f18e217]:
+                - link "Organograma" [ref=f18e218] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/composicao/organograma
+          - listitem [ref=f18e219]:
+            - link "Canais de Atendimento" [ref=f18e220] [cursor=pointer]:
+              - /url: https://www.gov.br/transportes/pt-br/canais_atendimento
+            - list [ref=f18e221]:
+              - listitem [ref=f18e222]:
+                - link "Ouvidoria" [ref=f18e223] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/ouvidoria/pagina-inicial-ouvidoria
+              - listitem [ref=f18e224]:
+                - link "Fale Conosco" [ref=f18e225] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/ouvidoria/canais-de-atendimento
+              - listitem [ref=f18e226]:
+                - link "Sala de Imprensa" [ref=f18e227] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/canais_atendimento/sala-de-imprensa-1
+              - listitem [ref=f18e228]:
+                - link "FalaBR" [ref=f18e229] [cursor=pointer]:
+                  - /url: https://falabr.cgu.gov.br/PainelServidor/Principal.aspx
+              - listitem [ref=f18e230]:
+                - link "Chatbot" [ref=f18e231] [cursor=pointer]:
+                  - /url: https://plataformamaua.transportes.gov.br/embed-flow/FD7241B1-CFE5-404F-99DC-2161644ED2B9
+              - listitem [ref=f18e232]:
+                - link "Encarregado pelo Tratamento de Dados Pessoais" [ref=f18e233] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/ouvidoria/privacidade-e-protecao-de-dados-pessoais-lgpd/
+              - listitem [ref=f18e234]:
+                - link "Informa.BR" [ref=f18e235] [cursor=pointer]:
+                  - /url: https://informabr.cgu.gov.br/
+          - listitem [ref=f18e236]:
+            - link "Serviços" [ref=f18e237] [cursor=pointer]:
+              - /url: https://www.gov.br/transportes/pt-br/servicos
+            - list [ref=f18e238]:
+              - listitem [ref=f18e239]:
+                - link "Protocolo Eletrônico – SEI!" [ref=f18e240] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/servicos/protocolo-eletronico-sei
+              - listitem [ref=f18e241]:
+                - link "Protocolo Digital - Gov.br" [ref=f18e242] [cursor=pointer]:
+                  - /url: https://www.gov.br/pt-br/servicos/protocolar-documentos-junto-ao-ministerio-dos-transportes
+              - listitem [ref=f18e243]:
+                - link "Gestão de Pessoas" [ref=f18e244] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/servicos/gestao-de-pessoas
+              - listitem [ref=f18e245]:
+                - link "Programa de Gestão e Desempenho" [ref=f18e246] [cursor=pointer]:
+                  - /url: https://www.gov.br/transportes/pt-br/servicos/gestao-de-pessoas/programa-de-gestao-e-desempenho-mt
+        - generic: 
+        - generic [ref=f18e247]:
+          - generic [ref=f18e248]:
+            - generic [ref=f18e249]: Redes sociais
+            - list [ref=f18e250]:
+              - listitem [ref=f18e251]:
+                - text: 
+                - link "Twitter" [ref=f18e252] [cursor=pointer]:
+                  - /url: https://www.twitter.com/mtransportes
+              - listitem [ref=f18e253]:
+                - text: 
+                - link "YouTube" [ref=f18e254] [cursor=pointer]:
+                  - /url: https://www.youtube.com/@mintransportes
+              - listitem [ref=f18e255]:
+                - text: 
+                - link "Facebook" [ref=f18e256] [cursor=pointer]:
+                  - /url: https://www.facebook.com/mtransportes
+              - listitem [ref=f18e257]:
+                - text: 
+                - link "Flickr" [ref=f18e258] [cursor=pointer]:
+                  - /url: https://www.flickr.com/mtransportes/albums
+              - listitem [ref=f18e259]:
+                - text: 
+                - link "Instagram" [ref=f18e260] [cursor=pointer]:
+                  - /url: https://www.instagram.com/mtransportes
+              - listitem [ref=f18e261]:
+                - text: 
+                - link "Linkedin" [ref=f18e262] [cursor=pointer]:
+                  - /url: https://linkedin.com/company/ministeriodostransportes
+          - link "Acesse o portal sobre o acesso à informação" [ref=f18e265] [cursor=pointer]:
+            - /url: https://www.gov.br/acessoainformacao/pt-br
+            - img [ref=f18e266]:
+              - generic [ref=f18e270]: Acesso àInformação
+      - generic [ref=f18e272]:
+        - text: Todo o conteúdo deste site está publicado sob a licença
+        - link "Creative Commons Atribuição-SemDerivações 3.0 Não Adaptada" [ref=f18e273] [cursor=pointer]:
+          - /url: https://creativecommons.org/licenses/by-nd/3.0/deed.pt_BR
+        - text: .
+    - navigation "Voltar ao topo da página" [ref=f18e274]:
+      - link " Voltar ao topo da página" [ref=f18e275] [cursor=pointer]:
+        - /url: "#wrapper"
+        - generic [ref=f18e276]: 
+        - generic [ref=f18e277]: Voltar ao topo da página
+  - generic [ref=f18e281]:
+    - generic [ref=f18e282]:
+      - text:  
+      - generic [ref=f18e283]:
+        - generic [ref=f18e284]:
+          - text: Para melhorar a sua experiência na plataforma e prover serviços personalizados, utilizamos cookies.
+          - strong [ref=f18e285]: Ao aceitar, você terá acesso a todas as funcionalidades do site. Se clicar em "Rejeitar Cookies", os cookies que não forem estritamente necessários serão desativados.
+          - text: Para escolher quais quer autorizar, clique em "Gerenciar cookies". Saiba mais em nossa
+          - link "Declaração de Cookies" [ref=f18e286] [cursor=pointer]:
+            - /url: https://www.gov.br/pt-br/termos-de-uso
+          - text: .
+        - text: Desativado  Ativado  Desativado  Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  • • • • • • Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado 
+    - generic [ref=f18e287]:
+      - button "Gerenciar cookies" [ref=f18e288] [cursor=pointer]:  Gerenciar cookies
+      - button "Rejeitar cookies" [ref=f18e289] [cursor=pointer]
+      - button "Aceitar cookies" [ref=f18e290] [cursor=pointer]
+  - text:   
+  - generic [ref=f18e292] [cursor=pointer]:
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f18e293]
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f18e294]

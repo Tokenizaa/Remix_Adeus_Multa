@@ -1,0 +1,333 @@
+- generic [active] [ref=f11e1]:
+  - generic [ref=f11e2]:
+    - generic [ref=f11e3]:
+      - generic [ref=f11e6]:
+        - generic [ref=f11e7]:
+          - link "Acessibilidade:" [ref=f11e8] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Paginas/Acessibilidade.aspx
+          - link "A-" [ref=f11e9] [cursor=pointer]:
+            - /url: javascript:;
+          - link "A+" [ref=f11e10] [cursor=pointer]:
+            - /url: javascript:;
+          - link "AA" [ref=f11e11] [cursor=pointer]:
+            - /url: javascript:;
+        - generic [ref=f11e12]:
+          - text: "Sob medida:"
+          - link "Advogado" [ref=f11e13] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Sob-medida/Advogado
+          - link "Tribunais" [ref=f11e14] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Sob-medida/tribunais
+          - link "Servidor" [ref=f11e15] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Sob-medida/Servidor
+        - text: 
+        - generic [ref=f11e16]:
+          - generic [ref=f11e17]:
+            - link "Ouvidoria" [ref=f11e18] [cursor=pointer]:
+              - /url: https://www.stj.jus.br/sites/portalp/Contato-e-ajuda/Fale-conosco/Ouvidoria
+            - button "Acesso Rápido " [ref=f11e19] [cursor=pointer]:
+              - text: Acesso Rápido
+              - generic [ref=f11e20]: 
+          - generic [ref=f11e21] [cursor=pointer]:
+            - button "Redes Sociais " [ref=f11e22]:
+              - text: Redes Sociais
+              - generic [ref=f11e23]: 
+            - text:          
+          - button "" [ref=f11e26] [cursor=pointer]
+        - text:                                                                        
+      - generic [ref=f11e29]:
+        - text:            
+        - link [ref=f11e31] [cursor=pointer]:
+          - /url: https://www.stj.jus.br/sites/portalp/Inicio
+          - img "Logo STJ" [ref=f11e32]
+        - navigation [ref=f11e34]:
+          - list [ref=f11e35]:
+            - listitem [ref=f11e36]:
+              - link "Institucional" [ref=f11e37] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f11e38]:
+              - link "Processos" [ref=f11e39] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f11e40]:
+              - link "Jurisprudência" [ref=f11e41] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f11e42]:
+              - link "Precedentes" [ref=f11e43] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f11e44]:
+              - link "Internacional" [ref=f11e45] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f11e46]:
+              - link "Comunicação" [ref=f11e47] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f11e48]:
+              - link "Leis e normas" [ref=f11e49] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f11e50]:
+              - link "Sob medida" [ref=f11e51] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f11e52]:
+              - link "Contato e ajuda" [ref=f11e53] [cursor=pointer]:
+                - /url: javascript:;
+        - button "" [ref=f11e55] [cursor=pointer]
+        - text:  
+    - generic [ref=f11e58]:
+      - link "Início" [ref=f11e59] [cursor=pointer]:
+        - /url: https://www.stj.jus.br/
+      - text: Jurisprudência
+      - link "Súmulas" [ref=f11e60] [cursor=pointer]:
+        - /url: https://scon.stj.jus.br/SCON/sumstj/
+    - generic [ref=f11e61]:
+      - generic [ref=f11e62]:
+        - heading "Súmulas do STJ" [level=1] [ref=f11e64]
+        - generic [ref=f11e65]:
+          - link " Notificações automáticas" [ref=f11e66] [cursor=pointer]:
+            - /url: /SCON/feed.jsp
+            - generic [ref=f11e67]: 
+            - generic [ref=f11e68]: Notificações automáticas
+          - link "Jurisprudência no Telegram" [ref=f11e69] [cursor=pointer]:
+            - /url: https://t.me/stjnoticias
+        - text: 
+      - generic [ref=f11e72]:
+        - generic [ref=f11e75]:
+          - generic [ref=f11e76]:
+            - heading [level=3] [ref=f11e77]:
+              - link " Pesquisa" [ref=f11e78] [cursor=pointer]:
+                - /url: javascript:;
+                - generic [ref=f11e79]: 
+                - generic [ref=f11e80]: Pesquisa
+            - generic [ref=f11e81]:
+              - button "Configurações da pesquisa (plurais, sinônimos, visualização)" [ref=f11e82] [cursor=pointer]:
+                - generic "Configurações da pesquisa (plurais, sinônimos, visualização)" [ref=f11e83]: 
+              - text:  
+          - generic [ref=f11e85]:
+            - textbox "Busca livre" [ref=f11e86]: "127"
+            - button "Pesquisar" [ref=f11e88] [cursor=pointer]: 
+        - generic [ref=f11e89]:
+          - generic [ref=f11e90]:
+            - heading " Filtrar Resultados" [level=3] [ref=f11e92]:
+              - generic [ref=f11e93]: 
+              - text: Filtrar Resultados
+            - generic [ref=f11e94]: 
+          - link "Situação " [ref=f11e96] [cursor=pointer]:
+            - /url: javascript:;
+            - text: Situação
+            - generic [ref=f11e97]: 
+          - link "Órgãos Julgadores " [ref=f11e100] [cursor=pointer]:
+            - /url: javascript:;
+            - text: Órgãos Julgadores
+            - generic [ref=f11e101]: 
+          - link "Ramos do Direito " [ref=f11e104] [cursor=pointer]:
+            - /url: javascript:;
+            - text: Ramos do Direito
+            - generic [ref=f11e105]: 
+          - generic [ref=f11e107]:
+            - link "Data de Publicação " [ref=f11e108] [cursor=pointer]:
+              - /url: javascript:;
+              - text: Data de Publicação
+              - generic [ref=f11e109]: 
+            - text: 
+          - generic [ref=f11e111]:
+            - link "Data de Julgamento " [ref=f11e112] [cursor=pointer]:
+              - /url: javascript:;
+              - text: Data de Julgamento
+              - generic [ref=f11e113]: 
+            - text: 
+          - heading " Súmulas em PDF" [level=3] [ref=f11e117]:
+            - generic [ref=f11e118]: 
+            - text: Súmulas em PDF
+          - list [ref=f11e121]:
+            - listitem [ref=f11e122]:
+              - generic [ref=f11e123]:
+                - generic [ref=f11e124]: 
+                - generic [ref=f11e125]: Enunciados
+              - list [ref=f11e126]:
+                - listitem [ref=f11e127]:
+                  - link " Ordem crescente" [ref=f11e128] [cursor=pointer]:
+                    - /url: /SCON/getFile?url=/docs_internet/jurisprudencia/tematica/download/SU/Verbetes/VerbetesSTJ_asc.pdf
+                    - generic [ref=f11e129]: 
+                    - generic [ref=f11e130]: Ordem crescente
+                - listitem [ref=f11e131]:
+                  - link " Ordem decrescente" [ref=f11e132] [cursor=pointer]:
+                    - /url: /SCON/getFile?url=/docs_internet/jurisprudencia/tematica/download/SU/Verbetes/VerbetesSTJ.pdf
+                    - generic [ref=f11e133]: 
+                    - generic [ref=f11e134]: Ordem decrescente
+            - listitem [ref=f11e135]:
+              - generic [ref=f11e136]:
+                - generic [ref=f11e137]: 
+                - generic [ref=f11e138]: Canceladas
+              - list [ref=f11e139]:
+                - listitem [ref=f11e140]:
+                  - link " Ordem crescente" [ref=f11e141] [cursor=pointer]:
+                    - /url: /SCON/getFile?url=/docs_internet/jurisprudencia/tematica/download/SU/Canceladas/VerbetesCanceladasSTJ_asc.pdf
+                    - generic [ref=f11e142]: 
+                    - generic [ref=f11e143]: Ordem crescente
+                - listitem [ref=f11e144]:
+                  - link " Ordem decrescente" [ref=f11e145] [cursor=pointer]:
+                    - /url: /SCON/getFile?url=/docs_internet/jurisprudencia/tematica/download/SU/Canceladas/VerbetesCanceladasSTJ_asc.pdf
+                    - generic [ref=f11e146]: 
+                    - generic [ref=f11e147]: Ordem decrescente
+            - listitem [ref=f11e148]:
+              - link " Inteiro Teor" [ref=f11e149] [cursor=pointer]:
+                - /url: /SCON/getFile?url=/docs_internet/jurisprudencia/tematica/download/SU/Sumulas/SumulasSTJ.pdf
+                - generic [ref=f11e150]: 
+                - generic [ref=f11e151]: Inteiro Teor
+            - listitem [ref=f11e152]:
+              - link " Organizadas por Ramos do Direito" [ref=f11e153] [cursor=pointer]:
+                - /url: /SCON/getFile?url=/docs_internet/jurisprudencia/tematica/download/SU/RamosDoDireito/SumulasSTJ_Ramos.pdf
+                - generic [ref=f11e154]: 
+                - generic [ref=f11e155]: Organizadas por Ramos do Direito
+        - generic [ref=f11e156]:
+          - generic [ref=f11e158]:
+            - generic [ref=f11e159]: Súmulas (15)
+            - link "Acórdãos (1.578)" [ref=f11e162] [cursor=pointer]:
+              - /url: /SCON/pesquisar.jsp?livre=127&operador=E&b=ACOR&p=true&tp=T
+            - link "Decisões Monocráticas (64.551)" [ref=f11e165] [cursor=pointer]:
+              - /url: /SCON/pesquisar.jsp?livre=127&operador=E&b=DTXT&p=true&tp=T
+            - generic [ref=f11e167]:
+              - link "Informativos e outros produtos(83) " [ref=f11e168] [cursor=pointer]:
+                - /url: javascript:;
+                - text: Informativos e outros produtos(83)
+                - generic [ref=f11e169]: 
+              - text:     
+          - generic [ref=f11e170]:
+            - generic [ref=f11e171]:
+              - generic [ref=f11e172]:
+                - button "Ordem numérica ascendente" [ref=f11e173] [cursor=pointer]:
+                  - generic [ref=f11e174]: 
+                - button "Ordem numérica descendente" [ref=f11e175] [cursor=pointer]:
+                  - generic [ref=f11e176]: 
+                - button "Agrupamento por ramos do direito" [ref=f11e177] [cursor=pointer]:
+                  - generic [ref=f11e178]: 
+              - generic [ref=f11e179]: "15 súmulas encontradas com: 127"
+              - generic [ref=f11e183]:
+                - generic [ref=f11e184]:
+                  - combobox "documentos por página" [ref=f11e185]:
+                    - option "10" [selected]
+                    - option "25"
+                    - option "50"
+                    - option "100"
+                  - generic [ref=f11e186]: documentos por página
+                - generic [ref=f11e187]:
+                  - link "" [ref=f11e188] [cursor=pointer]:
+                    - /url: javascript:;
+                  - link "" [ref=f11e190] [cursor=pointer]:
+                    - /url: javascript:;
+                  - generic [ref=f11e192]: 
+                  - generic [ref=f11e194]: 
+                  - link "" [ref=f11e196] [cursor=pointer]:
+                    - /url: javascript:;
+            - generic [ref=f11e198]:
+              - generic [ref=f11e199]:
+                - generic [ref=f11e200]:
+                  - checkbox [ref=f11e201]
+                  - button " PDF" [disabled] [ref=f11e202]:
+                    - generic [ref=f11e203]: 
+                    - text: PDF
+                  - generic [ref=f11e204]:
+                    - radio [checked] [ref=f11e205]
+                    - text: Íntegra
+                    - radio [ref=f11e206]
+                    - text: Enunciados
+                - generic [ref=f11e207]: Súmulas
+              - generic [ref=f11e208]:
+                - generic [ref=f11e209]:
+                  - checkbox [ref=f11e211]
+                  - link "Súmula 232" [ref=f11e213] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f11e214]: Súmula
+                    - generic [ref=f11e215]: "232"
+                  - link "DIREITO PROCESSUAL CIVIL - HONORÁRIOS PERICIAIS A Fazenda Pública, quando parte no processo, fica sujeita à exigência do depósito prévio dos honorários do perito. (CORTE ESPECIAL, julgado em 01/12/1999, DJ 07/12/1999, p. 127)" [ref=f11e217] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f11e218]: DIREITO PROCESSUAL CIVIL - HONORÁRIOS PERICIAIS
+                    - generic [ref=f11e219]: A Fazenda Pública, quando parte no processo, fica sujeita à exigência do depósito prévio dos honorários do perito.
+                    - text: (CORTE ESPECIAL, julgado em 01/12/1999, DJ 07/12/1999, p. 127)
+                  - link [ref=f11e221] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f11e223]:
+                  - checkbox [ref=f11e225]
+                  - link "Súmula 189" [ref=f11e227] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f11e228]: Súmula
+                    - generic [ref=f11e229]: "189"
+                  - link "DIREITO TRIBUTÁRIO - EXECUÇÃO FISCAL É desnecessária a intervenção do Ministério Público nas execuções fiscais. (PRIMEIRA SEÇÃO, julgado em 11/06/1997, DJ 23/06/1997)." [ref=f11e231] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f11e232]: DIREITO TRIBUTÁRIO - EXECUÇÃO FISCAL
+                    - generic [ref=f11e233]: É desnecessária a intervenção do Ministério Público nas execuções fiscais.
+                    - text: (PRIMEIRA SEÇÃO, julgado em 11/06/1997, DJ 23/06/1997).
+                  - link [ref=f11e235] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f11e237]:
+                  - checkbox [ref=f11e239]
+                  - link "Súmula 127" [ref=f11e241] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f11e242]: Súmula
+                    - generic [ref=f11e243]: "127"
+                  - link "DIREITO ADMINISTRATIVO - CÓDIGO DE TRÂNSITO BRASILEIRO É ilegal condicionar a renovação da licença de veículo ao pagamento de multa, da qual o infrator não foi notificado. (SÚMULA 127, PRIMEIRA SEÇÃO, julgado em 14/03/1995, DJ 23/03/1995, p. 6730)" [ref=f11e245] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f11e246]: DIREITO ADMINISTRATIVO - CÓDIGO DE TRÂNSITO BRASILEIRO
+                    - text: É ilegal condicionar a renovação da licença de veículo ao pagamento de multa, da qual o infrator não foi notificado. (SÚMULA 127, PRIMEIRA SEÇÃO, julgado em 14/03/1995, DJ 23/03/1995, p. 6730)
+                  - link [ref=f11e248] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f11e250]:
+                  - checkbox [ref=f11e252]
+                  - link "Súmula 108" [ref=f11e254] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f11e255]: Súmula
+                    - generic [ref=f11e256]: "108"
+                  - link "DIREITO DA CRIANÇA E DO ADOLESCENTE - MEDIDA SOCIOEDUCATIVA A aplicação de medidas socio-educativas ao adolescente, pela prática de ato infracional, é da competência exclusiva do juiz. (TERCEIRA SEÇÃO, julgado em 16/06/1994, DJ 22/06/1994, p. 16427)" [ref=f11e258] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f11e259]: DIREITO DA CRIANÇA E DO ADOLESCENTE - MEDIDA SOCIOEDUCATIVA
+                    - generic [ref=f11e260]: A aplicação de medidas socio-educativas ao adolescente, pela prática de ato infracional, é da competência exclusiva do juiz.
+                    - text: (TERCEIRA SEÇÃO, julgado em 16/06/1994, DJ 22/06/1994, p. 16427)
+                  - link [ref=f11e262] [cursor=pointer]:
+                    - /url: javascript:;
+                - generic [ref=f11e264]:
+                  - checkbox [ref=f11e266]
+                  - link "Súmula 99" [ref=f11e268] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f11e269]: Súmula
+                    - generic [ref=f11e270]: "99"
+                  - link "DIREITO PROCESSUAL CIVIL - MINISTÉRIO PÚBLICO O Ministério Público tem legitimidade para recorrer no processo em que oficiou como fiscal da lei, ainda que não haja recurso da parte. (CORTE ESPECIAL, julgado em 14/04/1994, DJ 25/04/1994, p. 9284)" [ref=f11e272] [cursor=pointer]:
+                    - /url: javascript:;
+                    - generic [ref=f11e273]: DIREITO PROCESSUAL CIVIL - MINISTÉRIO PÚBLICO
+                    - generic [ref=f11e274]: O Ministério Público tem legitimidade para recorrer no processo em que oficiou como fiscal da lei, ainda que não haja recurso da parte.
+                    - text: (CORTE ESPECIAL, julgado em 14/04/1994, DJ 25/04/1994, p. 9284)
+                  - link [ref=f11e276] [cursor=pointer]:
+                    - /url: javascript:;
+            - generic [ref=f11e281]:
+              - link "" [ref=f11e282] [cursor=pointer]:
+                - /url: javascript:;
+              - link "" [ref=f11e284] [cursor=pointer]:
+                - /url: javascript:;
+              - generic [ref=f11e286]: 
+              - generic [ref=f11e288]: 
+              - link "" [ref=f11e290] [cursor=pointer]:
+                - /url: javascript:;
+      - generic:
+        - button "Avalie" [ref=f11e292] [cursor=pointer]
+        - generic [ref=f11e298]:
+          - generic [ref=f11e299]: Melhore esse serviço. Avalie!
+          - button "Responder à pesquisa " [ref=f11e305] [cursor=pointer]:
+            - generic [ref=f11e306]:
+              - text: Responder à pesquisa
+              - generic [ref=f11e307]: 
+        - text: 
+    - generic [ref=f11e310]:
+      - generic [ref=f11e311]: Versão 5.1.19.2
+      - text: "|"
+      - generic [ref=f11e312]: de 05/08/2026 13:18.
+    - contentinfo [ref=f11e313]:
+      - generic [ref=f11e315]:
+        - link "Como chegar" [ref=f11e317] [cursor=pointer]:
+          - /url: http://www.stj.jus.br/sites/portalp/Contato-e-ajuda/Fale-conosco/Como-chegar
+          - generic [ref=f11e318]: 
+          - text: Como chegar
+        - generic [ref=f11e319]:
+          - text: "SAFS - Quadra 06 - Lote 01 - CEP: 70095-900 - Brasília - DF"
+          - generic [ref=f11e320]:
+            - generic [ref=f11e321]: 
+            - text: +55 61 3319-8000
+        - generic [ref=f11e322]: 
+  - generic [ref=f11e324] [cursor=pointer]:
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f11e325]
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f11e326]

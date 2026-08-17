@@ -1,0 +1,213 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e9]: DefesAi Enterprise LegalTech Core
+      - generic [ref=e10]: •
+      - generic [ref=e11]: Ambiente Seguro e Criptografado
+    - generic [ref=e12]:
+      - generic [ref=e13]: API v20.0 • 99.98% Uptime
+      - generic [ref=e14]: •
+      - generic [ref=e15]: Regulamentação CTB / CONTRAN
+  - generic [ref=e16]:
+    - complementary [ref=e18]:
+      - generic [ref=e24] [cursor=pointer]:
+        - generic [ref=e25]:
+          - generic [ref=e26]: DefesAi
+          - generic [ref=e27]: Admin
+        - paragraph [ref=e28]: Console Operacional
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]: Operação Jurídica
+          - button "Dashboard Geral" [ref=e32] [cursor=pointer]
+          - button "Casos & Autuações" [ref=e40] [cursor=pointer]
+          - button "Usuários & Contas" [ref=e46] [cursor=pointer]
+          - button "Documentos & Petições" [ref=e54] [cursor=pointer]
+          - button "Pagamentos (PagBank)" [ref=e60] [cursor=pointer]
+        - generic [ref=e65]:
+          - generic [ref=e66]: Gestão Comercial
+          - button "Visão Geral Comercial" [ref=e67] [cursor=pointer]
+          - button "Tabela de Preços" [ref=e72] [cursor=pointer]
+          - button "Promoções & Campanhas" [ref=e77] [cursor=pointer]
+          - button "Gestão de Cupons" [ref=e83] [cursor=pointer]
+          - button "Bônus (Ledger)" [ref=e89] [cursor=pointer]
+          - button "Indicações em 3 Níveis" [ref=e96] [cursor=pointer]
+          - button "Ledger de Comissões" [ref=e105] [cursor=pointer]
+          - button "Test Center Comercial" [ref=e113] [cursor=pointer]
+          - button "Configurações Comerciais" [ref=e119] [cursor=pointer]
+        - generic [ref=e125]:
+          - generic [ref=e126]: Inteligência & Marketing
+          - button "Marketing OS (7 Agentes)" [ref=e127] [cursor=pointer]
+          - button "IA & Gateway Providers" [ref=e135] [cursor=pointer]
+          - button "Hub de Integrações" [ref=e141] [cursor=pointer]
+          - button "Base Jurídica & CTB" [ref=e154] [cursor=pointer]
+        - generic [ref=e161]:
+          - generic [ref=e162]: Governança & Sistema
+          - button "Configurações (Settings)" [ref=e163] [cursor=pointer]
+          - button "Logs Estruturados" [ref=e167] [cursor=pointer]
+          - button "Monitoramento & Saúde" [ref=e172] [cursor=pointer]
+          - button "Auditoria & LGPD" [ref=e178] [cursor=pointer]
+        - generic [ref=e186]:
+          - generic [ref=e187]: "Status: Operacional"
+          - paragraph [ref=e190]: Motor Determinístico v1 ativo • 52 teses catalogadas.
+          - button "Ver como Motorista" [ref=e191] [cursor=pointer]
+      - generic [ref=e198]:
+        - generic [ref=e199]:
+          - generic [ref=e200]: A
+          - generic [ref=e201]:
+            - paragraph [ref=e202]: Administrador DefesAi
+            - paragraph [ref=e203]: admin@defesai.com.br
+        - button "Sair do Modo Admin" [ref=e204] [cursor=pointer]
+    - generic [ref=e208]:
+      - banner [ref=e209]:
+        - generic [ref=e211]:
+          - navigation [ref=e212]:
+            - button "Admin" [ref=e213] [cursor=pointer]
+            - generic [ref=e216]: Marketing OS
+          - generic [ref=e217]:
+            - heading "Marketing OS (7 Agentes)" [level=1] [ref=e218]
+            - generic [ref=e219]: Admin
+          - paragraph [ref=e220]: Campanhas autônomas de aquisição e nutrição de condutores
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - generic [ref=e224]: API 200 OK
+            - generic [ref=e225]: •
+            - generic [ref=e226]: NVIDIA / 9Router
+          - button "Visão do Usuário" [ref=e227] [cursor=pointer]
+          - button "Encerrar Sessão" [ref=e233] [cursor=pointer]
+      - main [ref=e237]:
+        - generic [ref=e238]:
+          - generic [ref=e239]:
+            - generic [ref=e240]: Organismo Autônomo • 7 Agentes de Aquisição
+            - heading "Marketing OS" [level=1] [ref=e244]
+            - paragraph [ref=e245]: Ciclo autônomo, biblioteca de conteúdos e automações — modelo v1 (DefesAi).
+          - generic [ref=e247]:
+            - button "Dashboard" [ref=e248] [cursor=pointer]
+            - button "Planejamento" [ref=e255] [cursor=pointer]
+            - button "Conteúdos" [active] [ref=e261] [cursor=pointer]
+            - button "Agendamento" [ref=e266] [cursor=pointer]
+            - button "Automações" [ref=e272] [cursor=pointer]
+            - button "Canais" [ref=e276] [cursor=pointer]
+            - button "Resultados" [ref=e284] [cursor=pointer]
+            - button "Configurações" [ref=e288] [cursor=pointer]
+          - generic [ref=e336]:
+            - generic [ref=e338]:
+              - generic [ref=e339]:
+                - generic [ref=e340]:
+                  - button "Todos (4)" [pressed] [ref=e341] [cursor=pointer]:
+                    - text: Todos
+                    - generic [ref=e342]: (4)
+                  - button "Rascunhos (0)" [ref=e343] [cursor=pointer]:
+                    - text: Rascunhos
+                    - generic [ref=e344]: (0)
+                  - button "Em aprovação (1)" [ref=e345] [cursor=pointer]:
+                    - text: Em aprovação
+                    - generic [ref=e346]: (1)
+                  - button "Agendados (2)" [ref=e347] [cursor=pointer]:
+                    - text: Agendados
+                    - generic [ref=e348]: (2)
+                  - button "Publicados (1)" [ref=e349] [cursor=pointer]:
+                    - text: Publicados
+                    - generic [ref=e350]: (1)
+                - searchbox "Buscar conteúdo" [ref=e355]
+                - generic [ref=e356]:
+                  - generic [ref=e357]:
+                    - button "Lista" [pressed] [ref=e358] [cursor=pointer]
+                    - button "Cards" [ref=e360] [cursor=pointer]
+                  - combobox "Ordenar por" [ref=e366]:
+                    - option "Atualizados primeiro" [selected]
+                    - option "Criados primeiro"
+                    - option "Título (A-Z)"
+                  - button "Gerar com IA" [ref=e367] [cursor=pointer]
+              - generic [ref=e371]:
+                - combobox "Filtrar por rede" [ref=e372]:
+                  - option "Todas as redes" [selected]
+                  - option "Instagram"
+                  - option "Blog"
+                  - option "TikTok"
+                  - option "LinkedIn"
+                  - option "E-mail"
+                - combobox "Filtrar por formato" [ref=e373]:
+                  - option "Todos os formatos" [selected]
+                  - option "Carrossel"
+                  - option "Artigo SEO"
+                  - option "Reels"
+                  - option "Infográfico"
+                  - option "Newsletter"
+                - combobox "Filtrar por autor" [ref=e374]:
+                  - option "Todos os autores" [selected]
+                  - 'option "Autor: IA"'
+                  - 'option "Autor: Humano"'
+              - table [ref=e377]:
+                - rowgroup [ref=e378]:
+                  - row [ref=e379]:
+                    - columnheader "Conteúdo" [ref=e380]
+                    - columnheader "Canal / Formato" [ref=e381]
+                    - columnheader "Autor" [ref=e382]
+                    - columnheader "Status" [ref=e383]
+                    - columnheader "Agendado" [ref=e384]
+                    - columnheader "Qualidade" [ref=e385]
+                    - columnheader "Ações" [ref=e386]
+                - rowgroup [ref=e387]:
+                  - row [ref=e388] [cursor=pointer]:
+                    - cell [ref=e389]:
+                      - generic [ref=e396]:
+                        - paragraph [ref=e397]: Celular no suporte do painel dá multa? O que diz a nova resolução
+                        - paragraph [ref=e398]: Artigo 252 do CTB — Manuseio x Suporte Veicular
+                    - cell "instagram • Carrossel" [ref=e399]
+                    - cell "IA" [ref=e400]
+                    - cell "Agendado" [ref=e405]
+                    - cell "2026-08-17 19:00" [ref=e406]
+                    - cell "9.7/10" [ref=e407]
+                    - cell [ref=e408]:
+                      - generic [ref=e409]:
+                        - generic "Visualizar" [ref=e410]: Ver
+                        - button "Mais ações" [ref=e415]
+                  - row [ref=e420] [cursor=pointer]:
+                    - cell [ref=e421]:
+                      - generic [ref=e429]:
+                        - paragraph [ref=e430]: Recusou o teste do bafômetro? Entenda por que a multa não é automática
+                        - paragraph [ref=e431]: Art. 165-A e Termo de Constatação de Embriaguez
+                    - cell "tiktok • Reels" [ref=e432]
+                    - cell "IA" [ref=e433]
+                    - cell "Em aprovação" [ref=e438]
+                    - cell "2026-08-16 12:00" [ref=e439]
+                    - cell "9.6/10" [ref=e440]
+                    - cell [ref=e441]:
+                      - generic [ref=e442]:
+                        - generic "Visualizar" [ref=e443]: Ver
+                        - button "Mais ações" [ref=e448]
+                  - row [ref=e453] [cursor=pointer]:
+                    - cell [ref=e454]:
+                      - generic [ref=e461]:
+                        - paragraph [ref=e462]: Recebeu notificação de radar? Confira se a aferição do INMETRO está válida!
+                        - paragraph [ref=e463]: Aferição Metrológica e Resolução CONTRAN 798/2020
+                    - cell "instagram • Carrossel" [ref=e464]
+                    - cell "IA" [ref=e465]
+                    - cell "Agendado" [ref=e470]
+                    - cell "2026-08-15 18:30" [ref=e471]
+                    - cell "9.8/10" [ref=e472]
+                    - cell [ref=e473]:
+                      - generic [ref=e474]:
+                        - generic "Visualizar" [ref=e475]: Ver
+                        - button "Mais ações" [ref=e480]
+                  - row [ref=e485] [cursor=pointer]:
+                    - cell [ref=e486]:
+                      - generic [ref=e491]:
+                        - paragraph [ref=e492]: Como converter sua multa leve ou média em Advertência por Escrito (Sem pagar nada)
+                        - paragraph [ref=e493]: Conversão em Advertência por Escrito — Art. 267 do CTB
+                    - cell "blog • Artigo SEO" [ref=e494]
+                    - cell "IA" [ref=e495]
+                    - cell "Publicado" [ref=e500]
+                    - cell "2026-08-14 10:00" [ref=e501]
+                    - cell "9.9/10" [ref=e502]
+                    - cell [ref=e503]:
+                      - generic [ref=e504]:
+                        - generic "Visualizar" [ref=e505]: Ver
+                        - button "Mais ações" [ref=e510]
+            - paragraph [ref=e521]: Selecione um conteúdo para visualizar o copy completo.
+      - contentinfo [ref=e319]:
+        - generic [ref=e320]: DefesAi Plataforma Privada de Tecnologia Jurídica © 2026
+        - generic [ref=e322]:
+          - generic [ref=e323]: NVIDIA NIM AI • 9Router Gateway
+          - generic [ref=e324]: PagBank Orders v2
+          - generic [ref=e325]: LGPD Compliant

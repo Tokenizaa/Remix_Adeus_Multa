@@ -18,8 +18,9 @@ export const AnalysisProcessingStep: React.FC<AnalysisProcessingStepProps> = ({ 
 
   const stages = [
     { label: 'Recebendo e validando dados informados pelo condutor', duration: 700 },
-    { label: 'Cruzando autuação com 52 teses do CTB e Resoluções do CONTRAN', duration: 800 },
-    { label: 'Auditando decadência de prazo (Art. 281 do CTB) e aferição de radar', duration: 800 },
+    { label: 'Cruzando autuação com 390 dispositivos do CTB e Resoluções do CONTRAN', duration: 800 },
+    { label: 'Auditando decadência de prazo (Art. 281-A CTB — Lei 14.071/2020) e aferição de radar', duration: 800 },
+    { label: 'Verificando vigência temporal: Lei 14.071/2020, 14.229/2021, 14.440/2022, 14.599/2023', duration: 700 },
     { label: 'Calibrando probabilidade de deferimento perante o órgão autuador', duration: 700 },
     { label: 'Diagnóstico jurídico 100% gratuito concluído com sucesso!', duration: 500 },
   ];
@@ -55,7 +56,7 @@ export const AnalysisProcessingStep: React.FC<AnalysisProcessingStepProps> = ({ 
           Analisando sua autuação com Inteligência Jurídica
         </h2>
         <p className="text-slate-500 text-xs sm:text-sm max-w-md mx-auto">
-          Aplicando precedentes dos órgãos de trânsito, regras do CTB e súmulas vigentes.
+          Aplicando 390 dispositivos do CTB, 7 peças-modelo validadas e precedentes do STJ em tempo real.
         </p>
       </div>
 

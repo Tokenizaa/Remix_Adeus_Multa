@@ -11,7 +11,7 @@ import {
   ChevronRight,
   ShieldCheck,
   CreditCard,
-  Building2
+  Building2,
 } from 'lucide-react';
 import { useRouter } from '../../core/router/RouterContext';
 import { useAuth } from '../../core/auth/AuthContext';
@@ -38,21 +38,8 @@ export const UserSidebar: React.FC<UserSidebarProps> = ({ activeCaseCount = 0 })
       badge: activeCaseCount > 0 ? activeCaseCount : null,
     },
     {
-      label: 'Nova Análise de Multa',
-      path: '/novo-caso',
-      icon: PlusCircle,
-      badge: 'Grátis',
-      highlight: true,
-    },
-    {
-      label: 'Meu Cadastro',
-      path: '/perfil',
-      icon: User,
-      badge: null,
-    },
-    {
-      label: 'Configurações',
-      path: '/configuracoes',
+      label: 'Minhas Configurações',
+      path: '/perfil', // This will now show the consolidated UserSettingsView
       icon: Settings,
       badge: null,
     },
@@ -71,23 +58,23 @@ export const UserSidebar: React.FC<UserSidebarProps> = ({ activeCaseCount = 0 })
           onClick={() => navigate('/dashboard')}
           className="flex items-center gap-2.5 cursor-pointer group"
         >
-          <div className="flex items-center font-extrabold text-xl tracking-tighter text-[#071D41] font-sans">
-            <span>gov</span>
-            <span className="text-[#155BCB]">.</span>
-            <span className="text-[#168821]">br</span>
+          <div className="w-8 h-8 rounded-xl bg-orange-500 flex items-center justify-center font-bold text-white shadow-sm shadow-orange-500/20 group-hover:scale-105 transition-transform text-xs">
+            <ShieldAlert className="w-4 h-4 text-white" />
           </div>
-          <div className="h-5 w-px bg-slate-300" />
           <div>
-            <span className="font-bold text-[#071D41] tracking-tight text-sm block">DefesAi</span>
-            <span className="text-[10px] font-bold text-[#155BCB] uppercase font-mono">
-              Área do Condutor
-            </span>
+            <div className="flex items-center gap-1.5">
+              <span className="font-extrabold text-white tracking-tight text-base">DefesAi</span>
+              <span className="text-[9px] font-bold tracking-wider uppercase px-1.5 py-0.2 rounded bg-orange-500/20 text-orange-400 border border-orange-500/30 font-mono">
+                Admin
+              </span>
+            </div>
+            <p className="text-[10px] text-slate-500 font-mono">Console Operacional</p>
           </div>
         </div>
       </div>
 
       {/* Main User Navigation */}
-      <div className="p-3 flex-1 space-y-1">
+      <div className="p-3 flex-1 space-y-4 overflow-y-auto">
         <div className="px-3 py-1.5 text-[10px] font-bold text-slate-500 uppercase tracking-wider font-mono">
           Navegação do Cidadão
         </div>
@@ -101,7 +88,7 @@ export const UserSidebar: React.FC<UserSidebarProps> = ({ activeCaseCount = 0 })
               key={item.path}
               id={`nav-user-${item.path.replace('/', '')}`}
               onClick={() => navigate(item.path)}
-              className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+              className={`w-full px-3 py-2 rounded-xl text-xs font-semibold flex items-center justify-between transition-all cursor-pointer ${
                 active
                   ? 'bg-[#E7EFFF] text-[#155BCB] font-bold border-l-4 border-[#155BCB]'
                   : item.highlight
@@ -111,66 +98,60 @@ export const UserSidebar: React.FC<UserSidebarProps> = ({ activeCaseCount = 0 })
             >
               <div className="flex items-center gap-2.5">
                 <Icon
-                  className={`w-4 h-4 ${
-                    active
-                      ? 'text-[#155BCB]'
-                      : item.highlight
-                      ? 'text-[#155BCB]'
-                      : 'text-slate-500'
-                  }`}
+                  className={`w-4 h-4 ${active ? 'text-[#155BCB]' : item.highlight ? 'text-[#155BCB]' : 'text-slate-500'}`}
                 />
                 <span>{item.label}</span>
               </div>
-
-              {item.badge && (
-                <span
-                  className={`text-[9px] font-mono font-bold px-1.5 py-0.2 rounded ${
-                    item.highlight
-                      ? 'bg-[#155BCB] text-white'
-                      : 'bg-slate-200 text-slate-700'
-                  }`}
-                >
-                  {item.badge}
-                </span>
-              )}
+              {active && <ChevronRight className="w-3.5 h-3.5 text-white" />}
             </button>
           );
         })}
-
-        {/* Link para o Painel Admin caso seja administrador */}
-        {isAdmin && (
-          <div className="pt-4 mt-4 border-t border-slate-200">
-            <div className="px-3 py-1 text-[10px] font-bold text-purple-700 uppercase tracking-wider font-mono">
-              Acesso Governamental
-            </div>
-            <button
-              onClick={() => navigate('/admin')}
-              className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-bold text-purple-900 bg-purple-50 hover:bg-purple-100 transition-colors cursor-pointer"
-            >
-              <div className="flex items-center gap-2">
-                <Building2 className="w-4 h-4 text-purple-700" />
-                <span>Console Administrativo</span>
-              </div>
-              <ChevronRight className="w-3.5 h-3.5 text-purple-500" />
-            </button>
-          </div>
-        )}
       </div>
+
+      {/* CTA Button - Nova Análise */}
+      <div className="p-3 border-t border-[#CCCCCC]">
+        <button
+          onClick={() => navigate('/novo-caso')}
+          className="w-full px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg text-xs font-bold flex items-center justify-between transition-all cursor-pointer shadow-xs shadow-orange-200"
+        >
+          <div className="flex items-center gap-2">
+            <PlusCircle className="w-4 h-4" />
+            <span>Nova Análise</span>
+          </div>
+        </button>
+      </div>
+
+      {/* Link para o Painel Admin caso seja administrador */}
+      {isAdmin && (
+        <div className="pt-4 mt-4 border-t border-slate-200">
+          <div className="px-3 py-1 text-[10px] font-bold text-purple-700 uppercase tracking-wider font-mono">
+            Acesso Governamental
+          </div>
+          <button
+            onClick={() => navigate('/admin')}
+            className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-bold text-purple-900 bg-purple-50 hover:bg-purple-100 transition-colors cursor-pointer"
+          >
+            <div className="flex items-center gap-2">
+              <Building2 className="w-4 h-4 text-purple-700" />
+              <span>Console Administrativo</span>
+            </div>
+            <ChevronRight className="w-3.5 h-3.5 text-purple-500" />
+          </button>
+        </div>
+      )}
 
       {/* User Info & Logout footer */}
       <div className="p-3 border-t border-[#CCCCCC] bg-[#F8F8F8]">
         <div className="flex items-center justify-between p-2 rounded-lg bg-white border border-[#E6E6E6]">
           <div className="flex items-center gap-2 min-w-0">
             <div className="w-7 h-7 rounded-full bg-[#071D41] text-white flex items-center justify-center text-xs font-bold shrink-0">
-              {user?.name ? user.name[0].toUpperCase() : 'C'}
+              A
             </div>
             <div className="min-w-0">
-              <p className="text-xs font-bold text-[#071D41] truncate">
-                {user?.name || 'Condutor'}
-              </p>
-              <span className="text-[10px] font-mono text-[#168821] font-semibold block truncate">
+              <p className="text-xs font-bold text-[#071D41] truncate">{user?.name || 'Condutor'}</p>
+              <p className="text-[10px] font-mono text-[#168821] font-semibold block truncate">
                 Conta gov.br Verificada
-              </span>
+              </p>
             </div>
           </div>
 

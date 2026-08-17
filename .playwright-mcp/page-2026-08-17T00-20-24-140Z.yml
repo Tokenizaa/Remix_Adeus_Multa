@@ -1,0 +1,260 @@
+- generic [active] [ref=f16e1]:
+  - generic [ref=f16e2]:
+    - generic [ref=f16e4]:
+      - generic [ref=f16e5]:
+        - generic [ref=f16e6]:
+          - link "Acessibilidade:" [ref=f16e7] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Paginas/Acessibilidade.aspx
+          - link "A-" [ref=f16e8] [cursor=pointer]:
+            - /url: javascript:;
+          - link "A+" [ref=f16e9] [cursor=pointer]:
+            - /url: javascript:;
+          - link "AA" [ref=f16e10] [cursor=pointer]:
+            - /url: javascript:;
+        - generic [ref=f16e11]:
+          - text: "Sob medida:"
+          - link "Advogado" [ref=f16e12] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Sob-medida/Advogado
+          - link "Tribunais" [ref=f16e13] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Sob-medida/tribunais
+          - link "Servidor" [ref=f16e14] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Sob-medida/Servidor
+        - text: 
+        - generic [ref=f16e15]:
+          - generic [ref=f16e16]:
+            - link "Ouvidoria" [ref=f16e17] [cursor=pointer]:
+              - /url: https://www.stj.jus.br/sites/portalp/Contato-e-ajuda/Fale-conosco/Ouvidoria
+            - button [ref=f16e18] [cursor=pointer]:
+              - text: Acesso Rápido
+              - button "" [ref=f16e19]
+          - button [ref=f16e20] [cursor=pointer]:
+            - text: Redes Sociais
+            - button "" [ref=f16e21]
+          - text:          
+          - button "" [ref=f16e24] [cursor=pointer]
+      - text:                                                                       
+      - generic [ref=f16e25]:
+        - text: 
+        - link [ref=f16e27] [cursor=pointer]:
+          - /url: https://www.stj.jus.br/sites/portalp/Inicio
+          - img "Logo STJ" [ref=f16e28]
+        - navigation [ref=f16e30]:
+          - list [ref=f16e31]:
+            - listitem [ref=f16e32]:
+              - link "Institucional" [ref=f16e33] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f16e34]:
+              - link "Processos" [ref=f16e35] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f16e36]:
+              - link "Jurisprudência" [ref=f16e37] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f16e38]:
+              - link "Precedentes" [ref=f16e39] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f16e40]:
+              - link "Internacional" [ref=f16e41] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f16e42]:
+              - link "Comunicação" [ref=f16e43] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f16e44]:
+              - link "Leis e normas" [ref=f16e45] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f16e46]:
+              - link "Sob medida" [ref=f16e47] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f16e48]:
+              - link "Contato e ajuda" [ref=f16e49] [cursor=pointer]:
+                - /url: javascript:;
+        - button "" [ref=f16e51] [cursor=pointer]
+        - text:  
+    - generic [ref=f16e52]:
+      - generic [ref=f16e53]:
+        - link "Início" [ref=f16e55] [cursor=pointer]:
+          - /url: http://www.stj.jus.br/
+        - link "Precedentes" [ref=f16e56] [cursor=pointer]:
+          - /url: javascript:;
+        - link "Pesquisa de Precedentes" [ref=f16e57] [cursor=pointer]:
+          - /url: https://processo.stj.jus.br/repetitivos/temas_repetitivos/
+      - generic [ref=f16e59]:
+        - heading "Precedentes Qualificados" [level=1] [ref=f16e62]
+        - generic [ref=f16e64]:
+          - generic [ref=f16e67]:
+            - generic [ref=f16e69]:
+              - textbox "Termo ou número" [ref=f16e70]
+              - button "" [ref=f16e72] [cursor=pointer]
+            - generic [ref=f16e73]:
+              - link " Opções de pesquisa" [ref=f16e76] [cursor=pointer]:
+                - /url: javascript:;
+                - generic [ref=f16e77]: 
+                - generic [ref=f16e78]: Opções de pesquisa
+              - generic [ref=f16e79]:
+                - generic [ref=f16e80]: "Operador:"
+                - generic [ref=f16e82]:
+                  - generic [ref=f16e84] [cursor=pointer]:
+                    - text: e
+                    - radio "e" [checked] [ref=f16e85]
+                  - generic [ref=f16e88] [cursor=pointer]:
+                    - text: adj
+                    - radio "adj" [ref=f16e89]
+                - generic [ref=f16e94] [cursor=pointer]:
+                  - text: Pesquisar sinônimos
+                  - checkbox "Pesquisar sinônimos" [checked]
+                - generic [ref=f16e99] [cursor=pointer]:
+                  - text: Pesquisar plurais
+                  - checkbox "Pesquisar plurais" [checked]
+              - link "Avalie nosso serviço E ajude a aprimorar a Pesquisa de Precedentes Qualificados" [ref=f16e105] [cursor=pointer]:
+                - /url: https://forms.office.com/r/PSvd5VzGT8
+                - generic [ref=f16e106]: Avalie nosso serviço
+                - generic [ref=f16e107]: E ajude a aprimorar a Pesquisa de Precedentes Qualificados
+          - generic [ref=f16e108]:
+            - generic [ref=f16e110]:
+              - generic [ref=f16e111]: Temas (1)
+              - generic [ref=f16e113]: Controvérsias (0)
+              - generic [ref=f16e115]: IAC (0)
+              - generic [ref=f16e117]: SIRDR (0)
+              - generic [ref=f16e119]: PUIL (0)
+            - generic [ref=f16e121]:
+              - generic [ref=f16e122]:
+                - generic [ref=f16e123]: 1 documento encontrado
+                - generic [ref=f16e127]:
+                  - generic [ref=f16e128]: "Nesta página:"
+                  - text: 1 ~ 1
+              - generic [ref=f16e130]:
+                - link "" [ref=f16e131] [cursor=pointer]:
+                  - /url: /repetitivos/temas_repetitivos/?pesquisaAvancada=true
+                - generic "Primeira página" [ref=f16e133]: 
+                - generic "Página anterior" [ref=f16e135]: 
+                - generic "Próxima página" [ref=f16e137]: 
+                - generic "Última página" [ref=f16e139]: 
+              - generic [ref=f16e142]:
+                - button "" [ref=f16e143]
+                - button "" [ref=f16e144]
+                - combobox [ref=f16e145]:
+                  - option "10" [selected]
+                  - option "20"
+                  - option "50"
+                  - option "Todos"
+                - generic [ref=f16e146]: resultados por página
+            - generic [ref=f16e148]:
+              - generic [ref=f16e149]:
+                - generic [ref=f16e150]: Documento 1
+                - generic [ref=f16e152]:
+                  - generic [ref=f16e153]: 
+                  - text: Assuntos
+                - generic [ref=f16e154]:
+                  - checkbox "Selecione para impressão" [ref=f16e155]
+                  - text: Selecionar
+              - generic [ref=f16e156]:
+                - generic [ref=f16e159]:
+                  - text: Tema Repetitivo 1097
+                  - link "" [ref=f16e161] [cursor=pointer]:
+                    - /url: "javascript:copiarLinkTema(\n\t    \t\t    \t\t\t'T',\n\t    \t\t    \t\t\t'1097',\n\t    \t\t    \t\t\t'iconeCopy-T-1097',\n\t    \t\t    \t\t\t'iconeCheck-T-1097');"
+                - generic [ref=f16e165]:
+                  - generic [ref=f16e166]: Situação
+                  - generic [ref=f16e167]: Trânsito em Julgado
+                - generic [ref=f16e169]:
+                  - generic [ref=f16e170]: Órgão julgador
+                  - generic [ref=f16e171]: PRIMEIRA SEÇÃO
+                - generic [ref=f16e173]:
+                  - generic [ref=f16e174]: Ramo do direito
+                  - generic [ref=f16e175]: DIREITO ADMINISTRATIVO
+              - generic [ref=f16e176]:
+                - generic [ref=f16e177]: Questão submetida a julgamento
+                - paragraph [ref=f16e181]: Verificação da necessidade de observação dos art. 280 e 281 da Lei 9.503/1997 em relação à infração pela não indicação de condutor prevista no art. 257 § 7º e 8º, para definir a imperiosidade da notificação da infração e da notificação de eventual imposição de penalidade.
+              - generic [ref=f16e182]:
+                - generic [ref=f16e183]: Tese Firmada
+                - paragraph [ref=f16e187]: "Em se tratando de multa aplicada às pessoas jurídicas proprietárias de veículo, fundamentada na ausência de indicação do condutor infrator, é obrigatório observar a dupla notificação: a primeira que se refere à autuação da infração e a segunda sobre a aplicação da penalidade, conforme estabelecido nos arts. 280, 281 e 282 do CTB."
+              - generic [ref=f16e188]:
+                - generic [ref=f16e189]: Anotações NUGEPNAC
+                - paragraph [ref=f16e193]: Afetação na sessão eletrônica iniciada em 26/5/2021 e finalizada em 1/6/2021 (Primeira Seção).IRDR 2187472-23.2017.8.26.0000 TJSP - REsp em IRDR.
+              - generic [ref=f16e194]:
+                - generic [ref=f16e195]: Informações Complementares
+                - paragraph [ref=f16e199]: Há determinação de suspensão de todos os processos pendentes, individuais ou coletivos, que versem acerca da questão delimitada e tramitem no território nacional (art. 1.037, II, do CPC/2015). (Acórdão publicado no DJe de 8/6/2021).
+              - generic [ref=f16e200]:
+                - generic "Paradigma Principal" [ref=f16e202]: 
+                - generic [ref=f16e204]:
+                  - link "REsp 1925456/SP" [ref=f16e205] [cursor=pointer]:
+                    - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=202000273310
+                  - button "PUSH" [ref=f16e206]
+              - generic [ref=f16e208]:
+                - generic [ref=f16e209]:
+                  - generic [ref=f16e210]:
+                    - generic [ref=f16e211]: Tribunal de Origem
+                    - generic [ref=f16e212]: TJSP
+                  - generic [ref=f16e214]:
+                    - generic [ref=f16e215]: RRC
+                    - generic [ref=f16e216]: Sim
+                  - generic [ref=f16e218]:
+                    - generic [ref=f16e219]: Relator
+                    - generic [ref=f16e220]: VICE-PRESIDENTE DO STJ
+                  - generic [ref=f16e222]:
+                    - generic [ref=f16e223]: Embargos de Declaração
+                    - generic [ref=f16e225]:
+                      - text: 1)
+                      - link "13/06/2022" [ref=f16e226] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/revista/inteiroteor/?num_registro=202000273310&dt_publicacao=13/06/2022
+                      - text: 2)
+                      - link "13/06/2022" [ref=f16e227] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/revista/inteiroteor/?num_registro=202000273310&dt_publicacao=13/06/2022
+                      - text: 3)
+                      - link "13/06/2022" [ref=f16e228] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/revista/inteiroteor/?num_registro=202000273310&dt_publicacao=13/06/2022
+                - generic [ref=f16e229]:
+                  - generic [ref=f16e230]:
+                    - generic [ref=f16e231]: Afetação
+                    - link "08/06/2021" [ref=f16e234] [cursor=pointer]:
+                      - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=202000273310.REG.+E+@DTPB='20210608'
+                  - generic [ref=f16e235]:
+                    - generic [ref=f16e236]: Julgado em
+                    - generic [ref=f16e237]: 21/10/2021
+                  - generic [ref=f16e239]:
+                    - generic [ref=f16e240]: Acórdão publicado em
+                    - generic [ref=f16e242]:
+                      - link "17/12/2021" [ref=f16e243] [cursor=pointer]:
+                        - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=202000273310.REG. E 17/12/2021.FONT.
+                      - button "ROA" [ref=f16e244]
+                  - generic [ref=f16e245]:
+                    - generic [ref=f16e246]: Trânsito em Julgado
+                    - generic [ref=f16e247]: 16/12/2024
+              - generic [ref=f16e249]: "Última atualização: 10/11/2025"
+            - generic [ref=f16e252]:
+              - button "Exportar todos" [ref=f16e256]
+              - generic [ref=f16e258]:
+                - button "Imprimir todos" [ref=f16e259]
+                - button "Imprimir selecionados" [ref=f16e260]
+        - generic [ref=f16e261]:
+          - generic [ref=f16e262]:
+            - link "" [ref=f16e263] [cursor=pointer]:
+              - /url: /repetitivos/temas_repetitivos/?pesquisaAvancada=true
+            - generic "Primeira página" [ref=f16e265]: 
+            - generic "Página anterior" [ref=f16e267]: 
+            - generic "Próxima página" [ref=f16e269]: 
+            - generic "Última página" [ref=f16e271]: 
+          - table:
+            - rowgroup:
+              - row
+        - generic [ref=f16e273]: Esta pesquisa recupera informações inseridas pelo NUGEPNAC nesta página e as presentes na base de dados da Secretaria de Jurisprudência do STJ.
+    - generic [ref=f16e274]:
+      - generic [ref=f16e275]: Versão 3.2.2.1
+      - text: "|"
+      - generic [ref=f16e276]: de 29/04/2026 13:13.
+    - contentinfo [ref=f16e277]:
+      - generic [ref=f16e279]:
+        - link " Como chegar" [ref=f16e281] [cursor=pointer]:
+          - /url: http://www.stj.jus.br/sites/portalp/Contato-e-ajuda/Fale-conosco/Como-chegar
+          - generic [ref=f16e282]: 
+          - text: Como chegar
+        - generic [ref=f16e283]:
+          - text: "SAFS - Quadra 06 - Lote 01 - CEP: 70095-900 - Brasília - DF"
+          - generic [ref=f16e284]: 
+          - link "+55 61 3319-8000" [ref=f16e285] [cursor=pointer]:
+            - /url: ""
+        - link " Avalie o Portal STJ" [ref=f16e287] [cursor=pointer]:
+          - /url: https://www.stj.jus.br/sites/portalp/Paginas/Institucional/Pesquisa-de-satisfacao.aspx
+          - generic [ref=f16e288]: 
+          - text: Avalie o Portal STJ
+  - generic [ref=f16e290] [cursor=pointer]:
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f16e291]
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f16e292]

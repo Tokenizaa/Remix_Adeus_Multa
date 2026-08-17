@@ -1,0 +1,146 @@
+- generic [ref=e324]:
+  - generic [ref=e326]:
+    - generic [ref=e327]:
+      - link "Ir para o conteúdo 1" [ref=e328] [cursor=pointer]:
+        - /url: "#main-content"
+        - generic [ref=e329]: Ir para o conteúdo
+        - generic [ref=e330]: "1"
+      - link "Ir para o menu 2" [ref=e331] [cursor=pointer]:
+        - /url: "#main-menu"
+        - generic [ref=e332]: Ir para o menu
+        - generic [ref=e333]: "2"
+      - link "Ir para a busca 3" [ref=e334] [cursor=pointer]:
+        - /url: "#main-search"
+        - generic [ref=e335]: Ir para a busca
+        - generic [ref=e336]: "3"
+      - link "Ir para o rodapé 4" [ref=e337] [cursor=pointer]:
+        - /url: "#footer"
+        - generic [ref=e338]: Ir para o rodapé
+        - generic [ref=e339]: "4"
+    - generic [ref=e340]:
+      - generic [ref=e341]:
+        - button "Diminuir tamanho da fonte" [ref=e342] [cursor=pointer]: A-
+        - button "Redefinir tamanho da fonte" [ref=e343] [cursor=pointer]: A
+        - button "Aumentar tamanho da fonte" [ref=e344] [cursor=pointer]: A+
+      - button "Alternar modo de alto contraste" [ref=e345] [cursor=pointer]:
+        - generic [ref=e352]: Alto Contraste
+  - banner [ref=e353]:
+    - generic [ref=e355]:
+      - generic [ref=e356]:
+        - generic [ref=e357]: DEFESAI
+        - generic [ref=e359]: Sistema de Defesa Autônoma
+      - generic [ref=e360]:
+        - link "Página Inicial" [ref=e361] [cursor=pointer]:
+          - /url: /
+        - link "Análise Gratuita" [ref=e362] [cursor=pointer]:
+          - /url: /novo-caso
+        - link "Base Jurídica" [ref=e363] [cursor=pointer]:
+          - /url: /knowledge
+    - generic [ref=e365]:
+      - generic [ref=e366]:
+        - button "Abrir menu de navegação" [ref=e367] [cursor=pointer]
+        - generic [ref=e369] [cursor=pointer]:
+          - generic [ref=e370]:
+            - generic [ref=e371]: Defe
+            - generic [ref=e372]: s
+            - generic [ref=e373]: Ai
+          - generic [ref=e375]:
+            - heading "Adeus Multa CTB • CONTRAN" [level=1] [ref=e376]:
+              - generic [ref=e377]: Adeus
+              - generic [ref=e378]: Multa
+              - generic [ref=e379]: CTB • CONTRAN
+            - paragraph [ref=e380]: Plataforma de Defesa Autônoma para Multas de Trânsito
+      - generic [ref=e381]:
+        - generic [ref=e382]:
+          - textbox "Buscar serviços ou infrações..." [ref=e383]
+          - button "Executar busca" [ref=e384] [cursor=pointer]
+        - button "Análise Gratuita" [ref=e388] [cursor=pointer]
+        - button "D Acessar Conta" [ref=e393] [cursor=pointer]:
+          - generic [ref=e394]: D
+          - generic [ref=e395]: Acessar Conta
+  - main [ref=e396]:
+    - generic [ref=e398]:
+      - generic [ref=e399]:
+        - generic [ref=e400]:
+          - generic [ref=e401]: gov
+          - generic [ref=e402]: .
+          - generic [ref=e403]: br
+        - heading "Identificação do Cidadão no DefesAi" [level=1] [ref=e404]
+        - paragraph [ref=e405]: Acesse seus diagnósticos de autuação, defesas protocoladas e prazos.
+      - generic [ref=e406]:
+        - button "g Entrar com gov.br" [ref=e407] [cursor=pointer]:
+          - generic [ref=e408]: g
+          - generic [ref=e409]: Entrar com gov.br
+        - generic [ref=e410]:
+          - generic [ref=e411]: "Níveis de Conta Aceitos:"
+          - paragraph [ref=e415]: Bronze (básico), Prata (bancos credenciados / CNH) e Ouro (biometria / certificado ICP-Brasil).
+      - generic [ref=e416]: Ou acesse com e-mail cadastrado
+      - generic [ref=e420]:
+        - generic [ref=e421]:
+          - generic [ref=e422]: E-mail do Condutor
+          - textbox "seu.email@exemplo.com" [ref=e427]
+        - generic [ref=e428]:
+          - generic [ref=e429]:
+            - generic [ref=e430]: Senha de Acesso
+            - button "Esqueceu a senha?" [ref=e431]
+          - textbox "••••••••" [ref=e436]
+        - button "Acessar Painel" [ref=e437] [cursor=pointer]
+      - generic [ref=e441]:
+        - generic [ref=e442]: Acesso Rápido de Homologação
+        - generic [ref=e443]:
+          - button "👤 Condutor Demo" [ref=e444] [cursor=pointer]
+          - button "🏛️ Gestor Público" [ref=e445] [cursor=pointer]
+      - generic [ref=e446]:
+        - text: Novo condutor?
+        - button "Fazer análise preliminar gratuita" [ref=e447] [cursor=pointer]
+  - contentinfo [ref=e448]:
+    - generic [ref=e449]:
+      - generic [ref=e450]:
+        - generic [ref=e451]:
+          - generic [ref=e452]:
+            - generic [ref=e453]:
+              - generic [ref=e454]: Defe
+              - generic [ref=e455]: s
+              - generic [ref=e456]: Ai
+            - generic [ref=e457]: "| Adeus Multa"
+          - paragraph [ref=e458]: Plataforma de inteligência jurídica para geração determinística de defesas e recursos de trânsito em conformidade com o Código de Trânsito Brasileiro (CTB) e Resoluções do CONTRAN.
+          - generic [ref=e459]: Sistema de Defesa Autônoma
+        - generic [ref=e463]:
+          - heading "Serviços ao Usuário" [level=3] [ref=e464]
+          - list [ref=e465]:
+            - listitem [ref=e466]:
+              - button "Análise Preliminar Gratuita de Multa" [ref=e467] [cursor=pointer]
+            - listitem [ref=e468]:
+              - button "Defesa Prévia (Notificação de Autuação)" [ref=e469] [cursor=pointer]
+            - listitem [ref=e470]:
+              - button "Recurso à JARI (1ª Instância)" [ref=e471] [cursor=pointer]
+            - listitem [ref=e472]:
+              - button "Recurso ao CETRAN (2ª Instância)" [ref=e473] [cursor=pointer]
+            - listitem [ref=e474]:
+              - button "Conversão em Advertência (Art. 267 CTB)" [ref=e475] [cursor=pointer]
+        - generic [ref=e476]:
+          - heading "Legislação & Normas" [level=3] [ref=e477]
+          - list [ref=e478]:
+            - listitem [ref=e479]:
+              - link "Lei nº 9.503/1997 (CTB)" [ref=e480] [cursor=pointer]:
+                - /url: https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm
+            - listitem [ref=e486]: Resoluções CONTRAN (798, 909, 918)
+            - listitem [ref=e487]: Súmula 312 do STJ (Notificação Dupla)
+            - listitem [ref=e488]: Tema 1.097 do STJ
+            - listitem [ref=e489]:
+              - link "SENATRAN — Secretaria Nacional" [ref=e490] [cursor=pointer]:
+                - /url: https://www.gov.br/transportes/pt-br/assuntos/transito/senatran
+        - generic [ref=e496]:
+          - heading "Acessibilidade & LGPD" [level=3] [ref=e497]
+          - paragraph [ref=e498]: Tratamento de dados realizado estritamente segundo as diretrizes da Lei nº 13.709/2018 (LGPD), garantindo sigilo e minimização de coleta.
+          - generic [ref=e499]:
+            - generic [ref=e500]: Criptografia de Ponta a Ponta
+            - paragraph [ref=e505]: Em conformidade com o eMAG e WCAG 2.1 / 2.2 AA.
+      - generic [ref=e506]:
+        - generic [ref=e507]:
+          - generic [ref=e508]: BRASIL
+          - paragraph [ref=e510]: © 2026 DefesAi • Tecnologia Jurídica Autônoma • Todos os direitos reservados.
+        - generic [ref=e511]:
+          - generic [ref=e512]: Padrão DefesAi
+          - generic [ref=e513]: •
+          - generic [ref=e514]: Versão 1.0.0

@@ -33,12 +33,11 @@
     "year": 2013,
     "theme": "Fiscalização de Álcool e Substâncias Psicoativas (Lei Seca)",
     "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/resolucao4322013.pdf",
-    "summary": "Dispõe sobre os procedimentos a serem adotados pelas autoridades de trânsito e seus agentes na fiscalização do consumo de álcool ou de outra substância psicoativa.",
+    "summary": "UNVERIFIED - ementa não conferida na fonte oficial (URL 404 em 2026-08-16). Pendência: localizar no DOU histórico ou acervo SENATRAN.",
     "key_requirements": [
-      "Verificação anual do etilômetro pelo INMETRO",
-      "Preenchimento obrigatório do Termo de Constatação de Sinais de Alteração da Capacidade Psicomotora (Anexo II) quando não houver teste",
-      "Necessidade de constatação de conjunto de sinais (não apenas odor isolado)",
-      "Margem de tolerância metrológica de 0,04 mg/L para etilômetro"
+      "UNVERIFIED - verificação anual do etilômetro pelo INMETRO",
+      "UNVERIFIED - Termo de Constatação de Sinais de Alteração da Capacidade Psicomotora (Anexo II)",
+      "UNVERIFIED - margem de tolerância metrológica de 0,04 mg/L"
     ],
     "status": "vigente"
   },
@@ -71,12 +70,12 @@
   {
     "resolution_number": "973/2022",
     "year": 2022,
-    "theme": "Sinalização Viária e Sinalização Semafórica",
+    "theme": "Regulamento de Sinalização Viária",
     "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9732022.pdf",
-    "summary": "Aprova o Volume I do Manual Brasileiro de Sinalização de Trânsito (Sinalização Vertical de Regulamentação).",
+    "summary": "Institui o Regulamento de Sinalização Viária. (CORREÇÃO: registro anterior o descrevia como 'Volume I do Manual Brasileiro de Sinalização de Trânsito'; ementa verificada no texto oficial em 2026-08-16.)",
     "key_requirements": [
-      "Critérios de legibilidade, retrorrefletividade e posicionamento de placas R-1 a R-40",
-      "Obrigatoriedade de sinalização regular para validade de autuações de parada, estacionamento e conversões"
+      "Disciplina implantação, padronização e manutenção da sinalização viária (vertical, horizontal, semafórica e dispositivos auxiliares)",
+      "Sinalização regular como pressuposto de validade de autuações relacionadas a sinalização"
     ],
     "status": "vigente"
   }

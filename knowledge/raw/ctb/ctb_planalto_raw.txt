@@ -2,6 +2,7 @@
 # SUBCHEFIA PARA ASSUNTOS JURÍDICOS
 # LEI Nº 9.503, DE 23 DE SETEMBRO DE 1997 - CÓDIGO DE TRÂNSITO BRASILEIRO (CTB)
 # Texto compilado com as Leis 14.071/2020, 14.229/2021, 14.440/2022 e 14.599/2023.
+# AVISO: arquivo contém EXCERTOS selecionados para defesas de trânsito, com anotações de redação verificadas em 2026-08-16. Não substitui o texto oficial completo (URL acima).
 
 Art. 1º O trânsito de qualquer natureza nas vias terrestres do território nacional, abertas à circulação, rege-se por este Código.
 § 2º O trânsito, em condições seguras, é um direito de todos e dever dos órgãos e entidades componentes do Sistema Nacional de Trânsito, a estes cabendo, no âmbito das respectivas competências, adotar as medidas destinadas a assegurar esse direito.
@@ -24,7 +25,7 @@ Penalidade - multa;
 Medida administrativa - retenção do veículo até colocação do cinto pelo infrator.
 
 Art. 181. Estacionar o veículo:
-(Incisos I a XX com tipificações de estacionamento irregular em guia, esquinas, ciclovias, vagas especiais e locais proibidos).
+# RESUMO DE COLETA PARCIAL: incisos I a XX (tipificações de estacionamento irregular). Texto integral dos incisos pendente - conferir no texto compilado antes de uso operacional (este arquivo contém EXCERTOS, não o texto oficial completo).
 
 Art. 208. Avançar o sinal vermelho do semáforo ou o de parada obrigatória, exceto onde houver sinalização que permita a livre conversão à direita prevista no art. 44-A deste Código:
 Infração - gravíssima;
@@ -52,9 +53,12 @@ Parágrafo único. A hipótese do inciso V caracterizar-se-á como infração gr
 
 Art. 257. As penalidades serão impostas ao condutor, ao proprietário do veículo, ao embarcador e ao transportador, salvo os casos de descumprimento de obrigações e deveres impostos a pessoas físicas ou jurídicas expressamente mencionados neste Código.
 § 7º Não sendo imediata a identificação do infrator, o principal condutor ou o proprietário do veículo terá o prazo de 30 (trinta) dias, contado da notificação da autuação, para indicá-lo, na forma estabelecida pelo Contran, e, transcorrido esse prazo, se não o fizer, será considerado responsável pela infração o principal condutor ou, em sua ausência, o proprietário do veículo.
-§ 8º Após o prazo previsto no § 7º deste artigo, se o infrator não tiver sido identificado, e o veículo for de propriedade de pessoa jurídica, será lavrada nova multa ao proprietário do veículo, mantida a originada pela infração, cujo valor é o da multa originária multiplicado pelo número de infrações iguais cometidas no período de doze meses (Multa NIC).
+§ 8º Após o prazo previsto no § 7º deste artigo, se o infrator não tiver sido identificado, e o veículo for de propriedade de pessoa jurídica, será lavrada nova multa ao proprietário do veículo, mantida a originada pela infração, cujo valor será igual a 2 (duas) vezes o da multa originária, garantidos o direito de defesa prévia e de interposição de recursos previstos neste Código, na forma estabelecida pelo Contran. (Redação dada pela Lei nº 14.229/2021)
+# ATENÇÃO: registro anterior (texto 'multiplicado pelo número de infrações iguais cometidas no período de doze meses') era a redação da Lei 14.071/2020 e foi SUBSTITUÍDO pela Lei 14.229/2021 (2x). Conferido no texto compilado do Planalto.
 
-Art. 267. Deverá ser imposta a penalidade de advertência por escrito à infração de natureza leve ou média, passível de ser punida com multa, não sendo reincidente o infrator, na mesma infração, nos últimos doze meses, quando a autoridade, considerando o prontuário do infrator, entender esta providência como mais educativa. (Redação dada pela Lei nº 14.071/2020).
+Art. 267. Deverá ser imposta a penalidade de advertência por escrito à infração de natureza leve ou média, passível de ser punida com multa, caso o infrator não tenha cometido nenhuma outra infração nos últimos 12 (doze) meses. (Redação dada pela Lei nº 14.071/2020)
+# ATENÇÃO: registro anterior atribuía à Lei 14.071/2020 a redação original da Lei 9.503/1997 ('não sendo reincidente o infrator, na mesma infração... quando a autoridade... entender esta providência como mais educativa'). Confirmado no texto compilado do Planalto: redação vigente (Lei 14.071/2020) é objetiva - 'caso o infrator não tenha cometido nenhuma outra infração nos últimos 12 meses'. §§ 1º e 2º revogados.
+# Para infrações anteriores a 12/04/2021, ver regra de transição da Res. CONTRAN 918/2022, art. 11.
 
 Art. 280. Ocorrendo infração prevista na legislação de trânsito, lavrar-se-á auto de infração, do qual constará:
 I - tipificação da infração;

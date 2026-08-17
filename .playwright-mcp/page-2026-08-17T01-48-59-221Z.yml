@@ -1,0 +1,183 @@
+- generic [ref=f1e3]:
+  - generic [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - generic [ref=f1e9]: DefesAi Enterprise LegalTech Core
+      - generic [ref=f1e10]: •
+      - generic [ref=f1e11]: Ambiente Seguro e Criptografado
+    - generic [ref=f1e12]:
+      - generic [ref=f1e13]: API v20.0 • 99.98% Uptime
+      - generic [ref=f1e14]: •
+      - generic [ref=f1e15]: Regulamentação CTB / CONTRAN
+  - generic [ref=f1e16]:
+    - complementary [ref=f1e18]:
+      - generic [ref=f1e24] [cursor=pointer]:
+        - generic [ref=f1e25]:
+          - generic [ref=f1e26]: DefesAi
+          - generic [ref=f1e27]: Admin
+        - paragraph [ref=f1e28]: Console Operacional
+      - generic [ref=f1e29]:
+        - generic [ref=f1e30]:
+          - generic [ref=f1e31]: Operação Jurídica
+          - button "Dashboard Geral" [ref=f1e32] [cursor=pointer]
+          - button "Casos & Autuações" [ref=f1e40] [cursor=pointer]
+          - button "Usuários & Contas" [ref=f1e46] [cursor=pointer]
+          - button "Documentos & Petições" [ref=f1e54] [cursor=pointer]
+          - button "Pagamentos (PagBank)" [ref=f1e60] [cursor=pointer]
+        - generic [ref=f1e65]:
+          - generic [ref=f1e66]: Gestão Comercial
+          - button "Visão Geral Comercial" [ref=f1e67] [cursor=pointer]
+          - button "Tabela de Preços" [ref=f1e72] [cursor=pointer]
+          - button "Promoções & Campanhas" [ref=f1e77] [cursor=pointer]
+          - button "Gestão de Cupons" [ref=f1e83] [cursor=pointer]
+          - button "Bônus (Ledger)" [ref=f1e89] [cursor=pointer]
+          - button "Indicações em 3 Níveis" [ref=f1e96] [cursor=pointer]
+          - button "Ledger de Comissões" [ref=f1e105] [cursor=pointer]
+          - button "Test Center Comercial" [ref=f1e113] [cursor=pointer]
+          - button "Configurações Comerciais" [ref=f1e119] [cursor=pointer]
+        - generic [ref=f1e125]:
+          - generic [ref=f1e126]: Inteligência & Marketing
+          - button "Marketing OS (7 Agentes)" [ref=f1e127] [cursor=pointer]
+          - button "IA & Gateway Providers" [ref=f1e135] [cursor=pointer]
+          - button "Hub de Integrações" [ref=f1e141] [cursor=pointer]
+          - button "Base Jurídica & CTB" [ref=f1e154] [cursor=pointer]
+        - generic [ref=f1e161]:
+          - generic [ref=f1e162]: Governança & Sistema
+          - button "Configurações (Settings)" [ref=f1e163] [cursor=pointer]
+          - button "Logs Estruturados" [ref=f1e167] [cursor=pointer]
+          - button "Monitoramento & Saúde" [ref=f1e172] [cursor=pointer]
+          - button "Auditoria & LGPD" [ref=f1e178] [cursor=pointer]
+        - generic [ref=f1e186]:
+          - generic [ref=f1e187]: "Status: Operacional"
+          - paragraph [ref=f1e190]: Motor Determinístico v1 ativo • 52 teses catalogadas.
+          - button "Ver como Motorista" [ref=f1e191] [cursor=pointer]
+      - generic [ref=f1e198]:
+        - generic [ref=f1e199]:
+          - generic [ref=f1e200]: A
+          - generic [ref=f1e201]:
+            - paragraph [ref=f1e202]: Administrador DefesAi
+            - paragraph [ref=f1e203]: admin@defesai.com.br
+        - button "Sair do Modo Admin" [ref=f1e204] [cursor=pointer]
+    - generic [ref=f1e208]:
+      - banner [ref=f1e209]:
+        - generic [ref=f1e211]:
+          - navigation [ref=f1e212]:
+            - button "Admin" [ref=f1e213] [cursor=pointer]
+            - generic [ref=f1e216]: Marketing OS
+          - generic [ref=f1e217]:
+            - heading "Marketing OS (7 Agentes)" [level=1] [ref=f1e218]
+            - generic [ref=f1e219]: Admin
+          - paragraph [ref=f1e220]: Campanhas autônomas de aquisição e nutrição de condutores
+        - generic [ref=f1e221]:
+          - generic [ref=f1e222]:
+            - generic [ref=f1e224]: API 200 OK
+            - generic [ref=f1e225]: •
+            - generic [ref=f1e226]: NVIDIA / 9Router
+          - button "Visão do Usuário" [ref=f1e227] [cursor=pointer]
+          - button "Encerrar Sessão" [ref=f1e233] [cursor=pointer]
+      - main [ref=f1e237]:
+        - generic [ref=f1e238]:
+          - generic [ref=f1e240]:
+            - generic [ref=f1e241]: Organismo Autônomo • 7 Agentes de Aquisição
+            - heading "Marketing OS — Supervisão & Exceções" [level=1] [ref=f1e245]
+            - paragraph [ref=f1e246]: "Ciclo autônomo de conteúdo jurídico e publicação via fila Meta. Sem botões manuais: só exceções exigem atenção."
+          - generic [ref=f1e248]:
+            - button "Visão Geral" [ref=f1e249] [cursor=pointer]
+            - button "Agentes" [active] [ref=f1e256] [cursor=pointer]
+            - button "Calendário" [ref=f1e263] [cursor=pointer]
+            - button "Publicações" [ref=f1e267] [cursor=pointer]
+            - button "Canais" [ref=f1e275] [cursor=pointer]
+            - button "Resultados" [ref=f1e283] [cursor=pointer]
+            - button "Configurações" [ref=f1e287] [cursor=pointer]
+          - generic [ref=f1e336]:
+            - heading "Status dos 7 Agentes Especialistas" [level=3] [ref=f1e337]
+            - generic [ref=f1e342]:
+              - generic [ref=f1e343]:
+                - generic [ref=f1e344]:
+                  - generic [ref=f1e345]: "@marketing-estrategico"
+                  - generic [ref=f1e346]: running
+                - heading "Agente Estratégico" [level=4] [ref=f1e348]
+                - paragraph [ref=f1e349]: Monitora alterações legislativas no CTB, novas resoluções do CONTRAN e tendências de busca de motoristas.
+                - generic [ref=f1e350]:
+                  - generic [ref=f1e351]: "Atividade Atual:"
+                  - paragraph [ref=f1e352]: Monitorando alterações legislativas e tendências de busca
+                - generic [ref=f1e353]:
+                  - generic [ref=f1e354]: 143 tarefas
+                  - generic [ref=f1e355]: 98% precisão
+              - generic [ref=f1e356]:
+                - generic [ref=f1e357]:
+                  - generic [ref=f1e358]: "@marketing-planejamento"
+                  - generic [ref=f1e359]: running
+                - heading "Agente de Planejamento" [level=4] [ref=f1e361]
+                - paragraph [ref=f1e362]: Organiza a grade editorial semanal, frequência de postagens e distribuição multicanal (Instagram, Blog SEO, TikTok).
+                - generic [ref=f1e363]:
+                  - generic [ref=f1e364]: "Atividade Atual:"
+                  - paragraph [ref=f1e365]: Organizando grade editorial e distribuindo conteúdo
+                - generic [ref=f1e366]:
+                  - generic [ref=f1e367]: 90 tarefas
+                  - generic [ref=f1e368]: 95% precisão
+              - generic [ref=f1e369]:
+                - generic [ref=f1e370]:
+                  - generic [ref=f1e371]: "@marketing-criador"
+                  - generic [ref=f1e372]: running
+                - heading "Agente Criador de Conteúdo" [level=4] [ref=f1e374]
+                - paragraph [ref=f1e375]: Gera copies de alta conversão, carrosséis educativos, roteiros de Reels e guias práticos sobre anulação de multas.
+                - generic [ref=f1e376]:
+                  - generic [ref=f1e377]: "Atividade Atual:"
+                  - paragraph [ref=f1e378]: Criando conteúdo jurídico para redes sociais
+                - generic [ref=f1e379]:
+                  - generic [ref=f1e380]: 237 tarefas
+                  - generic [ref=f1e381]: 96% precisão
+              - generic [ref=f1e382]:
+                - generic [ref=f1e383]:
+                  - generic [ref=f1e384]: "@marketing-qualidade"
+                  - generic [ref=f1e385]: idle
+                - heading "Agente Guardião de Qualidade" [level=4] [ref=f1e387]
+                - paragraph [ref=f1e388]: Gate duro que audita conformidade jurídica com o CTB/CONTRAN e bloqueia promessas falsas de ganho de causa.
+                - generic [ref=f1e389]:
+                  - generic [ref=f1e390]: "Atividade Atual:"
+                  - paragraph [ref=f1e391]: Revisando e aprovando conteúdo jurídico
+                - generic [ref=f1e392]:
+                  - generic [ref=f1e393]: 199 tarefas
+                  - generic [ref=f1e394]: 99% precisão
+              - generic [ref=f1e395]:
+                - generic [ref=f1e396]:
+                  - generic [ref=f1e397]: "@marketing-publicacao"
+                  - generic [ref=f1e398]: running
+                - heading "Agente de Publicação & Despacho" [level=4] [ref=f1e400]
+                - paragraph [ref=f1e401]: Gerencia a fila de agendamento automático e publicação sincronizada nas redes sociais e blog.
+                - generic [ref=f1e402]:
+                  - generic [ref=f1e403]: "Atividade Atual:"
+                  - paragraph [ref=f1e404]: Publicando e monitorando conteúdo nas plataformas
+                - generic [ref=f1e405]:
+                  - generic [ref=f1e406]: 175 tarefas
+                  - generic [ref=f1e407]: 97% precisão
+              - generic [ref=f1e408]:
+                - generic [ref=f1e409]:
+                  - generic [ref=f1e410]: "@marketing-inteligencia"
+                  - generic [ref=f1e411]: running
+                - heading "Agente de Inteligência & Métricas" [level=4] [ref=f1e413]
+                - paragraph [ref=f1e414]: Coleta dados de engajamento, leads capturados no onboarding anônimo e taxa de conversão em checkout de defesas.
+                - generic [ref=f1e415]:
+                  - generic [ref=f1e416]: "Atividade Atual:"
+                  - paragraph [ref=f1e417]: Coletando e analisando métricas de desempenho
+                - generic [ref=f1e418]:
+                  - generic [ref=f1e419]: 116 tarefas
+                  - generic [ref=f1e420]: 94% precisão
+              - generic [ref=f1e421]:
+                - generic [ref=f1e422]:
+                  - generic [ref=f1e423]: "@marketing-aprendizado"
+                  - generic [ref=f1e424]: idle
+                - heading "Agente de Aprendizado Contínuo" [level=4] [ref=f1e426]
+                - paragraph [ref=f1e427]: Processa o feedback dos resultados para refinar ganchos persuasivos e focar nos temas com maior retorno.
+                - generic [ref=f1e428]:
+                  - generic [ref=f1e429]: "Atividade Atual:"
+                  - paragraph [ref=f1e430]: Aprendendo com resultados e melhorando estratégias
+                - generic [ref=f1e431]:
+                  - generic [ref=f1e432]: 78 tarefas
+                  - generic [ref=f1e433]: 96% precisão
+      - contentinfo [ref=f1e318]:
+        - generic [ref=f1e319]: DefesAi Plataforma Privada de Tecnologia Jurídica © 2026
+        - generic [ref=f1e321]:
+          - generic [ref=f1e322]: NVIDIA NIM AI • 9Router Gateway
+          - generic [ref=f1e323]: PagBank Orders v2
+          - generic [ref=f1e324]: LGPD Compliant

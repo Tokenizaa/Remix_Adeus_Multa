@@ -1,0 +1,91 @@
+[
+  {
+    "id": "lei_1471_2020",
+    "type": "lei_ordinaria_federal",
+    "number": "14.071",
+    "year": 2020,
+    "title": "Nova Lei de Trânsito",
+    "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/L14071.htm",
+    "publication_date": "2020-10-14",
+    "status": "vigente",
+    "hierarchy": "Lei federal ordinária (altera lei federal ordinária - CTB)",
+    "ementa_verified": true,
+    "ementa": "Altera a Lei nº 9.503, de 23 de setembro de 1997 (Código de Trânsito Brasileiro), para modificar a composição do Conselho Nacional de Trânsito e ampliar o prazo de validade das habilitações; e dá outras providências.",
+    "verification_signature": "SHA256:planalto_L14071_texto_integral_2026-08-16",
+    "verified_changes_affecting_defense": [
+      "Art. 281-A CTB (novo): prazo de defesa prévia não inferior a 30 dias, contado da expedição da notificação",
+      "Art. 282-A CTB: redação do sistema de notificação eletrônica (SNE); § 2º considera notificado 30 dias após inclusão no sistema",
+      "Art. 257, § 7º CTB: prazo de 30 dias para indicação do real condutor (FICI)",
+      "Art. 261 CTB: nova pontuação 20/30/40 pontos; curso preventivo para condutor profissional a partir de 30 pontos",
+      "Art. 267 CTB: advertência por escrito com critério objetivo - infrator sem nenhuma outra infração nos últimos 12 meses; §§ 1º e 2º revogados",
+      "Art. 285, § 4º CTB: vedada exigência de documentos emitidos pelo órgão autuador para admissibilidade de defesa/recurso",
+      "Art. 218, III CTB: gravíssima - multa (três vezes) e suspensão do direito de dirigir"
+    ],
+    "legacy_notes": "Ver redações históricas: art. 267 com redação da Lei 14.071/2020 diverge da redação original da Lei 9.503/1997 (que exigia reincidência na mesma infração + juízo discricionário da autoridade)."
+  },
+  {
+    "id": "lei_14229_2021",
+    "type": "lei_ordinaria_federal",
+    "number": "14.229",
+    "year": 2021,
+    "title": "Lei dos Novos Prazos de Recursos e Fiscalização (conversão da MP 1.050/2021)",
+    "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14229.htm",
+    "publication_date": "2021-10-22",
+    "status": "vigente",
+    "hierarchy": "Lei federal ordinária (altera CTB, Lei 7.408/1985 e Lei 10.209/2001)",
+    "ementa_verified": true,
+    "ementa": "Altera a Lei nº 7.408, de 25 de novembro de 1985, e a Lei nº 9.503, de 23 de setembro de 1997 (Código de Trânsito Brasileiro), para dispor sobre a fiscalização do excesso de peso dos veículos; altera a Lei nº 10.209, de 23 de março de 2001, para dispor sobre a prescrição da cobrança de multa ou indenização nos termos que especifica; e dá outras providências.",
+    "verification_signature": "SHA256:planalto_L14229_texto_integral_2026-08-16",
+    "verified_changes_affecting_defense": [
+      "Art. 282, § 6º CTB: prazo de 180 dias (ou 360 dias com defesa prévia) para expedição das notificações de penalidade; § 6º-A - contagem a partir do conhecimento da infração para autuações não flagrantes",
+      "Art. 282, § 7º CTB: descumprimento dos prazos do § 6º gera decadência do direito de aplicar a penalidade",
+      "Art. 282, caput e § 1º CTB: redação - notificação da penalidade por remessa postal ou meio hábil; notificação devolvida por desatualização/recusa considerada válida",
+      "Art. 285 CTB: recurso perante autoridade que imputou a penalidade, efeito suspensivo; § 2º remessa à JARI em 10 dias; § 5º intempestivo arquivado; § 6º julgamento em 24 meses (vigência 01/01/2024)",
+      "Art. 289 CTB: julgamento em 24 meses (vigência 01/01/2024)",
+      "Art. 289-A CTB (novo): não julgamento nos prazos gera prescrição da pretensão punitiva (vigência 01/01/2024)",
+      "Art. 290-A CTB (novo): prazos processuais não se suspendem, salvo força maior comprovada",
+      "Art. 257, § 8º CTB: Multa NIC - valor igual a 2 (duas) vezes o da multa originária, garantidos defesa prévia e recursos",
+      "Art. 99, §§ 4º e 5º; art. 271, §§ 9º-A a 9º-D CTB: fiscalização de peso e regularização"
+    ],
+    "vigencia_rules": "Art. 7º: vigência imediata para arts. 131, 271, 282, 338-A e alterações da Lei 7.408/85; 01/01/2024 para art. 289 caput, art. 285 § 6º e art. 289-A; 180 dias após publicação para demais dispositivos.",
+    "legacy_notes": "Para infrações praticadas antes de 12/04/2021 aplica-se a redação anterior do art. 282 (prazo de notificação da penalidade) e do art. 267; ver Res. CONTRAN 918/2022, art. 11 (regra de transição da advertência)."
+  },
+  {
+    "id": "lei_14440_2022",
+    "type": "lei_ordinaria_federal",
+    "number": "14.440",
+    "year": 2022,
+    "title": "Alterações em exames, prazos e habilitação",
+    "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/lei/L14440.htm",
+    "publication_date": "2022-09-02",
+    "status": "vigente",
+    "hierarchy": "Lei federal ordinária (altera CTB)",
+    "ementa_verified": false,
+    "ementa": "UNVERIFIED - ementa não conferida na fonte oficial; pendente de coleta do texto integral no sítio do Planalto.",
+    "verification_signature": "SHA256:pendente_planalto_L14440",
+    "verified_changes_affecting_defense": [
+      "Art. 282-A, § 4º CTB (indicado no texto compilado): coordenação do sistema de notificação eletrônica pelo órgão máximo executivo de trânsito da União"
+    ],
+    "legacy_notes": "Referências cruzadas no texto compilado do CTB: '(Vide Lei n° 14.440, de 2022)' nos arts. 282-A e 284. Coleta pendente."
+  },
+  {
+    "id": "lei_14599_2023",
+    "type": "lei_ordinaria_federal",
+    "number": "14.599",
+    "year": 2023,
+    "title": "Competências municipais, exames e alterações no processo administrativo",
+    "official_url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14599.htm",
+    "publication_date": "2023-06-19",
+    "status": "vigente",
+    "hierarchy": "Lei federal ordinária (altera CTB)",
+    "ementa_verified": false,
+    "ementa": "UNVERIFIED - ementa não conferida na fonte oficial; pendente de coleta do texto integral no sítio do Planalto.",
+    "verification_signature": "SHA256:pendente_planalto_L14599",
+    "verified_changes_affecting_defense": [
+      "Art. 284, § 1º CTB: pagamento da multa com desconto de 60% via SNE com reconhecimento da infração; adesão antes do envio da notificação de autuação",
+      "Art. 280, § 5º e § 6º CTB (novos): não há infração de circulação, parada ou estacionamento para veículos de socorro/polícia/ambulância ainda que não identificados ostensivamente",
+      "Art. 268, III CTB: curso de reciclagem quando envolver-se em sinistro grave para o qual tenha contribuído"
+    ],
+    "legacy_notes": "Referências no texto compilado do CTB; texto integral pendente de coleta. Coleta pendente."
+  }
+]

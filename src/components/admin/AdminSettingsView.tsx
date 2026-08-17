@@ -22,36 +22,16 @@ import {
   Lock,
   Search,
   ExternalLink,
+  TrendingUp,
+  BookOpen,
 } from 'lucide-react';
 import { SecretEditModal } from './SecretEditModal';
+import { api } from '../../lib/api/client';
+import type { SettingDefinitionFrontend, SettingAuditRecord, SettingsResponse, TestIntegrationResult } from '../../types/api';
 
-export interface SettingDefinitionFrontend {
-  key: string;
-  name: string;
-  category: 'ai' | 'supabase' | 'payments' | 'meta' | 'marketing' | 'ocr' | 'system' | 'notifications';
-  type: 'string' | 'number' | 'boolean' | 'select' | 'secret' | 'json';
-  description: string;
-  defaultValue: any;
-  currentValue?: any;
-  isSecret: boolean;
-  isRequired: boolean;
-  isEditable: boolean;
-  options?: { label: string; value: any }[];
-  lastUpdated?: string;
-  updatedBy?: string;
-  isConfigured?: boolean;
-}
 
-export interface SettingAuditRecord {
-  id: string;
-  key: string;
-  category: string;
-  isSecret: boolean;
-  action: string;
-  updatedBy: string;
-  timestamp: string;
-  details: string;
-}
+
+
 
 export const AdminSettingsView: React.FC = () => {
   const [settings, setSettings] = useState<SettingDefinitionFrontend[]>([]);
@@ -79,120 +59,105 @@ export const AdminSettingsView: React.FC = () => {
     { id: 'ocr', label: 'OCR & Percepção', icon: Scan, desc: 'Limiares de Confiança & Radars' },
     { id: 'system', label: 'Sistema & Flags', icon: Server, desc: 'Ambiente, URLs & Feature Flags' },
     { id: 'notifications', label: 'Notificações', icon: Bell, desc: 'Evolution API, WhatsApp & Prazos' },
+    { id: 'commercial', label: 'Comercial', icon: TrendingUp, desc: 'Configurações de vendas, comissão e bônus' },
+    { id: 'knowledge', label: 'Base de Conhecimento', icon: BookOpen, desc: 'Configurações de atualização e embeddings do knowledge base' },
   ];
 
-  const loadSettings = async () => {
-    try {
-      setIsLoading(true);
-      const res = await fetch('/api/settings');
-      const data = await res.json();
-      setSettings(data.settings || []);
-      setAuditHistory(data.auditHistory || []);
-    } catch (err) {
-      console.error('Error loading settings:', err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+const loadSettings = async () => {
+     try {
+       setIsLoading(true);
+       const res = await api.get<SettingsResponse>('/api/settings');
+       setSettings(res.settings);
+       setAuditHistory(res.auditHistory);
+     } catch (err) {
+       console.error('Error loading settings:', err);
+     } finally {
+       setIsLoading(false);
+     }
+   };
 
   useEffect(() => {
     loadSettings();
   }, []);
 
-  const handleUpdateSetting = async (key: string, value: any) => {
-    setSavingKey(key);
-    try {
-      const res = await fetch('/api/settings', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          key,
-          value,
-          updatedBy: 'admin@defesai.com.br',
-        }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setSettings(data.settings);
-        setSuccessToast(data.message || 'Configuração salva com sucesso!');
-        setTimeout(() => setSuccessToast(null), 3000);
-        // refresh audit history
-        const auditRes = await fetch('/api/settings');
-        const auditData = await auditRes.json();
-        setAuditHistory(auditData.auditHistory || []);
-      }
-    } catch (err) {
-      console.error('Error updating setting:', err);
-    } finally {
-      setSavingKey(null);
-    }
-  };
+const handleUpdateSetting = async (key: string, value: any) => {
+     setSavingKey(key);
+     try {
+       const res = await api.put<{ success: boolean; message: string; settings: SettingDefinitionFrontend[] }>('/api/settings', {
+         key,
+         value,
+         updatedBy: 'admin@defesai.com.br',
+       });
+       if (res.success) {
+         setSettings(res.settings);
+         setSuccessToast(res.message || 'Configuração salva com sucesso!');
+         setTimeout(() => setSuccessToast(null), 3000);
+         // refresh audit history
+         const auditRes = await api.get<SettingsResponse>('/api/settings');
+         setAuditHistory(auditRes.auditHistory);
+       }
+     } catch (err) {
+       console.error('Error updating setting:', err);
+     } finally {
+       setSavingKey(null);
+     }
+   };
 
-  const handleResetDefault = async (key: string) => {
-    if (!window.confirm('Tem certeza que deseja restaurar esta configuração para o padrão original de fábrica?')) {
-      return;
-    }
-    setSavingKey(key);
-    try {
-      const res = await fetch('/api/settings/reset-default', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ key, updatedBy: 'admin@defesai.com.br' }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setSettings(data.settings);
-        setSuccessToast(data.message);
-        setTimeout(() => setSuccessToast(null), 3000);
-      }
-    } catch (err) {
-      console.error('Error resetting setting:', err);
-    } finally {
-      setSavingKey(null);
-    }
-  };
+const handleResetDefault = async (key: string) => {
+     if (!window.confirm('Tem certeza que deseja restaurar esta configuração para o padrão original de fábrica?')) {
+       return;
+     }
+     setSavingKey(key);
+     try {
+       const res = await api.post<{ success: boolean; message: string; settings: SettingDefinitionFrontend[] }>('/api/settings/reset-default', {
+         key,
+         updatedBy: 'admin@defesai.com.br',
+       });
+       if (res.success) {
+         setSettings(res.settings);
+         setSuccessToast(res.message);
+         setTimeout(() => setSuccessToast(null), 3000);
+       }
+     } catch (err) {
+       console.error('Error resetting setting:', err);
+     } finally {
+       setSavingKey(null);
+     }
+   };
 
-  const handleSaveSecret = async (key: string, newSecret: string): Promise<boolean> => {
-    try {
-      const res = await fetch('/api/settings', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          key,
-          value: newSecret,
-          updatedBy: 'admin@defesai.com.br',
-        }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setSettings(data.settings);
-        setSuccessToast('Segredo criptográfico atualizado com sucesso!');
-        setTimeout(() => setSuccessToast(null), 3000);
-        return true;
-      }
-      return false;
-    } catch (err) {
-      console.error('Error updating secret:', err);
-      return false;
-    }
-  };
+const handleSaveSecret = async (key: string, newSecret: string): Promise<boolean> => {
+     try {
+       const res = await api.put<{ success: boolean; message: string; settings: SettingDefinitionFrontend[] }>('/api/settings', {
+         key,
+         value: newSecret,
+         updatedBy: 'admin@defesai.com.br',
+       });
+       if (res.success) {
+         setSettings(res.settings);
+         setSuccessToast('Segredo criptográfico atualizado com sucesso!');
+         setTimeout(() => setSuccessToast(null), 3000);
+         return true;
+       }
+       return false;
+     } catch (err) {
+       console.error('Error updating secret:', err);
+       return false;
+     }
+   };
 
-  const handleTestIntegration = async (serviceId: string) => {
-    setTestingService(serviceId);
-    try {
-      const res = await fetch('/api/settings/test-integration', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ serviceId }),
-      });
-      const data = await res.json();
-      setTestResults((prev) => ({ ...prev, [serviceId]: data }));
-    } catch (err) {
-      console.error(`Error testing integration ${serviceId}:`, err);
-    } finally {
-      setTestingService(null);
-    }
-  };
+const handleTestIntegration = async (serviceId: string) => {
+     setTestingService(serviceId);
+     try {
+       const res = await api.post<TestIntegrationResult>('/api/settings/test-integration', {
+         serviceId,
+       });
+       setTestResults((prev) => ({ ...prev, [serviceId]: res }));
+     } catch (err) {
+       console.error(`Error testing integration ${serviceId}:`, err);
+     } finally {
+       setTestingService(null);
+     }
+   };
 
   const filteredSettings = settings.filter((s) => {
     const matchesCategory = s.category === activeCategory;

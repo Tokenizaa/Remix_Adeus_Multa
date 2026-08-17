@@ -45,20 +45,42 @@
     "official_url": "https://www.in.gov.br/",
     "collection_date": "2026-08-15",
     "status": "vigente",
-    "last_major_amendments": ["Publicações Oficiais de Normas e Editais"],
+    "last_major_amendments": [
+      "Publicações Oficiais de Normas e Editais",
+      "Res. CONTRAN 900/2022 (DOU 17/03/2022), 918/2022 (DOU 01/04/2022), 973/2022 (DOU 25/07/2022), 985/2022 (DOU 26/12/2022) - cabeçalhos oficiais verificados via PDFs do gov.br"
+    ],
     "verification_signature": "SHA256:dou_atos_normativos_transito"
+  },
+  {
+    "id": "src_planalto_leis_alteradoras",
+    "name": "Leis federais alteradoras do CTB (Planalto)",
+    "official_body": "Presidência da República / Casa Civil / Subchefia para Assuntos Jurídicos",
+    "official_url": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm",
+    "collection_date": "2026-08-16",
+    "status": "vigente",
+    "last_major_amendments": [
+      "Lei 14.071/2020 (L14071.htm) - texto integral VERIFIED",
+      "Lei 14.229/2021 (L14229.htm) - texto integral VERIFIED",
+      "Lei 14.440/2022 (L14440.htm) - ementa pendente (UNVERIFIED)",
+      "Lei 14.599/2023 (L14599.htm) - ementa pendente (UNVERIFIED)"
+    ],
+    "notes": "Efetividade temporal: ver knowledge/legislation/ctb-provisions.json para redações por vigência."
   },
   {
     "id": "src_stj_jurisprudencia",
     "name": "Jurisprudência Consolidada e Súmulas do STJ em Matéria de Trânsito",
     "official_body": "Superior Tribunal de Justiça (STJ)",
     "official_url": "https://www.stj.jus.br/jurisprudencia/sumulas/",
-    "collection_date": "2026-08-15",
+    "official_urls_verified": [
+      "https://scon.stj.jus.br/SCON/sumstj/ (Súmulas do STJ - pesquisa verificada em 2026-08-16)",
+      "https://processo.stj.jus.br/repetitivos/temas_repetitivos/ (Precedentes Qualificados - pesquisas verificadas em 2026-08-16)"
+    ],
+    "collection_date": "2026-08-16",
     "status": "vigente",
     "last_major_amendments": [
-      "Súmula 312/STJ (Dupla Notificação)",
-      "Súmula 127/STJ (Licenciamento e Notificação)",
-      "Tema Repetitivo 1.097/STJ (Prazo decadencial de notificação)"
+      "Súmula 312/STJ (Dupla Notificação) - VERIFIED",
+      "Súmula 127/STJ (Licenciamento e Notificação) - VERIFIED: 'É ilegal condicionar a renovação da licença de veículo ao pagamento de multa, da qual o infrator não foi notificado.' (1ª Seção, julgado 14/03/1995, DJ 23/03/1995)",
+      "Tema Repetitivo 1.097/STJ - VERIFIED: dupla notificação obrigatória na multa a PJ por não indicação de condutor (arts. 280, 281 e 282 CTB); paradigma REsp 1.925.456/SP"
     ],
     "verification_signature": "SHA256:stj_sumulas_transito_precedentes"
   }

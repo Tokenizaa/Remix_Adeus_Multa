@@ -24,6 +24,10 @@ import {
   Share2,
   Coins,
   Award,
+  TrendingUp,
+  BarChart3,
+  Settings,
+  Activity,
 } from 'lucide-react';
 import { useRouter } from '../../core/router/RouterContext';
 import { useAuth } from '../../core/auth/AuthContext';
@@ -34,7 +38,7 @@ export const AdminSidebar: React.FC = () => {
 
   const adminNavGroups = [
     {
-      groupTitle: 'Operação Jurídica',
+      groupTitle: 'Visão Geral',
       items: [
         {
           label: 'Dashboard Geral',
@@ -42,6 +46,17 @@ export const AdminSidebar: React.FC = () => {
           icon: LayoutDashboard,
           exact: true,
         },
+        {
+          label: 'Visão Geral Comercial',
+          path: '/admin/commercial',
+          icon: TrendingUp,
+          exact: true,
+        },
+      ],
+    },
+    {
+      groupTitle: 'Operação',
+      items: [
         {
           label: 'Casos & Autuações',
           path: '/admin/cases',
@@ -65,23 +80,17 @@ export const AdminSidebar: React.FC = () => {
       ],
     },
     {
-      groupTitle: 'Gestão Comercial',
+      groupTitle: 'Crescimento',
       items: [
-        {
-          label: 'Visão Geral Comercial',
-          path: '/admin/commercial',
-          icon: DollarSign,
-          exact: true,
-        },
         {
           label: 'Tabela de Preços',
           path: '/admin/commercial/prices',
-          icon: DollarSign,
+          icon: Tag,
         },
         {
           label: 'Promoções & Campanhas',
           path: '/admin/commercial/promotions',
-          icon: Tag,
+          icon: Gift,
         },
         {
           label: 'Gestão de Cupons',
@@ -89,9 +98,9 @@ export const AdminSidebar: React.FC = () => {
           icon: Tag,
         },
         {
-          label: 'Bônus (Ledger)',
+          label: 'Sistema de Bônus (Ledger)',
           path: '/admin/commercial/bonuses',
-          icon: Gift,
+          icon: Coins,
         },
         {
           label: 'Indicações em 3 Níveis',
@@ -101,22 +110,22 @@ export const AdminSidebar: React.FC = () => {
         {
           label: 'Ledger de Comissões',
           path: '/admin/commercial/commissions',
-          icon: Coins,
+          icon: DollarSign,
         },
         {
           label: 'Test Center Comercial',
           path: '/admin/commercial/tests',
-          icon: Award,
+          icon: Activity,
         },
         {
           label: 'Configurações Comerciais',
           path: '/admin/commercial/settings',
-          icon: ShieldCheck,
+          icon: Settings,
         },
       ],
     },
     {
-      groupTitle: 'Inteligência & Marketing',
+      groupTitle: 'Inteligência',
       items: [
         {
           label: 'Marketing OS (7 Agentes)',
@@ -141,7 +150,7 @@ export const AdminSidebar: React.FC = () => {
       ],
     },
     {
-      groupTitle: 'Governança & Sistema',
+      groupTitle: 'Sistema',
       items: [
         {
           label: 'Configurações (Settings)',

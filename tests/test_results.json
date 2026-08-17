@@ -1,0 +1,121 @@
+{
+  "total": 5,
+  "passed": 5,
+  "failed": 0,
+  "success_rate": 100.0,
+  "results": [
+    {
+      "id": "TEST_001",
+      "name": "Defesa Prévia - Excesso de Velocidade 50-70% (PF, primeira infração)",
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "checks": [
+        "✓ Found expected concept: prazo de defesa previa (30 dias) (terms: prazo, defesa, previa, art. 281-a)",
+        "✓ Found expected concept: vicios de forma do AIT (terms: forma, ait)",
+        "✓ Found expected concept: atipicidade da conduta (terms: atipicidade)",
+        "✓ Correctly absent forbidden concept: CTB Art. 281-II",
+        "✓ Correctly absent forbidden concept: CTB Art. 281 II",
+        "✓ Law CTB Art. 281-A found in CTB knowledge base",
+        "✓ Law CTB Art. 218, II found in CTB knowledge base",
+        "✓ Law CTB Art. 280 found in CTB knowledge base"
+      ],
+      "info": [
+        "Using template: Petição Padrão de Defesa Prévia (Notificação de Autuação) (TPL_DEFESA_PREVIA)",
+        "ℹ Citation Res. CONTRAN 918/2022 noted for manual verification",
+        "Infraction date: 15/03/2025",
+        "  → After Lei 14.071/2020 (applicable)",
+        "  → After Lei 14.229/2021 (applicable)",
+        "  → After Lei 14.440/2022 (applicable)",
+        "  → After Lei 14.599/2023 (applicable)"
+      ]
+    },
+    {
+      "id": "TEST_002",
+      "name": "Requerimento de Conversão para Advertência - Infraçao Leve (PF, reincidente)",
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "checks": [
+        "✓ Found expected concept: ausência de reincidência no período de 12 meses (terms: 12 meses)",
+        "✓ Found expected concept: certidão de prontuário de CNH (terms: certidão, prontuário, cnh, detran)",
+        "✓ Law CTB Art. 267 found in CTB knowledge base",
+        "✓ Law Lei 14.071/2020 referenced (verified in earlier phases)"
+      ],
+      "info": [
+        "Using template: Requerimento de Conversão Obrigatória de Multa em Advertência por Escrito (TPL_CONVERSAO_ADVERTENCIA)",
+        "Infraction date: 10/05/2025",
+        "  → After Lei 14.071/2020 (applicable)",
+        "  → After Lei 14.229/2021 (applicable)",
+        "  → After Lei 14.440/2022 (applicable)",
+        "  → After Lei 14.599/2023 (applicable)",
+        "Defendant has 2 prior offenses - conversion to warning should NOT be granted"
+      ]
+    },
+    {
+      "id": "TEST_003",
+      "name": "Defesa em PSDD - Pessoa Jurídica (limite de 40 pontos)",
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "checks": [
+        "✓ Found expected concept: retroatividade benéfica do limite de 40 pontos (terms: retroatividade, benéfica, 40 pontos, tema 1.097)",
+        "✓ Law CTB Art. 261 found in CTB knowledge base",
+        "✓ Jurisprudence Tema 1.097/STJ referenced (verified in earlier phases)",
+        "✓ Law Lei 14.071/2020 referenced (verified in earlier phases)"
+      ],
+      "info": [
+        "Using template: Defesa em Processo de Suspensão do Direito de Dirigir (PSDD) (TPL_PSDD_SUSPENSAO)",
+        "Infraction date: 15/01/2025",
+        "  → After Lei 14.071/2020 (applicable)",
+        "  → After Lei 14.229/2021 (applicable)",
+        "  → After Lei 14.440/2022 (applicable)",
+        "  → After Lei 14.599/2023 (applicable)"
+      ]
+    },
+    {
+      "id": "TEST_004",
+      "name": "Recurso em 1ª Instância (JARI) - Multa por Lei Seca",
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "checks": [
+        "✓ Found expected concept: efeito suspensivo automático (terms: efeito, suspensivo, automático)",
+        "✓ Found expected concept: dupla notificação (autuação e penalidade) (terms: notificação, penalidade)",
+        "✓ Law CTB Art. 285 found in CTB knowledge base",
+        "✓ Jurisprudence Súmula 312/STJ referenced (verified in earlier phases)",
+        "✓ Law CTB Art. 280 found in CTB knowledge base"
+      ],
+      "info": [
+        "Using template: Recurso Ordinário em 1ª Instância à JARI (TPL_RECURSO_JARI)",
+        "Infraction date: 01/02/2025",
+        "  → After Lei 14.071/2020 (applicable)",
+        "  → After Lei 14.229/2021 (applicable)",
+        "  → After Lei 14.440/2022 (applicable)",
+        "  → After Lei 14.599/2023 (applicable)"
+      ]
+    },
+    {
+      "id": "TEST_005",
+      "name": "Indicação de Condutor - Multa de Estacionamento (PJ)",
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "checks": [
+        "✓ Found expected concept: preenchimento bilateral (terms: preenchimento, bilateral, proprietário, condutor)",
+        "✓ Found expected concept: cópias de CNH e documentos com foto (terms: cópia, cnh, documento, foto)",
+        "✓ Found expected concept: protocolo dentro do prazo (terms: protocolo, prazo, notificação)",
+        "✓ Law CTB Art. 257, § 7º found in CTB knowledge base"
+      ],
+      "info": [
+        "Using template: Requerimento e Formulário de Indicação do Real Condutor Infrator (FICI) (TPL_FICI_INDICACAO)",
+        "ℹ Citation Res. CONTRAN 918/2022 noted for manual verification",
+        "Infraction date: 01/03/2025",
+        "  → After Lei 14.071/2020 (applicable)",
+        "  → After Lei 14.229/2021 (applicable)",
+        "  → After Lei 14.440/2022 (applicable)",
+        "  → After Lei 14.599/2023 (applicable)"
+      ]
+    }
+  ]
+}

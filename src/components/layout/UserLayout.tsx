@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { UserSidebar } from './UserSidebar';
 import { UserHeader } from './UserHeader';
-import { GovAccessibilityBar } from '../govbr/GovAccessibilityBar';
-import { GovFooter } from '../govbr/GovFooter';
-import { GovCookieBanner } from '../govbr/GovCookieBanner';
+import { PrivateAccessibilityBar } from '../ui/PrivateAccessibilityBar';
+import { PrivateFooter } from '../ui/PrivateFooter';
+import { PrivateCookieBanner } from '../ui/PrivateCookieBanner';
 import { LayoutDashboard, FileText, PlusCircle, User, Settings, X } from 'lucide-react';
 import { useRouter } from '../../core/router/RouterContext';
 
@@ -25,8 +25,8 @@ export const UserLayout: React.FC<UserLayoutProps> = ({
 
   return (
     <div className="min-h-screen bg-[#F8F8F8] flex flex-col font-sans text-[#1B1B1B]">
-      {/* Barra de Acessibilidade GOV.BR */}
-      <GovAccessibilityBar />
+      {/* Barra de Acessibilidade DefesAi */}
+      <PrivateAccessibilityBar />
 
       <div className="flex-1 flex min-w-0">
         {/* Desktop Sidebar */}
@@ -121,8 +121,8 @@ export const UserLayout: React.FC<UserLayoutProps> = ({
         </button>
       </div>
 
-      <GovFooter />
-      <GovCookieBanner />
+      <PrivateFooter />
+      <PrivateCookieBanner />
     </div>
   );
 };

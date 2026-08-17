@@ -1,0 +1,86 @@
+[
+  {
+    "id": "rel_ctb1503_leit7141",
+    "source": "lei_1471_2020",
+    "target": "leg_ctb_9503",
+    "relation_type": "AMENDS",
+    "evidence": "Texto integral da Lei 14.071/2020 consultado no Planalto em 2026-08-16; alterações nos arts. 147, 148-A, 257 § 7º, 261, 267, 281-A, 282-A, 285 § 4º, 218 III."
+  },
+  {
+    "id": "rel_ctb1503_leit4229",
+    "source": "lei_14229_2021",
+    "target": "leg_ctb_9503",
+    "relation_type": "AMENDS",
+    "evidence": "Texto integral da Lei 14.229/2021 consultado no Planalto em 2026-08-16; arts. 99, 131, 257 § 8º, 271, 282 §§ 6º/6º-A/7º, 285, 289, 289-A, 290-A, 338-A."
+  },
+  {
+    "id": "rel_ctb1503_let1444",
+    "source": "lei_14440_2022",
+    "target": "leg_ctb_9503",
+    "relation_type": "AMENDS",
+    "evidence": "Marcação '(Vide Lei nº 14.440, de 2022)' nos arts. 282-A e 284 do texto compilado do CTB (Planalto). Ementa e demais alterações: coleta pendente."
+  },
+  {
+    "id": "rel_ctb1503_let1459",
+    "source": "lei_14599_2023",
+    "target": "leg_ctb_9503",
+    "relation_type": "AMENDS",
+    "evidence": "Texto compilado do CTB (Planalto): art. 280 §§ 5º e 6º, art. 268 III, art. 284 § 1º (redação Lei 14.599/2023). Ementa: coleta pendente."
+  },
+  {
+    "id": "rel_res798_reg_ctb280",
+    "source": "res_contran_798",
+    "target": "art_ctb_280_2",
+    "relation_type": "REGULATES",
+    "evidence": "Resolução 798/2020 fundamentada no § 2º do art. 280 do CTB (texto oficial do PDF, 15 p., SHA256 b4f72b9f...)."
+  },
+  {
+    "id": "rel_res918_reg_ctb281",
+    "source": "res_contran_918",
+    "target": "art_ctb_281_1",
+    "relation_type": "REGULATES",
+    "evidence": "Resolução 918/2022, art. 4º: NA expedida em até 30 dias da infração; § 1º não expedição arquiva o AIT; § 2º prazo de defesa da autuação não inferior a 30 dias (texto oficial, SHA256 5153b682...)."
+  },
+  {
+    "id": "rel_res918_art4_na",
+    "source": "res_contran_918",
+    "target": "leg_ctb_9503@281",
+    "relation_type": "COMPLEMENTS",
+    "evidence": "Concretiza o prazo do art. 281, § 1º, II do CTB (30 dias para notificação da autuação)."
+  },
+  {
+    "id": "rel_res900_prazo_recursos",
+    "source": "res_contran_900",
+    "target": "leg_ctb_9503@285",
+    "relation_type": "COMPLEMENTS",
+    "evidence": "Padroniza requerimento (art. 3º), legitimidade (art. 2º), não conhecimento (art. 4º) e tempestividade (art. 6º) para defesa prévia e recursos. Observação: NÃO contém vedação de pagamento prévio - essa garantia decorre do art. 286 do CTB (verificado no texto integral da resolução, SHA256 02b0123c...)."
+  },
+  {
+    "id": "rel_tema1097_interp_ctb257",
+    "source": "jur_stj_tema_1097",
+    "target": "leg_ctb_9503@257",
+    "relation_type": "INTERPRETS",
+    "evidence": "Tese firmada: multa a PJ por não indicação de condutor (art. 257, §§ 7º e 8º) exige dupla notificação (arts. 280, 281 e 282 CTB). Portal STJ Precedentes Qualificados, consultado em 2026-08-16."
+  },
+  {
+    "id": "rel_sumula312_interp_ctb281",
+    "source": "jur_stj_sumula_312",
+    "target": "leg_ctb_9503@281",
+    "relation_type": "INTERPRETS",
+    "evidence": "Súmula 312/STJ: necessárias as notificações da autuação e da aplicação da pena (SCON Súmulas do STJ, consultado em 2026-08-16)."
+  },
+  {
+    "id": "rel_sumula127_applies_licenciamento",
+    "source": "jur_stj_sumula_127",
+    "target": "leg_ctb_9503@130",
+    "relation_type": "APPLIES",
+    "evidence": "Súmula 127/STJ: ilegal condicionar renovação da licença de veículo ao pagamento de multa da qual o infrator não foi notificado (SCON Súmulas do STJ, consultado em 2026-08-16)."
+  },
+  {
+    "id": "rel_art218_ver_res798",
+    "source": "leg_ctb_9503@218",
+    "target": "res_contran_798",
+    "relation_type": "REFERENCES",
+    "evidence": "Enquadramento do excesso de velocidade (art. 218 CTB) observa tabela velocidade medida x considerada da Res. 798/2020."
+  }
+]

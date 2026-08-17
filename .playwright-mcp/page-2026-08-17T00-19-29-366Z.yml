@@ -1,0 +1,991 @@
+- generic [active] [ref=f14e1]:
+  - generic [ref=f14e2]:
+    - generic [ref=f14e4]:
+      - generic [ref=f14e5]:
+        - generic [ref=f14e6]:
+          - link "Acessibilidade:" [ref=f14e7] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Paginas/Acessibilidade.aspx
+          - link "A-" [ref=f14e8] [cursor=pointer]:
+            - /url: javascript:;
+          - link "A+" [ref=f14e9] [cursor=pointer]:
+            - /url: javascript:;
+          - link "AA" [ref=f14e10] [cursor=pointer]:
+            - /url: javascript:;
+        - generic [ref=f14e11]:
+          - text: "Sob medida:"
+          - link "Advogado" [ref=f14e12] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Sob-medida/Advogado
+          - link "Tribunais" [ref=f14e13] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Sob-medida/tribunais
+          - link "Servidor" [ref=f14e14] [cursor=pointer]:
+            - /url: https://www.stj.jus.br/sites/portalp/Sob-medida/Servidor
+        - text: 
+        - generic [ref=f14e15]:
+          - generic [ref=f14e16]:
+            - link "Ouvidoria" [ref=f14e17] [cursor=pointer]:
+              - /url: https://www.stj.jus.br/sites/portalp/Contato-e-ajuda/Fale-conosco/Ouvidoria
+            - button [ref=f14e18] [cursor=pointer]:
+              - text: Acesso Rápido
+              - button "" [ref=f14e19]
+          - button [ref=f14e20] [cursor=pointer]:
+            - text: Redes Sociais
+            - button "" [ref=f14e21]
+          - text:          
+          - button "" [ref=f14e24] [cursor=pointer]
+      - text:                                                                       
+      - generic [ref=f14e25]:
+        - text: 
+        - link [ref=f14e27] [cursor=pointer]:
+          - /url: https://www.stj.jus.br/sites/portalp/Inicio
+          - img "Logo STJ" [ref=f14e28]
+        - navigation [ref=f14e30]:
+          - list [ref=f14e31]:
+            - listitem [ref=f14e32]:
+              - link "Institucional" [ref=f14e33] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f14e34]:
+              - link "Processos" [ref=f14e35] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f14e36]:
+              - link "Jurisprudência" [ref=f14e37] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f14e38]:
+              - link "Precedentes" [ref=f14e39] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f14e40]:
+              - link "Internacional" [ref=f14e41] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f14e42]:
+              - link "Comunicação" [ref=f14e43] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f14e44]:
+              - link "Leis e normas" [ref=f14e45] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f14e46]:
+              - link "Sob medida" [ref=f14e47] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f14e48]:
+              - link "Contato e ajuda" [ref=f14e49] [cursor=pointer]:
+                - /url: javascript:;
+        - button "" [ref=f14e51] [cursor=pointer]
+        - text:  
+    - generic [ref=f14e52]:
+      - generic [ref=f14e53]:
+        - link "Início" [ref=f14e55] [cursor=pointer]:
+          - /url: http://www.stj.jus.br/
+        - link "Precedentes" [ref=f14e56] [cursor=pointer]:
+          - /url: javascript:;
+        - link "Pesquisa de Precedentes" [ref=f14e57] [cursor=pointer]:
+          - /url: https://processo.stj.jus.br/repetitivos/temas_repetitivos/
+      - generic [ref=f14e59]:
+        - heading "Precedentes Qualificados" [level=1] [ref=f14e62]
+        - generic [ref=f14e64]:
+          - generic [ref=f14e67]:
+            - generic [ref=f14e69]:
+              - textbox "Termo ou número" [ref=f14e70]
+              - button "" [ref=f14e72] [cursor=pointer]
+            - generic [ref=f14e73]:
+              - link " Opções de pesquisa" [ref=f14e76] [cursor=pointer]:
+                - /url: javascript:;
+                - generic [ref=f14e77]: 
+                - generic [ref=f14e78]: Opções de pesquisa
+              - generic [ref=f14e79]:
+                - generic [ref=f14e80]: "Operador:"
+                - generic [ref=f14e82]:
+                  - generic [ref=f14e84] [cursor=pointer]:
+                    - text: e
+                    - radio "e" [checked] [ref=f14e85]
+                  - generic [ref=f14e88] [cursor=pointer]:
+                    - text: adj
+                    - radio "adj" [ref=f14e89]
+                - generic [ref=f14e94] [cursor=pointer]:
+                  - text: Pesquisar sinônimos
+                  - checkbox "Pesquisar sinônimos" [checked]
+                - generic [ref=f14e99] [cursor=pointer]:
+                  - text: Pesquisar plurais
+                  - checkbox "Pesquisar plurais" [checked]
+              - link "Avalie nosso serviço E ajude a aprimorar a Pesquisa de Precedentes Qualificados" [ref=f14e105] [cursor=pointer]:
+                - /url: https://forms.office.com/r/PSvd5VzGT8
+                - generic [ref=f14e106]: Avalie nosso serviço
+                - generic [ref=f14e107]: E ajude a aprimorar a Pesquisa de Precedentes Qualificados
+          - generic [ref=f14e108]:
+            - generic [ref=f14e110]:
+              - generic [ref=f14e111]: Temas (1468)
+              - link "Controvérsias (826)" [ref=f14e114] [cursor=pointer]:
+                - /url: pesquisa.jsp?&l=10&i=1&tt=C
+              - link "IAC (22)" [ref=f14e116] [cursor=pointer]:
+                - /url: pesquisa.jsp?&l=10&i=1&tt=I
+              - link "SIRDR (11)" [ref=f14e118] [cursor=pointer]:
+                - /url: pesquisa.jsp?&l=10&i=1&tt=S
+              - link "PUIL (27)" [ref=f14e120] [cursor=pointer]:
+                - /url: pesquisa.jsp?&l=10&i=1&tt=P
+            - generic [ref=f14e121]:
+              - generic [ref=f14e122]:
+                - generic [ref=f14e123]: 1468 documentos encontrados
+                - generic [ref=f14e127]:
+                  - generic [ref=f14e128]: "Nesta página:"
+                  - text: 1 ~ 10
+              - generic [ref=f14e130]:
+                - link "" [ref=f14e131] [cursor=pointer]:
+                  - /url: /repetitivos/temas_repetitivos/?pesquisaAvancada=true
+                - generic "Primeira página" [ref=f14e133]: 
+                - generic "Página anterior" [ref=f14e135]: 
+                - link "" [ref=f14e137] [cursor=pointer]:
+                  - /url: pesquisa.jsp?&l=10&i=11
+                - link "" [ref=f14e139] [cursor=pointer]:
+                  - /url: pesquisa.jsp?&l=10&i=1461
+              - generic [ref=f14e142]:
+                - button "" [ref=f14e143]
+                - button "" [ref=f14e144]
+                - combobox [ref=f14e145]:
+                  - option "10"
+                  - option "20"
+                  - option "50"
+                  - option "Todos"
+                - generic [ref=f14e146]: resultados por página
+            - generic [ref=f14e147]:
+              - generic [ref=f14e148]:
+                - generic [ref=f14e149]:
+                  - generic [ref=f14e150]: Documento 1
+                  - generic [ref=f14e152]:
+                    - generic [ref=f14e153]: 
+                    - text: Assuntos
+                  - generic [ref=f14e154]:
+                    - checkbox "Selecione para impressão" [ref=f14e155]
+                    - text: Selecionar
+                - generic [ref=f14e156]:
+                  - generic [ref=f14e159]:
+                    - text: Tema Repetitivo 1
+                    - link "" [ref=f14e161] [cursor=pointer]:
+                      - /url: "javascript:copiarLinkTema(\n\t    \t\t    \t\t\t'T',\n\t    \t\t    \t\t\t'1',\n\t    \t\t    \t\t\t'iconeCopy-T-1',\n\t    \t\t    \t\t\t'iconeCheck-T-1');"
+                  - generic [ref=f14e165]:
+                    - generic [ref=f14e166]: Situação
+                    - generic [ref=f14e167]: Trânsito em Julgado
+                  - generic [ref=f14e169]:
+                    - generic [ref=f14e170]: Órgão julgador
+                    - generic [ref=f14e171]: CORTE ESPECIAL
+                  - generic [ref=f14e173]:
+                    - generic [ref=f14e174]: Ramo do direito
+                    - generic [ref=f14e175]: DIREITO PROCESSUAL CIVIL E DO TRABALHO
+                - generic [ref=f14e176]:
+                  - generic [ref=f14e177]: Questão submetida a julgamento
+                  - generic [ref=f14e178]: Questão referente à necessidade de anuência do devedor para substituição processual do polo ativo, decorrente de cessão de crédito, nos autos de ação de execução.
+                - generic [ref=f14e180]:
+                  - generic [ref=f14e181]: Tese Firmada
+                  - generic [ref=f14e182]: A substituição processual, no polo ativo da execução, do exequente originário pelo cessionário dispensa a autorização ou o consentimento do devedor.
+                - generic [ref=f14e184]:
+                  - generic [ref=f14e185]: Anotações NUGEPNAC
+                  - generic [ref=f14e186]: RRC de Origem (art. 543-C, §1º, do CPC/73). É possível a sucessão processual do credor (cedente) pelo cessionário, independentemente da anuência do devedor, na hipótese de cessão de crédito oriundo de precatório.
+                - generic [ref=f14e189]:
+                  - generic [ref=f14e190]: Delimitação do Julgado
+                  - generic [ref=f14e191]: Eventual debate relacionado à natureza do crédito cedido, se é transmudado ou não de crédito alimentar em normal, para fins de verificação da ordem de preferência, é questão que não é objeto dos presentes autos.
+                - generic [ref=f14e193]:
+                  - generic [ref=f14e194]: Repercussão Geral
+                  - generic [ref=f14e195]: Tema 361/STF - Transmudação da natureza de precatório alimentar em normal em virtude de cessão do direito nele estampado.
+                - generic [ref=f14e197]:
+                  - generic "Paradigma Principal" [ref=f14e199]: 
+                  - generic [ref=f14e201]:
+                    - link "REsp 1091443/SP" [ref=f14e202] [cursor=pointer]:
+                      - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=200802176867
+                    - button "PUSH" [ref=f14e203]
+                - generic [ref=f14e205]:
+                  - generic [ref=f14e206]:
+                    - generic [ref=f14e207]:
+                      - generic [ref=f14e208]: Tribunal de Origem
+                      - generic [ref=f14e209]: TJSP
+                    - generic [ref=f14e211]:
+                      - generic [ref=f14e212]: RRC
+                      - generic [ref=f14e213]: Sim
+                    - generic [ref=f14e215]:
+                      - generic [ref=f14e216]: Relator
+                      - generic [ref=f14e217]: MARIA THEREZA DE ASSIS MOURA
+                    - generic [ref=f14e219]:
+                      - generic [ref=f14e220]: Embargos de Declaração
+                      - generic [ref=f14e221]: "-"
+                  - generic [ref=f14e223]:
+                    - generic [ref=f14e224]:
+                      - generic [ref=f14e225]: Afetação
+                      - link "10/10/2008" [ref=f14e228] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200802176867&dt_publicacao=10/10/2008
+                    - generic [ref=f14e229]:
+                      - generic [ref=f14e230]: Julgado em
+                      - generic [ref=f14e231]: 02/05/2012
+                    - generic [ref=f14e233]:
+                      - generic [ref=f14e234]: Acórdão publicado em
+                      - generic [ref=f14e236]:
+                        - link "29/05/2012" [ref=f14e237] [cursor=pointer]:
+                          - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=200802176867.REG. E 29/05/2012.FONT.
+                        - button "ROA" [ref=f14e238]
+                    - generic [ref=f14e239]:
+                      - generic [ref=f14e240]: Trânsito em Julgado
+                      - generic [ref=f14e241]: 09/07/2012
+                - generic [ref=f14e245]:
+                  - link "REsp 1101723/SP" [ref=f14e246] [cursor=pointer]:
+                    - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=200802409126
+                  - button "PUSH" [ref=f14e247]
+                - generic [ref=f14e251]:
+                  - link "Processo desafetado em 27/02/2009." [ref=f14e252] [cursor=pointer]:
+                    - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200802409126&dt_publicacao=27/02/2009
+                  - text: "Observação: Julgado como recurso repetido ao REsp 1091443/SP."
+                - generic [ref=f14e253]:
+                  - generic [ref=f14e254]:
+                    - generic [ref=f14e255]:
+                      - generic [ref=f14e256]: Tribunal de Origem
+                      - generic [ref=f14e257]: TJSP
+                    - generic [ref=f14e259]:
+                      - generic [ref=f14e260]: RRC
+                      - generic [ref=f14e261]: Sim
+                    - generic [ref=f14e263]:
+                      - generic [ref=f14e264]: Relator
+                      - generic [ref=f14e265]: BENEDITO GONÇALVES
+                    - generic [ref=f14e267]:
+                      - generic [ref=f14e268]: Embargos de Declaração
+                      - generic [ref=f14e269]: "-"
+                  - generic [ref=f14e271]:
+                    - generic [ref=f14e272]:
+                      - generic [ref=f14e273]: Afetação
+                      - link "19/12/2008" [ref=f14e276] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200802409126&dt_publicacao=19/12/2008
+                    - generic [ref=f14e277]:
+                      - generic [ref=f14e278]: Julgado em
+                      - generic [ref=f14e279]: "-"
+                    - generic [ref=f14e281]:
+                      - generic [ref=f14e282]: Acórdão publicado em
+                      - generic [ref=f14e283]: "-"
+                    - generic [ref=f14e285]:
+                      - generic [ref=f14e286]: Trânsito em Julgado
+                      - generic [ref=f14e287]: "-"
+                - generic [ref=f14e289]: "Última atualização: 19/10/2023"
+              - generic [ref=f14e292]:
+                - generic [ref=f14e293]:
+                  - generic [ref=f14e294]: Documento 2
+                  - generic [ref=f14e296]:
+                    - generic [ref=f14e297]: 
+                    - text: Assuntos
+                  - generic [ref=f14e298]:
+                    - checkbox "Selecione para impressão" [ref=f14e299]
+                    - text: Selecionar
+                - generic [ref=f14e300]:
+                  - generic [ref=f14e303]:
+                    - text: Tema Repetitivo 2
+                    - link "" [ref=f14e305] [cursor=pointer]:
+                      - /url: "javascript:copiarLinkTema(\n\t    \t\t    \t\t\t'T',\n\t    \t\t    \t\t\t'2',\n\t    \t\t    \t\t\t'iconeCopy-T-2',\n\t    \t\t    \t\t\t'iconeCheck-T-2');"
+                  - generic [ref=f14e309]:
+                    - generic [ref=f14e310]: Situação
+                    - generic [ref=f14e311]: Trânsito em Julgado
+                  - generic [ref=f14e313]:
+                    - generic [ref=f14e314]: Órgão julgador
+                    - generic [ref=f14e315]: CORTE ESPECIAL
+                  - generic [ref=f14e317]:
+                    - generic [ref=f14e318]: Ramo do direito
+                    - generic [ref=f14e319]: DIREITO PROCESSUAL CIVIL E DO TRABALHO
+                - generic [ref=f14e320]:
+                  - generic [ref=f14e321]: Questão submetida a julgamento
+                  - generic [ref=f14e322]: Questão referente à possibilidade de habilitação de cessionário de crédito referente a honorários advocatícios sucumbenciais que integra precatório expedido em nome do exeqüente e não dos advogados cedentes.
+                - generic [ref=f14e324]:
+                  - generic [ref=f14e325]: Tese Firmada
+                  - generic [ref=f14e326]: Comprovada a validade do ato de cessão dos honorários advocatícios sucumbenciais, realizado por escritura pública, bem como discriminado no precatório o valor devido a título da respectiva verba advocatícia, deve-se reconhecer a legitimidade do cessionário para se habilitar no crédito consignado no precatório.
+                - generic [ref=f14e328]:
+                  - generic [ref=f14e329]: Anotações NUGEPNAC
+                  - generic [ref=f14e330]: RRC de Origem (art. 543-C, §1º, do CPC/73).O cessionário tem legitimidade para se habilitar no crédito consignado em precatório quando, tratando-se de cessão de crédito de honorários advocatícios sucumbenciais, validamente realizada, estiver discriminado no precatório o valor devido a título da respectiva verba advocatícia.
+                - generic [ref=f14e333]:
+                  - generic [ref=f14e334]: Delimitação do Julgado
+                  - generic [ref=f14e335]: "\"... não cuida o recurso em exame da questão relativa à necessidade de anuência do devedor, nos autos de execução, para sucessão processual do pólo ativo decorrente de cessão de crédito, questão que está sendo examinada por esse egrégio Colegiado no julgamento do Recurso Especial Repetitivo 1.091.443/SP. [...] Tampouco se questiona, nos presentas autos, se a cessão de crédito alimentar (no caso, de honorários advocatícios sucumbenciais) importa na perda da sua natureza, para fins de verificação da ordem de preferência, matéria que foi reconhecida como de repercussão geral no Supremo Tribunal Federal, nos autos do RE 631.537/RS, da relatoria do Ministro Marco Aurélio.\""
+                - generic [ref=f14e337]:
+                  - generic "Paradigma Principal" [ref=f14e339]: 
+                  - generic [ref=f14e341]:
+                    - link "REsp 1102473/RS" [ref=f14e342] [cursor=pointer]:
+                      - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=200802566525
+                    - button "PUSH" [ref=f14e343]
+                - generic [ref=f14e345]:
+                  - generic [ref=f14e346]:
+                    - generic [ref=f14e347]:
+                      - generic [ref=f14e348]: Tribunal de Origem
+                      - generic [ref=f14e349]: TJRS
+                    - generic [ref=f14e351]:
+                      - generic [ref=f14e352]: RRC
+                      - generic [ref=f14e353]: Sim
+                    - generic [ref=f14e355]:
+                      - generic [ref=f14e356]: Relator
+                      - generic [ref=f14e357]: MARIA THEREZA DE ASSIS MOURA
+                    - generic [ref=f14e359]:
+                      - generic [ref=f14e360]: Embargos de Declaração
+                      - generic [ref=f14e361]: "-"
+                  - generic [ref=f14e363]:
+                    - generic [ref=f14e364]:
+                      - generic [ref=f14e365]: Afetação
+                      - link "20/02/2009" [ref=f14e368] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200802566525&dt_publicacao=20/02/2009
+                    - generic [ref=f14e369]:
+                      - generic [ref=f14e370]: Julgado em
+                      - generic [ref=f14e371]: 16/05/2012
+                    - generic [ref=f14e373]:
+                      - generic [ref=f14e374]: Acórdão publicado em
+                      - generic [ref=f14e376]:
+                        - link "27/08/2012" [ref=f14e377] [cursor=pointer]:
+                          - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=200802566525.REG. E 27/08/2012.FONT.
+                        - button "ROA" [ref=f14e378]
+                    - generic [ref=f14e379]:
+                      - generic [ref=f14e380]: Trânsito em Julgado
+                      - generic [ref=f14e381]: 04/10/2012
+                - generic [ref=f14e383]: "Última atualização: 27/10/2023"
+              - generic [ref=f14e386]:
+                - generic [ref=f14e387]:
+                  - generic [ref=f14e388]: Documento 3
+                  - generic [ref=f14e390]:
+                    - generic [ref=f14e391]: 
+                    - text: Assuntos
+                  - generic [ref=f14e392]:
+                    - checkbox "Selecione para impressão" [ref=f14e393]
+                    - text: Selecionar
+                - generic [ref=f14e394]:
+                  - generic [ref=f14e397]:
+                    - text: Tema Repetitivo 3
+                    - link "" [ref=f14e399] [cursor=pointer]:
+                      - /url: "javascript:copiarLinkTema(\n\t    \t\t    \t\t\t'T',\n\t    \t\t    \t\t\t'3',\n\t    \t\t    \t\t\t'iconeCopy-T-3',\n\t    \t\t    \t\t\t'iconeCheck-T-3');"
+                  - generic [ref=f14e403]:
+                    - generic [ref=f14e404]: Situação
+                    - generic [ref=f14e405]: Trânsito em Julgado
+                  - generic [ref=f14e407]:
+                    - generic [ref=f14e408]: Órgão julgador
+                    - generic [ref=f14e409]: TERCEIRA SEÇÃO
+                  - generic [ref=f14e411]:
+                    - generic [ref=f14e412]: Ramo do direito
+                    - generic [ref=f14e413]: DIREITO ADMINISTRATIVO
+                - generic [ref=f14e414]:
+                  - generic [ref=f14e415]: Questão submetida a julgamento
+                  - paragraph [ref=f14e419]: Questão referente à conversão dos vencimentos em URV de servidores do Poder Executivo gaúcho, conforme a Lei 8.880/94, deixando-se de considerar os reajustes/antecipações que foram objeto de várias leis estaduais do Rio Grande do Sul.
+                - generic [ref=f14e420]:
+                  - generic [ref=f14e421]: Tese Firmada
+                  - paragraph [ref=f14e425]: A imposição ao Estado do Rio Grande do Sul da conversão das retribuições aos servidores pela URV (Lei 8.880/94), apesar dos reajustes voluntários já concedidos à categoria pelo Governo Gaúcho a pretexto dessa mesma conversão, somente seria cabível se evidenciado algum prejuízo vencimental decorrente daquela antecipação voluntária.
+                - generic [ref=f14e426]:
+                  - generic [ref=f14e427]: Anotações NUGEPNAC
+                  - paragraph [ref=f14e431]: Processos destacados de ofício pelo relator.O Estado somente poderia ser compelido à aplicação da URV na conversão da remuneração dos servidores públicos estaduais de Cruzeiro Real para Real se evidenciado prejuízo decorrente dos reajustes aplicados antecipadamente por disposição de lei estadual.
+                - generic [ref=f14e432]:
+                  - generic [ref=f14e433]: Repercussão Geral
+                  - generic [ref=f14e434]: Tema 539/STF - Conversão monetária de vencimentos de servidores públicos estaduais, sem intermédio de URV.
+                - generic [ref=f14e436]:
+                  - generic "Paradigma Principal" [ref=f14e438]: 
+                  - generic [ref=f14e440]:
+                    - link "REsp 970217/RS" [ref=f14e441] [cursor=pointer]:
+                      - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=200701661622
+                    - button "PUSH" [ref=f14e442]
+                - generic [ref=f14e444]:
+                  - generic [ref=f14e445]:
+                    - generic [ref=f14e446]:
+                      - generic [ref=f14e447]: Tribunal de Origem
+                      - generic [ref=f14e448]: TJRS
+                    - generic [ref=f14e450]:
+                      - generic [ref=f14e451]: RRC
+                      - generic [ref=f14e452]: Não
+                    - generic [ref=f14e454]:
+                      - generic [ref=f14e455]: Relator
+                      - generic [ref=f14e456]: NAPOLEÃO NUNES MAIA FILHO
+                    - generic [ref=f14e458]:
+                      - generic [ref=f14e459]: Embargos de Declaração
+                      - link "06/04/2010" [ref=f14e462] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/revista/inteiroteor/?num_registro=200701661622&dt_publicacao=06/04/2010
+                  - generic [ref=f14e463]:
+                    - generic [ref=f14e464]:
+                      - generic [ref=f14e465]: Afetação
+                      - link "04/09/2008" [ref=f14e468] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200701661622&dt_publicacao=04/09/2008
+                    - generic [ref=f14e469]:
+                      - generic [ref=f14e470]: Julgado em
+                      - generic [ref=f14e471]: 14/10/2009
+                    - generic [ref=f14e473]:
+                      - generic [ref=f14e474]: Acórdão publicado em
+                      - generic [ref=f14e476]:
+                        - link "20/10/2009" [ref=f14e477] [cursor=pointer]:
+                          - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=200701661622.REG. E 20/10/2009.FONT.
+                        - button "ROA" [ref=f14e478]
+                    - generic [ref=f14e479]:
+                      - generic [ref=f14e480]: Trânsito em Julgado
+                      - generic [ref=f14e481]: 07/05/2010
+                - generic [ref=f14e485]:
+                  - link "REsp 1047686/RS" [ref=f14e486] [cursor=pointer]:
+                    - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=200800798283
+                  - button "PUSH" [ref=f14e487]
+                - generic [ref=f14e489]:
+                  - generic [ref=f14e490]:
+                    - generic [ref=f14e491]:
+                      - generic [ref=f14e492]: Tribunal de Origem
+                      - generic [ref=f14e493]: TJRS
+                    - generic [ref=f14e495]:
+                      - generic [ref=f14e496]: RRC
+                      - generic [ref=f14e497]: Não
+                    - generic [ref=f14e499]:
+                      - generic [ref=f14e500]: Relator
+                      - generic [ref=f14e501]: NAPOLEÃO NUNES MAIA FILHO
+                    - generic [ref=f14e503]:
+                      - generic [ref=f14e504]: Embargos de Declaração
+                      - link "06/04/2010" [ref=f14e507] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/revista/inteiroteor/?num_registro=200800798283&dt_publicacao=06/04/2010
+                  - generic [ref=f14e508]:
+                    - generic [ref=f14e509]:
+                      - generic [ref=f14e510]: Afetação
+                      - link "04/09/2008" [ref=f14e513] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200800798283&dt_publicacao=04/09/2008
+                    - generic [ref=f14e514]:
+                      - generic [ref=f14e515]: Julgado em
+                      - generic [ref=f14e516]: 14/10/2009
+                    - generic [ref=f14e518]:
+                      - generic [ref=f14e519]: Acórdão publicado em
+                      - generic [ref=f14e521]:
+                        - link "20/10/2009" [ref=f14e522] [cursor=pointer]:
+                          - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=200800798283.REG. E 20/10/2009.FONT.
+                        - button "ROA" [ref=f14e523]
+                    - generic [ref=f14e524]:
+                      - generic [ref=f14e525]: Trânsito em Julgado
+                      - generic [ref=f14e526]: 16/08/2010
+                - generic [ref=f14e528]: "Última atualização: 09/04/2026"
+              - generic [ref=f14e531]:
+                - generic [ref=f14e532]:
+                  - generic [ref=f14e533]: Documento 4
+                  - generic [ref=f14e535]:
+                    - generic [ref=f14e536]: 
+                    - text: Assuntos
+                  - generic [ref=f14e537]:
+                    - checkbox "Selecione para impressão" [ref=f14e538]
+                    - text: Selecionar
+                - generic [ref=f14e539]:
+                  - generic [ref=f14e542]:
+                    - text: Tema Repetitivo 4
+                    - link "" [ref=f14e544] [cursor=pointer]:
+                      - /url: "javascript:copiarLinkTema(\n\t    \t\t    \t\t\t'T',\n\t    \t\t    \t\t\t'4',\n\t    \t\t    \t\t\t'iconeCopy-T-4',\n\t    \t\t    \t\t\t'iconeCheck-T-4');"
+                  - generic [ref=f14e548]:
+                    - generic [ref=f14e549]: Situação
+                    - generic [ref=f14e550]: Trânsito em Julgado
+                  - generic [ref=f14e552]:
+                    - generic [ref=f14e553]: Órgão julgador
+                    - generic [ref=f14e554]: TERCEIRA SEÇÃO
+                  - generic [ref=f14e556]:
+                    - generic [ref=f14e557]: Ramo do direito
+                    - generic [ref=f14e558]: DIREITO ADMINISTRATIVO
+                - generic [ref=f14e559]:
+                  - generic [ref=f14e560]: Questão submetida a julgamento
+                  - generic [ref=f14e561]: Questão referente ao percentual de juros moratórios devido nas condenações impostas à Fazenda Pública para pagamento de verbas remuneratórias a servidores públicos, nos termos do artigo 1º-F da Lei nº 9.494/97, acrescentado pela Medida Provisória nº 2.180/2001.
+                - generic [ref=f14e563]:
+                  - generic [ref=f14e564]: Tese Firmada
+                  - generic [ref=f14e565]: O art. 1º-F, da Lei 9.494/97, que fixa os juros moratórios nas ações ajuizadas contra a Fazenda Pública no patamar de 6%, é de ser aplicado tão somente às demandas ajuizadas após a sua entrada em vigor.
+                - generic [ref=f14e567]:
+                  - generic [ref=f14e568]: Anotações NUGEPNAC
+                  - generic [ref=f14e569]: RRC de Origem (art. 543-C, §1º, do CPC/73). São devidos juros moratórios de 6% ao ano em condenação imposta à Fazenda Pública, cuja ação foi ajuizada após a entrada em vigor do art. 1º-F da Lei 9.494/1997.
+                - generic [ref=f14e572]:
+                  - generic [ref=f14e573]: Delimitação do Julgado
+                  - generic [ref=f14e574]: "\"O debate sobre a cisão dos juros moratórios, quando a ação tiver sido ajuizada em data anterior à entrada em vigor do art. 1º-F da Lei n. 9.494/97 não foi objeto do recurso especial. (...) Nada impede, portanto, que a União diligencie no sentido de ver analisada tal tese em recurso próprio, que tenha por objeto ação ajuizada anteriormente à vigência do artigo\"."
+                - generic [ref=f14e576]:
+                  - generic [ref=f14e577]: Entendimento Anterior
+                  - generic [ref=f14e578]: Cessam os efeitos previstos no artigo 543-C do CPC em relação ao Recurso Especial Repetitivo n. 1.086.944/SP, que se referia tão-somente às modificações legislativas impostas pela MP 2.180-35/01, que acrescentou o art. 1º-F à Lei 9.494/97, alterada pela Lei 11.960/09, aqui tratada. (Recurso Repetitivo no REsp 1.205.946/SP)
+                - generic [ref=f14e580]:
+                  - generic [ref=f14e581]: Repercussão Geral
+                  - generic [ref=f14e582]: Tema 435/STF - Aplicação do artigo 1º-F da Lei 9.494/97 nas ações ajuizadas anteriormente à sua vigência.
+                - generic [ref=f14e584]:
+                  - generic "Paradigma Principal" [ref=f14e586]: 
+                  - generic [ref=f14e588]:
+                    - link "REsp 1086944/SP" [ref=f14e589] [cursor=pointer]:
+                      - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=200802080770
+                    - button "PUSH" [ref=f14e590]
+                - generic [ref=f14e592]:
+                  - generic [ref=f14e593]:
+                    - generic [ref=f14e594]:
+                      - generic [ref=f14e595]: Tribunal de Origem
+                      - generic [ref=f14e596]: TJSP
+                    - generic [ref=f14e598]:
+                      - generic [ref=f14e599]: RRC
+                      - generic [ref=f14e600]: Sim
+                    - generic [ref=f14e602]:
+                      - generic [ref=f14e603]: Relator
+                      - generic [ref=f14e604]: MARIA THEREZA DE ASSIS MOURA
+                    - generic [ref=f14e606]:
+                      - generic [ref=f14e607]: Embargos de Declaração
+                      - link "04/06/2009" [ref=f14e610] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/revista/inteiroteor/?num_registro=200802080770&dt_publicacao=04/06/2009
+                  - generic [ref=f14e611]:
+                    - generic [ref=f14e612]:
+                      - generic [ref=f14e613]: Afetação
+                      - link "18/09/2008" [ref=f14e616] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200802080770&dt_publicacao=18/09/2008
+                    - generic [ref=f14e617]:
+                      - generic [ref=f14e618]: Julgado em
+                      - generic [ref=f14e619]: 11/03/2009
+                    - generic [ref=f14e621]:
+                      - generic [ref=f14e622]: Acórdão publicado em
+                      - generic [ref=f14e624]:
+                        - link "04/05/2009" [ref=f14e625] [cursor=pointer]:
+                          - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=200802080770.REG. E 04/05/2009.FONT.
+                        - button "ROA" [ref=f14e626]
+                    - generic [ref=f14e627]:
+                      - generic [ref=f14e628]: Trânsito em Julgado
+                      - generic [ref=f14e629]: 10/08/2009
+                - generic [ref=f14e631]: "Última atualização: 19/10/2023"
+              - generic [ref=f14e634]:
+                - generic [ref=f14e635]:
+                  - generic [ref=f14e636]: Documento 5
+                  - generic [ref=f14e638]:
+                    - generic [ref=f14e639]: 
+                    - text: Assuntos
+                  - generic [ref=f14e640]:
+                    - checkbox "Selecione para impressão" [ref=f14e641]
+                    - text: Selecionar
+                - generic [ref=f14e642]:
+                  - generic [ref=f14e645]:
+                    - text: Tema Repetitivo 5
+                    - link "" [ref=f14e647] [cursor=pointer]:
+                      - /url: "javascript:copiarLinkTema(\n\t    \t\t    \t\t\t'T',\n\t    \t\t    \t\t\t'5',\n\t    \t\t    \t\t\t'iconeCopy-T-5',\n\t    \t\t    \t\t\t'iconeCheck-T-5');"
+                  - generic [ref=f14e651]:
+                    - generic [ref=f14e652]: Situação
+                    - generic [ref=f14e653]: Trânsito em Julgado
+                  - generic [ref=f14e655]:
+                    - generic [ref=f14e656]: Órgão julgador
+                    - generic [ref=f14e657]: TERCEIRA SEÇÃO
+                  - generic [ref=f14e659]:
+                    - generic [ref=f14e660]: Ramo do direito
+                    - generic [ref=f14e661]: DIREITO ADMINISTRATIVO
+                - generic [ref=f14e662]:
+                  - generic [ref=f14e663]: Questão submetida a julgamento
+                  - generic [ref=f14e664]: Questão referente à prescrição da pretensão de militares inativos da Polícia Militar do Estado do Rio Grande do Sul ao reconhecimento dos benefícios concedidos pela Lei Complementar Estadual nº 10.990/97.
+                - generic [ref=f14e666]:
+                  - generic [ref=f14e667]: Tese Firmada
+                  - generic [ref=f14e668]: Na hipótese em que se pretende a revisão de ato de reforma de policial militar do Estado do Rio Grande do Sul, com base na Lei Complementar Estadual nº 10.990/97, com sua promoção a um posto superior na carreira militar e, como mera consequência do deferimento do pedido de promoção, a revisão de seus proventos da inatividade, a prescrição aplicável é de fundo do direito, nos termos do artigo 1º do Decreto nº 20.910/32.
+                - generic [ref=f14e670]:
+                  - generic [ref=f14e671]: Anotações NUGEPNAC
+                  - generic [ref=f14e672]: Processos destacados de ofício pelo relator. Discussão quanto à natureza jurídica da prescrição, se de fundo de direito ou de trato sucessivo. "Não se está a discutir vantagens pecuniárias ou parcelas que deveriam ser pagas ao autor, e que consistira em obrigação de trato sucessivo, mas, isto, sim, está-se buscando a alteração da graduação em que o demandante foi transferido para a inatividade."
+                - generic [ref=f14e675]:
+                  - generic "Paradigma Principal" [ref=f14e677]: 
+                  - generic [ref=f14e679]:
+                    - link "REsp 1073976/RS" [ref=f14e680] [cursor=pointer]:
+                      - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=200801516650
+                    - button "PUSH" [ref=f14e681]
+                - generic [ref=f14e683]:
+                  - generic [ref=f14e684]:
+                    - generic [ref=f14e685]:
+                      - generic [ref=f14e686]: Tribunal de Origem
+                      - generic [ref=f14e687]: TJRS
+                    - generic [ref=f14e689]:
+                      - generic [ref=f14e690]: RRC
+                      - generic [ref=f14e691]: Não
+                    - generic [ref=f14e693]:
+                      - generic [ref=f14e694]: Relator
+                      - generic [ref=f14e695]: MARIA THEREZA DE ASSIS MOURA
+                    - generic [ref=f14e697]:
+                      - generic [ref=f14e698]: Embargos de Declaração
+                      - generic [ref=f14e699]: "-"
+                  - generic [ref=f14e701]:
+                    - generic [ref=f14e702]:
+                      - generic [ref=f14e703]: Afetação
+                      - link "23/09/2008" [ref=f14e706] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200801516650&dt_publicacao=23/09/2008
+                    - generic [ref=f14e707]:
+                      - generic [ref=f14e708]: Julgado em
+                      - generic [ref=f14e709]: 26/11/2008
+                    - generic [ref=f14e711]:
+                      - generic [ref=f14e712]: Acórdão publicado em
+                      - generic [ref=f14e714]:
+                        - link "06/04/2009" [ref=f14e715] [cursor=pointer]:
+                          - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=200801516650.REG. E 06/04/2009.FONT.
+                        - button "ROA" [ref=f14e716]
+                    - generic [ref=f14e717]:
+                      - generic [ref=f14e718]: Trânsito em Julgado
+                      - generic [ref=f14e719]: 12/05/2009
+                - generic [ref=f14e721]: "Última atualização: 19/10/2023"
+              - generic [ref=f14e724]:
+                - generic [ref=f14e725]:
+                  - generic [ref=f14e726]: Documento 6
+                  - generic [ref=f14e728]:
+                    - generic [ref=f14e729]: 
+                    - text: Assuntos
+                  - generic [ref=f14e730]:
+                    - checkbox "Selecione para impressão" [ref=f14e731]
+                    - text: Selecionar
+                - generic [ref=f14e732]:
+                  - generic [ref=f14e735]:
+                    - text: Tema Repetitivo 6
+                    - link "" [ref=f14e737] [cursor=pointer]:
+                      - /url: "javascript:copiarLinkTema(\n\t    \t\t    \t\t\t'T',\n\t    \t\t    \t\t\t'6',\n\t    \t\t    \t\t\t'iconeCopy-T-6',\n\t    \t\t    \t\t\t'iconeCheck-T-6');"
+                  - generic [ref=f14e741]:
+                    - generic [ref=f14e742]: Situação
+                    - generic [ref=f14e743]: Trânsito em Julgado
+                  - generic [ref=f14e745]:
+                    - generic [ref=f14e746]: Órgão julgador
+                    - generic [ref=f14e747]: TERCEIRA SEÇÃO
+                  - generic [ref=f14e749]:
+                    - generic [ref=f14e750]: Ramo do direito
+                    - generic [ref=f14e751]: DIREITO ADMINISTRATIVO
+                - generic [ref=f14e752]:
+                  - generic [ref=f14e753]: Questão submetida a julgamento
+                  - paragraph [ref=f14e757]: Questão relativa ao reajuste de 28,86%, decorrente das Leis nºs 8.622/93 e 8.627/93, no que pertine à concessão do referido índice aos militares federais.
+                - generic [ref=f14e758]:
+                  - generic [ref=f14e759]: Tese Firmada
+                  - paragraph [ref=f14e763]: Os servidores públicos militares, que foram contemplados com reajustes inferiores (concedidos pelas Leis 8.622/1993 e 8.627/1993), têm direito às diferenças entre estes e o índice de 28,86%.
+                - generic [ref=f14e764]:
+                  - generic [ref=f14e765]: Anotações NUGEPNAC
+                  - generic [ref=f14e768]:
+                    - paragraph [ref=f14e769]: Processos destacados de ofício pelo relator.
+                    - paragraph [ref=f14e770]: Revisão geral de remuneração.
+                - generic [ref=f14e771]:
+                  - generic [ref=f14e772]: Repercussão Geral
+                  - generic [ref=f14e773]: Tema 340/STF - Extensão do índice de reajuste de 28,86% aos militares.
+                - generic [ref=f14e775]:
+                  - generic "Paradigma Principal" [ref=f14e777]: 
+                  - generic [ref=f14e779]:
+                    - link "REsp 990284/RS" [ref=f14e780] [cursor=pointer]:
+                      - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=200702242110
+                    - button "PUSH" [ref=f14e781]
+                - generic [ref=f14e783]:
+                  - generic [ref=f14e784]:
+                    - generic [ref=f14e785]:
+                      - generic [ref=f14e786]: Tribunal de Origem
+                      - generic [ref=f14e787]: TRF4
+                    - generic [ref=f14e789]:
+                      - generic [ref=f14e790]: RRC
+                      - generic [ref=f14e791]: Não
+                    - generic [ref=f14e793]:
+                      - generic [ref=f14e794]: Relator
+                      - generic [ref=f14e795]: MARIA THEREZA DE ASSIS MOURA
+                    - generic [ref=f14e797]:
+                      - generic [ref=f14e798]: Embargos de Declaração
+                      - generic [ref=f14e799]: "-"
+                  - generic [ref=f14e801]:
+                    - generic [ref=f14e802]:
+                      - generic [ref=f14e803]: Afetação
+                      - link "09/10/2008" [ref=f14e806] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200702242110&dt_publicacao=09/10/2008
+                    - generic [ref=f14e807]:
+                      - generic [ref=f14e808]: Julgado em
+                      - generic [ref=f14e809]: 26/11/2008
+                    - generic [ref=f14e811]:
+                      - generic [ref=f14e812]: Acórdão publicado em
+                      - generic [ref=f14e814]:
+                        - link "13/04/2009" [ref=f14e815] [cursor=pointer]:
+                          - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=200702242110.REG. E 13/04/2009.FONT.
+                        - button "ROA" [ref=f14e816]
+                    - generic [ref=f14e817]:
+                      - generic [ref=f14e818]: Trânsito em Julgado
+                      - generic [ref=f14e819]: 14/05/2009
+                - generic [ref=f14e821]: "Última atualização: 31/03/2026"
+              - generic [ref=f14e824]:
+                - generic [ref=f14e825]:
+                  - generic [ref=f14e826]: Documento 7
+                  - generic [ref=f14e828]:
+                    - generic [ref=f14e829]: 
+                    - text: Assuntos
+                  - generic [ref=f14e830]:
+                    - checkbox "Selecione para impressão" [ref=f14e831]
+                    - text: Selecionar
+                - generic [ref=f14e832]:
+                  - generic [ref=f14e835]:
+                    - text: Tema Repetitivo 7
+                    - link "" [ref=f14e837] [cursor=pointer]:
+                      - /url: "javascript:copiarLinkTema(\n\t    \t\t    \t\t\t'T',\n\t    \t\t    \t\t\t'7',\n\t    \t\t    \t\t\t'iconeCopy-T-7',\n\t    \t\t    \t\t\t'iconeCheck-T-7');"
+                  - generic [ref=f14e841]:
+                    - generic [ref=f14e842]: Situação
+                    - generic [ref=f14e843]: Trânsito em Julgado
+                  - generic [ref=f14e845]:
+                    - generic [ref=f14e846]: Órgão julgador
+                    - generic [ref=f14e847]: TERCEIRA SEÇÃO
+                  - generic [ref=f14e849]:
+                    - generic [ref=f14e850]: Ramo do direito
+                    - generic [ref=f14e851]: DIREITO ADMINISTRATIVO
+                - generic [ref=f14e852]:
+                  - generic [ref=f14e853]: Questão submetida a julgamento
+                  - paragraph [ref=f14e857]: Questão relativa ao reajuste de 28,86%, decorrente das Leis nºs 8.622/93 e 8.627/93, no que pertine à base de cálculo do reajuste.
+                - generic [ref=f14e858]:
+                  - generic [ref=f14e859]: Tese Firmada
+                  - paragraph [ref=f14e863]: O reajuste de 28,86% incide sobre a remuneração do servidor, o que inclui o vencimento básico (servidor público civil) ou o soldo (militar), acrescido das parcelas que não os têm como base de cálculo.
+                - generic [ref=f14e864]:
+                  - generic [ref=f14e865]: Anotações NUGEPNAC
+                  - generic [ref=f14e868]:
+                    - paragraph [ref=f14e869]: Processos destacados de ofício pelo relator.
+                    - paragraph [ref=f14e870]: Súmula Vinculante 51/STF - "O reajuste de 28,86%, concedido aos servidores militares pelas Leis 8622/1993 e 8627/1993, estende-se aos servidores civis do poder executivo, observadas as eventuais compensações decorrentes dos reajustes diferenciados concedidos pelos mesmos diplomas legais".
+                - generic [ref=f14e871]:
+                  - generic "Paradigma Principal" [ref=f14e873]: 
+                  - generic [ref=f14e875]:
+                    - link "REsp 990284/RS" [ref=f14e876] [cursor=pointer]:
+                      - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=200702242110
+                    - button "PUSH" [ref=f14e877]
+                - generic [ref=f14e879]:
+                  - generic [ref=f14e880]:
+                    - generic [ref=f14e881]:
+                      - generic [ref=f14e882]: Tribunal de Origem
+                      - generic [ref=f14e883]: TRF4
+                    - generic [ref=f14e885]:
+                      - generic [ref=f14e886]: RRC
+                      - generic [ref=f14e887]: Não
+                    - generic [ref=f14e889]:
+                      - generic [ref=f14e890]: Relator
+                      - generic [ref=f14e891]: MARIA THEREZA DE ASSIS MOURA
+                    - generic [ref=f14e893]:
+                      - generic [ref=f14e894]: Embargos de Declaração
+                      - generic [ref=f14e895]: "-"
+                  - generic [ref=f14e897]:
+                    - generic [ref=f14e898]:
+                      - generic [ref=f14e899]: Afetação
+                      - link "09/10/2008" [ref=f14e902] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200702242110&dt_publicacao=09/10/2008
+                    - generic [ref=f14e903]:
+                      - generic [ref=f14e904]: Julgado em
+                      - generic [ref=f14e905]: 26/11/2008
+                    - generic [ref=f14e907]:
+                      - generic [ref=f14e908]: Acórdão publicado em
+                      - generic [ref=f14e910]:
+                        - link "13/04/2009" [ref=f14e911] [cursor=pointer]:
+                          - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=200702242110.REG. E 13/04/2009.FONT.
+                        - button "ROA" [ref=f14e912]
+                    - generic [ref=f14e913]:
+                      - generic [ref=f14e914]: Trânsito em Julgado
+                      - generic [ref=f14e915]: 14/05/2009
+                - generic [ref=f14e917]: "Última atualização: 31/03/2026"
+              - generic [ref=f14e920]:
+                - generic [ref=f14e921]:
+                  - generic [ref=f14e922]: Documento 8
+                  - generic [ref=f14e924]:
+                    - generic [ref=f14e925]: 
+                    - text: Assuntos
+                  - generic [ref=f14e926]:
+                    - checkbox "Selecione para impressão" [ref=f14e927]
+                    - text: Selecionar
+                - generic [ref=f14e928]:
+                  - generic [ref=f14e931]:
+                    - text: Tema Repetitivo 8
+                    - link "" [ref=f14e933] [cursor=pointer]:
+                      - /url: "javascript:copiarLinkTema(\n\t    \t\t    \t\t\t'T',\n\t    \t\t    \t\t\t'8',\n\t    \t\t    \t\t\t'iconeCopy-T-8',\n\t    \t\t    \t\t\t'iconeCheck-T-8');"
+                  - generic [ref=f14e937]:
+                    - generic [ref=f14e938]: Situação
+                    - generic [ref=f14e939]: Trânsito em Julgado
+                  - generic [ref=f14e941]:
+                    - generic [ref=f14e942]: Órgão julgador
+                    - generic [ref=f14e943]: TERCEIRA SEÇÃO
+                  - generic [ref=f14e945]:
+                    - generic [ref=f14e946]: Ramo do direito
+                    - generic [ref=f14e947]: DIREITO ADMINISTRATIVO
+                - generic [ref=f14e948]:
+                  - generic [ref=f14e949]: Questão submetida a julgamento
+                  - generic [ref=f14e950]: Questão relativa ao reajuste de 28,86%, decorrente das Leis nºs 8.622/93 e 8.627/93, no que pertine ao termo inicial da correção monetária.
+                - generic [ref=f14e952]:
+                  - generic [ref=f14e953]: Tese Firmada
+                  - generic [ref=f14e954]: A correção monetária deve incidir a partir da data em que deveria ter sido efetuado o pagamento de cada parcela.
+                - generic [ref=f14e956]:
+                  - generic [ref=f14e957]: Anotações NUGEPNAC
+                  - generic [ref=f14e958]: Processos destacados de ofício pelo relator.Sobre os valores apurados a partir da aplicação do reajuste de 28,86% sobre a remuneração do servidor deve incidir correção monetária a partir da data em que deveria ter sido efetuado o pagamento de cada parcela.
+                - generic [ref=f14e961]:
+                  - generic "Paradigma Principal" [ref=f14e963]: 
+                  - generic [ref=f14e965]:
+                    - link "REsp 990284/RS" [ref=f14e966] [cursor=pointer]:
+                      - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=200702242110
+                    - button "PUSH" [ref=f14e967]
+                - generic [ref=f14e969]:
+                  - generic [ref=f14e970]:
+                    - generic [ref=f14e971]:
+                      - generic [ref=f14e972]: Tribunal de Origem
+                      - generic [ref=f14e973]: TRF4
+                    - generic [ref=f14e975]:
+                      - generic [ref=f14e976]: RRC
+                      - generic [ref=f14e977]: Não
+                    - generic [ref=f14e979]:
+                      - generic [ref=f14e980]: Relator
+                      - generic [ref=f14e981]: MARIA THEREZA DE ASSIS MOURA
+                    - generic [ref=f14e983]:
+                      - generic [ref=f14e984]: Embargos de Declaração
+                      - generic [ref=f14e985]: "-"
+                  - generic [ref=f14e987]:
+                    - generic [ref=f14e988]:
+                      - generic [ref=f14e989]: Afetação
+                      - link "09/10/2008" [ref=f14e992] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200702242110&dt_publicacao=09/10/2008
+                    - generic [ref=f14e993]:
+                      - generic [ref=f14e994]: Julgado em
+                      - generic [ref=f14e995]: 26/11/2008
+                    - generic [ref=f14e997]:
+                      - generic [ref=f14e998]: Acórdão publicado em
+                      - generic [ref=f14e1000]:
+                        - link "13/04/2009" [ref=f14e1001] [cursor=pointer]:
+                          - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=200702242110.REG. E 13/04/2009.FONT.
+                        - button "ROA" [ref=f14e1002]
+                    - generic [ref=f14e1003]:
+                      - generic [ref=f14e1004]: Trânsito em Julgado
+                      - generic [ref=f14e1005]: 14/05/2009
+                - generic [ref=f14e1007]: "Última atualização: 29/06/2022"
+              - generic [ref=f14e1010]:
+                - generic [ref=f14e1011]:
+                  - generic [ref=f14e1012]: Documento 9
+                  - generic [ref=f14e1014]:
+                    - generic [ref=f14e1015]: 
+                    - text: Assuntos
+                  - generic [ref=f14e1016]:
+                    - checkbox "Selecione para impressão" [ref=f14e1017]
+                    - text: Selecionar
+                - generic [ref=f14e1018]:
+                  - generic [ref=f14e1021]:
+                    - text: Tema Repetitivo 9
+                    - link "" [ref=f14e1023] [cursor=pointer]:
+                      - /url: "javascript:copiarLinkTema(\n\t    \t\t    \t\t\t'T',\n\t    \t\t    \t\t\t'9',\n\t    \t\t    \t\t\t'iconeCopy-T-9',\n\t    \t\t    \t\t\t'iconeCheck-T-9');"
+                  - generic [ref=f14e1027]:
+                    - generic [ref=f14e1028]: Situação
+                    - generic [ref=f14e1029]: Trânsito em Julgado
+                  - generic [ref=f14e1031]:
+                    - generic [ref=f14e1032]: Órgão julgador
+                    - generic [ref=f14e1033]: TERCEIRA SEÇÃO
+                  - generic [ref=f14e1035]:
+                    - generic [ref=f14e1036]: Ramo do direito
+                    - generic [ref=f14e1037]: DIREITO ADMINISTRATIVO
+                - generic [ref=f14e1038]:
+                  - generic [ref=f14e1039]: Questão submetida a julgamento
+                  - paragraph [ref=f14e1043]: Questão relativa ao reajuste de 28,86%, decorrente das Leis nºs 8.622/93 e 8.627/93, no que pertine à compensação com a complementação do salário mínimo, pela aplicação do artigo 73 da Lei nº 8.237/91.
+                - generic [ref=f14e1044]:
+                  - generic [ref=f14e1045]: Tese Firmada
+                  - paragraph [ref=f14e1049]: O reajuste de 28,86% não pode ser compensado com a rubrica paga a título de complementação de salário mínimo.
+                - generic [ref=f14e1050]:
+                  - generic [ref=f14e1051]: Anotações NUGEPNAC
+                  - generic [ref=f14e1054]:
+                    - paragraph [ref=f14e1055]: Processos destacados de ofício pelo relator.
+                    - paragraph [ref=f14e1056]: Súmula Vinculante 51/STF - "O reajuste de 28,86%, concedido aos servidores militares pelas Leis 8622/1993 e 8627/1993, estende-se aos servidores civis do poder executivo, observadas as eventuais compensações decorrentes dos reajustes diferenciados concedidos pelos mesmos diplomas legais".
+                - generic [ref=f14e1057]:
+                  - generic "Paradigma Principal" [ref=f14e1059]: 
+                  - generic [ref=f14e1061]:
+                    - link "REsp 990284/RS" [ref=f14e1062] [cursor=pointer]:
+                      - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=200702242110
+                    - button "PUSH" [ref=f14e1063]
+                - generic [ref=f14e1065]:
+                  - generic [ref=f14e1066]:
+                    - generic [ref=f14e1067]:
+                      - generic [ref=f14e1068]: Tribunal de Origem
+                      - generic [ref=f14e1069]: TRF4
+                    - generic [ref=f14e1071]:
+                      - generic [ref=f14e1072]: RRC
+                      - generic [ref=f14e1073]: Não
+                    - generic [ref=f14e1075]:
+                      - generic [ref=f14e1076]: Relator
+                      - generic [ref=f14e1077]: MARIA THEREZA DE ASSIS MOURA
+                    - generic [ref=f14e1079]:
+                      - generic [ref=f14e1080]: Embargos de Declaração
+                      - generic [ref=f14e1081]: "-"
+                  - generic [ref=f14e1083]:
+                    - generic [ref=f14e1084]:
+                      - generic [ref=f14e1085]: Afetação
+                      - link "09/10/2008" [ref=f14e1088] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200702242110&dt_publicacao=09/10/2008
+                    - generic [ref=f14e1089]:
+                      - generic [ref=f14e1090]: Julgado em
+                      - generic [ref=f14e1091]: 26/11/2008
+                    - generic [ref=f14e1093]:
+                      - generic [ref=f14e1094]: Acórdão publicado em
+                      - generic [ref=f14e1096]:
+                        - link "13/04/2009" [ref=f14e1097] [cursor=pointer]:
+                          - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=200702242110.REG. E 13/04/2009.FONT.
+                        - button "ROA" [ref=f14e1098]
+                    - generic [ref=f14e1099]:
+                      - generic [ref=f14e1100]: Trânsito em Julgado
+                      - generic [ref=f14e1101]: 14/05/2009
+                - generic [ref=f14e1103]: "Última atualização: 31/03/2026"
+              - generic [ref=f14e1106]:
+                - generic [ref=f14e1107]:
+                  - generic [ref=f14e1108]: Documento 10
+                  - generic [ref=f14e1110]:
+                    - generic [ref=f14e1111]: 
+                    - text: Assuntos
+                  - generic [ref=f14e1112]:
+                    - checkbox "Selecione para impressão" [ref=f14e1113]
+                    - text: Selecionar
+                - generic [ref=f14e1114]:
+                  - generic [ref=f14e1117]:
+                    - text: Tema Repetitivo 10
+                    - link "" [ref=f14e1119] [cursor=pointer]:
+                      - /url: "javascript:copiarLinkTema(\n\t    \t\t    \t\t\t'T',\n\t    \t\t    \t\t\t'10',\n\t    \t\t    \t\t\t'iconeCopy-T-10',\n\t    \t\t    \t\t\t'iconeCheck-T-10');"
+                  - generic [ref=f14e1123]:
+                    - generic [ref=f14e1124]: Situação
+                    - generic [ref=f14e1125]: Trânsito em Julgado
+                  - generic [ref=f14e1127]:
+                    - generic [ref=f14e1128]: Órgão julgador
+                    - generic [ref=f14e1129]: TERCEIRA SEÇÃO
+                  - generic [ref=f14e1131]:
+                    - generic [ref=f14e1132]: Ramo do direito
+                    - generic [ref=f14e1133]: DIREITO ADMINISTRATIVO
+                - generic [ref=f14e1134]:
+                  - generic [ref=f14e1135]: Questão submetida a julgamento
+                  - generic [ref=f14e1136]: Questão relativa ao reajuste de 28,86%, decorrente das Leis nºs 8.622/93 e 8.627/93, no que pertine à contagem do prazo prescricional.
+                - generic [ref=f14e1138]:
+                  - generic [ref=f14e1139]: Tese Firmada
+                  - generic [ref=f14e1140]: "Quanto a prescrição à pretensão dos servidores públicos militares ao reajuste de 28,86%: i) se ajuizada a ação ordinária dos servidores até 30/06/2003, os efeitos financeiros devem retroagir a janeiro de 1993."
+                - generic [ref=f14e1142]:
+                  - generic [ref=f14e1143]: Anotações NUGEPNAC
+                  - generic [ref=f14e1144]: Processos destacados de ofício pelo relator.
+                - generic [ref=f14e1146]:
+                  - generic "Paradigma Principal" [ref=f14e1148]: 
+                  - generic [ref=f14e1150]:
+                    - link "REsp 990284/RS" [ref=f14e1151] [cursor=pointer]:
+                      - /url: https://ww2.stj.jus.br/processo/pesquisa/?tipoPesquisa=tipoPesquisaNumeroRegistro&termo=200702242110
+                    - button "PUSH" [ref=f14e1152]
+                - generic [ref=f14e1154]:
+                  - generic [ref=f14e1155]:
+                    - generic [ref=f14e1156]:
+                      - generic [ref=f14e1157]: Tribunal de Origem
+                      - generic [ref=f14e1158]: TRF4
+                    - generic [ref=f14e1160]:
+                      - generic [ref=f14e1161]: RRC
+                      - generic [ref=f14e1162]: Não
+                    - generic [ref=f14e1164]:
+                      - generic [ref=f14e1165]: Relator
+                      - generic [ref=f14e1166]: MARIA THEREZA DE ASSIS MOURA
+                    - generic [ref=f14e1168]:
+                      - generic [ref=f14e1169]: Embargos de Declaração
+                      - generic [ref=f14e1170]: "-"
+                  - generic [ref=f14e1172]:
+                    - generic [ref=f14e1173]:
+                      - generic [ref=f14e1174]: Afetação
+                      - link "09/10/2008" [ref=f14e1177] [cursor=pointer]:
+                        - /url: https://ww2.stj.jus.br/processo/monocraticas/decisoes/?num_registro=200702242110&dt_publicacao=09/10/2008
+                    - generic [ref=f14e1178]:
+                      - generic [ref=f14e1179]: Julgado em
+                      - generic [ref=f14e1180]: 26/11/2008
+                    - generic [ref=f14e1182]:
+                      - generic [ref=f14e1183]: Acórdão publicado em
+                      - generic [ref=f14e1185]:
+                        - link "13/04/2009" [ref=f14e1186] [cursor=pointer]:
+                          - /url: https://scon.stj.jus.br/SCON/jurisprudencia/toc.jsp?O=JT&b=ACOR&livre=200702242110.REG. E 13/04/2009.FONT.
+                        - button "ROA" [ref=f14e1187]
+                    - generic [ref=f14e1188]:
+                      - generic [ref=f14e1189]: Trânsito em Julgado
+                      - generic [ref=f14e1190]: 14/05/2009
+                - generic [ref=f14e1192]: "Última atualização: 29/06/2022"
+            - generic [ref=f14e1195]:
+              - button "Exportar todos" [ref=f14e1199]
+              - generic [ref=f14e1201]:
+                - button "Imprimir todos" [ref=f14e1202]
+                - button "Imprimir selecionados" [ref=f14e1203]
+        - generic [ref=f14e1204]:
+          - generic [ref=f14e1205]:
+            - link "" [ref=f14e1206] [cursor=pointer]:
+              - /url: /repetitivos/temas_repetitivos/?pesquisaAvancada=true
+            - generic "Primeira página" [ref=f14e1208]: 
+            - generic "Página anterior" [ref=f14e1210]: 
+            - link "" [ref=f14e1212] [cursor=pointer]:
+              - /url: pesquisa.jsp?&l=10&i=11
+            - link "" [ref=f14e1214] [cursor=pointer]:
+              - /url: pesquisa.jsp?&l=10&i=1461
+          - table:
+            - rowgroup:
+              - row
+        - generic [ref=f14e1216]: Esta pesquisa recupera informações inseridas pelo NUGEPNAC nesta página e as presentes na base de dados da Secretaria de Jurisprudência do STJ.
+    - generic [ref=f14e1217]:
+      - generic [ref=f14e1218]: Versão 3.2.2.1
+      - text: "|"
+      - generic [ref=f14e1219]: de 29/04/2026 13:13.
+    - contentinfo [ref=f14e1220]:
+      - generic [ref=f14e1222]:
+        - link " Como chegar" [ref=f14e1224] [cursor=pointer]:
+          - /url: http://www.stj.jus.br/sites/portalp/Contato-e-ajuda/Fale-conosco/Como-chegar
+          - generic [ref=f14e1225]: 
+          - text: Como chegar
+        - generic [ref=f14e1226]:
+          - text: "SAFS - Quadra 06 - Lote 01 - CEP: 70095-900 - Brasília - DF"
+          - generic [ref=f14e1227]: 
+          - link "+55 61 3319-8000" [ref=f14e1228] [cursor=pointer]:
+            - /url: ""
+        - link " Avalie o Portal STJ" [ref=f14e1230] [cursor=pointer]:
+          - /url: https://www.stj.jus.br/sites/portalp/Paginas/Institucional/Pesquisa-de-satisfacao.aspx
+          - generic [ref=f14e1231]: 
+          - text: Avalie o Portal STJ
+  - generic [ref=f14e1233] [cursor=pointer]:
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f14e1234]
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f14e1235]

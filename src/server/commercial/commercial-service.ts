@@ -30,6 +30,7 @@ import {
   CommercialPermission,
 } from '../../types/commercial';
 import { logger } from '../observability/logger';
+import { commercialRepository } from '../db/commercial-repository';
 
 class CommercialService {
   private pricings: Map<string, ServicePricing> = new Map();
@@ -476,7 +477,55 @@ class CommercialService {
       (p) => p.serviceType === serviceType || p.id === `price_${serviceType}`
     ) || Array.from(this.pricings.values())[0];
   }
-
+  public createPricing(data: Omit<ServicePricing, 'id' | 'history' | 'updatedAt' | 'updatedBy'>): ServicePricing {
+    // Generate ID based on serviceType
+    const baseId = `price_${data.serviceType}`;
+    let id = baseId;
+    let counter = 1;
+    
+    // Ensure ID is unique
+    while (this.pricings.has(id)) {
+      id = `${baseId}_${counter}`;
+      counter++;
+    }
+    
+    // Create new pricing with default values for missing fields
+    const now = new Date().toISOString();
+    const newPricing: ServicePricing = {
+      id,
+      serviceType: data.serviceType,
+      serviceName: data.serviceName,
+      description: data.description,
+      standardPrice: data.standardPrice,
+      promotionalPrice: data.promotionalPrice ?? null,
+      isActive: data.isActive ?? true,
+      validFrom: data.validFrom,
+      validUntil: data.validUntil,
+      history: [],
+      updatedAt: now,
+      updatedBy: 'Admin Comercial',
+    };
+    
+    // Add to pricings map
+    this.pricings.set(id, newPricing);
+    
+    // Create initial history entry for creation
+    const historyEntry: PriceHistoryEntry = {
+      id: `ph_${Date.now()}`,
+      previousStandardPrice: 0,
+      newStandardPrice: data.standardPrice,
+      previousPromoPrice: null,
+      newPromoPrice: data.promotionalPrice ?? null,
+      reason: 'Criação de nova tabela de preço',
+      changedBy: 'Admin Comercial',
+      changedAt: now,
+    };
+    
+    // Initialize history array
+    newPricing.history = [historyEntry];
+    
+    return newPricing;
+  }
   public updatePricing(
     id: string,
     updates: {
@@ -523,6 +572,7 @@ class CommercialService {
     existing.history.unshift(historyEntry);
 
     this.pricings.set(id, existing);
+    commercialRepository.persistPricing(existing);
 
     // Record Audit Log
     this.recordAudit({
@@ -559,6 +609,7 @@ class CommercialService {
     };
 
     this.promotions.set(id, newPromo);
+    commercialRepository.persistPromotion(newPromo);
 
     this.recordAudit({
       action: 'PROMO_CHANGE',
@@ -586,6 +637,7 @@ class CommercialService {
     };
 
     this.promotions.set(id, updated);
+    commercialRepository.persistPromotion(updated);
 
     this.recordAudit({
       action: 'PROMO_CHANGE',
@@ -624,6 +676,7 @@ class CommercialService {
     };
 
     this.coupons.set(code, newCoupon);
+    commercialRepository.persistCoupon(newCoupon);
 
     this.recordAudit({
       action: 'COUPON_CHANGE',
@@ -651,6 +704,7 @@ class CommercialService {
     };
 
     this.coupons.set(cleanCode, updated);
+    commercialRepository.persistCoupon(updated);
 
     this.recordAudit({
       action: 'COUPON_CHANGE',
@@ -772,6 +826,7 @@ class CommercialService {
     });
 
     this.coupons.set(coupon.code, coupon);
+    commercialRepository.persistCoupon(coupon);
 
     return {
       discountApplied: validation.discountAmount,
@@ -829,6 +884,7 @@ class CommercialService {
     };
 
     this.bonusLedger.unshift(entry);
+    commercialRepository.persistBonus(entry);
 
     this.recordAudit({
       action: 'BONUS_CREDIT',
@@ -877,6 +933,7 @@ class CommercialService {
     };
 
     this.bonusLedger.unshift(entry);
+    commercialRepository.persistBonus(entry);
 
     this.recordAudit({
       action: 'BONUS_ADJUSTMENT',
@@ -917,6 +974,7 @@ class CommercialService {
     };
 
     this.bonusLedger.unshift(entry);
+    commercialRepository.persistBonus(entry);
 
     this.recordAudit({
       action: 'BONUS_ADJUSTMENT',
@@ -946,6 +1004,7 @@ class CommercialService {
       updatedAt: new Date().toISOString(),
       updatedBy: author,
     };
+    commercialRepository.persistReferralConfig(this.referralConfig);
 
     this.recordAudit({
       action: 'REFERRAL_CONFIG_CHANGE',
@@ -969,6 +1028,7 @@ class CommercialService {
     }
 
     this.referralParents.set(newUserId, referrerId);
+    commercialRepository.persistReferralRelation(newUserId, referrerId);
 
     // Credit signup bonus for the new user
     if (this.referralConfig.signupBonusAmount > 0) {
@@ -1050,6 +1110,7 @@ class CommercialService {
         availableAt: new Date(Date.now() + this.referralConfig.payoutDelayDays * 86400000).toISOString(),
       };
       this.commissionLedger.unshift(entry);
+      commercialRepository.persistCommission(entry);
       createdCommissions.push(entry);
 
       // 2. Level 2 Referrer
@@ -1073,6 +1134,7 @@ class CommercialService {
           availableAt: new Date(Date.now() + this.referralConfig.payoutDelayDays * 86400000).toISOString(),
         };
         this.commissionLedger.unshift(entryL2);
+        commercialRepository.persistCommission(entryL2);
         createdCommissions.push(entryL2);
 
         // 3. Level 3 Referrer
@@ -1096,6 +1158,7 @@ class CommercialService {
             availableAt: new Date(Date.now() + this.referralConfig.payoutDelayDays * 86400000).toISOString(),
           };
           this.commissionLedger.unshift(entryL3);
+          commercialRepository.persistCommission(entryL3);
           createdCommissions.push(entryL3);
         }
       }
@@ -1132,6 +1195,14 @@ class CommercialService {
       });
     }
 
+    if (comms.length > 0) {
+      const reversedAt = comms[0].reversedAt;
+      commercialRepository.updateCommissionsStatus(paymentId, 'REVERSED', {
+        reversedAt,
+        reversalReason: reason,
+      });
+    }
+
     logger.warn('commercial', 'commissions', 'reversed', `Comissões revertidas para o pagamento ${paymentId}`, {
       paymentId,
       reversedCount: comms.length,
@@ -1158,6 +1229,11 @@ class CommercialService {
     const prev = { ...comm };
     comm.status = 'PAID';
     comm.paidAt = new Date().toISOString();
+
+    commercialRepository.updateCommissionsStatus(comm.paymentId, 'PAID', {
+      paidAt: comm.paidAt,
+      level: comm.level,
+    });
 
     this.recordAudit({
       action: 'COMMISSION_PAYOUT',
@@ -1276,6 +1352,7 @@ class CommercialService {
       timestamp: new Date().toISOString(),
     };
     this.commercialAuditLogs.unshift(log);
+    commercialRepository.persistAuditLog(log);
 
     logger.info('commercial', 'audit', entry.action, `Ação comercial auditada: ${entry.action} no alvo ${entry.target}`, {
       action: entry.action,

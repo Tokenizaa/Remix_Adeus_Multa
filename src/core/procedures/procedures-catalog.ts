@@ -28,7 +28,7 @@ export const PROCEDURES_CATALOG: ProcedureModel[] = [
       { name: 'Documento oficial de identidade (CNH ou RG/CPF)', required: true, description: 'Comprovação de legitimidade ativa do requerente.' },
       { name: 'Certificado de Registro e Licenciamento do Veículo (CRLV)', required: true, description: 'Comprovação de propriedade ou posse legítima do veículo.' },
       { name: 'Comprovante de residência atualizado', required: false, description: 'Para ratificação de endereço no prontuário do órgão.' },
-      { name: 'Procuração com poderes específicos (se representado)', required: false, description: 'Obrigatória caso interposto por advogado ou procurador.' },
+      { name: 'Procuração com poderes específicos (se representado)', required: false, description: 'Obrigatória caso interposto por representante legal.' },
     ],
     applicableGrounds: ['ARG-001', 'ARG-002', 'ARG-003', 'ARG-004', 'ARG-005', 'ARG-006', 'ARG-007', 'ARG-008'],
     availableTemplates: ['TPL_DEFESA_PREVIA_PADRAO', 'TPL_DEFESA_PREVIA_VELOCIDADE', 'TPL_CONVERSAO_ADVERTENCIA'],

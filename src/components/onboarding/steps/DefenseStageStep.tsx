@@ -66,7 +66,7 @@ export const DefenseStageStep: React.FC<DefenseStageStepProps> = ({
           </div>
           <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between">
             <span className="text-[10px] font-bold font-mono text-slate-600">
-              Prazo mínimo 30 dias (Art. 281 CTB)
+              Prazo mínimo 30 dias (Art. 281-A CTB)
             </span>
             <span className="text-[10px] text-orange-600 font-semibold group-hover:translate-x-0.5 transition-transform flex items-center gap-0.5">
               Selecionar <ArrowRight className="w-3 h-3" />

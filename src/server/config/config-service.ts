@@ -6,19 +6,18 @@
  * 1. Strict separation of public Configuration vs. protected Secrets.
  * 2. In-memory and environment-backed configuration with typed validation.
  * 3. Masked serialization for frontend (secrets never leaked in plain text).
- * 4. Audit logging on every administrative change.
- * 5. Metadata for every setting (type, category, description, required, validation).
- */
-
+*/
 export type SettingCategory =
   | 'ai'
-  | 'supabase'
-  | 'payments'
-  | 'meta'
+  | 'commercial'
+  | 'knowledge'
   | 'marketing'
+  | 'meta'
+  | 'notifications'
   | 'ocr'
-  | 'system'
-  | 'notifications';
+  | 'payments'
+  | 'supabase'
+  | 'system';
 
 export type SettingType = 'string' | 'number' | 'boolean' | 'select' | 'secret' | 'json';
 
@@ -619,6 +618,124 @@ class ConfigService {
         isRequired: true,
         isEditable: true,
       },
+      // =========================================================================
+      // 9. COMERCIAL
+      // =========================================================================
+      {
+        key: 'COMERCIAL_ENV',
+        name: 'Ambiente Comercial',
+        category: 'commercial',
+        type: 'select',
+        description: 'Ambiente de operação do módulo comercial (sandbox ou produção)',
+        defaultValue: 'sandbox',
+        isSecret: false,
+        isRequired: true,
+        isEditable: true,
+        options: [
+          { label: 'Sandbox / Homologação', value: 'sandbox' },
+          { label: 'Produção (Transações Reais)', value: 'production' },
+        ],
+        envSource: 'COMERCIAL_ENV',
+      },
+      {
+        key: 'COMERCIAL_TOKEN',
+        name: 'Token Comercial',
+        category: 'commercial',
+        type: 'secret',
+        description: 'Bearer Token para autenticação na API comercial',
+        defaultValue: '',
+        isSecret: true,
+        isRequired: false,
+        isEditable: true,
+        envSource: 'COMERCIAL_TOKEN',
+      },
+      {
+        key: 'COMERCIAL_WEBHOOK_SECRET',
+        name: 'Webhook Secret Comercial',
+        category: 'commercial',
+        type: 'secret',
+        description: 'Secret para validação de webhooks comerciais',
+        defaultValue: '',
+        isSecret: true,
+        isRequired: false,
+        isEditable: true,
+        envSource: 'COMERCIAL_WEBHOOK_SECRET',
+      },
+      {
+        key: 'COMERCIAL_AUDIT_ENABLED',
+        name: 'Auditoria Comercial Ativada',
+        category: 'commercial',
+        type: 'boolean',
+        description: 'Ativa auditoria detalhada de operações comerciais',
+        defaultValue: false,
+        isSecret: false,
+        isRequired: false,
+        isEditable: true,
+      },
+      {
+        key: 'COMERCIAL_NOTIFICATION_THRESHOLD',
+        name: 'Limiar de Notificação Comercial',
+        category: 'commercial',
+        type: 'number',
+        description: 'Limiar de valor para disparar notificações de transações comerciais',
+        defaultValue: 1000,
+        isSecret: false,
+        isRequired: true,
+        isEditable: true,
+      },
+      // =========================================================================
+      // 10. BASE DE CONHECIMENTO
+      // =========================================================================
+      {
+        key: 'KNOWLEDGE_AUTO_UPDATE_ENABLED',
+        name: 'Atualização Automática do Knowledge Base',
+        category: 'knowledge',
+        type: 'boolean',
+        description: 'Ativa a atualização automática da base de conhecimento jurídico',
+        defaultValue: true,
+        isSecret: false,
+        isRequired: true,
+        isEditable: true,
+      },
+      {
+        key: 'KNOWLEDGE_EMBEDDING_MODEL',
+        name: 'Modelo de Embeddings do Knowledge Base',
+        category: 'knowledge',
+        type: 'select',
+        description: 'Modelo de embeddings utilizado para vetorização de documentos jurídicos',
+        defaultValue: 'nvidia/nv-embedqa-e5-v5',
+        isSecret: false,
+        isRequired: true,
+        isEditable: true,
+        options: [
+          { label: 'NV-EmbedQA E5 v5 (4096 dim - RAG Especializado)', value: 'nvidia/nv-embedqa-e5-v5' },
+          { label: 'Snowflake Arctic Embed L (1024 dim)', value: 'snowflake/arctic-embed-l' },
+          { label: 'BAAI BGE Multilingual Gemma2', value: 'baai/bge-multilingual-gemma2' },
+        ],
+        envSource: 'KNOWLEDGE_EMBEDDING_MODEL',
+      },
+      {
+        key: 'KNOWLEDGE_UPDATE_INTERVAL_HOURS',
+        name: 'Intervalo de Atualização do Knowledge Base (horas)',
+        category: 'knowledge',
+        type: 'number',
+        description: 'Intervalo em horas entre atualizações automáticas da base de conhecimento',
+        defaultValue: 24,
+        isSecret: false,
+        isRequired: true,
+        isEditable: true,
+      },
+      {
+        key: 'KNOWLEDGE_CHUNK_SIZE',
+        name: 'Tamanho do Chunk de Texto do Knowledge Base',
+        category: 'knowledge',
+        type: 'number',
+        description: 'Tamanho máximo em tokens para cada chunk de texto ao processar documentos',
+        defaultValue: 512,
+        isSecret: false,
+        isRequired: true,
+        isEditable: true,
+      },
     ];
 
     for (const def of definitions) {
@@ -645,8 +762,8 @@ class ConfigService {
         def.isConfigured = true;
         def.lastUpdated = new Date().toISOString();
       }
-    }
   }
+    }
 
   /**
    * Get raw value for backend consumers (includes unmasked secrets)

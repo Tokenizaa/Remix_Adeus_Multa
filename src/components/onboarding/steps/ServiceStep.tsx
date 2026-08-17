@@ -8,7 +8,11 @@ import {
   UserCheck,
   Sparkles,
   ArrowRight,
-  ShieldCheck
+  ShieldCheck,
+  Ban,
+  CheckCircle2,
+  Database,
+  RefreshCw
 } from 'lucide-react';
 import { ProcedureType } from '../../../types';
 
@@ -23,6 +27,34 @@ export const ServiceStep: React.FC<ServiceStepProps> = ({
 }) => {
   return (
     <div className="bg-white border border-slate-200 rounded-2xl p-5 sm:p-7 shadow-2xs space-y-6">
+      {/* Trust & Knowledge Base Banner */}
+      <div className="bg-gradient-to-r from-slate-50 to-blue-50/30 border border-slate-200 rounded-xl p-4 space-y-3">
+        <div className="flex items-center gap-2">
+          <Database className="w-4 h-4 text-[#155BCB]" />
+          <h3 className="text-[11px] font-bold text-slate-800 uppercase tracking-wider">
+            Base Jurídica Verificada e Atualizada
+          </h3>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div className="flex items-center gap-1.5 text-[10px] text-slate-600">
+            <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+            <span>390 dispositivos CTB</span>
+          </div>
+          <div className="flex items-center gap-1.5 text-[10px] text-slate-600">
+            <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+            <span>7 peças-modelo validadas</span>
+          </div>
+          <div className="flex items-center gap-1.5 text-[10px] text-slate-600">
+            <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+            <span>Fontes: Planalto, DOU, STJ</span>
+          </div>
+          <div className="flex items-center gap-1.5 text-[10px] text-slate-600">
+            <RefreshCw className="w-3 h-3 text-[#155BCB] shrink-0" />
+            <span>Atualização diária via DOU</span>
+          </div>
+        </div>
+      </div>
+
       <div className="text-center max-w-xl mx-auto space-y-2">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-orange-50 text-orange-700 border border-orange-200 font-mono">
           <Sparkles className="w-3 h-3 text-orange-500" />
@@ -210,6 +242,36 @@ export const ServiceStep: React.FC<ServiceStepProps> = ({
           <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between">
             <span className="text-[10px] font-bold font-mono text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded">
               Decisão Colegiada
+            </span>
+            <span className="text-[10px] text-orange-600 font-semibold group-hover:translate-x-0.5 transition-transform flex items-center gap-0.5">
+              Continuar <ArrowRight className="w-3 h-3" />
+            </span>
+          </div>
+        </button>
+
+        <button
+          id="service-option-cassacao-cnh"
+          onClick={() => onSelectService('cassacao_cnh')}
+          className={`p-4 border rounded-xl text-left transition-all flex flex-col justify-between group cursor-pointer shadow-2xs ${
+            selectedService === 'cassacao_cnh'
+              ? 'border-orange-500 bg-orange-50/30 ring-2 ring-orange-500/20'
+              : 'border-slate-200 hover:border-orange-300 hover:bg-slate-50/50'
+          }`}
+        >
+          <div className="flex items-start gap-3">
+            <div className="w-9 h-9 rounded-lg bg-slate-900 text-white flex items-center justify-center shrink-0 group-hover:bg-orange-500 transition-colors">
+              <Ban className="w-4 h-4" />
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-900 text-xs">Cassação da CNH (PCDD)</h3>
+              <p className="text-[11px] text-slate-500 mt-1 leading-snug">
+                Defesa contra processo de cassação do documento de habilitação por Art. 263 CTB.
+              </p>
+            </div>
+          </div>
+          <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between">
+            <span className="text-[10px] font-bold font-mono text-rose-700 bg-rose-50 px-1.5 py-0.5 rounded">
+              Penalidade Máxima
             </span>
             <span className="text-[10px] text-orange-600 font-semibold group-hover:translate-x-0.5 transition-transform flex items-center gap-0.5">
               Continuar <ArrowRight className="w-3 h-3" />

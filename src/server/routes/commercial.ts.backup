@@ -1,0 +1,23 @@
+import { Router } from 'express';
+import { commercialService } from '../../src/server/commercial/commercial-service';
+
+const router = Router();
+
+// Commercial Management & Economics Endpoints
+router.get('/admin/commercial/overview', (req, res) => {
+  // TODO: Implement commercial overview metrics
+  // For now, return placeholder
+  res.json({
+    totalRevenue: 0,
+    totalCases: 0,
+    conversionRate: 0,
+    // Add more metrics as needed
+  });
+});
+
+// The specific commercial sub-routes (prices, promotions, coupons, bonuses, referrals, commissions, tests, settings)
+// would be implemented here as needed, but for now we rely on the existing commercial-service.ts
+// and the frontend may call the same endpoints under /api/admin/commercial/* which are mapped here.
+// We can add more specific routes as required.
+
+export default router;

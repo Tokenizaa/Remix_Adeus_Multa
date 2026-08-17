@@ -3,64 +3,87 @@
     "id": "res_contran_798",
     "number": "798",
     "year": 2020,
+    "publication_date": "2020-09-02",
     "issuing_body": "CONTRAN",
-    "subject": "Critérios técnicos para instalação e fiscalização com medidores de velocidade (radares)",
+    "ementa": "Dispõe sobre requisitos técnicos mínimos para a fiscalização da velocidade de veículos automotores, elétricos, reboques e semirreboques.",
+    "subject": "Requisitos técnicos mínimos para fiscalização de velocidade (medidores de velocidade - radares)",
     "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao7982020.pdf",
+    "source_hash": "sha256:b4f72b9f3efaa01b7211bb8f8a9817445a9aa4fd98242f52696be90653973e87",
     "status": "vigente",
+    "verification_status": "VERIFIED",
+    "verification_date": "2026-08-16",
     "key_articles": [
       {
         "article": "4º",
-        "description": "Exigência de aprovação de modelo pelo INMETRO e verificação metrológica periódica (máximo 12 meses)."
+        "description": "Exigência de aprovação de modelo pelo INMETRO e verificação metrológica periódica (máximo 12 meses). [texto integral coletado; conferir citação exata antes de uso operacional]"
       },
       {
         "article": "5º",
-        "description": "Estudo técnico de viabilidade e mapeamento de acidentalidade para radares fixos."
+        "description": "Estudo técnico de viabilidade e mapeamento de acidentalidade para radares fixos. [texto integral coletado; conferir citação exata antes de uso operacional]"
       },
       {
         "article": "6º",
-        "description": "Vedação do uso de medidores de velocidade do tipo oculto ou sem visibilidade ostensiva."
+        "description": "Vedação do uso de medidores de velocidade do tipo oculto ou sem visibilidade ostensiva. [texto integral coletado; conferir citação exata antes de uso operacional]"
       },
       {
         "article": "11",
-        "description": "Tabela de enquadramento de velocidade medida e velocidade considerada para aplicação de penalidade."
+        "description": "Tabela de enquadramento de velocidade medida e velocidade considerada para aplicação de penalidade. [texto integral coletado; conferir citação exata antes de uso operacional]"
       }
-    ]
+    ],
+    "legal_foundation": "Art. 12, I e art. 280, § 2º do CTB (conforme texto oficial da resolução)"
   },
   {
     "id": "res_contran_985",
     "number": "985",
     "year": 2022,
+    "publication_date": "2022-12-15",
     "issuing_body": "CONTRAN",
+    "ementa": "Aprova o Manual Brasileiro de Fiscalização de Trânsito.",
     "subject": "Manual Brasileiro de Fiscalização de Trânsito (MBFT)",
     "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9852022.pdf",
+    "source_hash": "sha256:4b763952f62acd73f811ffe4084127b37502516ade23d90dca94e594af50c851",
     "status": "vigente",
+    "verification_status": "VERIFIED",
+    "verification_date": "2026-08-16",
     "key_articles": [
       {
-        "article": "Volume Único",
-        "description": "Fichas individuais de enquadramento com campos obrigatórios, competência do agente e definições de abordagem."
+        "article": "1º",
+        "description": "Aprova o MBFT; Anexo disponível no sítio eletrônico do órgão máximo executivo de trânsito da União."
+      },
+      {
+        "article": "2º",
+        "description": "Revoga a Resolução CONTRAN nº 925, de 28 de março de 2022."
+      },
+      {
+        "article": "3º",
+        "description": "Entrada em vigor conforme texto oficial (DOU de 26/12/2022, Edição 242-B, Seção 1 - Extra B, p. 2)."
       }
-    ]
+    ],
+    "legal_foundation": "Art. 12, I, VII e VIII do CTB (conforme texto oficial da resolução)"
   },
   {
     "id": "res_contran_432",
     "number": "432",
     "year": 2013,
     "issuing_body": "CONTRAN",
-    "subject": "Fiscalização de alcoolemia e substâncias psicoativas no trânsito",
+    "subject": "Fiscalização de alcoolemia e substâncias psicoativas no trânsito (Lei Seca)",
     "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/resolucao4322013.pdf",
     "status": "vigente",
+    "verification_status": "UNVERIFIED",
+    "verification_date": "2026-08-16",
+    "verification_note": "Ementa e artigos não conferidos: URL oficial retornou 404 na consulta de 2026-08-16 e a coleção de resoluções do gov.br não listou o arquivo. NÃO utilizar claims específicas (arts. 5º, 6º e Anexo II/0,04 mg/L) antes da verificação na fonte oficial. Pendência: localizar ato no DOU histórico ou no acervo SENATRAN/CONTRAN.",
     "key_articles": [
       {
         "article": "5º",
-        "description": "Meios de prova admitidos (etilômetro, exame de sangue, sinais de alteração psicomotora)."
+        "description": "UNVERIFIED - meios de prova admitidos (etilômetro, exame de sangue, sinais de alteração psicomotora) - aguardando fonte oficial"
       },
       {
         "article": "6º",
-        "description": "Margem de erro admissível e verificação metrológica anual do etilômetro."
+        "description": "UNVERIFIED - verificação metrológica do etilômetro e margem de erro (0,04 mg/L) - aguardando fonte oficial"
       },
       {
         "article": "Anexo II",
-        "description": "Formulário obrigatório do Termo de Constatação de Sinais de Alteração da Capacidade Psicomotora."
+        "description": "UNVERIFIED - Termo de Constatação de Sinais de Alteração da Capacidade Psicomotora - aguardando fonte oficial"
       }
     ]
   },
@@ -68,53 +91,100 @@
     "id": "res_contran_918",
     "number": "918",
     "year": 2022,
+    "publication_date": "2022-03-28",
     "issuing_body": "CONTRAN",
-    "subject": "Procedimento de notificação de autuação e penalidade, e arrecadação de multas",
+    "ementa": "Consolida as normas sobre procedimentos para a aplicação das multas por infrações, a arrecadação e o repasse dos valores arrecadados, nos termos do Código de Trânsito Brasileiro (CTB).",
+    "subject": "Procedimentos de notificação de autuação e de penalidade, aplicação de multas, arrecadação e repasse",
     "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9182022.pdf",
+    "source_hash": "sha256:5153b6823048ef78d7f19e181252a4b6701dffa7bed3e8b64b6ae1cbc34eae41",
     "status": "vigente",
+    "verification_status": "VERIFIED",
+    "verification_date": "2026-08-16",
     "key_articles": [
       {
-        "article": "3º",
-        "description": "Obrigatoriedade de emissão da Notificação de Autuação em até 30 dias sob pena de arquivamento."
+        "article": "4º",
+        "description": "Notificação da Autuação (NA) expedida no prazo máximo de 30 dias contados da data do cometimento da infração."
       },
       {
-        "article": "4º",
-        "description": "Prazo mínimo de 30 dias para apresentação de Defesa Prévia e Indicação de Real Condutor."
+        "article": "4º, § 1º",
+        "description": "Não expedição da NA no prazo enseja o arquivamento do AIT."
+      },
+      {
+        "article": "4º, § 2º",
+        "description": "Prazo para apresentação de defesa da autuação não inferior a 30 dias, contado da data de expedição da NA ou publicação por edital."
+      },
+      {
+        "article": "12",
+        "description": "Conteúdo mínimo da Notificação de Penalidade (NP) de multa: dados do art. 280 CTB, comunicação do não acolhimento da defesa, valor e desconto (art. 284 CTB), data de término para recurso (= data de pagamento)."
+      },
+      {
+        "article": "10",
+        "description": "Infrações leves ou médias: autoridade DEVE aplicar advertência por escrito nos termos do art. 267 CTB."
+      },
+      {
+        "article": "11",
+        "description": "Transição: infrações cometidas antes de 12/04/2021 seguem a redação anterior do art. 267 CTB (não reincidente na mesma infração + juízo de conveniência da autoridade)."
       }
-    ]
+    ],
+    "legal_foundation": "Art. 12, I, II e VIII do CTB (conforme texto oficial da resolução)",
+    "note": "Publicada no DOU de 01/04/2022, Edição 63, Seção 1, p. 98."
   },
   {
     "id": "res_contran_900",
     "number": "900",
     "year": 2022,
+    "publication_date": "2022-03-09",
     "issuing_body": "CONTRAN",
-    "subject": "Padronização do procedimento de apresentação de Defesa da Autuação e Recursos Administrativos",
+    "ementa": "Consolida as normas sobre a padronização dos procedimentos para apresentação de defesa prévia e de recurso, em 1ª e 2ª instâncias, contra a imposição de penalidades de advertência por escrito e de multa de trânsito.",
+    "subject": "Padronização do procedimento de apresentação de Defesa da Autuação (defesa prévia) e Recursos Administrativos em 1ª e 2ª instâncias",
     "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9002022.pdf",
+    "source_hash": "sha256:02b0123c63b796449e117788fc173ba0fec961a786f70092e7a9d67cb197fa8c",
     "status": "vigente",
+    "verification_status": "VERIFIED",
+    "verification_date": "2026-08-16",
     "key_articles": [
       {
-        "article": "4º",
-        "description": "Documentos e requisitos mínimos de admissibilidade recursal."
+        "article": "2º",
+        "description": "Legitimidade ativa: proprietário do veículo (PF ou PJ), condutor identificado, embarcador e transportador."
       },
       {
-        "article": "7º",
-        "description": "Vedação de exigência de pagamento prévio para admissão de recurso administrativo."
+        "article": "3º",
+        "description": "Requerimento por escrito, legível, com dados mínimos (órgão, identificação do requerente etc.)."
+      },
+      {
+        "article": "4º",
+        "description": "Não conhecimento: fora do prazo legal; não comprovada a legitimidade; ausência de assinatura."
+      },
+      {
+        "article": "5º",
+        "description": "Documentos: requerimento, cópia da notificação de autuação/penalidade ou AIT (ou documento com placa + número do AIT), cópia da CNH/documento de identificação, documento que comprove a legitimidade."
+      },
+      {
+        "article": "6º",
+        "description": "Protocolo no órgão autuador ou via postal; tempestividade aferida pela data da entrega na ECT."
       }
-    ]
+    ],
+    "note": "CORREÇÃO DE REGISTRO ANTERIOR: esta resolução NÃO contém vedação de exigência de pagamento prévio para recorrer. Ver texto verificada integralmente (nenhuma ocorrência de 'pagamento'/'recolhimento do valor'). A vedação decorre do art. 286 do CTB. Publicada no DOU de 17/03/2022, Edição 52, Seção 1, p. 46."
   },
   {
     "id": "res_contran_973",
     "number": "973",
     "year": 2022,
+    "publication_date": "2022-07-18",
     "issuing_body": "CONTRAN",
-    "subject": "Manual Brasileiro de Sinalização de Trânsito - Volume I (Regulamentação)",
+    "ementa": "Institui o Regulamento de Sinalização Viária.",
+    "subject": "Regulamento de Sinalização Viária (inclusive sinalização semafórica e critérios de implantação/manutenção)",
     "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-contran/resolucoes/Resolucao9732022.pdf",
+    "source_hash": "sha256:f4715ed8295b23030fb73c00a8c66675ab1321f28cdcd1c926260799e824eaaf",
     "status": "vigente",
+    "verification_status": "VERIFIED",
+    "verification_date": "2026-08-16",
     "key_articles": [
       {
-        "article": "Padrões Técnicos",
-        "description": "Requisitos obrigatórios de visibilidade, posicionamento e conservação de placas regulamentares."
+        "article": "1º",
+        "description": "Institui o Regulamento de Sinalização Viária, com objetivo de disciplinar a implantação, manutenção e padronização da sinalização viária."
       }
-    ]
+    ],
+    "note": "CORREÇÃO DE REGISTRO ANTERIOR: a Resolução 973/2022 NÃO é o 'Manual Brasileiro de Sinalização de Trânsito - Volume I'; institui o Regulamento de Sinalização Viária. Publicada no DOU de 25/07/2022, Edição 139, Seção 1, p. 105. O MBST (volumes) é aprovado por outras resoluções - coleta pendente."
   }
 ]

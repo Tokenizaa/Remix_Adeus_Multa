@@ -1,0 +1,182 @@
+[
+  {
+    "id": "TEST_001",
+    "name": "Defesa Prévia - Excesso de Velocidade 50-70% (PF, primeira infração)",
+    "infraction": {
+      "type": "excesso_velocidade",
+      "article": "218",
+      "inciso": "II",
+      "codigo": "746-30",
+      "descricao": "Exceder a velocidade máxima permitida em 50% a 70%",
+      "gravidade": "média",
+      "pontos": 5
+    },
+    "timing": {
+      "data_infracao": "2025-03-15",
+      "data_notificacao": "2025-03-20",
+      "data_limite_defesa": "2025-04-19"
+    },
+    "defendant": {
+      "tipo": "PF",
+      "primeira_infracao": true,
+      "cnh_valida": true,
+      "outras_infracoes_12meses": 0
+    },
+    "expected_template": "TPL_DEFESA_PREVIA",
+    "expected_citations": [
+      "CTB Art. 281-A",
+      "CTB Art. 218, II",
+      "CTB Art. 280",
+      "Res. CONTRAN 918/2022"
+    ],
+    "expected_arguments": [
+      "prazo de defesa previa (30 dias)",
+      "vicios de forma do AIT",
+      "atipicidade da conduta"
+    ],
+    "forbidden_citations": [
+      "CTB Art. 281-II",
+      "CTB Art. 281 II"
+    ]
+  },
+  {
+    "id": "TEST_002",
+    "name": "Requerimento de Conversão para Advertência - Infraçao Leve (PF, reincidente)",
+    "infraction": {
+      "type": "uso_celular",
+      "article": "252",
+      "paragrafo": "único",
+      "codigo": "736-62",
+      "descricao": "Usar telefone celular enquanto dirige",
+      "gravidade": "leve",
+      "pontos": 4
+    },
+    "timing": {
+      "data_infracao": "2025-05-10",
+      "data_notificacao": "2025-05-15",
+      "data_limite_defesa": "2025-06-14"
+    },
+    "defendant": {
+      "tipo": "PF",
+      "primeira_infracao": false,
+      "cnh_valida": true,
+      "outras_infracoes_12meses": 2
+    },
+    "expected_template": "TPL_CONVERSAO_ADVERTENCIA",
+    "expected_citations": [
+      "CTB Art. 267",
+      "Lei 14.071/2020"
+    ],
+    "expected_arguments": [
+      "ausência de reincidência no período de 12 meses",
+      "certidão de prontuário de CNH"
+    ],
+    "validation_note": "DEVE FALHAR porque o réu tem 2 infrações nos 12 meses - a conversão para advertência só é possível se NADA nos 12 meses"
+  },
+  {
+    "id": "TEST_003",
+    "name": "Defesa em PSDD - Pessoa Jurídica (limite de 40 pontos)",
+    "infraction": {
+      "type": "acumulado_pontos",
+      "article": "259",
+      "descricao": "Ultrapassagem do limite de pontos na CNH",
+      "gravidade": "variável",
+      "pontos": "variável"
+    },
+    "timing": {
+      "data_infracao": "2025-01-15",
+      "data_notificacao": "2025-01-20",
+      "data_limite_defesa": "2025-02-19"
+    },
+    "defendant": {
+      "tipo": "PJ",
+      "primeira_infracao": false,
+      "cnh_valida": false,
+      "pontos_atuais": 42,
+      "tema_1097_aplicavel": true
+    },
+    "expected_template": "TPL_PSDD_SUSPENSAO",
+    "expected_citations": [
+      "CTB Art. 261",
+      "Tema 1.097/STJ",
+      "Lei 14.071/2020"
+    ],
+    "expected_arguments": [
+      "retroatividade benéfica do limite de 40 pontos",
+      "ausência de trânsito em julgado das multas"
+    ]
+  },
+  {
+    "id": "TEST_004",
+    "name": "Recurso em 1ª Instância (JARI) - Multa por Lei Seca",
+    "infraction": {
+      "type": "direcao_alcoolica",
+      "article": "165",
+      "codigo": "516-91",
+      "descricao": "Conduzir com capacidade psicomotora alterada por álcool",
+      "gravidade": "grave",
+      "pontos": 7,
+      "valor": "R$ 2.934,70"
+    },
+    "timing": {
+      "data_infracao": "2025-02-01",
+      "data_notificacao": "2025-02-05",
+      "data_limite_recurso": "2025-04-05"
+    },
+    "defendant": {
+      "tipo": "PF",
+      "primeira_infracao": true,
+      "teor_alcoolemia": "0,34 mg/L",
+      "recusa_bafometro": false
+    },
+    "expected_template": "TPL_RECURSO_JARI",
+    "expected_citations": [
+      "CTB Art. 285",
+      "Súmula 312/STJ",
+      "CTB Art. 280"
+    ],
+    "expected_arguments": [
+      "efeito suspensivo automático",
+      "dupla notificação (autuação e penalidade)",
+      "cerceamento de defesa"
+    ]
+  },
+  {
+    "id": "TEST_005",
+    "name": "Indicação de Condutor - Multa de Estacionamento (PJ)",
+    "infraction": {
+      "type": "estacionamento_proibido",
+      "article": "181",
+      "inciso": "XVIII",
+      "codigo": "555-00",
+      "descricao": "Estacionar em local proibido",
+      "gravidade": "leve",
+      "pontos": 0
+    },
+    "timing": {
+      "data_infracao": "2025-03-01",
+      "data_notificacao": "2025-03-06",
+      "prazo_indicacao": "2025-04-05"
+    },
+    "defendant": {
+      "tipo": "PJ",
+      "frota_veiculos": true,
+      "condutor_indicado": {
+        "nome": "João Silva",
+        "cpf": "123.456.789-00",
+        "cnh": "12345678901",
+        "cnh_valida": true
+      }
+    },
+    "expected_template": "TPL_FICI_INDICACAO",
+    "expected_citations": [
+      "CTB Art. 257, § 7º",
+      "Res. CONTRAN 918/2022"
+    ],
+    "expected_arguments": [
+      "preenchimento bilateral",
+      "cópias de CNH e documentos com foto",
+      "protocolo dentro do prazo"
+    ]
+  }
+]

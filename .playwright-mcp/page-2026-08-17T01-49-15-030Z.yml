@@ -1,0 +1,148 @@
+- generic [ref=f1e3]:
+  - generic [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - generic [ref=f1e9]: DefesAi Enterprise LegalTech Core
+      - generic [ref=f1e10]: •
+      - generic [ref=f1e11]: Ambiente Seguro e Criptografado
+    - generic [ref=f1e12]:
+      - generic [ref=f1e13]: API v20.0 • 99.98% Uptime
+      - generic [ref=f1e14]: •
+      - generic [ref=f1e15]: Regulamentação CTB / CONTRAN
+  - generic [ref=f1e16]:
+    - complementary [ref=f1e18]:
+      - generic [ref=f1e24] [cursor=pointer]:
+        - generic [ref=f1e25]:
+          - generic [ref=f1e26]: DefesAi
+          - generic [ref=f1e27]: Admin
+        - paragraph [ref=f1e28]: Console Operacional
+      - generic [ref=f1e29]:
+        - generic [ref=f1e30]:
+          - generic [ref=f1e31]: Operação Jurídica
+          - button "Dashboard Geral" [ref=f1e32] [cursor=pointer]
+          - button "Casos & Autuações" [ref=f1e40] [cursor=pointer]
+          - button "Usuários & Contas" [ref=f1e46] [cursor=pointer]
+          - button "Documentos & Petições" [ref=f1e54] [cursor=pointer]
+          - button "Pagamentos (PagBank)" [ref=f1e60] [cursor=pointer]
+        - generic [ref=f1e65]:
+          - generic [ref=f1e66]: Gestão Comercial
+          - button "Visão Geral Comercial" [ref=f1e67] [cursor=pointer]
+          - button "Tabela de Preços" [ref=f1e72] [cursor=pointer]
+          - button "Promoções & Campanhas" [ref=f1e77] [cursor=pointer]
+          - button "Gestão de Cupons" [ref=f1e83] [cursor=pointer]
+          - button "Bônus (Ledger)" [ref=f1e89] [cursor=pointer]
+          - button "Indicações em 3 Níveis" [ref=f1e96] [cursor=pointer]
+          - button "Ledger de Comissões" [ref=f1e105] [cursor=pointer]
+          - button "Test Center Comercial" [ref=f1e113] [cursor=pointer]
+          - button "Configurações Comerciais" [ref=f1e119] [cursor=pointer]
+        - generic [ref=f1e125]:
+          - generic [ref=f1e126]: Inteligência & Marketing
+          - button "Marketing OS (7 Agentes)" [ref=f1e127] [cursor=pointer]
+          - button "IA & Gateway Providers" [ref=f1e135] [cursor=pointer]
+          - button "Hub de Integrações" [ref=f1e141] [cursor=pointer]
+          - button "Base Jurídica & CTB" [ref=f1e154] [cursor=pointer]
+        - generic [ref=f1e161]:
+          - generic [ref=f1e162]: Governança & Sistema
+          - button "Configurações (Settings)" [ref=f1e163] [cursor=pointer]
+          - button "Logs Estruturados" [ref=f1e167] [cursor=pointer]
+          - button "Monitoramento & Saúde" [ref=f1e172] [cursor=pointer]
+          - button "Auditoria & LGPD" [ref=f1e178] [cursor=pointer]
+        - generic [ref=f1e186]:
+          - generic [ref=f1e187]: "Status: Operacional"
+          - paragraph [ref=f1e190]: Motor Determinístico v1 ativo • 52 teses catalogadas.
+          - button "Ver como Motorista" [ref=f1e191] [cursor=pointer]
+      - generic [ref=f1e198]:
+        - generic [ref=f1e199]:
+          - generic [ref=f1e200]: A
+          - generic [ref=f1e201]:
+            - paragraph [ref=f1e202]: Administrador DefesAi
+            - paragraph [ref=f1e203]: admin@defesai.com.br
+        - button "Sair do Modo Admin" [ref=f1e204] [cursor=pointer]
+    - generic [ref=f1e208]:
+      - banner [ref=f1e209]:
+        - generic [ref=f1e211]:
+          - navigation [ref=f1e212]:
+            - button "Admin" [ref=f1e213] [cursor=pointer]
+            - generic [ref=f1e216]: Marketing OS
+          - generic [ref=f1e217]:
+            - heading "Marketing OS (7 Agentes)" [level=1] [ref=f1e218]
+            - generic [ref=f1e219]: Admin
+          - paragraph [ref=f1e220]: Campanhas autônomas de aquisição e nutrição de condutores
+        - generic [ref=f1e221]:
+          - generic [ref=f1e222]:
+            - generic [ref=f1e224]: API 200 OK
+            - generic [ref=f1e225]: •
+            - generic [ref=f1e226]: NVIDIA / 9Router
+          - button "Visão do Usuário" [ref=f1e227] [cursor=pointer]
+          - button "Encerrar Sessão" [ref=f1e233] [cursor=pointer]
+      - main [ref=f1e237]:
+        - generic [ref=f1e238]:
+          - generic [ref=f1e240]:
+            - generic [ref=f1e241]: Organismo Autônomo • 7 Agentes de Aquisição
+            - heading "Marketing OS — Supervisão & Exceções" [level=1] [ref=f1e245]
+            - paragraph [ref=f1e246]: "Ciclo autônomo de conteúdo jurídico e publicação via fila Meta. Sem botões manuais: só exceções exigem atenção."
+          - generic [ref=f1e248]:
+            - button "Visão Geral" [ref=f1e249] [cursor=pointer]
+            - button "Agentes" [ref=f1e256] [cursor=pointer]
+            - button "Calendário" [active] [ref=f1e263] [cursor=pointer]
+            - button "Publicações" [ref=f1e267] [cursor=pointer]
+            - button "Canais" [ref=f1e275] [cursor=pointer]
+            - button "Resultados" [ref=f1e283] [cursor=pointer]
+            - button "Configurações" [ref=f1e287] [cursor=pointer]
+          - generic [ref=f1e532]:
+            - generic [ref=f1e534]:
+              - heading "Grade de Conteúdos Produzidos pelos Agentes" [level=3] [ref=f1e535]
+              - generic [ref=f1e538]:
+                - generic [ref=f1e539] [cursor=pointer]:
+                  - generic [ref=f1e540]:
+                    - generic [ref=f1e541]: instagram • carrossel
+                    - generic [ref=f1e542]: publicado
+                  - 'heading "Radares Portáteis: Falta de Estudo Técnico do Órgão" [level=4] [ref=f1e543]'
+                  - paragraph [ref=f1e544]: "Tese: Radares Portáteis: Falta de Estudo Técnico do Órgão"
+                  - generic [ref=f1e545]:
+                    - generic [ref=f1e546]: "Alcance est.: 23.492"
+                    - generic [ref=f1e547]: Ver Copy
+                - generic [ref=f1e551] [cursor=pointer]:
+                  - generic [ref=f1e552]:
+                    - generic [ref=f1e553]: instagram • carrossel
+                    - generic [ref=f1e554]: agendado
+                  - heading "Recebeu notificação de radar? Confira se a aferição do INMETRO está válida!" [level=4] [ref=f1e555]
+                  - paragraph [ref=f1e556]: "Tese: Aferição Metrológica e Resolução CONTRAN 798/2020"
+                  - generic [ref=f1e557]:
+                    - generic [ref=f1e558]: "Alcance est.: 24.500"
+                    - generic [ref=f1e559]: Ver Copy
+                - generic [ref=f1e563] [cursor=pointer]:
+                  - generic [ref=f1e564]:
+                    - generic [ref=f1e565]: blog • artigo_seo
+                    - generic [ref=f1e566]: publicado
+                  - heading "Como converter sua multa leve ou média em Advertência por Escrito (Sem pagar nada)" [level=4] [ref=f1e567]
+                  - paragraph [ref=f1e568]: "Tese: Conversão em Advertência por Escrito — Art. 267 do CTB"
+                  - generic [ref=f1e569]:
+                    - generic [ref=f1e570]: "Alcance est.: 18.200"
+                    - generic [ref=f1e571]: Ver Copy
+                - generic [ref=f1e575] [cursor=pointer]:
+                  - generic [ref=f1e576]:
+                    - generic [ref=f1e577]: tiktok • reels_roteiro
+                    - generic [ref=f1e578]: aprovado_qualidade
+                  - heading "Recusou o teste do bafômetro? Entenda por que a multa não é automática" [level=4] [ref=f1e579]
+                  - paragraph [ref=f1e580]: "Tese: Art. 165-A e Termo de Constatação de Embriaguez"
+                  - generic [ref=f1e581]:
+                    - generic [ref=f1e582]: "Alcance est.: 45.000"
+                    - generic [ref=f1e583]: Ver Copy
+                - generic [ref=f1e587] [cursor=pointer]:
+                  - generic [ref=f1e588]:
+                    - generic [ref=f1e589]: instagram • carrossel
+                    - generic [ref=f1e590]: agendado
+                  - heading "Celular no suporte do painel dá multa? O que diz a nova resolução" [level=4] [ref=f1e591]
+                  - paragraph [ref=f1e592]: "Tese: Artigo 252 do CTB — Manuseio x Suporte Veicular"
+                  - generic [ref=f1e593]:
+                    - generic [ref=f1e594]: "Alcance est.: 32.000"
+                    - generic [ref=f1e595]: Ver Copy
+            - generic [ref=f1e600]:
+              - generic [ref=f1e601]: Prévia do Copy Final
+              - paragraph [ref=f1e607]: Selecione um conteúdo da grade para visualizar o copy.
+      - contentinfo [ref=f1e318]:
+        - generic [ref=f1e319]: DefesAi Plataforma Privada de Tecnologia Jurídica © 2026
+        - generic [ref=f1e321]:
+          - generic [ref=f1e322]: NVIDIA NIM AI • 9Router Gateway
+          - generic [ref=f1e323]: PagBank Orders v2
+          - generic [ref=f1e324]: LGPD Compliant

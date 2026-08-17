@@ -1,0 +1,120 @@
+- generic [ref=f21e1]:
+  - navigation "Acesso rápido":
+    - link "Ir para o Conteúdo 1" [ref=f21e2] [cursor=pointer]:
+      - /url: "#wrapper"
+      - generic [ref=f21e3]: Ir para o
+      - text: Conteúdo
+      - generic [ref=f21e4]: "1"
+    - link "Ir para a Página Inicial 2" [ref=f21e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f21e6]: Ir para a
+      - text: Página Inicial
+      - generic [ref=f21e7]: "2"
+    - link "Ir para o menu de Navegação 3" [ref=f21e8] [cursor=pointer]:
+      - /url: "#main-navigation"
+      - generic [ref=f21e9]: Ir para o menu de
+      - text: Navegação
+      - generic [ref=f21e10]: "3"
+    - link "Ir para a Busca 4" [ref=f21e11] [cursor=pointer]:
+      - /url: "#govbr-busca-input"
+      - generic [ref=f21e12]: Ir para a
+      - text: Busca
+      - generic [ref=f21e13]: "4"
+    - link "Ir para o Mapa do site 5" [ref=f21e14] [cursor=pointer]:
+      - /url: "#portal-footer"
+      - generic [ref=f21e15]: Ir para o
+      - text: Mapa do site
+      - generic [ref=f21e16]: "5"
+  - banner [ref=f21e17]:
+    - generic [ref=f21e20]:
+      - generic [ref=f21e23]:
+        - generic [ref=f21e25]:
+          - generic [ref=f21e26]:
+            - generic [ref=f21e27]: "Idioma atual:"
+            - text: PT
+          - button "Alterar idioma" [ref=f21e28] [cursor=pointer]:
+            - generic [ref=f21e29]: 
+        - button "Abrir preferências de cookies" [ref=f21e32] [cursor=pointer]:
+          - generic [ref=f21e33]: 
+        - button "Ativar ou desativar o modo de alto contraste" [ref=f21e37] [cursor=pointer]:
+          - generic [ref=f21e38]: 
+      - banner [ref=f21e41]:
+        - generic [ref=f21e43]:
+          - link [ref=f21e45] [cursor=pointer]:
+            - /url: https://www.gov.br/pt-br
+            - img "Logomarca gov.br" [ref=f21e46]
+          - generic [ref=f21e47]:
+            - generic [ref=f21e48]:
+              - text: 
+              - list [ref=f21e49]:
+                - listitem [ref=f21e50]:
+                  - button "Institucional" [ref=f21e51] [cursor=pointer]:
+                    - generic [ref=f21e53]: 
+                - listitem [ref=f21e54]:
+                  - link "Acessibilidade" [ref=f21e55] [cursor=pointer]:
+                    - /url: https://www.gov.br/governodigital/pt-br/acessibilidade-digital
+                - listitem [ref=f21e56]:
+                  - link "Participe" [ref=f21e57] [cursor=pointer]:
+                    - /url: https://www.gov.br/pt-br/participacao-social
+            - button "Abrir menu de seleção serviços" [ref=f21e62] [cursor=pointer]:
+              - generic [ref=f21e66]: Atalhos gov.br
+            - button "Entrar com gov.br" [ref=f21e70] [cursor=pointer]:
+              - generic [ref=f21e71]: 
+    - generic [ref=f21e74]:
+      - generic [ref=f21e75]:
+        - link "Abrir menu principal de navegação" [ref=f21e76] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=f21e78]: 
+          - text: 
+        - link "Serviços e Informações do Brasil" [ref=f21e80] [cursor=pointer]:
+          - /url: https://www.gov.br
+      - text:        
+      - generic [ref=f21e81]:
+        - combobox [ref=f21e83]:
+          - search [ref=f21e84]:
+            - button "" [ref=f21e86] [cursor=pointer]
+            - searchbox "O que você procura?" [ref=f21e88]
+            - button "Pesquisar por voz" [ref=f21e89] [cursor=pointer]:
+              - generic [ref=f21e90]: 
+        - text:   
+    - text:         
+  - generic [ref=f21e91]:
+    - main [ref=f21e93]:
+      - generic [ref=f21e94]:
+        - text: 
+        - generic [ref=f21e95]:
+          - heading "Desculpe, mas esta página não existe…" [level=1] [ref=f21e96]
+          - generic [ref=f21e97]:
+            - paragraph [ref=f21e98]: Pedimos desculpas pelo inconveniente, mas a página que você estava tentando acessar não existe neste endereço.
+            - paragraph [ref=f21e99]:
+              - text: Se você está certo que o endereço informado está correto mas está encontrando um erro, por favor contate a
+              - link "Administração do Site" [ref=f21e101] [cursor=pointer]:
+                - /url: https://www.gov.br/contact-info
+              - text: .
+            - paragraph [ref=f21e102]: Obrigado.
+    - text:       
+    - navigation "Voltar ao topo da página" [ref=f21e103]:
+      - link " Voltar ao topo da página" [ref=f21e104] [cursor=pointer]:
+        - /url: "#wrapper"
+        - generic [ref=f21e105]: 
+        - generic [ref=f21e106]: Voltar ao topo da página
+  - generic [ref=f21e110]:
+    - generic [ref=f21e111]:
+      - text:  
+      - generic [ref=f21e112]:
+        - generic [ref=f21e113]:
+          - text: Para melhorar a sua experiência na plataforma e prover serviços personalizados, utilizamos cookies.
+          - strong [ref=f21e114]: Ao aceitar, você terá acesso a todas as funcionalidades do site. Se clicar em "Rejeitar Cookies", os cookies que não forem estritamente necessários serão desativados.
+          - text: Para escolher quais quer autorizar, clique em "Gerenciar cookies". Saiba mais em nossa
+          - link "Declaração de Cookies" [ref=f21e115] [cursor=pointer]:
+            - /url: https://www.gov.br/pt-br/termos-de-uso
+          - text: .
+        - text: Desativado  Ativado  Desativado  Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  • • • • • • Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado Desativado  Desligado 
+    - generic [ref=f21e116]:
+      - button "Gerenciar cookies" [ref=f21e117] [cursor=pointer]:  Gerenciar cookies
+      - button "Rejeitar cookies" [ref=f21e118] [cursor=pointer]
+      - button "Aceitar cookies" [ref=f21e119] [cursor=pointer]
+  - text:   
+  - generic [ref=f21e121] [cursor=pointer]:
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f21e122]
+    - img "Conteúdo acessível em Libras usando o VLibras Widget com opções dos Avatares Ícaro, Hosana ou Guga." [ref=f21e123]

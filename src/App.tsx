@@ -23,9 +23,9 @@ import { OnboardingWizard } from './components/onboarding/OnboardingWizard';
 import { CheckoutView } from './components/checkout/CheckoutView';
 import { CaseDetailView } from './components/cases/CaseDetailView';
 import { CasesListView } from './components/cases/CasesListView';
-import { KnowledgeBaseView } from './components/knowledge/KnowledgeBaseView';
+import { KnowledgeHub } from './components/knowledge/KnowledgeHub';
 import { MarketingOSView } from './components/marketing/MarketingOSView';
-import { AuditLogsView } from './components/audit/AuditLogsView';
+import { AdminAuditView } from './components/admin/AdminAuditView';
 import { WhatsAppSimulatorModal } from './components/communication/WhatsAppSimulatorModal';
 
 // Admin Pages
@@ -39,7 +39,6 @@ import { AdminPaymentsView } from './components/admin/AdminPaymentsView';
 import { AdminAiGatewayView } from './components/admin/AdminAiGatewayView';
 import { AdminIntegrationsView } from './components/admin/AdminIntegrationsView';
 import { AdminSettingsView } from './components/admin/AdminSettingsView';
-import { AdminLogsView } from './components/admin/AdminLogsView';
 import { AdminMonitoringView } from './components/admin/AdminMonitoringView';
 
 // Commercial Admin Pages
@@ -52,6 +51,7 @@ import { AdminCommercialReferralsView } from './components/commercial/AdminComme
 import { AdminCommercialCommissionsView } from './components/commercial/AdminCommercialCommissionsView';
 import { AdminCommercialSettingsView } from './components/commercial/AdminCommercialSettingsView';
 import { AdminCommercialTestsView } from './components/commercial/AdminCommercialTestsView';
+import { CommercialHubView } from './components/commercial/CommercialHubView';
 
 import { CaseDomain } from './types';
 
@@ -217,15 +217,15 @@ function AppContent() {
         {currentPath === '/admin/payments' && <AdminPaymentsView />}
         {currentPath === '/admin/ai' && <AdminAiGatewayView />}
         {currentPath === '/admin/integrations' && <AdminIntegrationsView />}
-        {currentPath === '/admin/knowledge' && <KnowledgeBaseView />}
+        {currentPath === '/admin/knowledge' && <KnowledgeHub />}
         {currentPath === '/admin/marketing' && <MarketingOSView />}
         {currentPath === '/admin/settings' && <AdminSettingsView />}
-        {currentPath === '/admin/logs' && <AdminLogsView />}
+        {currentPath === '/admin/logs' && <AdminAuditView />}
         {currentPath === '/admin/monitoring' && <AdminMonitoringView />}
-        {currentPath === '/admin/audit' && <AuditLogsView />}
+        {currentPath === '/admin/audit' && <AdminAuditView />}
 
         {/* Commercial Management Module */}
-        {currentPath === '/admin/commercial' && <AdminCommercialOverviewView />}
+        {currentPath === '/admin/commercial' && <CommercialHubView />}
         {currentPath === '/admin/commercial/prices' && <AdminCommercialPricesView />}
         {currentPath === '/admin/commercial/promotions' && <AdminCommercialPromotionsView />}
         {currentPath === '/admin/commercial/coupons' && <AdminCommercialCouponsView />}
@@ -290,7 +290,7 @@ function AppContent() {
           />
         )}
 
-        {currentPath === '/perfil' && <UserProfileView />}
+        {currentPath === '/perfil' && <UserSettingsView />}
         {currentPath === '/configuracoes' && <UserSettingsView />}
 
         <WhatsAppSimulatorModal

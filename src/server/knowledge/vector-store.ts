@@ -14,6 +14,7 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { configService } from '../config/config-service';
 import { logger } from '../observability/logger';
 import { embeddingService } from './embedding-service';
+import { Database } from '../../types/supabase';
 import {
   KnowledgeSource,
   KnowledgeDocument,
@@ -34,7 +35,7 @@ export class VectorStore {
   private chunks: Map<string, KnowledgeChunk> = new Map();
   private embeddings: Map<string, KnowledgeEmbedding> = new Map();
 
-  private supabaseClient: SupabaseClient | null = null;
+  private supabaseClient: SupabaseClient<Database> | null = null;
 
   private constructor() {
     this.initSupabaseClient();
@@ -53,10 +54,10 @@ export class VectorStore {
 
     if (url && serviceKey && url.startsWith('https://')) {
       try {
-        this.supabaseClient = createClient(url, serviceKey);
-        logger.info('database', 'vector_store', 'init', 'Supabase Postgres pgvector client conectado.');
+        this.supabaseClient = createClient<Database>(url, serviceKey);
+        logger.info('supabase', 'vector_store', 'init', 'Supabase Postgres pgvector client conectado.');
       } catch (err: any) {
-        logger.warn('database', 'vector_store', 'init', `Falha ao conectar Supabase: ${err.message}. Operando via Store local.`);
+        logger.warn('supabase', 'vector_store', 'init', `Falha ao conectar Supabase: ${err.message}. Operando via Store local.`);
       }
     }
   }
@@ -180,7 +181,7 @@ export class VectorStore {
           provider: e.provider,
           model: e.model,
           dimensions: e.dimensions,
-          embedding: e.embedding,
+          embedding: JSON.stringify(e.embedding),
         }));
         await this.supabaseClient.from('knowledge_embeddings').upsert(rows);
       } catch {
@@ -204,7 +205,7 @@ export class VectorStore {
     if (this.supabaseClient) {
       try {
         const { data, error } = await this.supabaseClient.rpc('match_knowledge_chunks', {
-          query_embedding: queryEmbedding,
+          query_embedding: JSON.stringify(queryEmbedding),
           match_threshold: threshold,
           match_count: topK,
           filter_source_id: options?.filterSourceId || null,
@@ -239,7 +240,7 @@ export class VectorStore {
           }));
         }
       } catch (err: any) {
-        logger.warn('database', 'vector_store', 'search', `Fallback para motor vetorial em memória: ${err.message}`);
+        logger.warn('supabase', 'vector_store', 'search', `Fallback para motor vetorial em memória: ${err.message}`);
       }
     }
 

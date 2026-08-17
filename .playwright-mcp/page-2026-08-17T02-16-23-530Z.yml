@@ -1,0 +1,173 @@
+- generic [ref=f13e3]:
+  - generic [ref=f13e4]:
+    - generic [ref=f13e5]:
+      - generic [ref=f13e9]: DefesAi Enterprise LegalTech Core
+      - generic [ref=f13e10]: •
+      - generic [ref=f13e11]: Ambiente Seguro e Criptografado
+    - generic [ref=f13e12]:
+      - generic [ref=f13e13]: API v20.0 • 99.98% Uptime
+      - generic [ref=f13e14]: •
+      - generic [ref=f13e15]: Regulamentação CTB / CONTRAN
+  - generic [ref=f13e16]:
+    - complementary [ref=f13e18]:
+      - generic [ref=f13e24] [cursor=pointer]:
+        - generic [ref=f13e25]:
+          - generic [ref=f13e26]: DefesAi
+          - generic [ref=f13e27]: Admin
+        - paragraph [ref=f13e28]: Console Operacional
+      - generic [ref=f13e29]:
+        - generic [ref=f13e30]:
+          - generic [ref=f13e31]: Operação Jurídica
+          - button "Dashboard Geral" [ref=f13e32] [cursor=pointer]
+          - button "Casos & Autuações" [ref=f13e40] [cursor=pointer]
+          - button "Usuários & Contas" [ref=f13e46] [cursor=pointer]
+          - button "Documentos & Petições" [ref=f13e54] [cursor=pointer]
+          - button "Pagamentos (PagBank)" [ref=f13e60] [cursor=pointer]
+        - generic [ref=f13e65]:
+          - generic [ref=f13e66]: Gestão Comercial
+          - button "Visão Geral Comercial" [ref=f13e67] [cursor=pointer]
+          - button "Tabela de Preços" [ref=f13e72] [cursor=pointer]
+          - button "Promoções & Campanhas" [ref=f13e77] [cursor=pointer]
+          - button "Gestão de Cupons" [ref=f13e83] [cursor=pointer]
+          - button "Bônus (Ledger)" [ref=f13e89] [cursor=pointer]
+          - button "Indicações em 3 Níveis" [ref=f13e96] [cursor=pointer]
+          - button "Ledger de Comissões" [ref=f13e105] [cursor=pointer]
+          - button "Test Center Comercial" [ref=f13e113] [cursor=pointer]
+          - button "Configurações Comerciais" [ref=f13e119] [cursor=pointer]
+        - generic [ref=f13e125]:
+          - generic [ref=f13e126]: Inteligência & Marketing
+          - button "Marketing OS (7 Agentes)" [ref=f13e127] [cursor=pointer]
+          - button "IA & Gateway Providers" [ref=f13e135] [cursor=pointer]
+          - button "Hub de Integrações" [ref=f13e141] [cursor=pointer]
+          - button "Base Jurídica & CTB" [ref=f13e154] [cursor=pointer]
+        - generic [ref=f13e161]:
+          - generic [ref=f13e162]: Governança & Sistema
+          - button "Configurações (Settings)" [ref=f13e163] [cursor=pointer]
+          - button "Logs Estruturados" [ref=f13e167] [cursor=pointer]
+          - button "Monitoramento & Saúde" [ref=f13e172] [cursor=pointer]
+          - button "Auditoria & LGPD" [ref=f13e178] [cursor=pointer]
+        - generic [ref=f13e186]:
+          - generic [ref=f13e187]: "Status: Operacional"
+          - paragraph [ref=f13e190]: Motor Determinístico v1 ativo • 52 teses catalogadas.
+          - button "Ver como Motorista" [ref=f13e191] [cursor=pointer]
+      - generic [ref=f13e198]:
+        - generic [ref=f13e199]:
+          - generic [ref=f13e200]: A
+          - generic [ref=f13e201]:
+            - paragraph [ref=f13e202]: Administrador DefesAi
+            - paragraph [ref=f13e203]: admin@defesai.com.br
+        - button "Sair do Modo Admin" [ref=f13e204] [cursor=pointer]
+    - generic [ref=f13e208]:
+      - banner [ref=f13e209]:
+        - generic [ref=f13e211]:
+          - navigation [ref=f13e212]:
+            - button "Admin" [ref=f13e213] [cursor=pointer]
+            - generic [ref=f13e216]: Marketing OS
+          - generic [ref=f13e217]:
+            - heading "Marketing OS (7 Agentes)" [level=1] [ref=f13e218]
+            - generic [ref=f13e219]: Admin
+          - paragraph [ref=f13e220]: Campanhas autônomas de aquisição e nutrição de condutores
+        - generic [ref=f13e221]:
+          - generic [ref=f13e222]:
+            - generic [ref=f13e224]: API 200 OK
+            - generic [ref=f13e225]: •
+            - generic [ref=f13e226]: NVIDIA / 9Router
+          - button "Visão do Usuário" [ref=f13e227] [cursor=pointer]
+          - button "Encerrar Sessão" [ref=f13e233] [cursor=pointer]
+      - main [ref=f13e237]:
+        - generic [ref=f13e238]:
+          - generic [ref=f13e239]:
+            - generic [ref=f13e240]: Organismo Autônomo • 7 Agentes de Aquisição
+            - heading "Marketing OS" [level=1] [ref=f13e244]
+            - paragraph [ref=f13e245]: Ciclo autônomo, conteúdo robusto e automações — inspirado no módulo v1 (DefesAi).
+          - generic [ref=f13e246]:
+            - complementary [ref=f13e247]:
+              - generic [ref=f13e248]:
+                - generic [ref=f13e249]:
+                  - paragraph [ref=f13e250]: Visão
+                  - button "Dashboard" [ref=f13e252] [cursor=pointer]
+                - generic [ref=f13e258]:
+                  - paragraph [ref=f13e259]: Produção
+                  - generic [ref=f13e260]:
+                    - button "Planejamento" [ref=f13e261] [cursor=pointer]
+                    - button "Conteúdos" [ref=f13e266] [cursor=pointer]
+                    - button "Agendamento" [ref=f13e270] [cursor=pointer]
+                - generic [ref=f13e275]:
+                  - paragraph [ref=f13e276]: Sistema
+                  - generic [ref=f13e277]:
+                    - button "Automações" [active] [ref=f13e278] [cursor=pointer]
+                    - button "Canais" [ref=f13e281] [cursor=pointer]
+                    - button "Resultados" [ref=f13e288] [cursor=pointer]
+                    - button "Configurações" [ref=f13e291] [cursor=pointer]
+            - generic [ref=f13e339]:
+              - generic [ref=f13e340]:
+                - generic [ref=f13e341]:
+                  - generic [ref=f13e342]: Na fila
+                  - generic [ref=f13e348]: "0"
+                - generic [ref=f13e349]:
+                  - generic [ref=f13e350]: Em retry
+                  - generic [ref=f13e358]: "0"
+                - generic [ref=f13e359]:
+                  - generic [ref=f13e360]: Entregues
+                  - generic [ref=f13e366]: "0"
+                - generic [ref=f13e367]:
+                  - generic [ref=f13e368]: Falhas
+                  - generic [ref=f13e373]: "0"
+                - generic [ref=f13e374]:
+                  - generic [ref=f13e375]: Ciclos rodados
+                  - generic [ref=f13e382]: "0"
+              - generic [ref=f13e383]:
+                - heading "Canais de Publicação" [level=3] [ref=f13e384]
+                - generic [ref=f13e385]:
+                  - generic [ref=f13e391]:
+                    - paragraph [ref=f13e392]: Instagram
+                    - paragraph [ref=f13e394]: Não conectado
+                  - generic [ref=f13e399]:
+                    - paragraph [ref=f13e400]: Facebook
+                    - paragraph [ref=f13e402]: Não conectado
+                  - generic [ref=f13e408]:
+                    - paragraph [ref=f13e409]: Blog
+                    - paragraph [ref=f13e411]: 4 conteúdos
+                  - generic [ref=f13e416]:
+                    - paragraph [ref=f13e417]: WhatsApp
+                    - paragraph [ref=f13e419]: Não configurado neste servidor
+                  - generic [ref=f13e425]:
+                    - paragraph [ref=f13e426]: E-mail
+                    - paragraph [ref=f13e428]: Não configurado neste servidor
+              - generic [ref=f13e429]:
+                - heading "Execuções Recentes" [level=3] [ref=f13e430]
+                - table [ref=f13e432]:
+                  - rowgroup [ref=f13e433]:
+                    - row [ref=f13e434]:
+                      - columnheader "Execução" [ref=f13e435]
+                      - columnheader "Canal" [ref=f13e436]
+                      - columnheader "Status" [ref=f13e437]
+                      - columnheader "Quando" [ref=f13e438]
+                  - rowgroup [ref=f13e439]:
+                    - row [ref=f13e440]:
+                      - cell "Recebeu notificação de radar? Confira se a aferição do INMETRO está válida!" [ref=f13e441]
+                      - cell "instagram" [ref=f13e442]
+                      - cell "Fila" [ref=f13e443]
+                      - cell "15/08/2026, 18:30:00" [ref=f13e454]
+                    - row [ref=f13e455]:
+                      - cell "Como converter sua multa leve ou média em Advertência por Escrito (Sem pagar nada)" [ref=f13e456]
+                      - cell "blog" [ref=f13e457]
+                      - cell "Entregue" [ref=f13e458]
+                      - cell "14/08/2026, 10:00:00" [ref=f13e464]
+                    - row [ref=f13e465]:
+                      - cell "Celular no suporte do painel dá multa? O que diz a nova resolução" [ref=f13e466]
+                      - cell "instagram" [ref=f13e467]
+                      - cell "Fila" [ref=f13e468]
+                      - cell "17/08/2026, 19:00:00" [ref=f13e479]
+              - generic [ref=f13e480]:
+                - heading "Insights Automáticos" [level=3] [ref=f13e481]
+                - generic [ref=f13e484]:
+                  - paragraph [ref=f13e485]: "📊 Canal com mais publicações: blog (1)."
+                  - paragraph [ref=f13e486]: "📋 Qualidade média dos conteúdos: 9.8/10."
+                  - paragraph [ref=f13e487]: "⏰ Conversão atual: 10.4%."
+      - contentinfo [ref=f13e322]:
+        - generic [ref=f13e323]: DefesAi Plataforma Privada de Tecnologia Jurídica © 2026
+        - generic [ref=f13e325]:
+          - generic [ref=f13e326]: NVIDIA NIM AI • 9Router Gateway
+          - generic [ref=f13e327]: PagBank Orders v2
+          - generic [ref=f13e328]: LGPD Compliant

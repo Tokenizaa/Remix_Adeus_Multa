@@ -1,0 +1,196 @@
+- generic [ref=f11e516]:
+  - generic [ref=f11e517]:
+    - generic [ref=f11e518]:
+      - generic [ref=f11e522]: DefesAi Enterprise LegalTech Core
+      - generic [ref=f11e523]: •
+      - generic [ref=f11e524]: Ambiente Seguro e Criptografado
+    - generic [ref=f11e525]:
+      - generic [ref=f11e526]: API v20.0 • 99.98% Uptime
+      - generic [ref=f11e527]: •
+      - generic [ref=f11e528]: Regulamentação CTB / CONTRAN
+  - generic [ref=f11e529]:
+    - complementary [ref=f11e531]:
+      - generic [ref=f11e537] [cursor=pointer]:
+        - generic [ref=f11e538]:
+          - generic [ref=f11e539]: DefesAi
+          - generic [ref=f11e540]: Admin
+        - paragraph [ref=f11e541]: Console Operacional
+      - generic [ref=f11e542]:
+        - generic [ref=f11e543]:
+          - generic [ref=f11e544]: Operação Jurídica
+          - button "Dashboard Geral" [ref=f11e545] [cursor=pointer]
+          - button "Casos & Autuações" [ref=f11e555] [cursor=pointer]
+          - button "Usuários & Contas" [ref=f11e561] [cursor=pointer]
+          - button "Documentos & Petições" [ref=f11e569] [cursor=pointer]
+          - button "Pagamentos (PagBank)" [ref=f11e575] [cursor=pointer]
+        - generic [ref=f11e580]:
+          - generic [ref=f11e581]: Gestão Comercial
+          - button "Visão Geral Comercial" [ref=f11e582] [cursor=pointer]
+          - button "Tabela de Preços" [ref=f11e589] [cursor=pointer]
+          - button "Promoções & Campanhas" [ref=f11e594] [cursor=pointer]
+          - button "Gestão de Cupons" [ref=f11e600] [cursor=pointer]
+          - button "Bônus (Ledger)" [ref=f11e606] [cursor=pointer]
+          - button "Indicações em 3 Níveis" [ref=f11e613] [cursor=pointer]
+          - button "Ledger de Comissões" [ref=f11e622] [cursor=pointer]
+          - button "Test Center Comercial" [ref=f11e630] [cursor=pointer]
+          - button "Configurações Comerciais" [ref=f11e636] [cursor=pointer]
+        - generic [ref=f11e642]:
+          - generic [ref=f11e643]: Inteligência & Marketing
+          - button "Marketing OS (7 Agentes)" [ref=f11e644] [cursor=pointer]
+          - button "IA & Gateway Providers" [ref=f11e650] [cursor=pointer]
+          - button "Hub de Integrações" [ref=f11e656] [cursor=pointer]
+          - button "Base Jurídica & CTB" [ref=f11e669] [cursor=pointer]
+        - generic [ref=f11e676]:
+          - generic [ref=f11e677]: Governança & Sistema
+          - button "Configurações (Settings)" [ref=f11e678] [cursor=pointer]
+          - button "Logs Estruturados" [ref=f11e682] [cursor=pointer]
+          - button "Monitoramento & Saúde" [ref=f11e687] [cursor=pointer]
+          - button "Auditoria & LGPD" [ref=f11e693] [cursor=pointer]
+        - generic [ref=f11e701]:
+          - generic [ref=f11e702]: "Status: Operacional"
+          - paragraph [ref=f11e705]: Motor Determinístico v1 ativo • 52 teses catalogadas.
+          - button "Ver como Motorista" [ref=f11e706] [cursor=pointer]
+      - generic [ref=f11e713]:
+        - generic [ref=f11e714]:
+          - generic [ref=f11e715]: A
+          - generic [ref=f11e716]:
+            - paragraph [ref=f11e717]: Administrador DefesAi
+            - paragraph [ref=f11e718]: admin@defesai.com.br
+        - button "Sair do Modo Admin" [ref=f11e719] [cursor=pointer]
+    - generic [ref=f11e723]:
+      - banner [ref=f11e724]:
+        - generic [ref=f11e726]:
+          - navigation [ref=f11e727]:
+            - generic [ref=f11e728]: Admin
+          - generic [ref=f11e729]:
+            - heading "Console Administrativo" [level=1] [ref=f11e730]
+            - generic [ref=f11e731]: Admin
+          - paragraph [ref=f11e732]: Monitoramento operacional de autuações, teses e conformidade
+        - generic [ref=f11e733]:
+          - generic [ref=f11e734]:
+            - generic [ref=f11e736]: API 200 OK
+            - generic [ref=f11e737]: •
+            - generic [ref=f11e738]: NVIDIA / 9Router
+          - button "Visão do Usuário" [ref=f11e739] [cursor=pointer]
+          - button "Encerrar Sessão" [ref=f11e745] [cursor=pointer]
+      - main [ref=f11e749]:
+        - generic [ref=f11e750]:
+          - generic [ref=f11e751]:
+            - generic [ref=f11e752]:
+              - generic [ref=f11e753]: PAINEL DE CONTROLE OPERACIONAL
+              - heading "Visão Geral da Plataforma DefesAi" [level=2] [ref=f11e756]
+              - paragraph [ref=f11e757]: Monitoramento de volume de autuações, pipeline de teses e transações financeiras.
+            - generic [ref=f11e758]:
+              - button "Gerenciar Casos" [ref=f11e759] [cursor=pointer]
+              - button "Recarregar Métricas" [ref=f11e760] [cursor=pointer]
+          - generic [ref=f11e766]:
+            - generic [ref=f11e767]:
+              - generic [ref=f11e768]: "Saúde dos Serviços:"
+              - generic [ref=f11e769]: NVIDIA NIM (Llama 3.1)
+              - generic [ref=f11e772]: 9Router Gateway
+              - generic [ref=f11e775]: PagBank Orders v2
+              - generic [ref=f11e778]: Supabase Postgres
+            - generic [ref=f11e781]:
+              - text: "Uptime:"
+              - generic [ref=f11e782]: 99.98%
+              - text: "• Latência P95: 280ms"
+          - generic [ref=f11e783]:
+            - generic [ref=f11e784]:
+              - generic [ref=f11e785]: Volume de Casos
+              - generic [ref=f11e789]: "1"
+              - generic [ref=f11e790]: Autuações cadastradas
+            - generic [ref=f11e791]:
+              - generic [ref=f11e792]: Receita Acumulada
+              - generic [ref=f11e796]: R$ 89.90
+              - generic [ref=f11e797]: 1 defesas pagas via PIX
+            - generic [ref=f11e798]:
+              - generic [ref=f11e799]: Minutas Diagramadas
+              - generic [ref=f11e805]: "1"
+              - generic [ref=f11e806]: Peças ABNT formatadas
+            - generic [ref=f11e807]:
+              - generic [ref=f11e808]: Taxa de Conversão
+              - generic [ref=f11e813]: 100%
+              - generic [ref=f11e814]: Análise Gratuita ➔ Compra
+          - generic [ref=f11e815]:
+            - heading "Módulos Administrativos da Plataforma" [level=3] [ref=f11e816]
+            - generic [ref=f11e817]:
+              - generic [ref=f11e818] [cursor=pointer]:
+                - generic [ref=f11e819]:
+                  - generic [ref=f11e820]: Casos & Autuações
+                  - generic [ref=f11e826]: 1 Casos
+                - paragraph [ref=f11e827]: Gestão de autos, NIPs, dados de veículos e prazos de defesa.
+              - generic [ref=f11e828] [cursor=pointer]:
+                - generic [ref=f11e829]:
+                  - generic [ref=f11e830]: Usuários & Contas
+                  - generic [ref=f11e838]: 8 Usuários
+                - paragraph [ref=f11e839]: Controle de condutores cadastrados e permissões de acesso.
+              - generic [ref=f11e840] [cursor=pointer]:
+                - generic [ref=f11e841]:
+                  - generic [ref=f11e842]: Petições & Documentos
+                  - generic [ref=f11e848]: 1 Prontas
+                - paragraph [ref=f11e849]: Repositório de minutas ABNT geradas pelo motor CTB e RAG.
+              - generic [ref=f11e850] [cursor=pointer]:
+                - generic [ref=f11e851]:
+                  - generic [ref=f11e852]: Pagamentos (PagBank)
+                  - generic [ref=f11e857]: R$ 89.90
+                - paragraph [ref=f11e858]: Transações PIX Orders v2, conciliação e webhooks.
+              - generic [ref=f11e859] [cursor=pointer]:
+                - generic [ref=f11e860]:
+                  - generic [ref=f11e861]: IA & Gateway Providers
+                  - generic [ref=f11e867]: NVIDIA NIM 100%
+                - paragraph [ref=f11e868]: NVIDIA NIM primário ➔ 9Router fallback com latência P95.
+              - generic [ref=f11e869] [cursor=pointer]:
+                - generic [ref=f11e870]:
+                  - generic [ref=f11e871]: Hub de Integrações
+                  - generic [ref=f11e884]: 5 Ativas
+                - paragraph [ref=f11e885]: Meta Graph API, Supabase Postgres, OCR e WhatsApp.
+              - generic [ref=f11e886] [cursor=pointer]:
+                - generic [ref=f11e887]:
+                  - generic [ref=f11e888]: Marketing OS (7 Agentes)
+                  - generic [ref=f11e894]: 7 Agentes
+                - paragraph [ref=f11e895]: Geração e publicação autônoma de conteúdo jurídico.
+              - generic [ref=f11e896] [cursor=pointer]:
+                - generic [ref=f11e897]:
+                  - generic [ref=f11e898]: Configurações (Settings)
+                  - generic [ref=f11e902]: 14 Variáveis
+                - paragraph [ref=f11e903]: Administração centralizada de credenciais seguras.
+              - generic [ref=f11e904] [cursor=pointer]:
+                - generic [ref=f11e905]:
+                  - generic [ref=f11e906]: Logs Estruturados
+                  - generic [ref=f11e911]: Live Stream
+                - paragraph [ref=f11e912]: Tracing em tempo real com correlationId e LGPD.
+              - generic [ref=f11e913] [cursor=pointer]:
+                - generic [ref=f11e914]:
+                  - generic [ref=f11e915]: Monitoramento & Saúde
+                  - generic [ref=f11e921]: 99.98% OK
+                - paragraph [ref=f11e922]: Uptime de serviços, latências e observabilidade.
+          - generic [ref=f11e923]:
+            - generic [ref=f11e924]:
+              - generic [ref=f11e925]:
+                - heading "Últimas Autuações Submetidas" [level=3] [ref=f11e926]
+                - paragraph [ref=f11e927]: Acesso rápido ao detalhe operacional de cada caso
+              - button "Ver tabela completa" [ref=f11e928] [cursor=pointer]
+            - table [ref=f11e933]:
+              - rowgroup [ref=f11e934]:
+                - row [ref=f11e935]:
+                  - columnheader "Auto / ID" [ref=f11e936]
+                  - columnheader "Placa / Veículo" [ref=f11e937]
+                  - columnheader "Infração / CTB" [ref=f11e938]
+                  - columnheader "Órgão" [ref=f11e939]
+                  - columnheader "Status" [ref=f11e940]
+                  - columnheader "Ação" [ref=f11e941]
+              - rowgroup [ref=f11e942]:
+                - row [ref=f11e943]:
+                  - cell "1B892014" [ref=f11e944]
+                  - cell "ABC4E89" [ref=f11e945]
+                  - cell "Transitar em velocidade superior à máxima permitida em até 20%" [ref=f11e946]
+                  - cell "DETRAN-SP — Departamento Estadual de Trânsito de São Paulo" [ref=f11e947]
+                  - cell "PAGO (PIX)" [ref=f11e948]
+                  - cell [ref=f11e949]:
+                    - button "Inspecionar" [ref=f11e950] [cursor=pointer]
+      - contentinfo [ref=f11e951]:
+        - generic [ref=f11e952]: DefesAi Plataforma Privada de Tecnologia Jurídica © 2026
+        - generic [ref=f11e954]:
+          - generic [ref=f11e955]: NVIDIA NIM AI • 9Router Gateway
+          - generic [ref=f11e956]: PagBank Orders v2
+          - generic [ref=f11e957]: LGPD Compliant
