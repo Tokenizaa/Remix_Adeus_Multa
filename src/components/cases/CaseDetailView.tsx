@@ -1,27 +1,5 @@
-import React, { useState } from 'react';
-import {
-  ArrowLeft,
-  CheckCircle2,
-  FileText,
-  Printer,
-  Download,
-  Scale,
-  Sparkles,
-  Building2,
-  Send,
-  Calendar,
-  AlertCircle,
-  Clock,
-  ShieldCheck,
-  Check,
-  Edit3,
-  ExternalLink,
-  MessageSquare,
-  History,
-  Copy,
-  ChevronRight,
-  FileDown
-} from 'lucide-react';
+import React from 'react';
+import { CaseDetailBase } from '../shared/CaseDetailBase';
 import { CaseDomain, JourneyStage, ProcedureType, LegalArgumentDomain } from '../../types';
 import { LEGAL_ARGUMENTS, AUTUADOR_BODIES, PROCEDURE_TITLES } from '../../data/knowledge-base';
 import { exportDefenseToPDF } from '../../lib/pdf-export';
@@ -39,30 +17,63 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
   onBackToList,
   onOpenWhatsAppModal,
 }) => {
-  const [activeStage, setActiveStage] = useState<JourneyStage>(currentCase.currentStage || 3);
-  const [isEditingDraft, setIsEditingDraft] = useState<boolean>(false);
-  const [editedDraftText, setEditedDraftText] = useState<string>(
-    currentCase.defenseDraft?.fullDraftText || ''
-  );
-  const [isRegenerating, setIsRegenerating] = useState<boolean>(false);
-  const [copiedDraft, setCopiedDraft] = useState<boolean>(false);
-  const [checkedDocuments, setCheckedDocuments] = useState<Record<string, boolean>>({
-    doc_cnh: true,
-    doc_crlv: true,
-    doc_notificacao: true,
-    doc_comprovante_residencia: false,
-    doc_procuracao: false,
+  const shared = CaseDetailBase({
+    caseId: currentCase.id,
+    currentCase,
+    onUpdateCase,
+    onBackToList,
+    onOpenWhatsAppModal,
+    variant: 'user'
   });
 
-  // Selected argument IDs in Stage 2
-  const [selectedArgIds, setSelectedArgIds] = useState<string[]>(
-    currentCase.defenseDraft?.selectedArgumentIds ||
-      currentCase.analysis?.recommendedArguments.map((a) => a.id) || [
+  // Destructure what we need from the shared component
+  const {
+    caseData,
+    isLoading,
+    error,
+    activeStage,
+    setActiveStage,
+    isEditingDraft,
+    setIsEditingDraft,
+    editedDraftText,
+    setEditedDraftText,
+    isRegenerating,
+    setIsRegenerating,
+    copiedDraft,
+    setCopiedDraft,
+    checkedDocuments,
+    setCheckedDocuments,
+    // Admin-specific fields we won't use in user view
+    activeTab,
+    setActiveTab,
+    isSimulatingPayment,
+    actionSuccess,
+    handleSimulatePayment
+  } = shared;
+
+  // Selected argument IDs in Stage 2 (this is user-specific and not in CaseDetailBase)
+  const [selectedArgIds, setSelectedArgIds] = React.useState<string[]>(
+    caseData?.defenseDraft?.selectedArgumentIds ||
+      caseData?.analysis?.recommendedArguments.map((a) => a.id) || [
         'ARG-001',
         'ARG-003',
         'ARG-007',
       ]
   );
+
+  // Sync selectedArgIds with caseData when it changes
+  React.useEffect(() => {
+    if (caseData) {
+      setSelectedArgIds(
+        caseData.defenseDraft?.selectedArgumentIds ||
+          caseData.analysis?.recommendedArguments.map((a) => a.id) || [
+            'ARG-001',
+            'ARG-003',
+            'ARG-007',
+          ]
+      );
+    }
+  }, [caseData]);
 
   const toggleArgument = (argId: string) => {
     if (selectedArgIds.includes(argId)) {
@@ -108,21 +119,21 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
   };
 
   const handleExportPDF = () => {
-    exportDefenseToPDF(currentCase, editedDraftText || currentCase.defenseDraft?.fullDraftText);
+    exportDefenseToPDF(caseData, editedDraftText || caseData?.defenseDraft?.fullDraftText);
   };
 
   const handleCopyDraft = () => {
-    navigator.clipboard.writeText(editedDraftText || currentCase.defenseDraft?.fullDraftText || '');
+    navigator.clipboard.writeText(editedDraftText || caseData?.defenseDraft?.fullDraftText || '');
     setCopiedDraft(true);
     setTimeout(() => setCopiedDraft(false), 2000);
   };
 
   const handleSaveEditedDraft = () => {
-    if (currentCase.defenseDraft) {
+    if (caseData?.defenseDraft) {
       const updatedCase: CaseDomain = {
-        ...currentCase,
+        ...caseData,
         defenseDraft: {
-          ...currentCase.defenseDraft,
+          ...caseData.defenseDraft,
           fullDraftText: editedDraftText,
           updatedAt: new Date().toISOString(),
         },
@@ -134,8 +145,36 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
 
   // Find organ info
   const autuadorInfo = AUTUADOR_BODIES.find((b) =>
-    currentCase.infraction.autuadorBody.toLowerCase().includes(b.name.toLowerCase().split(' ')[0])
+    caseData?.infraction.autuadorBody.toLowerCase().includes(b.name.toLowerCase().split(' ')[0])
   ) || AUTUADOR_BODIES[0];
+
+  if (isLoading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[400px] text-slate-400 font-mono gap-3">
+        <RefreshCw className="w-8 h-8 animate-spin text-orange-500" />
+        <p className="text-sm">Carregando registro operacional do caso {currentCase.id}...</p>
+      </div>
+    );
+  }
+
+  if (error || !caseData) {
+    return (
+      <div className="p-6 rounded-2xl bg-rose-950/40 border border-rose-800 text-rose-300 space-y-4">
+        <div className="flex items-center gap-3">
+          <AlertTriangle className="w-6 h-6 text-rose-400" />
+          <h2 className="text-base font-bold">Caso não encontrado ou indisponível</h2>
+        </div>
+        <p className="text-sm font-mono text-rose-200">{error || 'ID de caso inválido.'}</p>
+        <button
+          onClick={onBackToList}
+          className="px-4 py-2 bg-slate-900 text-slate-100 rounded-xl text-xs font-semibold hover:bg-slate-800 flex items-center gap-2 cursor-pointer"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Voltar para Lista de Casos</span>
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-5xl mx-auto py-6 px-4 sm:px-6 space-y-6">
@@ -151,14 +190,14 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-base sm:text-lg font-bold text-slate-900 font-mono">
-                {currentCase.title}
+                {caseData.title}
               </h1>
               <span className="px-2 py-0.2 text-[10px] rounded font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 uppercase font-mono">
-                {currentCase.status.toUpperCase().replace('_', ' ')}
+                {caseData.status.toUpperCase().replace('_', ' ')}
               </span>
             </div>
             <p className="text-[11px] text-slate-500 mt-0.5">
-              Requerente: <span className="font-semibold text-slate-800">{currentCase.clientName}</span> • Placa: <span className="font-mono font-bold text-slate-900">{currentCase.vehicle.plate}</span> • AIT: <span className="font-mono text-slate-900">{currentCase.infraction.aitNumber}</span>
+              Requerente: <span className="font-semibold text-slate-800">{caseData.clientName}</span> • Placa: <span className="font-mono font-bold text-slate-900">{caseData.vehicle.plate}</span> • AIT: <span className="font-mono text-slate-900">{caseData.infraction.aitNumber}</span>
             </p>
           </div>
         </div>
@@ -174,7 +213,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
           </button>
 
           <button
-            onClick={() => onOpenWhatsAppModal(currentCase.id)}
+            onClick={() => onOpenWhatsAppModal(caseData.id)}
             className="px-3 py-1.5 bg-white hover:bg-emerald-50 text-emerald-800 border border-emerald-300 rounded-lg text-xs font-semibold flex items-center gap-1.5 cursor-pointer transition-colors shadow-2xs"
           >
             <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />
@@ -229,7 +268,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
             }`}
           >
             <span className={`text-[10px] font-bold uppercase tracking-wider font-mono ${
-              activeStage >= 3 ? 'text-orange-500' : 'text-slate-400'
+              activeStage >= 3 ? 'text-orange-500' : 'text-slave-400'
             }`}>
               Etapa 3
             </span>
@@ -285,7 +324,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
         <div className="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 shadow-2xs space-y-4">
           <div className="flex items-center justify-between border-b border-slate-100 pb-3">
             <h2 className="text-base font-bold text-slate-900">
-              Diagnóstico do Auto de Infração nº {currentCase.infraction.aitNumber}
+              Diagnóstico do Auto de Infração nº {caseData.infraction.aitNumber}
             </h2>
             <button
               onClick={() => setActiveStage(2)}
@@ -299,32 +338,32 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div className="p-3 rounded-lg border border-slate-200 bg-slate-50">
               <span className="text-[10px] font-bold text-slate-400 uppercase font-mono">Enquadramento</span>
-              <p className="text-sm font-bold text-slate-900 mt-0.5 font-mono">{currentCase.infraction.infractionCode}</p>
-              <p className="text-xs text-slate-600 mt-0.5 leading-snug">{currentCase.infraction.description}</p>
+              <p className="text-sm font-bold text-slate-900 mt-0.5 font-mono">{caseData.infraction.infractionCode}</p>
+              <p className="text-xs text-slate-600 mt-0.5 leading-snug">{caseData.infraction.description}</p>
             </div>
 
             <div className="p-3 rounded-lg border border-slate-200 bg-slate-50">
-              <span className="text-[10px] font-bold text-slate-400 uppercase font-mono">Penalidade Prevista</span>
+              <span className="text-[10px] font-bold text-slave-400 uppercase font-mono">Penalidade Prevista</span>
               <p className="text-sm font-bold text-rose-600 mt-0.5 font-mono">
-                {currentCase.infraction.points} Pontos • R$ {currentCase.infraction.fineAmount.toFixed(2)}
+                {caseData.infraction.points} Pontos • R$ {caseData.infraction.fineAmount.toFixed(2)}
               </p>
-              <p className="text-xs text-slate-600 mt-0.5">{currentCase.infraction.ctbArticle}</p>
+              <p className="text-xs text-slate-600 mt-0.5">{caseData.infraction.ctbArticle}</p>
             </div>
 
-            <div className="p-3 rounded-lg border border-slate-200 bg-slate-50">
-              <span className="text-[10px] font-bold text-slate-400 uppercase font-mono">Órgão Julgador</span>
-              <p className="text-xs font-bold text-slate-900 mt-0.5 truncate">{currentCase.infraction.autuadorBody}</p>
-              <p className="text-[11px] text-slate-600 mt-0.5 font-mono">Prazo: {currentCase.infraction.defenseDeadline}</p>
+            <div className="p-3 rounded-lg border border-slave-200 bg-slave-50">
+              <span className="text-[10px] font-bold text-slave-400 uppercase font-mono">Órgão Julgador</span>
+              <p className="text-xs font-bold text-slave-900 mt-0.5 truncate">{caseData.infraction.autuadorBody}</p>
+              <p className="text-[11px] text-slave-600 mt-0.5 font-mono">Prazo: {caseData.infraction.defenseDeadline}</p>
             </div>
           </div>
 
           <div className="p-3.5 rounded-lg bg-orange-50/50 border-l-4 border-orange-400 text-xs">
-            <h4 className="text-xs font-bold text-slate-900 uppercase flex items-center gap-1.5 mb-1.5 font-mono">
+            <h4 className="text-xs font-bold text-slave-900 uppercase flex items-center gap-1.5 mb-1.5 font-mono">
               <AlertCircle className="w-3.5 h-3.5 text-orange-600" />
               Vícios Formais Detectados no Auto:
             </h4>
-            <ul className="space-y-1 text-slate-700">
-              {currentCase.infraction.formalFlawsDetected?.map((flaw, idx) => (
+            <ul className="space-y-1 text-slave-700">
+              {caseData.infraction.formalFlawsDetected?.map((flaw, idx) => (
                 <li key={idx} className="flex items-start gap-1.5">
                   <span className="text-orange-500 font-bold">•</span>
                   <span>{flaw}</span>
@@ -339,13 +378,13 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
       {/* STAGE 2: Estratégia Jurídica & Seleção de Teses */}
       {/* ========================================================================= */}
       {activeStage === 2 && (
-        <div className="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 shadow-2xs space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
+        <div className="bg-white border border-slave-200 rounded-xl p-5 sm:p-6 shadow-2xs space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slave-100 pb-3">
             <div>
-              <h2 className="text-base font-bold text-slate-900">
+              <h2 className="text-base font-bold text-slave-900">
                 Seleção de Teses Jurídicas (CTB & CONTRAN)
               </h2>
-              <p className="text-xs text-slate-500 mt-0.5">
+              <p className="text-xs text-slave-500 mt-0.5">
                 Selecione as teses de nulidade que serão injetadas na minuta da petição.
               </p>
             </div>
@@ -380,31 +419,31 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                   className={`p-3.5 rounded-lg border transition-all cursor-pointer text-xs ${
                     isSelected
                       ? 'border-orange-500 bg-orange-50/20 shadow-2xs'
-                      : 'border-slate-200 hover:border-slate-400 bg-white'
+                      : 'border-slave-200 hover:border-slave-400 bg-white'
                   }`}
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex items-center gap-2">
                       <div
                         className={`w-4 h-4 rounded flex items-center justify-center shrink-0 ${
-                          isSelected ? 'bg-orange-500 text-white' : 'border border-slate-300'
+                          isSelected ? 'bg-orange-500 text-white' : 'border border-slave-300'
                         }`}
                       >
                         {isSelected && <Check className="w-3 h-3" />}
                       </div>
-                      <span className="font-bold text-slate-900 text-xs">{arg.title}</span>
+                      <span className="font-bold text-slave-900 text-xs">{arg.title}</span>
                     </div>
                     <span className="px-1.5 py-0.2 rounded bg-sky-50 text-sky-700 font-bold text-[10px] uppercase font-mono">
                       {arg.category}
                     </span>
                   </div>
 
-                  <p className="text-slate-600 mt-1.5 leading-relaxed text-[11px]">{arg.summary}</p>
+                  <p className="text-slave-600 mt-1.5 leading-relaxed text-[11px]">{arg.summary}</p>
                   <p className="font-mono text-[10px] text-orange-600 mt-1.5">{arg.legalBase}</p>
 
-                  <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono">
+                  <div className="mt-2.5 pt-2 border-t border-slave-100 flex items-center justify-between text-[10px] font-mono">
                     <span className="text-emerald-700 font-semibold">{arg.confidenceScore}% probabilidade</span>
-                    <span className="text-slate-400">{isSelected ? '✔ Selecionada' : '+ Incluir'}</span>
+                    <span className="text-slave-400">{isSelected ? '✔ Selecionada' : '+ Incluir'}</span>
                   </div>
                 </div>
               );
@@ -419,13 +458,13 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
       {activeStage === 3 && (
         <div className="space-y-4">
           {/* Action Toolbar */}
-          <div className="flex flex-wrap items-center justify-between gap-2 bg-white border border-slate-200 rounded-xl p-3 shadow-2xs">
+          <div className="flex flex-wrap items-center justify-between gap-2 bg-white border border-slave-200 rounded-xl p-3 shadow-2xs">
             <div className="flex items-center gap-2">
               <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 font-mono uppercase">
                 Petição Pronta (52 Blocos CTB)
               </span>
-              <span className="text-xs text-slate-500 hidden sm:inline truncate">
-                {PROCEDURE_TITLES[currentCase.serviceType] || 'Defesa Administrativa'}
+              <span className="text-xs text-slave-500 hidden sm:inline truncate">
+                {PROCEDURE_TITLES[caseData.serviceType] || 'Defesa Administrativa'}
               </span>
             </div>
 
@@ -441,7 +480,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
               ) : (
                 <button
                   onClick={() => setIsEditingDraft(true)}
-                  className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer"
+                  className="px-3 py-1.5 bg-slave-100 hover:bg-slave-200 text-slave-700 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer"
                 >
                   <Edit3 className="w-3.5 h-3.5" />
                   Editar Minuta
@@ -450,7 +489,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
 
               <button
                 onClick={handleCopyDraft}
-                className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer"
+                className="px-3 py-1.5 bg-slave-100 hover:bg-slave-200 text-slave-700 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer"
               >
                 {copiedDraft ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                 {copiedDraft ? 'Copiado!' : 'Copiar Texto'}
@@ -467,7 +506,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
 
               <button
                 onClick={handlePrint}
-                className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
+                className="px-3 py-1.5 bg-slave-100 hover:bg-slave-200 text-slave-700 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
               >
                 <Printer className="w-3.5 h-3.5" />
                 <span>Imprimir</span>
@@ -475,7 +514,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
 
               <button
                 onClick={() => setActiveStage(4)}
-                className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded-lg text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer"
+                className="px-3.5 py-1.5 bg-slave-900 hover:bg-slave-800 text-white rounded-lg text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer"
               >
                 <span>Protocolar</span>
                 <ChevronRight className="w-3.5 h-3.5" />
@@ -484,16 +523,16 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
           </div>
 
           {/* Formal Legal Document View (Simulated A4 Paper) */}
-          <div className="bg-white border border-slate-300 rounded-xl shadow-md p-8 sm:p-12 max-w-3xl mx-auto min-h-[800px] text-slate-900 font-serif leading-relaxed text-xs sm:text-sm">
+          <div className="bg-white border border-slave-300 rounded-xl shadow-md p-8 sm:p-12 max-w-3xl mx-auto min-h-[800px] text-slave-900 font-serif leading-relaxed text-xs sm:text-sm">
             {/* Official Header Timbre */}
-            <div className="text-center pb-5 mb-5 border-b-2 border-slate-900/30">
-              <div className="w-9 h-9 rounded-lg bg-slate-900 text-orange-400 mx-auto flex items-center justify-center font-bold text-xs mb-2">
+            <div className="text-center pb-5 mb-5 border-b-2 border-slave-900/30">
+              <div className="w-9 h-9 rounded-lg bg-slave-900 text-orange-400 mx-auto flex items-center justify-center font-bold text-xs mb-2">
                 <Scale className="w-4 h-4" />
               </div>
-              <h3 className="font-sans font-bold text-[11px] uppercase tracking-widest text-slate-700 font-mono">
+              <h3 className="font-sans font-bold text-[11px] uppercase tracking-widest text-slave-700 font-mono">
                 REPÚBLICA FEDERATIVA DO BRASIL • SISTEMA NACIONAL DE TRÂNSITO
               </h3>
-              <p className="font-sans text-[10px] text-slate-500 mt-0.5">
+              <p className="font-sans text-[10px] text-slave-500 mt-0.5">
                 DEFESA ADMINISTRATIVA COM BASE NA LEI Nº 9.503/1997 (CÓDIGO DE TRÂNSITO BRASILEIRO)
               </p>
             </div>
@@ -503,11 +542,11 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                 value={editedDraftText}
                 onChange={(e) => setEditedDraftText(e.target.value)}
                 rows={28}
-                className="w-full font-serif text-xs text-slate-900 border border-slate-300 rounded-lg p-4 outline-none focus:ring-2 focus:ring-orange-500 leading-relaxed"
+                className="w-full font-serif text-xs text-slave-900 border border-slave-300 rounded-lg p-4 outline-none focus:ring-2 focus:ring-orange-500 leading-relaxed"
               />
             ) : (
               <div className="whitespace-pre-wrap text-justify space-y-4">
-                {currentCase.defenseDraft?.fullDraftText || editedDraftText}
+                {caseData.defenseDraft?.fullDraftText || editedDraftText}
               </div>
             )}
           </div>
@@ -518,13 +557,13 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
       {/* STAGE 4: Protocolo & Órgão Autuador */}
       {/* ========================================================================= */}
       {activeStage === 4 && (
-        <div className="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 shadow-2xs space-y-5">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div className="bg-white border border-slave-200 rounded-xl p-5 sm:p-6 shadow-2xs space-y-5">
+          <div className="flex items-center justify-between border-b border-slave-100 pb-3">
             <div>
               <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-sky-800 border border-sky-200 uppercase font-mono">
                 Guia de Envio Oficial
               </span>
-              <h2 className="text-base font-bold text-slate-900 mt-1">
+              <h2 className="text-base font-bold text-slave-900 mt-1">
                 Onde e Como Protocolar sua Defesa
               </h2>
             </div>
@@ -545,11 +584,11 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                 <ExternalLink className="w-4 h-4" />
                 Opção 1: Protocolo 100% Digital (Recomendado)
               </div>
-              <p className="text-[11px] text-slate-600 mt-1.5 leading-snug">
+              <p className="text-[11px] text-slave-600 mt-1.5 leading-snug">
                 Você pode enviar o PDF gerado diretamente pelo portal eletrônico oficial do órgão autuador sem sair de casa.
               </p>
               <div className="mt-3 pt-2 border-t border-emerald-200">
-                <span className="text-[10px] font-bold text-slate-700 uppercase block font-mono">Portal Oficial:</span>
+                <span className="text-[10px] font-bold text-slave-700 uppercase block font-mono">Portal Oficial:</span>
                 <a
                   href={autuadorInfo.onlineProtocolUrl}
                   target="_blank"
@@ -562,30 +601,30 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
             </div>
 
             {/* Physical / Correios Option */}
-            <div className="p-4 rounded-xl border border-slate-200 bg-slate-50">
-              <div className="flex items-center gap-2 text-slate-900 font-bold text-xs">
-                <Building2 className="w-4 h-4 text-slate-600" />
+            <div className="p-4 rounded-xl border border-slave-200 bg-slave-50">
+              <div className="flex items-center gap-2 text-slave-900 font-bold text-xs">
+                <Building2 className="w-4 h-4 text-slave-600" />
                 Opção 2: Envio por Correios (Carta Registrada com AR)
               </div>
-              <p className="text-[11px] text-slate-600 mt-1.5 leading-snug">
+              <p className="text-[11px] text-slave-600 mt-1.5 leading-snug">
                 Imprima a petição, assine à caneta, anexe as cópias e envie para o endereço da JARI:
               </p>
-              <div className="mt-3 pt-2 border-t border-slate-200 text-xs">
-                <span className="font-bold text-slate-900 block text-xs">{autuadorInfo.name}</span>
-                <span className="text-slate-600 block mt-0.5 text-[11px]">{autuadorInfo.physicalAddress}</span>
+              <div className="mt-3 pt-2 border-t border-slave-200 text-xs">
+                <span className="font-bold text-slave-900 block text-xs">{autuadorInfo.name}</span>
+                <span className="text-slave-600 block mt-0.5 text-[11px]">{autuadorInfo.physicalAddress}</span>
               </div>
             </div>
           </div>
 
           {/* Checklist of Mandatory Documents */}
-          <div className="border-t border-slate-200 pt-4">
-            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wide mb-2 flex items-center gap-2 font-mono">
-              <FileText className="w-3.5 h-3.5 text-slate-700" />
+          <div className="border-t border-slave-200 pt-4">
+            <h3 className="text-xs font-bold text-slave-900 uppercase tracking-wide mb-2 flex items-center gap-2 font-mono">
+              <FileText className="w-3.5 h-3.5 text-slave-700" />
               Checklist de Documentos Obrigatórios para Juntada:
             </h3>
 
             <div className="space-y-1.5 text-xs">
-              <label className="flex items-center gap-2.5 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+              <label className="flex items-center gap-2.5 p-2.5 rounded-lg border border-slave-200 hover:bg-slave-50 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={checkedDocuments['doc_cnh']}
@@ -593,12 +632,12 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                   className="w-3.5 h-3.5 rounded text-orange-500"
                 />
                 <div>
-                  <span className="font-bold text-slate-900 text-xs">Cópia da CNH do Requerente</span>
-                  <span className="text-slate-500 block text-[10px]">Digital (do app Carteira Digital) ou fotocópia simples</span>
+                  <span className="font-bold text-slave-900 text-xs">Cópia da CNH do Requerente</span>
+                  <span className="text-slave-500 block text-[10px]">Digital (do app Carteira Digital) ou fotocópia simples</span>
                 </div>
               </label>
 
-              <label className="flex items-center gap-2.5 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+              <label className="flex items-center gap-2.5 p-2.5 rounded-lg border border-slave-200 hover:bg-slave-50 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={checkedDocuments['doc_crlv']}
@@ -606,12 +645,12 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                   className="w-3.5 h-3.5 rounded text-orange-500"
                 />
                 <div>
-                  <span className="font-bold text-slate-900 text-xs">Cópia do CRLV-e (Documento do Veículo)</span>
-                  <span className="text-slate-500 block text-[10px]">Comprovando propriedade ou posse legítima</span>
+                  <span className="font-bold text-slave-900 text-xs">Cópia do CRLV-e (Documento do Veículo)</span>
+                  <span className="text-slave-500 block text-[10px]">Comprovando propriedade ou posse legítima</span>
                 </div>
               </label>
 
-              <label className="flex items-center gap-2.5 p-2.5 rounded-lg border border-slate-200 hover:bg-slate-50 cursor-pointer">
+              <label className="flex items-center gap-2.5 p-2.5 rounded-lg border border-slave-200 hover:bg-slave-50 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={checkedDocuments['doc_notificacao']}
@@ -619,8 +658,8 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                   className="w-3.5 h-3.5 rounded text-orange-500"
                 />
                 <div>
-                  <span className="font-bold text-slate-900 text-xs">Cópia da Notificação de Autuação (AIT)</span>
-                  <span className="text-slate-500 block text-[10px]">Demonstrando o número do auto e data de postagem</span>
+                  <span className="font-bold text-slave-900 text-xs">Cópia da Notificação de Autuação (AIT)</span>
+                  <span className="text-slave-500 block text-[10px]">Demonstrando o número do auto e data de postagem</span>
                 </div>
               </label>
             </div>
@@ -632,30 +671,30 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
       {/* STAGE 5: Acompanhamento & Linha do Tempo */}
       {/* ========================================================================= */}
       {activeStage === 5 && (
-        <div className="bg-white border border-slate-200 rounded-xl p-5 sm:p-6 shadow-2xs space-y-5">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+        <div className="bg-white border border-slave-200 rounded-xl p-5 sm:p-6 shadow-2xs space-y-5">
+          <div className="flex items-center justify-between border-b border-slave-100 pb-3">
             <div>
               <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 uppercase font-mono">
                 Linha do Tempo em Tempo Real
               </span>
-              <h2 className="text-base font-bold text-slate-900 mt-1">
+              <h2 className="text-base font-bold text-slave-900 mt-1">
                 Histórico Processual & Andamento
               </h2>
             </div>
           </div>
 
-          <div className="relative pl-6 space-y-4 before:absolute before:left-2 before:top-3 before:bottom-3 before:w-0.5 before:bg-slate-200">
-            {currentCase.timeline.map((item, idx) => (
+          <div className="relative pl-6 space-y-4 before:absolute before:left-2 before:top-3 before:bottom-3 before:w-0.5 before:bg-slave-200">
+            {caseData.timeline.map((item, idx) => (
               <div key={item.id || idx} className="relative group">
                 <div className="absolute -left-6 top-1 w-3.5 h-3.5 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-100" />
-                <div className="p-3 rounded-lg border border-slate-200 bg-slate-50 text-xs">
+                <div className="p-3 rounded-lg border border-slave-200 bg-slave-50 text-xs">
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-slate-900 text-xs">{item.title}</span>
-                    <span className="text-[10px] font-mono text-slate-400">
+                    <span className="font-bold text-slave-900 text-xs">{item.title}</span>
+                    <span className="text-[10px] font-mono text-slave-400">
                       {new Date(item.timestamp).toLocaleString('pt-BR')}
                     </span>
                   </div>
-                  <p className="text-slate-600 mt-0.5 text-[11px]">{item.description}</p>
+                  <p className="text-slave-600 mt-0.5 text-[11px]">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -668,12 +707,12 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
               </div>
               <div>
                 <p className="font-bold text-white text-xs">Próximo Julgamento Previsto</p>
-                <p className="text-slate-300 text-[11px]">Prazo médio de deliberação da JARI: 30 a 60 dias</p>
+                <p className="text-slave-300 text-[11px]">Prazo médio de deliberação da JARI: 30 a 60 dias</p>
               </div>
             </div>
             <button
-              onClick={() => onOpenWhatsAppModal(currentCase.id)}
-              className="px-3 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-lg transition-colors cursor-pointer text-xs"
+              onClick={() => onOpenWhatsAppModal(caseData.id)}
+              className="px-3 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-slave-950 font-bold rounded-lg transition-colors cursor-pointer text-xs"
             >
               Alertas WhatsApp
             </button>
