@@ -32,10 +32,6 @@ export const AdminCaseDetailView: React.FC = () => {
     handleBackToList
   } = shared;
   
-  // Handle back navigation
-  const handleBackToList = () => {
-    navigate('/admin/cases');
-  };
   
   if (isLoading) {
     return (
@@ -447,9 +443,9 @@ export const AdminCaseDetailView: React.FC = () => {
                 STATUS: PAID / APROVADO
               </span>
 ) : (
-               <span className="px-3 py-1 bg-amber-500/20 text-amber-400 border border-amber-500/30 rounded-xl text-xs font-bold font-mono">
-                 STATUS: PENDING / AGUARGANDO
-               </span>
+<span className="px-3 py-1 bg-amber-500/20 text-amber-400 border border-amber-500/30 rounded-xl text-xs font-bold font-mono">
+                  STATUS: PENDING / AGUARDANDO
+                </span>
              )
            }
            </div>
