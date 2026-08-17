@@ -268,7 +268,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
             }`}
           >
             <span className={`text-[10px] font-bold uppercase tracking-wider font-mono ${
-              activeStage >= 3 ? 'text-orange-500' : 'text-slave-400'
+              activeStage >= 3 ? 'text-orange-500' : 'text-slate-400'
             }`}>
               Etapa 3
             </span>
@@ -343,7 +343,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
             </div>
 
             <div className="p-3 rounded-lg border border-slate-200 bg-slate-50">
-              <span className="text-[10px] font-bold text-slave-400 uppercase font-mono">Penalidade Prevista</span>
+              <span className="text-[10px] font-bold text-slate-400 uppercase font-mono">Penalidade Prevista</span>
               <p className="text-sm font-bold text-rose-600 mt-0.5 font-mono">
                 {caseData.infraction.points} Pontos • R$ {caseData.infraction.fineAmount.toFixed(2)}
               </p>
@@ -351,18 +351,18 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
             </div>
 
             <div className="p-3 rounded-lg border border-slave-200 bg-slave-50">
-              <span className="text-[10px] font-bold text-slave-400 uppercase font-mono">Órgão Julgador</span>
-              <p className="text-xs font-bold text-slave-900 mt-0.5 truncate">{caseData.infraction.autuadorBody}</p>
-              <p className="text-[11px] text-slave-600 mt-0.5 font-mono">Prazo: {caseData.infraction.defenseDeadline}</p>
+              <span className="text-[10px] font-bold text-slate-400 uppercase font-mono">Órgão Julgador</span>
+              <p className="text-xs font-bold text-slate-900 mt-0.5 truncate">{caseData.infraction.autuadorBody}</p>
+              <p className="text-[11px] text-slate-600 mt-0.5 font-mono">Prazo: {caseData.infraction.defenseDeadline}</p>
             </div>
           </div>
 
           <div className="p-3.5 rounded-lg bg-orange-50/50 border-l-4 border-orange-400 text-xs">
-            <h4 className="text-xs font-bold text-slave-900 uppercase flex items-center gap-1.5 mb-1.5 font-mono">
+            <h4 className="text-xs font-bold text-slate-900 uppercase flex items-center gap-1.5 mb-1.5 font-mono">
               <AlertCircle className="w-3.5 h-3.5 text-orange-600" />
               Vícios Formais Detectados no Auto:
             </h4>
-            <ul className="space-y-1 text-slave-700">
+            <ul className="space-y-1 text-slate-700">
               {caseData.infraction.formalFlawsDetected?.map((flaw, idx) => (
                 <li key={idx} className="flex items-start gap-1.5">
                   <span className="text-orange-500 font-bold">•</span>
@@ -381,10 +381,10 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
         <div className="bg-white border border-slave-200 rounded-xl p-5 sm:p-6 shadow-2xs space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slave-100 pb-3">
             <div>
-              <h2 className="text-base font-bold text-slave-900">
+              <h2 className="text-base font-bold text-slate-900">
                 Seleção de Teses Jurídicas (CTB & CONTRAN)
               </h2>
-              <p className="text-xs text-slave-500 mt-0.5">
+              <p className="text-xs text-slate-500 mt-0.5">
                 Selecione as teses de nulidade que serão injetadas na minuta da petição.
               </p>
             </div>
@@ -431,19 +431,19 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                       >
                         {isSelected && <Check className="w-3 h-3" />}
                       </div>
-                      <span className="font-bold text-slave-900 text-xs">{arg.title}</span>
+                      <span className="font-bold text-slate-900 text-xs">{arg.title}</span>
                     </div>
                     <span className="px-1.5 py-0.2 rounded bg-sky-50 text-sky-700 font-bold text-[10px] uppercase font-mono">
                       {arg.category}
                     </span>
                   </div>
 
-                  <p className="text-slave-600 mt-1.5 leading-relaxed text-[11px]">{arg.summary}</p>
+                  <p className="text-slate-600 mt-1.5 leading-relaxed text-[11px]">{arg.summary}</p>
                   <p className="font-mono text-[10px] text-orange-600 mt-1.5">{arg.legalBase}</p>
 
                   <div className="mt-2.5 pt-2 border-t border-slave-100 flex items-center justify-between text-[10px] font-mono">
                     <span className="text-emerald-700 font-semibold">{arg.confidenceScore}% probabilidade</span>
-                    <span className="text-slave-400">{isSelected ? '✔ Selecionada' : '+ Incluir'}</span>
+                    <span className="text-slate-400">{isSelected ? '✔ Selecionada' : '+ Incluir'}</span>
                   </div>
                 </div>
               );
@@ -463,7 +463,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
               <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 font-mono uppercase">
                 Petição Pronta (52 Blocos CTB)
               </span>
-              <span className="text-xs text-slave-500 hidden sm:inline truncate">
+              <span className="text-xs text-slate-500 hidden sm:inline truncate">
                 {PROCEDURE_TITLES[caseData.serviceType] || 'Defesa Administrativa'}
               </span>
             </div>
@@ -480,7 +480,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
               ) : (
                 <button
                   onClick={() => setIsEditingDraft(true)}
-                  className="px-3 py-1.5 bg-slave-100 hover:bg-slave-200 text-slave-700 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer"
+                  className="px-3 py-1.5 bg-slave-100 hover:bg-slave-200 text-slate-700 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer"
                 >
                   <Edit3 className="w-3.5 h-3.5" />
                   Editar Minuta
@@ -489,7 +489,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
 
               <button
                 onClick={handleCopyDraft}
-                className="px-3 py-1.5 bg-slave-100 hover:bg-slave-200 text-slave-700 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer"
+                className="px-3 py-1.5 bg-slave-100 hover:bg-slave-200 text-slate-700 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1 cursor-pointer"
               >
                 {copiedDraft ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5" />}
                 {copiedDraft ? 'Copiado!' : 'Copiar Texto'}
@@ -506,7 +506,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
 
               <button
                 onClick={handlePrint}
-                className="px-3 py-1.5 bg-slave-100 hover:bg-slave-200 text-slave-700 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
+                className="px-3 py-1.5 bg-slave-100 hover:bg-slave-200 text-slate-700 rounded-lg text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer"
               >
                 <Printer className="w-3.5 h-3.5" />
                 <span>Imprimir</span>
@@ -523,16 +523,16 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
           </div>
 
           {/* Formal Legal Document View (Simulated A4 Paper) */}
-          <div className="bg-white border border-slave-300 rounded-xl shadow-md p-8 sm:p-12 max-w-3xl mx-auto min-h-[800px] text-slave-900 font-serif leading-relaxed text-xs sm:text-sm">
+          <div className="bg-white border border-slave-300 rounded-xl shadow-md p-8 sm:p-12 max-w-3xl mx-auto min-h-[800px] text-slate-900 font-serif leading-relaxed text-xs sm:text-sm">
             {/* Official Header Timbre */}
             <div className="text-center pb-5 mb-5 border-b-2 border-slave-900/30">
               <div className="w-9 h-9 rounded-lg bg-slave-900 text-orange-400 mx-auto flex items-center justify-center font-bold text-xs mb-2">
                 <Scale className="w-4 h-4" />
               </div>
-              <h3 className="font-sans font-bold text-[11px] uppercase tracking-widest text-slave-700 font-mono">
+              <h3 className="font-sans font-bold text-[11px] uppercase tracking-widest text-slate-700 font-mono">
                 REPÚBLICA FEDERATIVA DO BRASIL • SISTEMA NACIONAL DE TRÂNSITO
               </h3>
-              <p className="font-sans text-[10px] text-slave-500 mt-0.5">
+              <p className="font-sans text-[10px] text-slate-500 mt-0.5">
                 DEFESA ADMINISTRATIVA COM BASE NA LEI Nº 9.503/1997 (CÓDIGO DE TRÂNSITO BRASILEIRO)
               </p>
             </div>
@@ -542,7 +542,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                 value={editedDraftText}
                 onChange={(e) => setEditedDraftText(e.target.value)}
                 rows={28}
-                className="w-full font-serif text-xs text-slave-900 border border-slave-300 rounded-lg p-4 outline-none focus:ring-2 focus:ring-orange-500 leading-relaxed"
+                className="w-full font-serif text-xs text-slate-900 border border-slave-300 rounded-lg p-4 outline-none focus:ring-2 focus:ring-orange-500 leading-relaxed"
               />
             ) : (
               <div className="whitespace-pre-wrap text-justify space-y-4">
@@ -563,7 +563,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
               <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-sky-50 text-sky-800 border border-sky-200 uppercase font-mono">
                 Guia de Envio Oficial
               </span>
-              <h2 className="text-base font-bold text-slave-900 mt-1">
+              <h2 className="text-base font-bold text-slate-900 mt-1">
                 Onde e Como Protocolar sua Defesa
               </h2>
             </div>
@@ -584,11 +584,11 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                 <ExternalLink className="w-4 h-4" />
                 Opção 1: Protocolo 100% Digital (Recomendado)
               </div>
-              <p className="text-[11px] text-slave-600 mt-1.5 leading-snug">
+              <p className="text-[11px] text-slate-600 mt-1.5 leading-snug">
                 Você pode enviar o PDF gerado diretamente pelo portal eletrônico oficial do órgão autuador sem sair de casa.
               </p>
               <div className="mt-3 pt-2 border-t border-emerald-200">
-                <span className="text-[10px] font-bold text-slave-700 uppercase block font-mono">Portal Oficial:</span>
+                <span className="text-[10px] font-bold text-slate-700 uppercase block font-mono">Portal Oficial:</span>
                 <a
                   href={autuadorInfo.onlineProtocolUrl}
                   target="_blank"
@@ -602,24 +602,24 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
 
             {/* Physical / Correios Option */}
             <div className="p-4 rounded-xl border border-slave-200 bg-slave-50">
-              <div className="flex items-center gap-2 text-slave-900 font-bold text-xs">
-                <Building2 className="w-4 h-4 text-slave-600" />
+              <div className="flex items-center gap-2 text-slate-900 font-bold text-xs">
+                <Building2 className="w-4 h-4 text-slate-600" />
                 Opção 2: Envio por Correios (Carta Registrada com AR)
               </div>
-              <p className="text-[11px] text-slave-600 mt-1.5 leading-snug">
+              <p className="text-[11px] text-slate-600 mt-1.5 leading-snug">
                 Imprima a petição, assine à caneta, anexe as cópias e envie para o endereço da JARI:
               </p>
               <div className="mt-3 pt-2 border-t border-slave-200 text-xs">
-                <span className="font-bold text-slave-900 block text-xs">{autuadorInfo.name}</span>
-                <span className="text-slave-600 block mt-0.5 text-[11px]">{autuadorInfo.physicalAddress}</span>
+                <span className="font-bold text-slate-900 block text-xs">{autuadorInfo.name}</span>
+                <span className="text-slate-600 block mt-0.5 text-[11px]">{autuadorInfo.physicalAddress}</span>
               </div>
             </div>
           </div>
 
           {/* Checklist of Mandatory Documents */}
           <div className="border-t border-slave-200 pt-4">
-            <h3 className="text-xs font-bold text-slave-900 uppercase tracking-wide mb-2 flex items-center gap-2 font-mono">
-              <FileText className="w-3.5 h-3.5 text-slave-700" />
+            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wide mb-2 flex items-center gap-2 font-mono">
+              <FileText className="w-3.5 h-3.5 text-slate-700" />
               Checklist de Documentos Obrigatórios para Juntada:
             </h3>
 
@@ -632,8 +632,8 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                   className="w-3.5 h-3.5 rounded text-orange-500"
                 />
                 <div>
-                  <span className="font-bold text-slave-900 text-xs">Cópia da CNH do Requerente</span>
-                  <span className="text-slave-500 block text-[10px]">Digital (do app Carteira Digital) ou fotocópia simples</span>
+                  <span className="font-bold text-slate-900 text-xs">Cópia da CNH do Requerente</span>
+                  <span className="text-slate-500 block text-[10px]">Digital (do app Carteira Digital) ou fotocópia simples</span>
                 </div>
               </label>
 
@@ -645,8 +645,8 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                   className="w-3.5 h-3.5 rounded text-orange-500"
                 />
                 <div>
-                  <span className="font-bold text-slave-900 text-xs">Cópia do CRLV-e (Documento do Veículo)</span>
-                  <span className="text-slave-500 block text-[10px]">Comprovando propriedade ou posse legítima</span>
+                  <span className="font-bold text-slate-900 text-xs">Cópia do CRLV-e (Documento do Veículo)</span>
+                  <span className="text-slate-500 block text-[10px]">Comprovando propriedade ou posse legítima</span>
                 </div>
               </label>
 
@@ -658,8 +658,8 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                   className="w-3.5 h-3.5 rounded text-orange-500"
                 />
                 <div>
-                  <span className="font-bold text-slave-900 text-xs">Cópia da Notificação de Autuação (AIT)</span>
-                  <span className="text-slave-500 block text-[10px]">Demonstrando o número do auto e data de postagem</span>
+                  <span className="font-bold text-slate-900 text-xs">Cópia da Notificação de Autuação (AIT)</span>
+                  <span className="text-slate-500 block text-[10px]">Demonstrando o número do auto e data de postagem</span>
                 </div>
               </label>
             </div>
@@ -677,7 +677,7 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
               <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 uppercase font-mono">
                 Linha do Tempo em Tempo Real
               </span>
-              <h2 className="text-base font-bold text-slave-900 mt-1">
+              <h2 className="text-base font-bold text-slate-900 mt-1">
                 Histórico Processual & Andamento
               </h2>
             </div>
@@ -689,12 +689,12 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
                 <div className="absolute -left-6 top-1 w-3.5 h-3.5 rounded-full bg-orange-500 border-2 border-white ring-2 ring-orange-100" />
                 <div className="p-3 rounded-lg border border-slave-200 bg-slave-50 text-xs">
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-slave-900 text-xs">{item.title}</span>
-                    <span className="text-[10px] font-mono text-slave-400">
+                    <span className="font-bold text-slate-900 text-xs">{item.title}</span>
+                    <span className="text-[10px] font-mono text-slate-400">
                       {new Date(item.timestamp).toLocaleString('pt-BR')}
                     </span>
                   </div>
-                  <p className="text-slave-600 mt-0.5 text-[11px]">{item.description}</p>
+                  <p className="text-slate-600 mt-0.5 text-[11px]">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -707,12 +707,12 @@ export const CaseDetailView: React.FC<CaseDetailViewProps> = ({
               </div>
               <div>
                 <p className="font-bold text-white text-xs">Próximo Julgamento Previsto</p>
-                <p className="text-slave-300 text-[11px]">Prazo médio de deliberação da JARI: 30 a 60 dias</p>
+                <p className="text-slate-300 text-[11px]">Prazo médio de deliberação da JARI: 30 a 60 dias</p>
               </div>
             </div>
             <button
               onClick={() => onOpenWhatsAppModal(caseData.id)}
-              className="px-3 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-slave-950 font-bold rounded-lg transition-colors cursor-pointer text-xs"
+              className="px-3 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold rounded-lg transition-colors cursor-pointer text-xs"
             >
               Alertas WhatsApp
             </button>

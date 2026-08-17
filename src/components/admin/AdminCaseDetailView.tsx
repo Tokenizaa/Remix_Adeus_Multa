@@ -232,7 +232,7 @@ export const AdminCaseDetailView: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-slate-500 text-[10px] uppercase">Veículo</span>
-                  <p className="text-slave-200 font-medium">{caseData.vehicle?.brandModel || 'Toyota Corolla Cross XRE'}</p>
+                  <p className="text-slate-200 font-medium">{caseData.vehicle?.brandModel || 'Toyota Corolla Cross XRE'}</p>
                 </div>
                 <div>
                   <span className="text-slate-500 text-[10px] uppercase">Órgão Autuador</span>
@@ -446,14 +446,14 @@ export const AdminCaseDetailView: React.FC = () => {
               <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 rounded-xl text-xs font-bold font-mono">
                 STATUS: PAID / APROVADO
               </span>
-            ) : (
-              <span className="px-3 py-1 bg-amber-500/20 text-amber-400 border border-amber-500/30 rounded-xl text-xs font-bold font-mono">
-                STATUS: PENDING / AGUARDANDO
-              )
-            )}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+) : (
+               <span className="px-3 py-1 bg-amber-500/20 text-amber-400 border border-amber-500/30 rounded-xl text-xs font-bold font-mono">
+                 STATUS: PENDING / AGUARGANDO
+               </span>
+             )
+           }
+           </div>
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-slate-950 p-5 rounded-xl border border-slate-800 space-y-3 font-mono text-xs">
               <h3 className="text-white font-bold text-sm border-b border-slate-900 pb-2">Metadados da Transação</h3>
               <div>
